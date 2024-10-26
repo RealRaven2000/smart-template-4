@@ -899,7 +899,7 @@ else { return "Good afternoon"; }
 &#37;{&#37; 
   (async () =&#62; {
   var val = await clipboard("text");
-  if (val &#38;&#38; val.contains("@")) {
+  if (val &#38;&#38; val.includes("@")) {
     console.log("Clipboard has email address")
     return "";
   }
