@@ -825,12 +825,12 @@ style="background-color:#e18700;color:white;border-radius:0.7em;padding-inline:1
     <code class="inline">from("firstname,mail,lowercase")</code>. 
   </p>
   <p>
-    However since Thunderbird 115, the %variable% functions now run asynchronously,
-    which means they do not return a value but a "promise". This is ok if the script 
-    block returns it directly, for example:
+    However since Thunderbird 115, the any <code>%variable%</code> functions now run asynchronously,
+    which means they do not return a value but a "Promise". This is ok if the script 
+    block returns it directly, for example like this:
 <pre class="code">
 (function() {
-  return from(email); 
+  return from("email"); 
 } )()
 </pre>
   </p>
