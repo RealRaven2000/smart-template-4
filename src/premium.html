@@ -788,32 +788,68 @@ style="background-color:#e18700;color:white;border-radius:0.7em;padding-inline:1
     feature</a> - this is able to run some user supplied script in order
     to insert SmartTemplates variables in a flexible manner. While I cannot guarantee
     that this is going to work forever, it has come in handy for some advanced users.
+    Please note that Thunderbird may have some problems with certain commands being 
+    executed by a script invoked by a user / Add-on, so I give no guarantees for this functionality.
+  </p>
+  <p>
     You can currently use it as follows:
   </p>
   <p>
-    Enable the Thunderbird config setting <span class="codeLine">extensions.smartTemplate4.allowScripts=true</span>.
-    Then add a code section using the tags <code>&#37;{&#37;</code> and <code>&#37;}&#37;</code>.
-    You need to define an anonymous function that can return a string. E.g.:
+    Enable the Thunderbird config setting <span class="codeLine">extensions.smartTemplate4.allowScripts=true</span>
+    and <span class="codeLine">extensions.smartTemplate4.sandbox=true</span>.
+    Then add a code section in between the following SmartTemplates "code brackets" 
+    <code>&#37;{&#37;</code> and <code>&#37;}&#37;</code>.
+    You need to define an anonymous function that must always return a string - this will then be inserted
+    into the email.
+    E.g.:
     <pre class="code">
 (function() {
-  /* your code here... */
-  return "something";
-}()</pre>
+  var date = new Date();
+  const hours = date.getHours();
+  if (hours < 12) { return "Good morning"; }
+  if (hours < 17) { return "Good afternoon"; }
+  return "Good evening"; 
+} )()</pre>
+  </p>
+  <p>
+    The syntax <code class="inline">(function { <i>functionBody</i> }() )</code>  defines an 
+    anonymous function and then calls it directly using the '()' Syntax.
+    You can also use the more modern <a href="https://www.boltic.io/blog/lambda-function-javascript">Lambda  expression</a>
+    Syntax: <code class="inline">(() => { <i>functionBody</i> }() )</code>
   </p>
   <p>
     You can use SmartTemplates variables (without the % signs) within code,
     they should be replaced within the function like a variable would in your HTML template.
+    If the parameters of a variable contain keywords such as <code>%from(firstname,mail,lowercase)%</code>
+    they need to be enclosed in double quotes, to avoid the JavaScript throwing errors:
+    <code class="inline">from("firstname,mail,lowercase")</code>. 
   </p>
-  <b>Example 1: load different template depending on who you reply</b>
+  <p>
+    However since Thunderbird 115, the %variable% functions now run asynchronously,
+    which means they do not return a value but a "promise". This is ok if the script 
+    block returns it directly, for example:
+<pre class="code">
+(function() {
+  return from(email); 
+} )()
+</pre>
+  </p>
+  <p> 
+    Usually you need to read the variable within the script in which case 
+    you need to use the keyword <code class="inline">await</code>
+    and also need to to declare the function as asynchronous:
+  </p>
+  <b>Example 1: load hardcoded test / a different template depending on who you reply</b>
 <pre class="code">
 &#37;{&#37;  
-(function() {
-  switch(from('mail')) {
+(async () => {
+  let mysender = await from("mail");
+  switch(mysender) {
     case "thunderbirddaily@gmail.com":
       return "&lt;p&gt;Special text for thunderbirddaily.&lt;/p&gt;"
         + "&lt;p&gt;Another paragraph!&lt;/p&gt;";
     case "axel@gmail.com":
-      return file("W:\\User\\axel\\stationery\\QuickFolders - Links (English).html");
+      return await file("W:\\User\\axel\\stationery\\QuickFolders - Links (English).html");
     default:
       return "&lt;p&gt;default case!&lt;/p&gt;";
   }
@@ -821,7 +857,7 @@ style="background-color:#e18700;color:white;border-radius:0.7em;padding-inline:1
 &#37;}&#37;
 </pre>
   <p>
-    Here the keywords file and from('mail') are replaced in the script with the SmartTemplates
+    Here the keywords <code class="inline">file</code> and <code class="inline">from('mail')</code> are replaced in the script with the SmartTemplates
     variables <code>%file(path)%</code> and <code>%from(mail)%</code> and then resolved by SmartTemplates.
     Notes: backslashes in strings need to be escaped: "\\" <br>
     Keywords / unquoted parts within smartTemplate functions like <code class="inline">%from()%</code>, such as 
@@ -832,11 +868,49 @@ style="background-color:#e18700;color:white;border-radius:0.7em;padding-inline:1
   <b>Example 2: Greeting based on time of day</b>
 <pre class="code">
 &#37;{&#37; 
-( () => {
+( () =&#62; {
 var date = new Date();
 if (date.getHours() &lt; 12) {return "Good morning";}
 else { return "Good afternoon"; }
 } )() &#37;}&#37;
+</pre>
+  <b>Example 3: Greeting based on time of day</b>
+  <p>
+    Please note that I am currently working on the syntactically problem of making <code class="inline">await</code>
+    work with smarttemplates variables that have no parameter, by using the syntax <code class="inline">await smartVar()</code>.
+    Please see <a href="https://github.com/RealRaven2000/SmartTemplates/issues/329">[issue 329]</a> 
+    to see progress on this and download trial versions.
+  </p>
+
+<pre>
+&#37;{&#37; 
+  (async () =&#62; {
+  var val = await clipboard("text");
+  if (val &#38;&#38; val.contains("@")) {
+    console.log("Clipboard has email address")
+    return "";
+  }
+  console.log("no email in Clipboard:", val);
+  await from("mail,toclipboard");
+  console.log(`Copied from address to clipboard`);
+  return "";
+})()
+&#37;}&#37;
+
+&#37;{&#37; 
+  (async () =&#62; {
+  var val = await clipboard("text");
+  switch(val) {
+    case 'joe@domain.com':
+      return "&#60;p&#62;Hello Joe!&#60;/p&#62;";
+    case 'customer@somedomain.com':
+      return await file('N:\\stationery\\Support_Template.html');
+    default:
+      return `&#60;p&#62;Dear ${val}&#60;/p&#62;`;
+  }
+})()
+&#37;}&#37;
+</pre>
 
 </article>
 
