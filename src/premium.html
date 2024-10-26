@@ -861,8 +861,9 @@ style="background-color:#e18700;color:white;border-radius:0.7em;padding-inline:1
     variables <code>%file(path)%</code> and <code>%from(mail)%</code> and then resolved by SmartTemplates.
     Notes: backslashes in strings need to be escaped: "\\" <br>
     Keywords / unquoted parts within smartTemplate functions like <code class="inline">%from()%</code>, such as 
-    <i>mail</i>, <i>firstname</i>, <i>toclipboard</i> etc. should be wrapped in single quotes 
+    <i>mail</i>, <i>firstname</i>, <i>toclipboard</i> etc. should be wrapped in quotes 
     - otherwise the script parser will think they are undefined variables and return an error.
+    For example: <code>%from(firstname,email)%</code> must become <code class="inline">await from("firstname,email")</code>
   </p>
   
   <b>Example 2: Greeting based on time of day</b>
@@ -882,7 +883,7 @@ else { return "Good afternoon"; }
     to see progress on this and download trial versions.
   </p>
 
-<pre>
+<pre class="code">
 &#37;{&#37; 
   (async () =&#62; {
   var val = await clipboard("text");
