@@ -3034,7 +3034,6 @@ SmartTemplate4.Util = {
   
   get Accounts() {
     var { MailServices } = ChromeUtils.import("resource:///modules/MailServices.jsm"); // replace account-manager
-    
     let acMgr = MailServices.accounts,
         aAccounts = [];
         
@@ -3043,76 +3042,80 @@ SmartTemplate4.Util = {
     };
     return aAccounts;    
   }, 
-  
+
+	/*
+	 * args: [] optional string array of preferred flavors, see:
+   * https://github.com/RealRaven2000/SmartTemplates/issues/330#issuecomment-2439671613
+	 */
   clipboardRead: function(args) {
 		const Ci = Components.interfaces,
 		      Cc = Components.classes;
+		function testFlavors(ar) {
+			const defaultFlavors = ["text/html", "text/unicode", "text/plain"]; // "text/rtf"
+			let supportedFlavors = []; // "text/rtf"
+			// [issue 330] - allow filtering flavor, e.g. %clipboard(text)%
+			for (let f of ar) {
+				switch (f) {
+					case "rtf":
+						supportedFlavors.push("text/rtf");
+						break;
+					case "text":
+					case "unicode":
+						supportedFlavors.push("text/unicode");
+						break;
+					case "plain":
+						supportedFlavors.push("text/plain");
+						break;
+					case "html":
+						supportedFlavors.push("text/html");
+						break;
+				}
+			}
+			for (let d of defaultFlavors.filter((e) => !supportedFlavors.includes(e))) {
+				supportedFlavors.push(d);
+			}
+
+			for (let flavor of supportedFlavors) {
+				// find first supported flavor in order of preference
+				if (
+					Services.clipboard.hasDataMatchingFlavors([flavor], Services.clipboard.kGlobalClipboard)
+				)
+					return flavor;
+			}
+			return null;
+		}					
     let cp = "";
     try {
       const xferable = Cc["@mozilla.org/widget/transferable;1"].createInstance(Ci.nsITransferable);
-			function testFlavors() {
-        const defaultFlavors = ["text/html", "text/unicode", "text/plain"]; // "text/rtf"
-        let supportedFlavors = []; // "text/rtf"
-        // [issue 330] - allow filtering flavor, e.g. %clipboard(text)%
-        for (let f of args) {
-          switch (f) {
-            case "rtf":
-              supportedFlavors.push("text/rtf");
-              break;
-            case "text":
-            case "unicode":
-              supportedFlavors.push("text/unicode");
-              break;
-            case "plain":
-              supportedFlavors.push("text/plain");
-              break;
-            case "html":
-              supportedFlavors.push("text/html");
-              break;
-          }
-        }
-        for (let d of defaultFlavors.filter((e) => !supportedFlavors.includes(e))) {
-          supportedFlavors.push(d);
-        }
-
-        for (let flavor of supportedFlavors) {
-          // find first supported flavor in order of preference
-          if (
-            Services.clipboard.hasDataMatchingFlavors([flavor], Services.clipboard.kGlobalClipboard)
-          )
-          return flavor;
-        }
-        return null;
-      }
       if (!xferable) {
         SmartTemplate4.Util.logToConsole("Couldn't get the clipboard data due to an internal error (couldn't create a Transferable object).")
-      }
-      else {
-        xferable.init(null);
-        let finalFlavor = testFlavors();
-        if (finalFlavor) {
-          xferable.addDataFlavor(finalFlavor);
-          // Get the data into our transferable.
-          Services.clipboard.getData(xferable, Services.clipboard.kGlobalClipboard);
-          
-          const data = {};
-          try {
-            xferable.getTransferData(finalFlavor, data);
-          } catch (e) {
-            // Clipboard doesn't contain data in flavor, return null.
-            SmartTemplate4.Util.logDebug(`No data with flavor ${finalFlavor} in clipboard! `);
-            return "";
-          }
+				return "";
+      } 
+			xferable.init(null);
+			let finalFlavor = testFlavors(args);
+			if (!finalFlavor) {
+				return "";
+			}
+			xferable.addDataFlavor(finalFlavor);
+			// Get the data into our transferable.
+			Services.clipboard.getData(xferable, Services.clipboard.kGlobalClipboard);
+			
+			const data = {};
+			try {
+				xferable.getTransferData(finalFlavor, data);
+			} catch (e) {
+				// Clipboard doesn't contain data in flavor, return null.
+				SmartTemplate4.Util.logDebug(`No data with flavor ${finalFlavor} in clipboard! `);
+				return "";
+			}
 
-          // There's no data available, return.
-          if (!data.value) {
-            SmartTemplate4.Util.logDebug("Clipboard is empty? ");
-            return "";
-          }
-
-          cp = data.value.QueryInterface(Ci.nsISupportsString).data;              
-        }
-      }      
+			// There's no data available, return.
+			if (!data.value) {
+				SmartTemplate4.Util.logDebug("Clipboard is empty? ");
+				return "";
+			}
+			cp = data.value.QueryInterface(Ci.nsISupportsString).data;              
+			
     }
     catch (ex) {
       SmartTemplate4.Util.logException('util.clipboardRead() failed', ex);
