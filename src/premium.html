@@ -875,7 +875,17 @@ if (date.getHours() &lt; 12) {return "Good morning";}
 else { return "Good afternoon"; }
 } )() &#37;}&#37;
 </pre>
-  <b>Example 3: Greeting based on time of day</b>
+  <b>Example 3: Reading email from clipboard and reacting accordingly</b>
+  <p>
+    In the next example, the template will insert content based on whether an email 
+    address is found in the clipboard. If no email is found the sender's 
+    address is used instead. This function both reads the clipboard and writes 
+    to it in order to communicated between different code blocks.
+    Important: if you use <code>%clipboard%</code> outside of code blocks
+    (in the template text itself) it may not be executed in the same 
+    order as the code blocks. I think code blocks are generally executed / replaced 
+    first before the rest of the template is processed.
+  </p>
   <p>
     Please note that I am currently working on the syntactically problem of making <code class="inline">await</code>
     work with smarttemplates variables that have no parameter, by using the syntax <code class="inline">await smartVar()</code>.
