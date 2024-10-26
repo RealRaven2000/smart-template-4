@@ -3044,20 +3044,46 @@ SmartTemplate4.Util = {
     return aAccounts;    
   }, 
   
-  clipboardRead: function() {
+  clipboardRead: function(args) {
 		const Ci = Components.interfaces,
 		      Cc = Components.classes;
     let cp = "";
     try {
       const xferable = Cc["@mozilla.org/widget/transferable;1"].createInstance(Ci.nsITransferable);
 			function testFlavors() {
-				const supportedFlavors = ["text/html","text/unicode","text/plain"]; // "text/rtf"
-				for (let flavor of supportedFlavors) {
-					if (Services.clipboard.hasDataMatchingFlavors([flavor], Services.clipboard.kGlobalClipboard))
-					  return flavor;
-				}
-				return null;
-			}
+        const defaultFlavors = ["text/html", "text/unicode", "text/plain"]; // "text/rtf"
+        let supportedFlavors = []; // "text/rtf"
+        // [issue 330] - allow filtering flavor, e.g. %clipboard(text)%
+        for (let f of args) {
+          switch (f) {
+            case "rtf":
+              supportedFlavors.push("text/rtf");
+              break;
+            case "text":
+            case "unicode":
+              supportedFlavors.push("text/unicode");
+              break;
+            case "plain":
+              supportedFlavors.push("text/plain");
+              break;
+            case "html":
+              supportedFlavors.push("text/html");
+              break;
+          }
+        }
+        for (let d of defaultFlavors.filter((e) => !supportedFlavors.includes(e))) {
+          supportedFlavors.push(d);
+        }
+
+        for (let flavor of supportedFlavors) {
+          // find first supported flavor in order of preference
+          if (
+            Services.clipboard.hasDataMatchingFlavors([flavor], Services.clipboard.kGlobalClipboard)
+          )
+          return flavor;
+        }
+        return null;
+      }
       if (!xferable) {
         SmartTemplate4.Util.logToConsole("Couldn't get the clipboard data due to an internal error (couldn't create a Transferable object).")
       }
@@ -3362,10 +3388,10 @@ SmartTemplate4.Util = {
 			return "";
 		}
 		return results;
-	}
+	} 
+
 
 };  // ST4.Util
-
 
 
 SmartTemplate4.Util.firstRun =
@@ -3870,6 +3896,687 @@ SmartTemplate4.Message = {
 	
 };  // ST4.Message
 
+
+SmartTemplate4.AB = {
+  _mapLegacyStruct: null,
+  _mapCardBook: null,
+  get mapCardBook() {
+    if (!this._mapCardBook) {
+      this._mapCardBook = new Map([
+        ["nickname", "nickname"],
+        ["firstname", "firstname"],
+        ["lastname", "lastname"],
+      ]);
+    }
+    return this._mapCardBook;
+  },
+  get mapLegacyCardStruct() {
+    if (!this._mapLegacyStruct) {
+      this._mapLegacyStruct = new Map([
+        ["nickname", "NickName"],
+        ["additionalmail", "SecondEmail"],
+        ["chatname", "ChatName"],
+        ["workphone", "WorkPhone"],
+        ["homephone", "HomePhone"],
+        ["fax", "FaxNumber"],
+        ["pager", "PagerNumber"],
+        ["mobile", "CellularNumber"],
+        ["private.address1", "HomeAddress"],
+        ["private.address2", "HomeAddress2"],
+        ["private.city", "HomeCity"],
+        ["private.state", "HomeState"],
+        ["private.country", "HomeCountry"],
+        ["private.zipcode", "HomeZipCode"],
+        ["private.pobox", "HomePOBox"],
+        ["private.webpage", "WebPage2"],
+        ["work.department", "Department"],
+        ["work.organization", "Company"],
+        ["work.address1", "WorkAddress"],
+        ["work.address2", "WorkAddress2"],
+        ["work.city", "WorkCity"],
+        ["work.state", "WorkState"],
+        ["work.country", "WorkCountry"],
+        ["work.zipcode", "WorkZipCode"],
+        ["work.webpage", "WebPage1"],
+        ["webpage", "WebPage1"], // default webpage!
+        ["work.pobox", "WorkPOBox"],
+        ["work.title", "Jobtitle"],
+        ["work.role", ""],
+        ["other.custom1", "Custom1"],
+        ["other.custom2", "Custom2"],
+        ["other.custom3", "Custom3"],
+        ["other.custom4", "Custom4"],
+        ["other.custom5", "Custom5"],
+        ["other.notes", "Notes"],
+      ]);
+    }
+    return this._mapLegacyStruct;
+  },
+  cardFormatter: function (args, card) {
+    // [issue 326]
+    if (!card) {
+      return "";
+    }
+    return "something";
+  },
+
+  // these were global functions in SmartTemplate4.classGetHeaders.split()
+  getCardFromAB: async function (searchText, searchField="mail", searchOperator="Is") {
+    let returnObj = {
+      card: null,
+      vCardJson: null,
+    };
+    if (!searchText) return returnObj;
+    try {
+      // https://developer.mozilla.org/en-US/docs/Mozilla/Thunderbird/Address_Book_Examples
+
+      // CARDBOOK
+      // alternatively look at mail merge (not mail merge p) - it may do it in a different way
+
+      var isCardBookAB = SmartTemplate4.Preferences.getMyBoolPref("mime.resolveAB.CardBook"),
+        isCardBookFallback = SmartTemplate4.Preferences.getMyBoolPref(
+          "mime.resolveAB.CardBook.fallback"
+        );
+      if (isCardBookAB) {
+        if (
+          SmartTemplate4.Util.licenseInfo.status != "Valid" ||
+          SmartTemplate4.Util.licenseInfo.keyType == 2
+        ) {
+          isCardBookAB = false;
+          isCardBookFallback = false;
+          console.warn(
+            "SmartTemplates: Cardbook support requires a valid SmartTemplates Pro license to work!"
+          );
+          // TO DO: accumulate a warning for showing at the end of processing.
+          // Should this only display no card was found?
+        }
+      }
+
+      if (isCardBookAB) {
+        let card, abFunction;
+        try {
+          // Optional parameter -  preferredDirId: "b7d2806b-4c3a-40f4-ad25-541e77001ce1"
+          // [issue 278] - avoid mixed case when looking up emails!
+					if (searchField=="mail") {
+						abFunction = "cardbook.getContactsFromMail";
+						card = await SmartTemplate4.Util.notifyTools.notifyBackground({
+              func: abFunction,
+              mail: searchText.toLowerCase(),
+            });
+					} else {
+            // NEW search for nickname:
+            abFunction = "cardbook.getContactsFromSearch";
+            card = await SmartTemplate4.Util.notifyTools.notifyBackground({
+              func: abFunction,
+              field: searchField,
+              string: searchText.toLowerCase(),
+              operator: searchOperator,
+              case: "ig",
+            });
+          }
+
+          if (card) {
+            // return first result (for now)
+            if (card.length) {
+              returnObj.card = card[0];
+              return returnObj;
+            }
+          }
+        } catch (ex) {
+          SmartTemplate4.Util.logException(`${abFunction} function  failed`, ex);
+        }
+        // Will it fall back to standard AB?
+        if (!isCardBookFallback && (!card || !card.length)) {
+          return returnObj;
+        }
+      }
+
+      const abManager = Components.classes["@mozilla.org/abmanager;1"].getService(
+          Components.interfaces.nsIAbManager
+        ),
+        allAddressBooks = abManager.directories; // Tb 88
+
+		  // new universal search
+			if (searchField != "mail") {
+        // let's use the API instead.
+        // NEW API search for nickname:
+        abFunction = "getContactsFromSearch";
+        card = await SmartTemplate4.Util.notifyTools.notifyBackground({
+          func: abFunction,
+          field: searchField,
+          string: searchText.toLowerCase(),
+          operator: searchOperator,
+          case: "ig",
+        });
+        if (card) {
+          // return first result (for now)
+          if (card.length) {
+            returnObj.card = card[0];
+            return returnObj;
+          }
+        }
+      }
+
+      // API-to-do: use API https://thunderbird-webextensions.readthedocs.io/en/latest/addressBooks.html
+      for (let i = 0; i < allAddressBooks.length; i++) {
+        let addressBook = allAddressBooks[i];
+        if (addressBook instanceof Components.interfaces.nsIAbDirectory) {
+          // or nsIAbItem or nsIAbCollection
+          // alert ("Directory Name:" + addressBook.dirName);
+          try {
+            if (searchField == "mail") {
+              let card = addressBook.cardForEmailAddress(searchText);
+              if (card) {
+                returnObj.card = card;
+                let jCal = await SmartTemplate4.Util.notifyTools.notifyBackground({
+                  func: "parseVcard",
+                  vCard: card.vCardProperties.toVCard(),
+                });
+                console.log(jCal);
+                returnObj.vCardJson = jCal;
+                return returnObj;
+              }
+            }
+            /**
+						 * * nsIAbDirectory.search()
+						 * Searches the directory for cards matching query.
+						 *
+						 * The query takes the form:
+						 * (BOOL1(FIELD1,OP1,VALUE1)..(FIELDn,OPn,VALUEn)(BOOL2(FIELD1,OP1,VALUE1)...)...)
+						 *
+						 * BOOLn   A boolean operator joining subsequent terms delimited by ().
+						 *         For possible values see CreateBooleanExpression().
+						 * FIELDn  An addressbook card data field.
+						 * OPn     An operator for the search term.
+						 *         For possible values see CreateBooleanConditionString().
+						 * VALUEn  The value to be matched in the FIELDn via the OPn operator.
+						 *         The value must be URL encoded by the caller, if it contains any
+						 *         special characters including '(' and ')'.
+						 
+							void search(in AString query, in AString searchString, in nsIAbDirSearchListener listener);
+						*/
+
+						/*
+            let searchQuery = `(AND(${searchField},${searchOperator},${searchText}))`;
+						let searchString = ""; // ??
+            const results = [];
+						const promises = [];
+						promises.push(
+              new Promise((resolve) => {
+								addressBook.search(searchQuery, searchString, {
+									onSearchFinished() {
+										resolve();
+									},
+									onSearchFoundCard(contact) {
+										if (contact.isMailList) {
+											return;
+										}
+										results.push(addressBookCache._makeContactNode(contact, book.item));
+									},
+								});
+							})
+						);
+						await Promise.all(promises);
+						if (results.length) { 
+							return results[0];
+						}
+						*/
+          } catch (ex) {
+            util.logDebug("Problem with Addressbook: " + addressBook.dirName + "\n" + ex);
+          }
+        }
+      }
+
+    } catch (ex) {
+      SmartTemplate4.Util.logException("getCardFromAB() function failed", ex);
+    }
+    return returnObj;
+  },
+
+  isCardCardBook: function (card) {
+    if (!card) return false;
+    return typeof card.dirPrefId == "string";
+  },
+
+  getPhoneProperty: function (cardObj, phoneType, isCardBook) {
+    let result;
+    try {
+      if (isCardBook) {
+        result = cardObj.card.tel.find((e) => e[1].includes(`TYPE=${phoneType.toUpperCase()}`));
+        if (result && result.length) return result[0].toString();
+      } else {
+        // use cardObj.vCardJson
+        let records = cardObj.vCardJson[1].filter((e) => e[0] == "tel" && e[1].type == phoneType);
+        if (records && records.length) {
+          return records[0][3]; // array with 4 members ["tel", {type:"work"}, "text", "087 123 456 789"]
+        }
+        // vCard parsing  - DON'T !!
+        // result = card.vCardProperties.entries.find( e=>e.name=="tel" && e.params.type==phoneType);
+        // if (result) return result.value;
+      }
+    } catch (ex) {
+      console.log(`getPhoneProperty(${phoneType}) failed:`, ex);
+    }
+    return "";
+  },
+
+  getCardProperty: function (cardObj, p, defaultValue = "") {
+    if (!cardObj) return "";
+    if (!cardObj.card) return "";
+    const card = cardObj.card;
+    const isDebugAB = SmartTemplate4.Preferences.isDebugOption("adressbook");
+    SmartTemplate4.Util.logDebugOptional("adressbook", `getCardProperty(${p},${defaultValue})`);
+    let r;
+    let isCardBook = SmartTemplate4.AB.isCardCardBook(card);
+    let legacyKey = this.mapLegacyCardStruct.get(p);
+    let cardbookKey = this.mapCardBook.get(p);
+    try {
+      if (card.getProperty && legacyKey) {
+        r = card.getProperty(legacyKey, "");
+      } else if (isCardBook) {
+        // cardbook
+        r = card[cardbookKey];
+      }
+      if (r) {
+        let d = SmartTemplate4.mimeDecoder.decode(r);
+        if (d) return d;
+      } else {
+        // parse contents of vCard
+        // see https://searchfox.org/comm-central/source/mailnews/addrbook/modules/VCardUtils.jsm#463
+        let addrArray;
+        let isvCard = cardObj && cardObj.vCardJson;
+        if (p.startsWith("work.")) {
+          if (isCardBook) {
+            addrArray = card.adr.find((e) => e[1].includes("TYPE=WORK"));
+          } else if (isvCard) {
+            // card.vCardProperties.entries.find( e=>e.name=="adr" && e.params.type=="work").value;
+            let arA = cardObj.vCardJson[1].filter((e) => e[0] == "adr" && e[1].type == "work");
+            if (arA && arA.length) {
+              addrArray = arA[0][3];
+            }
+          }
+        }
+        if (p.startsWith("private.")) {
+          if (isCardBook) {
+            addrArray = card.adr.find((e) => e[1].includes("TYPE=HOME"));
+          } else if (isvCard) {
+            // card.vCardProperties.entries.find( e=>e.name=="adr" && e.params.type=="home").value;
+            let arA = cardObj.vCardJson[1].filter((e) => e[0] == "adr" && e[1].type == "home");
+            if (arA && arA.length) {
+              addrArray = arA[0][3];
+            }
+          }
+        }
+        if (addrArray) {
+          if (isDebugAB) {
+            console.log("card returned addrArray", addrArray);
+          }
+          let p1 = p.split(".")[1]; //second word;
+          if (p1) {
+            let idx = null;
+            switch (p1) {
+              case "pobox":
+                idx = 0;
+                break;
+              case "address2":
+                idx = 1;
+                break;
+              case "address1":
+                idx = 2;
+                break;
+              case "city":
+                idx = 3;
+                break;
+              case "state":
+                idx = 4;
+                break;
+              case "zipcode":
+                idx = 5;
+                break;
+              case "country":
+                idx = 6;
+                break;
+            }
+            if (idx != null) {
+              try {
+                if (isCardBook && addrArray.length) {
+                  addrArray = addrArray[0];
+                }
+                r = addrArray[idx];
+                if (isDebugAB) {
+                  console.log(`${p} returned with idx=${idx}: `, r);
+                }
+              } catch (ex) {
+                r = "";
+              }
+            }
+          }
+        }
+        if (!r) {
+          let subType = "";
+          if (p.startsWith("chatname")) {
+            let terms = p.split(".");
+            if (terms.length > 1) {
+              subType = terms[1]; // chat protocol
+              p = terms[0];
+            }
+          }
+          switch (p) {
+            case "additionalmail":
+              {
+                let result = isCardBook
+                  ? card.email.find((e) => e[1].length == 0) // not Array [ "PREF=1", "TYPE=work" ] but empty!
+                  : isvCard
+                  ? cardObj.vCardJson[1].filter((e) => e[0] == "email" && !e[1].type)
+                  : null;
+                //card.vCardProperties.entries.find( e=>e.name=="email" && e.params.type==undefined);
+                if (result) {
+                  if (isCardBook) {
+                    if (result.length) return result[0].join(","); // this is still an array
+                    return "";
+                  } else {
+                    if (result.length) return result[0][3]; //  [ "email", { }, "text", "email address" ]
+                  }
+                }
+              }
+              break;
+            case "nickname":
+              {
+                if (isCardBook) {
+                  return card.nickname;
+                } else if (isvCard) {
+                  // card.vCardProperties.entries.find( e=>e.name=="nickname");
+                  let result = cardObj.vCardJson[1].find((e) => e[0] == "nickname"); // [ "nickname", {}, "text", "tbdaily" ]
+                  if (result && result.length) return result[3];
+                }
+              }
+              break;
+            case "prefix": // [issue 267]
+              {
+                if (isCardBook) {
+                  return card.prefixname;
+                } else if (isvCard) {
+                  let result = cardObj.vCardJson[1].find((e) => e[0] == "n"); // Array(4) [ "n", {}, "text", (5) […] ]
+                  if (result && result.length) return result[3][3];
+                }
+              }
+              break;
+            case "suffix": // [issue 267]
+              {
+                if (isCardBook) {
+                  return card.suffixname;
+                } else if (isvCard) {
+                  let result = cardObj.vCardJson[1].find((e) => e[0] == "n"); // Array(4) [ "n", {}, "text", (5) […] ]
+                  if (result && result.length) return result[3][4];
+                }
+              }
+              break;
+            case "chatname":
+              {
+                if (isCardBook) {
+                  let elements = card.impp.filter((e) => e[0].length > 0);
+                  let results = [];
+                  for (let e of elements) {
+                    let ar = e[0]
+                      .filter((el) => el.startsWith(subType))
+                      .map((x) => (subType ? x.replace(`${subType}:`, "") : x)); // if protocol: param is given, remove from chat handle!
+                    results.push(...ar); // spread for multiple results
+                  }
+                  return results.join(", ");
+                } else if (isvCard) {
+                  // card.vCardProperties.entries.filter( e=>e.name=="impp");
+                  let results = cardObj.vCardJson[1].filter((e) => e[0] == "impp"); // [ [ "impp", {}, "uri", "protocol:chatId" ] ...]
+                  // card.vCardProperties.getAllEntries("impp")
+                  if (results && subType) {
+                    results = results.filter((e) => e[3].startsWith(subType));
+                  }
+
+                  if (results && results.length) {
+                    if (subType) {
+                      // if protocol: param is given, remove from chat handle!
+                      return results[0][3].replace(`${subType}:`, "");
+                    }
+                    return results.map((e) => e[3]).join(", "); // array of arrays: concat them all?
+                  }
+                }
+              }
+              break;
+            case "workphone":
+              {
+                let result = SmartTemplate4.AB.getPhoneProperty(cardObj, "work", isCardBook);
+                if (result) return result;
+              }
+              break;
+            case "homephone":
+              {
+                let result = SmartTemplate4.AB.getPhoneProperty(cardObj, "home", isCardBook);
+                if (result) return result;
+              }
+              break;
+            case "fax":
+              {
+                let result = SmartTemplate4.AB.getPhoneProperty(cardObj, "fax", isCardBook);
+                if (result) return result;
+              }
+              break;
+            case "pager":
+              {
+                let result = SmartTemplate4.AB.getPhoneProperty(cardObj, "pager", isCardBook);
+                if (result) return result;
+              }
+              break;
+            case "mobile":
+              {
+                let result = SmartTemplate4.AB.getPhoneProperty(cardObj, "cell", isCardBook);
+                if (result) return result;
+              }
+              break;
+            case "work.organization": // "Company"
+              {
+                // cardbook stores this as a ; concat string
+                let ar = isCardBook
+                  ? card.org.split("\\;")
+                  : isvCard
+                  ? cardObj.vCardJson[1].find((e) => e[0] == "org")
+                  : null;
+                // card.vCardProperties.entries.filter( e=>e.name=="org");
+                if (ar && ar.length) {
+                  try {
+                    if (isCardBook) {
+                      return ar[0];
+                    }
+                    return ar[3][0];
+                  } catch (ex) {
+                    return "";
+                  }
+                }
+              }
+              break;
+            case "work.department": // "Department"
+              {
+                let ar = isCardBook
+                  ? card.org.split("\\;")
+                  : isvCard
+                  ? cardObj.vCardJson[1].find((e) => e[0] == "org")
+                  : null;
+                if (ar && ar.length >= 2) {
+                  try {
+                    let depts;
+                    if (isCardBook) {
+                      depts = ar.slice(1); // remove first part (org)
+                    } else {
+                      depts = ar[3].slice(1);
+                    }
+                    if (depts.length) {
+                      if (depts.length == 1) return depts[0];
+                      return depts; // .join("<br>")  ?
+                    }
+                  } catch (ex) {
+                    return "";
+                  }
+                }
+              }
+              break;
+            case "work.role":
+              {
+                let ar = isCardBook
+                  ? card.role
+                  : isvCard
+                  ? cardObj.vCardJson[1].find((e) => e[0] == "role")
+                  : null;
+                if (ar && ar.length) {
+                  if (isvCard) {
+                    return ar[3];
+                  }
+                  if (isCardBook) {
+                    return ar;
+                  } // string
+                }
+              }
+              break;
+            case "work.title": // "JobTitle"
+              {
+                let ar = isCardBook
+                  ? card.title
+                  : isvCard
+                  ? cardObj.vCardJson[1].find((e) => e[0] == "title")
+                  : null;
+                if (ar && ar.length) {
+                  try {
+                    if (isvCard) {
+                      return ar[3];
+                    }
+                    if (isCardBook) {
+                      return ar;
+                    } // string
+                  } catch (ex) {
+                    return "";
+                  }
+                }
+              }
+              break;
+            case "other.notes": // Notes
+              {
+                let ar = isCardBook
+                  ? card.note
+                  : isvCard
+                  ? cardObj.vCardJson[1].find((e) => e[0] == "note")
+                  : null;
+                if (ar && ar.length) {
+                  try {
+                    let notes;
+                    if (isvCard) {
+                      notes = ar[3];
+                    }
+                    if (isCardBook) {
+                      notes = ar;
+                    } // string
+                    return notes.replaceAll("\n", "<br>");
+                  } catch (ex) {
+                    return "";
+                  }
+                }
+              }
+              break;
+
+            case "webpage": // default one!
+            case "private.webpage": // "WebPage2" - fall through
+            case "work.webpage": // "WebPage1"
+              {
+                let adType;
+                switch (p.split(".")[0]) {
+                  case "work":
+                    adType = "WORK";
+                    break;
+                  case "private":
+                    adType = "HOME";
+                    break;
+                  default:
+                    adType = "PREF";
+                    break;
+                }
+                if (isCardBook) {
+                  let result = card.url.find((e) => e[1].includes(`TYPE=${adType}`));
+                  if (result && result.length) {
+                    return result[0].join(", ");
+                  }
+                } else if (isvCard) {
+                  let results = cardObj.vCardJson[1].filter(
+                    (e) => e[0] == "url" && e[1].type && e[1].type == adType.toLowerCase()
+                  );
+                  //  card.vCardProperties.getAllEntries("url").filter(e=>e.params.type==adType.toLowerCase())
+                  /*
+											card.vCardProperties.entries.find( e=>e.name=="url" && e.params 
+												&& (e.params.type==adType.toLowerCase() || adType=="PREF" )); */
+
+                  if (results && !results.length && adType == "PREF") {
+                    // vCard has no default, return 1st entry found instead.
+                    results = cardObj.vCardJson[1].filter((e) => e[0] == "url");
+                  }
+                  let list = [];
+                  // [ "url", {…}, "uri", "https://quickfolders.org" ]
+                  for (let e of results) {
+                    let ar = e[3]; // .value;
+                    if (ar) {
+                      list.push(ar);
+                    }
+                  }
+                  return list.join(", ");
+                }
+              }
+              break;
+          }
+        }
+        // loader.loadSubScript("chrome://cardbook/content/cardbookUtils.jsm", cardbookRepository);
+        // cardbookRepository.cardbookUtils.getvCardForEmail(card)
+
+        if (p.startsWith("other.")) {
+          let p1 = p.split(".")[1]; //second word;  "custom1 .. custom5
+          if (p1.startsWith("custom")) {
+            let p2 = "x-" + p1;
+            let ar = isCardBook
+              ? card.others.filter((e) => e.includes(p2.toUpperCase()))
+              : cardObj.vCardJson[1].find((e) => e[0] == p2);
+            // card.vCardProperties.entries.filter(e=>e.name==p2);
+            if (isCardBook) {
+              let s = ar
+                .toString()
+                .split(";")
+                .find((e) => e.startsWith("VALUE")); // VALUE=TEXT:something
+              if (!s) {
+                // "X-CUSTOM1:Test Custom ONE"
+                s = ar
+                  .toString()
+                  .split(";")
+                  .find((e) => e.startsWith(p2.toUpperCase()));
+              }
+              if (s) {
+                let n = s.indexOf(":");
+                if (n > 1) {
+                  return s.substr(n + 1);
+                }
+              }
+            } else {
+              if (ar && ar.length >= 4) {
+                return ar[3];
+              }
+            }
+          }
+        }
+      }
+    } catch (ex) {
+      console.log(`getCardProperty(${p}) failed:`, ex);
+    }
+
+    if (!r) {
+      console.log("Card property not found: " + p);
+      if (defaultValue) {
+        r = defaultValue;
+      }
+    }
+    return r;
+  },
+};
 
 var { ExtensionParent } = SmartTemplate4.Util.isESM
   ? ChromeUtils.importESModule("resource://gre/modules/ExtensionParent.sys.mjs")

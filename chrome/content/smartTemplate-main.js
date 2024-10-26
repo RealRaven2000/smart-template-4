@@ -205,6 +205,9 @@ END LICENSE BLOCK
     # [issue 323] Spell Dutch months and days with lowercase letters
     # [issue 324] Make SmartTemplates compatible with new ESM modules (jsm will be removed in the next ESR)
     # [issue 328] Text search should include contents contained in tables. Also improved whitespace collapsing.
+    # [issue 329] Sandbox script: Support reading variables without parameters (e.g. %from%) within script
+    # [issue 330] Added preferred flavor parameter to %clipboard()%: plain, text, unicode, html
+
 
 
 
