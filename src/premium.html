@@ -803,13 +803,15 @@ style="background-color:#e18700;color:white;border-radius:0.7em;padding-inline:1
     into the email.
     E.g.:
     <pre class="code">
+&#37;{&#37;  
 (function() {
   var date = new Date();
   const hours = date.getHours();
   if (hours < 12) { return "Good morning"; }
   if (hours < 17) { return "Good afternoon"; }
   return "Good evening"; 
-} )()</pre>
+} )()
+&#37;}&#37;</pre>
   </p>
   <p>
     The syntax <code class="inline">(function { <i>functionBody</i> }() )</code>  defines an 
@@ -830,12 +832,12 @@ style="background-color:#e18700;color:white;border-radius:0.7em;padding-inline:1
     block returns it directly, for example like this:
 <pre class="code">
 (function() {
-  return from("mail"); 
+  return from("name,capitalize,bracketMail"); 
 } )()
 </pre>
   </p>
   <p> 
-    Usually you need to read the variable within the script in which case 
+    Usually you need to read the variable string result within the script in which case 
     you need to use the keyword <code class="inline">await</code>
     and also need to to declare the function as asynchronous:
   </p>
