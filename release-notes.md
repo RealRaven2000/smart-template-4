@@ -7,6 +7,10 @@ The full change log with screen shots [can be found here](https://smarttemplates
 *   Examples Page: added link to open Examples Page in browser.
 *   Fixed spelling in Dutch months and days - these now start with lowercase letters
 *   Support for multiple address parameters in header.set / header.append [issue #327]
+*   Text search now includes text contained in tables. Also improved whitespace collapsing. [issue #328]
+*   Support reading variables without parameters (e.g. %from%) within Sandbox script [issue #329]
+*   Optional preferred flavor parameter to %clipboard()%: plain, text, unicode, html. [issue #330]
+
 
 
 
