@@ -255,10 +255,10 @@ permalink: version.html
 		<a href="#contact" 
       href1="https://addons.thunderbird.net/thunderbird/addon/324497/versions/4.9"
       onclick="alert('This is still Work in Progress!\nPlease mail us if you want a preview version for testing.\n\nThank you!')">
-      Version 4.* - Work in Progress</a>
+      Version 4.9 - Work in Progress</a>
 		<br>
 		<span class="appWrapper">
-			<span class="thunderbird">111.0 - 132.*</span>
+			<span class="thunderbird">111.0 - 133.*</span>
 		</span>
   </h4>
   <ul>
@@ -272,32 +272,36 @@ permalink: version.html
       <a href="https://github.com/RealRaven2000/SmartTemplates/issues/327">[issue 327]</a>
     </li>
     <li> 
-      Text search now includes text contained in tables. Also improved 
+      Text search now also includes text contained in tables. Also improved 
       whitespace collapsing. 
       <a href="https://github.com/RealRaven2000/SmartTemplates/issues/328">[issue 328]</a>
     </li>
     <li> 
-      Support reading variables without parameters (e.g. %from%) 
-      within Sandbox script 
+      Support reading variables without parameters (e.g. <code class="inline">%from%</code>) 
+      within Sandbox script. The new syntax in script uses a pair of empty 
+      parentheses: <code class="html">from()</code> 
       <a href="https://github.com/RealRaven2000/SmartTemplates/issues/329">[issue 329]</a>
     </li>
     <li> 
-      Optional preferred flavor parameter to %clipboard()%: plain, text, 
+      To get the preferred format, you can now add optional flavor parameters to <code>%clipboard()%</code>: plain, text, 
       unicode, html. 
       <a href="https://github.com/RealRaven2000/SmartTemplates/issues/330">[issue 330]</a>
     </li>
     <li>
-      Added link to open Examples Page in browser.
+      Added link to open the (English) Examples Page in browser. 
+      I also added more previews to the page.
     </li>
 
 
     <h5 class="inList"><span class="inListTitle">Bug Fixes</span></h5>
     <li>
-      Fixed description of <code>%preheader()%</code> variable.
+      Fixed description of <code>%preheader()%</code> variable in 
+      settings variable page and on the support site.
       <a href="https://github.com/RealRaven2000/SmartTemplates/issues/321">[issue 321]</a>
     </li>
     <li>
-      Fixed: SmartTemplates ignored when creating an email from the Thunderbird taskbar context menu.
+      SmartTemplates is now not bypassed anymore when creating an email from the 
+      context menu on the Thunderbird taskbar icon.
       <a href="https://github.com/RealRaven2000/SmartTemplates/issues/322">[issue 322]</a>
     </li>
     <li>
