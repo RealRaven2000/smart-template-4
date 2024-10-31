@@ -2032,7 +2032,7 @@
     "message": "Read the detailed change log here (English only):"
   },
   "whats-new-list": {
-    "message": "{L1}Maintenance version 8.4.1 fixes various scrolling issues on the new variables page and makes it compatible with dark themes [issue 319].{L2}{L1} Icon layouts were improved for dark themes and any font dependencies for icons containing text were removed. [issue 310]{L2}{L1} Multiple improvements on new Variables page: Added function to collapse all chapters and fixed expand all chapters. The search box is still a work in progress. [issue 314]{L2}{L1} The command 'configure menu items…' now opens the template files page in the new Settings dialog.{L2}"
+    "message": "{L1}Add {{%tags%}} variable for SmartTemplates Pro users [issue 320].{L2}{L1} Added link to examples page.{L2}{L1}Support for multiple address parameters in header.set / header.append. [issue 314]{L2} {L1}Extended {{%clipboard%}} variable with optional flavor parameter.{L2} {L1} Improved text search  on Variables page.{L2} {L1} Sandboxed script updates, now support empty parameter list on async variable functions. If you use script, please read up changes on the documentation. [issue 329] {L2}"
   },
   "whitespace_note": {
     "message": "Note that whitespace can be best represented as \\s because it can also contain line breaks. Commas and double quote characters cannot be used."
