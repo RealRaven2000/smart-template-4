@@ -2384,7 +2384,7 @@ SmartTemplate4.regularize = async function regularize(msg, composeType, isStatio
     }
 
     // 2 helpers for modifyHeader - uses ComposeFields
-    function getModType(hdrField, ComposeFields) {
+    function getModType(hdrField) {
       switch (hdrField) {
         case "subject":
           return "string";
@@ -2398,34 +2398,41 @@ SmartTemplate4.regularize = async function regularize(msg, composeType, isStatio
         case "message-id":
           return "string";
         default:
-          if (isClobberHeader) {
+          if (hdrField.toLowerCase().startsWith("list") 
+            || 
+            hdrField.toLowerCase().startsWith("x-")) {
             return "string";
           }
           return ""; // no know type
       }
     }
-    function getDefaultString(hdrField, ComposeFields, clobberHeader) {
-      switch (hdrField) {
-        case "subject":
-          return ComposeFields.subject;
-        case "recipient":
-        case "to":
-          return ComposeFields.to;
-        case "cc":
-          return ComposeFields.cc;
-        case "bcc":
-          return ComposeFields.bcc;
-        case "from":
-          return ComposeFields.from;
-        case "reply-to":
-          return ComposeFields.replyTo;
-        case "message-id":
-          return ComposeFields.messageId;
-        default:
-          if (clobberHeader) {
-            return gMsgCompose.compFields.getHeader(hdrField) || "";
-          }
-          return "";
+    function getDefaultString(hdrField, ComposeFields, customHeader) {
+      try {
+        switch (hdrField) {
+          case "subject":
+            return ComposeFields.subject;
+          case "recipient":
+          case "to":
+            return ComposeFields.to;
+          case "cc":
+            return ComposeFields.cc;
+          case "bcc":
+            return ComposeFields.bcc;
+          case "from":
+            return ComposeFields.from;
+          case "reply-to":
+            return ComposeFields.replyTo;
+          case "message-id":
+            return ComposeFields.messageId;
+          default:
+            if (customHeader) {
+              return gMsgCompose.compFields.getHeader(hdrField) || "";
+            }
+            return "";
+        }
+      } catch (ex) {
+        SmartTemplate4.logToConsole(`Cannot determine default string for unknown header '${hdrField}'`);
+        return "";
       }
     }
     // modify a number of headers with either a string literal
@@ -2448,7 +2455,7 @@ SmartTemplate4.regularize = async function regularize(msg, composeType, isStatio
         ComposeFields = gMsgCompose.compFields;
 
       // get header
-      const modType = getModType(hdrField, ComposeFields);
+      const modType = getModType(hdrField);
 
       let whatWasModified = "",
         isDataModified = false;
@@ -2526,13 +2533,13 @@ SmartTemplate4.regularize = async function regularize(msg, composeType, isStatio
           return "";
       }
       try {
-        let isClobberHeader = false;
+        let isCustomHeader = false; // was isClobberHeader
 
         let dbgParamsList = textParamList;
         if (isMultiPass) {
           dbgParamsList = `[${multiArgs.join(", ")}]`;
         }
-        util.logDebug(`modifyHeader( ${hdrField}, ${cmd}, ${dbgParamsList})`);
+        util.logHighlightDebug(`modifyHeader( ${hdrField}, ${cmd}, ${dbgParamsList})`,"black","lightgreen");
 
         if (whiteList.indexOf(hdrField) < 0) {
           // not in whitelist
@@ -2541,18 +2548,16 @@ SmartTemplate4.regularize = async function regularize(msg, composeType, isStatio
             hdrField.toLowerCase().startsWith("x-")
           ) {
             // allow modification of all custom headers x-...
-            isClobberHeader = true;
+            isCustomHeader = true;
           } else {
             util.logToConsole(
-              "invalid header - no permission to modify: " +
-                hdrField +
-                "\nSupported headers: " +
-                whiteList.join(", ")
+              `invalid header - no permission to modify: ${hdrField}\n` +
+                `Supported headers: ${whiteList.join(", ")}`
             );
             return "";
           }
         }
-        targetString = getDefaultString(hdrField, ComposeFields, isClobberHeader);
+        targetString = getDefaultString(hdrField, ComposeFields, isCustomHeader);
 
         // modify header
         switch (modType) {
@@ -2668,8 +2673,7 @@ SmartTemplate4.regularize = async function regularize(msg, composeType, isStatio
               }
             } else {
               util.logDebug(
-                `Invalid Priority: '${targetString}'\n` +
-                `Must be one of [${validVals.join()}]`
+                `Invalid Priority: '${targetString}'\n` + `Must be one of [${validVals.join()}]`
               );
             }
 
@@ -2679,7 +2683,7 @@ SmartTemplate4.regularize = async function regularize(msg, composeType, isStatio
             break;
           default:
             whatWasModified = "";
-            if (isClobberHeader) {
+            if (isCustomHeader) {
               if (targetString) {
                 util.logDebug("Adding clobbered header [" + hdrField + "] =" + targetString);
                 gMsgCompose.compFields.setHeader(hdrField, targetString);
@@ -3138,7 +3142,7 @@ SmartTemplate4.regularize = async function regularize(msg, composeType, isStatio
           if (debugTimeStrings) debugger;
           SmartTemplate4.whatIsX = SmartTemplate4.XisToday;
           SmartTemplate4.whatIsUtc = false;
-          //util.logDebugOptional ('replaceReservedWords', "Switch: Time = NOW");
+          util.logDebugOptional ("replaceReservedWords", "Switch: Time = NOW");
           return "";
         case "X:=calculated": // calculated(numberOfDays)
           if (debugTimeStrings) debugger;
