@@ -1232,22 +1232,22 @@ async function main() {
                    "=========================");
     }
     switch (data.func) {
-      case "getLicenseInfo": 
+      case "getLicenseInfo":
         return currentLicense.info;
-      
-      case "getPlatformInfo": 
+
+      case "getPlatformInfo":
         return messenger.runtime.getPlatformInfo();
 
-      case "getBrowserInfo": 
+      case "getBrowserInfo":
         return messenger.runtime.getBrowserInfo();
 
-      case "getAddonInfo": 
+      case "getAddonInfo":
         return messenger.management.getSelf();
-        
+
       case "initKeyListeners": // might be needed
         // messenger.NotifyTools.notifyExperiment({event: "initKeyListeners"});
         break;
-        
+
       case "splashScreen":
         showSplash();
         break;
@@ -1255,14 +1255,14 @@ async function main() {
       case "splashInstalled":
         showSplashInstalled();
         break;
-        
+
       case "updateLicense":
         await updateLicenseKey(data.key);
         return true;
-        
+
       case "updateTemplateMenus":
         // Broadcast main windows to run updateTemplateMenus
-        messenger.NotifyTools.notifyExperiment({event: "updateTemplateMenus"});
+        messenger.NotifyTools.notifyExperiment({ event: "updateTemplateMenus" });
         break;
 
       case "updateFileTemplates":
@@ -1276,31 +1276,31 @@ async function main() {
       case "patchHeaderMenuAPI":
         if (await messenger.LegacyPrefs.getPref("extensions.smartTemplate4.debug.API.menus")) {
           console.log("SmartTemplates patchHeaderMenuAPI [API] data\n");
-        }        
-        await createHeaderMenu();                           // use API to build the menu
+        }
+        await createHeaderMenu(); // use API to build the menu
         await updateMruMenu("message_display_action_menu"); // API to update MRU items
         break;
 
       case "updateHeaderMenuMRU":
         await updateMruMenu("message_display_action_menu"); // API to update MRU items
-        break;        
-        
-      case "updateSnippetMenus":
-        messenger.NotifyTools.notifyExperiment({event: "updateSnippetMenus"});
         break;
-        
+
+      case "updateSnippetMenus":
+        messenger.NotifyTools.notifyExperiment({ event: "updateSnippetMenus" });
+        break;
+
       case "updateNewsLabels":
-        messenger.NotifyTools.notifyExperiment({event: "updateNewsLabels"});
+        messenger.NotifyTools.notifyExperiment({ event: "updateNewsLabels" });
         break;
 
       case "setActionTip":
         // https://webextension-api.thunderbird.net/en/stable/browserAction.html#settitle-details
-        messenger.browserAction.setTitle({title:data.text});
+        messenger.browserAction.setTitle({ title: data.text });
         break;
 
       case "setActionLabel":
         // https://webextension-api.thunderbird.net/en/stable/browserAction.html#setlabel-details
-        messenger.browserAction.setLabel({label:data.text});
+        messenger.browserAction.setLabel({ label: data.text });
         break;
 
       // refresh license info (at midnight) and update label afterwards.
@@ -1308,60 +1308,91 @@ async function main() {
         {
           await currentLicense.updateLicenseDates();
 
-          messenger.NotifyTools.notifyExperiment({licenseInfo: currentLicense.info});
-          messenger.NotifyTools.notifyExperiment({event: "updateNewsLabels"});
+          messenger.NotifyTools.notifyExperiment({ licenseInfo: currentLicense.info });
+          messenger.NotifyTools.notifyExperiment({ event: "updateNewsLabels" });
           // update the status bar label too:
-          messenger.NotifyTools.notifyExperiment({event:"initLicensedUI"});  
+          messenger.NotifyTools.notifyExperiment({ event: "initLicensedUI" });
         }
         break;
-        
+
       case "initLicensedUI":
         // main window update reacting to license status change
-        messenger.NotifyTools.notifyExperiment({event:"initLicensedUI"}); 
+        messenger.NotifyTools.notifyExperiment({ event: "initLicensedUI" });
         break;
 
-      case "parseVcard" :
-        {
-          // https://webextension-api.thunderbird.net/en/stable/how-to/contacts.html
-          // Get JSON representation of the vCard data (jCal).
-          let dataString = data.vCard;
-          return ICAL.parse(dataString);
-        }
-        
+      case "parseVcard": {
+        // https://webextension-api.thunderbird.net/en/stable/how-to/contacts.html
+        // Get JSON representation of the vCard data (jCal).
+        let dataString = data.vCard;
+        return ICAL.parse(dataString);
+      }
 
-      case "cardbook.getContactsFromMail":
+      case "cardbook.getContactsFromSearch":
       {
         let cards;
         try {
           let queryObject = {
-            query: "smartTemplates.getContactsFromMail", 
-            mail: data.mail
-          }
+            query: "smartTemplates.getContactsFromSearch",
+            string: data.text, // new object
+            field: data.field, // default "fn" = display name, or  "nickname" or "firstname" or whatever CardBook fields
+            term: data?.operator || "Is", // default "Contains", might also be "Is", "Isnt" and others Thunderbird usual terms
+            case: data?.case || "dig" // default "dig", possibilities ["dig", "ignoreCaseIgnoreDiacriticLabel"], ["ig", "ignoreCaseMatchDiacriticLabel"], ["dg", "matchCaseIgnoreDiacriticLabel"], ["g", "matchCaseMatchDiacriticLabel"]
+          };
           if (data.preferredDirId) {
             queryObject.dirPrefId = data.preferredDirId;
           }
 
-          cards = await messenger.runtime.sendMessage( CARDBOOK_APPNAME, queryObject ).catch(
-            (x) => { logReceptionError(x); cards=null; }
-          );
+          cards = await messenger.runtime.sendMessage(CARDBOOK_APPNAME, queryObject).catch((x) => {
+            logReceptionError(x);
+            cards = null;
+          });
           return cards;
-        }
-        catch(ex) {
+        } catch (ex) {
           console.exception(ex);
-          console.log({cards});
+          console.log({ cards });
           return null;
         }
-        break;
+      }
+
+      case "cardbook.getContactsFromMail": {
+        let cards;
+        try {
+          let queryObject = {
+            query: "smartTemplates.getContactsFromMail",
+            mail: data.mail,
+          };
+          if (data.preferredDirId) {
+            queryObject.dirPrefId = data.preferredDirId;
+          }
+
+          cards = await messenger.runtime.sendMessage(CARDBOOK_APPNAME, queryObject).catch((x) => {
+            logReceptionError(x);
+            cards = null;
+          });
+          return cards;
+        } catch (ex) {
+          console.exception(ex);
+          console.log({ cards });
+          return null;
+        }
+      }
+      
+
+      case "getContactsFromSearch": {
+        let cards;
+        return null;
+
       }
         
+
       case "openPrefs":
         {
           const settingsUrl = "/html/smartTemplate-settings.html";
           // Add the current accountid for context?
           let url = browser.runtime.getURL(settingsUrl) + "*";
-          let [oldTab] = await browser.tabs.query({url}); // dereference first 
+          let [oldTab] = await browser.tabs.query({ url }); // dereference first
           let queryString = "";
-          let searchParams = new URLSearchParams()
+          let searchParams = new URLSearchParams();
           if (data.server) {
             searchParams.append("id", data.server);
           }
@@ -1376,51 +1407,45 @@ async function main() {
           }
 
           if (oldTab) {
-            await browser.tabs.update(
-              oldTab.id, 
-              {
-                active:true,
-                url: browser.runtime.getURL(settingsUrl + queryString)
-              }
-            );
+            await browser.tabs.update(oldTab.id, {
+              active: true,
+              url: browser.runtime.getURL(settingsUrl + queryString),
+            });
             // TO DO
-            const txt = "Select a specific page after activating existing Settings Tab."
-            console.log(`%c[issue 259] to do: \n%c${txt}\n`, "color:red", "background: darkblue; color:yellow;", data);
+            const txt = "Select a specific page after activating existing Settings Tab.";
+            console.log(
+              `%c[issue 259] to do: \n%c${txt}\n`,
+              "color:red",
+              "background: darkblue; color:yellow;",
+              data
+            );
             // await browser.windows.update(oldTab.windowId, {focused:true});
           } else {
             // open a new tab with settings
-            browser.tabs.create (
-              {
-                active: true, 
-                url: browser.runtime.getURL(settingsUrl + queryString)
-              }
-            );
+            browser.tabs.create({
+              active: true,
+              url: browser.runtime.getURL(settingsUrl + queryString),
+            });
           }
         }
         break;
 
       case "patchUnifiedToolbar":
-        return await messenger.NotifyTools.notifyExperiment({event: "patchUnifiedToolbar"});
+        return await messenger.NotifyTools.notifyExperiment({ event: "patchUnifiedToolbar" });
 
       case "openLinkInTab":
         // https://webextension-api.thunderbird.net/en/stable/tabs.html#query-queryinfo
         {
           let baseURI = data.baseURI || data.URL;
-          let found = await browser.tabs.query( { url:baseURI } );
+          let found = await browser.tabs.query({ url: baseURI });
           if (found.length) {
             let tab = found[0]; // first result
-            await browser.tabs.update(
-              tab.id, 
-              {active:true, url: data.URL}
-            );
+            await browser.tabs.update(tab.id, { active: true, url: data.URL });
             return;
           }
-          browser.tabs.create(
-            { active:true, url: data.URL }
-          );        
+          browser.tabs.create({ active: true, url: data.URL });
         }
-        break;        
-  
+        break;
     }
   });
   
