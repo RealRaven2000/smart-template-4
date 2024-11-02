@@ -2964,12 +2964,32 @@ SmartTemplate4.regularize = async function regularize(msg, composeType, isStatio
         case "quoteHeader": // is this useful when Stationery does not exist?
           return '<span class="quoteHeader-placeholder"></span>';
         case "quotePlaceholder":
-          // move  the quote up to level n. use "all"
-          let maxQuoteLevel = removeParentheses(arg),
-            levelAtt = maxQuoteLevel ? " quotelevel=" + maxQuoteLevel : "";
-          return (
-            "<blockquote type=\"cite\" class='SmartTemplate'" + levelAtt + ">\n" + "</blockquote>"
-          );
+          {
+            let attributeString = "";
+            const attributes = new Map();
+            for (let a of args) {
+              // add maximum quote level (number parameter)
+              if (!isNaN(a)) {
+                attributes.set("quotelevel", parseInt(a));
+              }
+              // [issue 331]
+              switch (a) {
+                case "nostyles":
+                  attributes.set("removestyles", true);
+                  break;
+                case "noquote":
+                  attributes.set("unquoteblock", true);
+                  break;
+              }
+            }
+            // move  the quote up to level n. use "all"
+            for (const [key, value] of attributes) {
+              attributeString = attributeString + ` ${key}='${value}'`; // string attributes
+            }
+            // [WIP unstyled]
+            return `<blockquote type=\"cite\" class='SmartTemplate'${attributeString}>\n` +
+              "</blockquote>";
+          }
           break;
         case "suppressQuoteHeaders":
           SmartTemplate4.PreprocessingFlags.suppressQuoteHeaders = true;

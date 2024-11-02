@@ -146,9 +146,9 @@ SmartTemplate4.classSmartTemplate = function() {
 				}
 			}
 			util.logDebugOptional('functions.extractSignature','signature node ' 
-			                                     + (sigNode ? 'was ' : 'not ')
-			                                     + 'found' 
-																					 + (isSigInBlockquote ? ' in <blockquote>!' : '.'));
+				+ (sigNode ? 'was ' : 'not ')
+				+ 'found' 
+				+ (isSigInBlockquote ? ' in <blockquote>!' : '.'));
 		}
 
 		// read text from signature file...
@@ -676,7 +676,7 @@ SmartTemplate4.classSmartTemplate = function() {
 
 			// Analyse the forwarded part. if  it is plain text, let's search for the delimiter in any case (higher risk)!
 			// [Bug 25097] do not restrict this to html mode only
-			if (node.className == 'moz-forward-container') {
+			if (node.className == "moz-forward-container") {
 				// lets find the ---original message--- now
 				let searchWhiteSpace = true,
 				    truncWhiteSpace = false,
@@ -1015,8 +1015,7 @@ SmartTemplate4.classSmartTemplate = function() {
 		if (!theIdentity) {
 			theIdentity = gMsgCompose.identity;
       identitySource = "gMsgCompose.identity";
-    }
-    else {
+    } else {
       identitySource = "msgIdentity.Identity";
     }
     util.logDebugOptional("identities", 
@@ -1027,8 +1026,7 @@ SmartTemplate4.classSmartTemplate = function() {
 		if (startup) {
 			// Clear template
 			clearTemplate();
-		}
-		else {
+		} else {
 			if (gMsgCompose.type != msgComposeType.Template) {
 				// Check identity changed or not; also check whether new template was requested from composer window
 				if (!flags.isChangeTemplate && 
@@ -1253,12 +1251,10 @@ SmartTemplate4.classSmartTemplate = function() {
 							prev.parentNode.removeChild(prev); 
 						}
 					}
-				}
-				else { // delete all <br> before quote!
+				} else { // delete all <br> before quote!
 					
 				}
-			}
-			else {
+			} else {
 				util.logDebugOptional('functions.insertTemplate','insertTemplate - processing is not active for id ' + idKey);
 				// remove old signature!
 				// we shouldn't do this if it is not active on account unless we inserted it just beforehand?
@@ -1411,8 +1407,7 @@ SmartTemplate4.classSmartTemplate = function() {
 					// the first Child should be BLOCKQUOTE (header is inserted afterwards)
 					util.logDebugOptional('composer','Reply on Top - inserting template before first root child');
 					targetNode = editor.rootElement.insertBefore(templateDiv, editor.rootElement.firstChild); 
-				}
-				else {
+				} else {
 					for (let i = 0; i < breaksAtTop; i++) {
 						SmartTemplate4.composer.body.appendChild(util.mailDocument.createElement("br"));
 					}
@@ -1426,41 +1421,42 @@ SmartTemplate4.classSmartTemplate = function() {
         // clean old quotes
         if (quoteNode) {
           function quoteLevel(element, level) {
-            if (!element || !element.parentNode)
-              return level;
+            if (!element || !element.parentNode) return level;
             let p = element.parentNode;
-            if (p.tagName && p.tagName.toLowerCase()=="blockquote")
+            if (p.tagName && p.tagName.toLowerCase() == "blockquote")
               return quoteLevel(p, level + 1); // increase level and check grandparent
             return quoteLevel(p, level);
-          }          
-          
-          let lev = quoteNode.getAttribute('quotelevel'),
-              quoteLevels = 100;
+          }
+
+          let lev = quoteNode.getAttribute("quotelevel"),
+            quoteLevels = 100;
           if (lev) {
-            if (lev=="all") {
+            if (lev == "all") {
               quoteLevels = 100;
-						} else {
-              quoteLevels = parseInt(lev,10);
+            } else {
+              quoteLevels = parseInt(lev, 10);
             }
-          } 
-          
-          let quotePart = (st4composeType=='fwd') ?
-							bodyEl.querySelector(".moz-forward-container") :  // [issue 156]
-              bodyEl.querySelector("blockquote[_moz_dirty]");
+          }
+
+          let quotePart =
+            st4composeType == "fwd"
+              ? bodyEl.querySelector(".moz-forward-container") // [issue 156]
+              : bodyEl.querySelector("blockquote[_moz_dirty]");
           if (quotePart) {
             quoteNode.parentNode.insertBefore(quotePart, quoteNode);
-            let blocks = quotePart.querySelectorAll("blockquote");
-                
+
+            // remove unwanted levels
+            const blocks = quotePart.querySelectorAll("blockquote");
             // remove lower quote levels
-            for (let i=0; i<blocks.length; i++) {
+            for (let i = 0; i < blocks.length; i++) {
               let p = blocks.item(i),
-                  lv = quoteLevel(p, 1);
-                  
-              if (lv>quoteLevels) {
+                lv = quoteLevel(p, 1);
+
+              if (lv > quoteLevels) {
                 p.parentNode.removeChild(p);
               }
             }
-            
+
             // move quote Header above:
             function distanceBody(el) {
               let d = 0;
@@ -1472,25 +1468,38 @@ SmartTemplate4.classSmartTemplate = function() {
               }
               return d;
             }
-            
+
             let topHeader,
-                topDist = 1000,
-                qHs = bodyEl.querySelectorAll("#smartTemplate4-quoteHeader");
-            for (let i=0; i<qHs.length; i++) {
+              topDist = 1000,
+              qHs = bodyEl.querySelectorAll("#smartTemplate4-quoteHeader");
+            for (let i = 0; i < qHs.length; i++) {
               let e = qHs.item(i),
-                  l = distanceBody(e);
-              if (l<topDist) {
+                l = distanceBody(e);
+              if (l < topDist) {
                 topDist = l;
                 topHeader = e;
               }
-            }           
-            if (topHeader && quoteLevel(topHeader, 1)<2) {
+            }
+            if (topHeader && quoteLevel(topHeader, 1) < 2) {
               quotePart.parentNode.insertBefore(topHeader, quotePart);
             }
-                
-            
           }
-          quoteNode.parentNode.removeChild(quoteNode);
+					const isRemoveStyles = quoteNode.getAttribute("removestyles");;
+          // move original
+					const originalContainer = quoteNode.parentNode;
+          originalContainer.removeChild(quoteNode);
+
+          // [issue 331] remove style blocks
+          if (isRemoveStyles && quotePart) {
+            const styles = quotePart.querySelectorAll("style");
+            styles.forEach((s) => {
+              util.logDebugOptional(
+                "functions.insertTemplate",
+                "Removing style block:\n" + s.innerText.substring(0, 65) + "..."
+              );
+              s.parentElement.removeChild(s);
+            });
+          }
         }
         
 			}
