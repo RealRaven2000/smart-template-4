@@ -1973,7 +1973,7 @@
     "message": "Lees hier het gedetailleerde wijzigingslogboek (alleen in het Engels):"
   },
   "whats-new-list": {
-    "message": "{L1}Onderhoudsversie 8.4.1 lost verschillende scrollproblemen op de nieuwe variabelenpagina op en maakt deze compatibel met donkere thema's [issue 319].{L2}{L1} Pictogramlay-outs zijn verbeterd voor donkere thema's en alle lettertypeafhankelijkheden voor pictogrammen met tekst zijn verwijderd. [issue 310]{L2}{L1} Verschillende verbeteringen op de nieuwe variabelenpagina: functie toegevoegd om alle hoofdstukken samen te vouwen en de functie om alle hoofdstukken uit te vouwen is hersteld. Het zoekvak is nog in ontwikkeling. [issue 314]{L2}{L1} Het commando 'menu-items configureren...' opent nu de sjabloonbestandenpagina in het nieuwe instellingenvenster.{L2}"
+    "message": "{L1}De {{%tags%}}-variabele toegevoegd voor SmartTemplates Pro-gebruikers [issue 320].{L2}{L1} Link naar de voorbeeldpagina toegevoegd.{L2}{L1}Ondersteuning voor meerdere adresparameters in {{header.set}} / {{header.append}}. [issue 314]{L2} {L1} De {{%clipboard%}}-variabele accepteert nu optionele parameters om tekst of html in te voegen. [issue 330]{L2} {L1} Verbeterde tekstzoekfunctie op de Variabelen-pagina.{L2} {L1} Geïsoleerde scriptupdates ondersteunen nu lege parameterlijsten in asynchrone variabelfuncties. Als je scripts gebruikt, lees dan de documentatie voor de wijzigingen. [issue 329] {L2} {L1} Correctie van de spelling van maanden en dagen in het Nederlands (in kleine letters). {L2}"
   },
   "whitespace_note": {
     "message": "Houd er rekening mee dat witruimte het beste kan worden vertegenwoordigd als \\s, omdat hierin ook regelafbrekingen kunnen voorkomen. Komma’s en dubbele aanhalingstekens mogen niet worden gebruikt."

@@ -197,6 +197,7 @@ END LICENSE BLOCK
 
   Version 4.9 - WIP
     # [issue 320] %tags% = new variable to insert tags in Email
+    # [issue 330] Added preferred flavor parameter to %clipboard()%: plain, text, unicode, html
     # [issue 321] missing text in explanation of the %preHeader% parameter headerText 
     # [issue 327] support multiple address parameters in header.set / header.append
     # Added link to open Examples Page in browser.
@@ -206,7 +207,6 @@ END LICENSE BLOCK
     # [issue 324] Make SmartTemplates compatible with new ESM modules (jsm will be removed in the next ESR)
     # [issue 328] Text search should include contents contained in tables. Also improved whitespace collapsing.
     # [issue 329] Sandbox script: Support reading variables without parameters (e.g. %from%) within script
-    # [issue 330] Added preferred flavor parameter to %clipboard()%: plain, text, unicode, html
 
 
 

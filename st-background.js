@@ -1381,7 +1381,6 @@ async function main() {
       case "getContactsFromSearch": {
         let cards;
         return null;
-
       }
         
 

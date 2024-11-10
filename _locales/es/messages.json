@@ -1940,7 +1940,7 @@
     "message": "Lea el registro de cambios detallado aquí (solo en inglés):"
   },
   "whats-new-list": {
-    "message": "{L1}La versión de mantenimiento 8.4.1 corrige varios problemas de desplazamiento en la nueva página de variables y la hace compatible con temas oscuros [issue 319].{L2}{L1} Se mejoraron los diseños de iconos para temas oscuros y se eliminaron todas las dependencias de fuentes para iconos que contenían texto. [issue 310]{L2}{L1} Múltiples mejoras en la nueva página de variables: Se agregó una función para contraer todos los capítulos y se corrigió la expansión de todos los capítulos. La caja de búsqueda sigue en desarrollo. [issue 314]{L2}{L1} El comando 'configurar elementos del menú...' ahora abre la página de archivos de plantillas en el nuevo diálogo de configuración.{L2}"
+    "message": "{L1}Añadida la variable {{%tags%}} para los usuarios de SmartTemplates Pro [issue 320].{L2}{L1} Añadido enlace a la página de ejemplos.{L2}{L1}Soporte para múltiples parámetros de dirección en {{header.set}} / {{header.append}}. [issue 314]{L2} {L1} La variable {{%clipboard%}} ahora acepta parámetros opcionales para insertar texto o html. [issue 330]{L2} {L1} Búsqueda de texto mejorada en la página de Variables.{L2} {L1} Actualizaciones de script en caja de arena, ahora admite lista de parámetros vacía en funciones de variables asíncronas. Si usa script, por favor lea los cambios en la documentación. [issue 329] {L2} {L1} Corrección ortográfica de los nombres de los meses y días en neerlandés (en minúsculas). {L2}"
   },
   "whitespace_note": {
     "message": "Tenga en cuenta que el espacio en blanco se puede representar mejor como \\s porque también puede contener saltos de línea. No se pueden usar comas ni comillas dobles."

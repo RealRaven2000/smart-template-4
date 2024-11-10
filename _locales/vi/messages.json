@@ -286,7 +286,7 @@
     "message": "Đọc nhật ký thay đổi chi tiết tại đây (chỉ bằng tiếng Anh):"
   },
   "whats-new-list": {
-    "message": "{L1}Phiên bản bảo trì 8.4.1 khắc phục các sự cố cuộn khác nhau trên trang biến mới và làm cho nó tương thích với các chủ đề tối [issue 319].{L2}{L1} Bố cục biểu tượng đã được cải thiện cho các chủ đề tối và tất cả các phụ thuộc phông chữ cho các biểu tượng chứa văn bản đã bị xóa. [issue 310]{L2}{L1} Nhiều cải tiến trên trang Biến mới: Đã thêm chức năng thu gọn tất cả các chương và khắc phục mở rộng tất cả các chương. Hộp tìm kiếm vẫn đang trong quá trình phát triển. [issue 314]{L2}{L1} Lệnh 'cấu hình các mục menu...' hiện mở trang tệp mẫu trong hộp thoại Cài đặt mới.{L2}"
+    "message": "{L1}Thêm biến {{%tags%}} cho người dùng SmartTemplates Pro [issue 320].{L2}{L1} Đã thêm liên kết đến trang ví dụ.{L2}{L1}Hỗ trợ nhiều tham số địa chỉ trong {{header.set}} / {{header.append}}. [issue 314]{L2} {L1} Biến {{%clipboard%}} hiện chấp nhận các tham số tùy chọn để chèn văn bản thuần hoặc html. [issue 330]{L2} {L1} Cải thiện tìm kiếm văn bản trên trang Biến.{L2} {L1} Cập nhật mã script trong môi trường bảo mật, hiện hỗ trợ danh sách tham số trống trong các hàm biến không đồng bộ. Nếu bạn sử dụng mã script, vui lòng đọc các thay đổi trong tài liệu. [issue 329] {L2} {L1} Đã sửa chính tả cho các tháng và ngày trong tiếng Hà Lan (viết thường). {L2}"
   },
   "window-title": {
     "description": "page title. first placeholder will be replaced with Add-on name",

@@ -1964,7 +1964,7 @@
     "message": "Leia o registro de alterações detalhado aqui (somente em inglês):"
   },
   "whats-new-list": {
-    "message": "{L1}A versão de manutenção 8.4.1 corrige vários problemas de rolagem na nova página de variáveis e a torna compatível com temas escuros [issue 319].{L2}{L1} Os layouts de ícones foram aprimorados para temas escuros e todas as dependências de fontes para ícones que contêm texto foram removidas. [issue 310]{L2}{L1} Várias melhorias na nova página de variáveis: Adicionada a função de recolher todos os capítulos e corrigida a expansão de todos os capítulos. A caixa de pesquisa ainda está em desenvolvimento. [issue 314]{L2}{L1} O comando 'configurar itens do menu...' agora abre a página de arquivos de modelos na nova caixa de diálogo de configurações.{L2}"
+    "message": "{L1}Adicionar variável {{%tags%}} para usuários do SmartTemplates Pro [issue 320].{L2}{L1} Adicionado link para a página de exemplos.{L2}{L1}Suporte para vários parâmetros de endereço em {{header.set}} / {{header.append}}. [issue 314]{L2} {L1} A variável {{%clipboard%}} agora aceita parâmetros opcionais para inserir texto simples ou html. [issue 330]{L2} {L1} Pesquisa de texto aprimorada na página de Variáveis.{L2} {L1} Atualizações de scripts isolados, agora com suporte para lista de parâmetros vazia em funções de variável assíncrona. Se você usa scripts, leia sobre as alterações na documentação. [issue 329] {L2} {L1} Correção da grafia dos meses e dias em neerlandês (em minúsculas). {L2}"
   },
   "whitespace_note": {
     "message": "Observe que o espaço em branco pode ser melhor representado como \\s, pois também pode conter quebras de linha. Vírgulas e caracteres de aspas duplas não podem ser usados."

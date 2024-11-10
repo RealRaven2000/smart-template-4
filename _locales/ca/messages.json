@@ -1994,7 +1994,7 @@
     "message": "Llegiu el registre de canvis detallat aquí (només en anglès):"
   },
   "whats-new-list": {
-    "message": "{L1}La versió de manteniment 8.4.1 corregeix diversos problemes de desplaçament a la nova pàgina de variables i la fa compatible amb temes foscos [issue 319].{L2}{L1} Els dissenys d'icones s'han millorat per a temes foscos i s'han eliminat totes les dependències de fonts per a icones que contenen text. [issue 310]{L2}{L1} Diverses millores a la nova pàgina de variables: S'ha afegit una funció per plegar tots els capítols i s'ha corregit l'expansió de tots els capítols. La caixa de cerca encara està en desenvolupament. [issue 314]{L2}{L1} La comanda 'configura els elements del menú...' ara obre la pàgina d'arxius de plantilles al nou diàleg de configuració.{L2}"
+    "message": "{L1}Afegeix la variable {{%tags%}} per a usuaris de SmartTemplates Pro [issue 320].{L2}{L1} Afegit un enllaç a la pàgina d'exemples.{L2}{L1}Suport per a múltiples paràmetres d'adreça a {{header.set}} / {{header.append}}. [issue 314]{L2} {L1} La variable {{%clipboard%}} ara accepta paràmetres de tipus opcionals per inserir text o html. [issue 330]{L2} {L1} Millora de la cerca de text a la pàgina de Variables.{L2} {L1} Actualitzacions de script en sandbox, ara admeten una llista de paràmetres buida en funcions variables asíncrones. Si feu servir script, si us plau, llegiu els canvis a la documentació. [issue 329] {L2} {L1} Correcció ortogràfica dels noms de mesos i dies en neerlandès (en minúscules). {L2}"
   },
   "whitespace_note": {
     "message": "Tingueu en compte que els espais en blanc es poden representar millor com \\s perquè també poden contenir salts de línia. No es poden utilitzar comes ni cometes dobles."

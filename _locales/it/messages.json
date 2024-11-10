@@ -1934,7 +1934,7 @@
     "message": "Leggi il registro delle modifiche dettagliato qui (solo in inglese):"
   },
   "whats-new-list": {
-    "message": "{L1}La versione di manutenzione 8.4.1 risolve vari problemi di scorrimento nella nuova pagina delle variabili e la rende compatibile con i temi scuri [issue 319].{L2}{L1} I layout delle icone sono stati migliorati per i temi scuri e tutte le dipendenze dai caratteri per le icone contenenti testo sono state rimosse. [issue 310]{L2}{L1} Numerosi miglioramenti alla nuova pagina delle variabili: Aggiunta la funzione per comprimere tutti i capitoli e corretta l'espansione di tutti i capitoli. La casella di ricerca è ancora in fase di sviluppo. [issue 314]{L2}{L1} Il comando 'configura voci di menu...' ora apre la pagina dei file modello nella nuova finestra di dialogo delle impostazioni.{L2}"
+    "message": "{L1}Aggiunta la variabile {{%tags%}} per gli utenti di SmartTemplates Pro [issue 320].{L2}{L1} Aggiunto collegamento alla pagina degli esempi.{L2}{L1}Supporto per più parametri di indirizzo in {{header.set}} / {{header.append}}. [issue 314]{L2} {L1} La variabile {{%clipboard%}} ora accetta parametri opzionali per inserire testo o html. [issue 330]{L2} {L1} Ricerca testuale migliorata nella pagina Variabili.{L2} {L1} Aggiornamenti degli script isolati, ora supportano liste di parametri vuoti nelle funzioni variabili asincrone. Se usi script, leggi i cambiamenti nella documentazione. [issue 329] {L2} {L1} Corretta l'ortografia dei nomi di mesi e giorni in olandese (in minuscolo). {L2}"
   },
   "whitespace_note": {
     "message": "Si noti che gli spazi bianchi possono essere meglio rappresentati come \\s perché possono contenere anche interruzioni di riga. Non è possibile utilizzare virgole e virgolette doppie."

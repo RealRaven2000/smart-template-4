@@ -3757,8 +3757,7 @@ SmartTemplate4.regularize = async function regularize(msg, composeType, isStatio
           html='';
           break;
       }
-    }
-    catch(ex) {
+    } catch(ex) {
       util.logException("FAILED: insertFileLink(" + txt + ") \n You may get more info if you enable debug mode.",ex );
       Services.prompt.alert(null, "SmartTemplates", "Something went wrong trying to read a file: " + txt + "\n" +
         "Please check Javascript error console for detailed error message.");

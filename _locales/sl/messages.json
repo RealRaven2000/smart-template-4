@@ -1994,7 +1994,7 @@
     "message": "Podroben dnevnik sprememb preberite tukaj (samo v angleščini):"
   },
   "whats-new-list": {
-    "message": "{L1}Vzdrževalna različica 8.4.1 odpravlja različne težave s pomikanjem na novi strani spremenljivk in jo naredi združljivo s temnimi temami [issue 319].{L2}{L1} Postavitve ikon so bile izboljšane za temne teme in vse odvisnosti pisav za ikone, ki vsebujejo besedilo, so bile odstranjene. [issue 310]{L2}{L1} Več izboljšav na novi strani spremenljivk: Dodana funkcija za strnitev vseh poglavij in popravljeno razširjanje vseh poglavij. Iskalno polje je še vedno v pripravi. [issue 314]{L2}{L1} Ukaz 'nastavi elemente menija...' zdaj odpre stran predlog v novem pogovornem oknu nastavitev.{L2}"
+    "message": "{L1}Dodana spremenljivka {{%tags%}} za uporabnike SmartTemplates Pro [issue 320].{L2}{L1} Dodana povezava na stran z zgledi.{L2}{L1}Podpora za več parametrov naslova v {{header.set}} / {{header.append}}. [issue 314]{L2} {L1} Spremenljivka {{%clipboard%}} zdaj sprejema dodatne parametre za vstavljanje navadnega besedila ali html. [issue 330]{L2} {L1} Izboljšano iskanje besedila na strani Spremenljivke.{L2} {L1} Posodobitve skript v zaščitenem načinu zdaj podpirajo prazen seznam parametrov v asinhronih funkcijah spremenljivk. Če uporabljate skripte, preberite o spremembah v dokumentaciji. [issue 329] {L2} {L1} Popravljeno zapisovanje mesecev in dni v nizozemščini (z malimi črkami). {L2}"
   },
   "whitespace_note": {
     "message": "Upoštevajte, da je beli prostor lahko najbolje predstaviti kot \\s, ker lahko vsebuje tudi prelome vrstic. Vejice in znakov z dvojnim citiranjem ni mogoče uporabiti."

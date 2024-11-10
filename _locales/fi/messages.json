@@ -1982,7 +1982,7 @@
     "message": "Lue yksityiskohtainen muutosloki täältä (vain englanniksi):"
   },
   "whats-new-list": {
-    "message": "{L1}Huoltoversio 8.4.1 korjaa erilaisia vieritysongelmia uudella muuttujasivulla ja tekee siitä yhteensopivan tummien teemojen kanssa [issue 319].{L2}{L1} Kuvakeasetteluja on parannettu tummille teemoille ja kaikki fonttiriippuvuudet kuvakkeissa, jotka sisältävät tekstiä, on poistettu. [issue 310]{L2}{L1} Useita parannuksia uudelle muuttujasivulle: Lisättiin toiminto kaikkien lukujen tiivistämiseksi ja korjattiin kaikkien lukujen laajennus. Hakukenttä on edelleen työn alla. [issue 314]{L2}{L1} Komento 'määritä valikkokohteet...' avaa nyt malliprosessisivun uudessa asetukset-valintaikkunassa.{L2}"
+    "message": "{L1}Lisää {{%tags%}}-muuttuja SmartTemplates Pro -käyttäjille [issue 320].{L2}{L1} Lisätty linkki esimerkkisivulle.{L2}{L1}Tuki useille osoiteparametreille {{header.set}} / {{header.append}} -toiminnoissa. [issue 314]{L2} {L1} Muuttuja {{%clipboard%}} hyväksyy nyt valinnaiset tyypin parametrit tekstin tai html:n lisäämiseen. [issue 330]{L2} {L1} Parannettu tekstihaku Muuttujat-sivulla.{L2} {L1} Sandboxed-skriptipäivitykset tukevat nyt tyhjää parametriluetteloa asynkronisissa muuttujafunktioissa. Jos käytät skriptejä, lue muutoksista dokumentaatiosta. [issue 329] {L2} {L1} Korjattu hollantilaisten kuukausien ja päivien oikeinkirjoitus (pienillä kirjaimilla). {L2}"
   },
   "whitespace_note": {
     "message": "Huomaa, että välilyönti voidaan parhaiten edustaa nimellä \\s, koska se voi sisältää myös rivinvaihtoja. Pilkuja ja kaksoislainausmerkkejä ei voi käyttää."

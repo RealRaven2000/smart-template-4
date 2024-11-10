@@ -1484,7 +1484,7 @@ SmartTemplate4.classSmartTemplate = function() {
               quotePart.parentNode.insertBefore(topHeader, quotePart);
             }
           }
-					const isRemoveStyles = quoteNode.getAttribute("removestyles");;
+					const isRemoveStyles = quoteNode.getAttribute("removestyles");
           // move original
 					const originalContainer = quoteNode.parentNode;
           originalContainer.removeChild(quoteNode);
