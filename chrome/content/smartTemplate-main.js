@@ -4,13 +4,13 @@
 /* import * as SmartTemplates_Discounts from "../../popup/sales.js";   */
 // Next Sale End Date  COPIED from sales.js until we find a better way
 var SmartTemplates_Discounts = {
-  sales_end: new Date("2024-09-22"),
-  discountRate : {
+  sales_end: new Date("2024-11-29"),
+  discountRate: {
     discountPro: "33%",
     discountUpgrade: "33%",
-    discountRenewal: "25%"
-  }
-}
+    discountRenewal: "25%",
+  },
+};
 
 
 
