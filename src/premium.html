@@ -399,7 +399,28 @@ permalink: premium.html
   <h5>Insert Data from Clipboard</h5>
   <p>
     <code>%clipboard%</code> 
-    Use this simple command to insert clipboard contents directly into the template.
+    Use this simple command to insert clipboard contents directly into the template.<br>
+    <p>
+      If the clipboard contains multiple formats, the variable will return in order 
+      of preference the formats: "text/html", "text/unicode", "text/plain".
+      To force a different behavior you can add the preferred flavors
+      as parameters, in order of preference:
+    </p>
+    <code>%clipboard(html)%</code> 
+    if the clipboard contains html code this will insert the code at the used location.<br>
+    <code>%clipboard(plain)%</code> 
+    if the clipboard contains plain text, insert text at the used location.<br>
+    <code>%clipboard(text)%</code> 
+    if the clipboard contains plain text, insert text at the used location.<br>
+    <code>%clipboard(unicode)%</code> 
+    if the clipboard contains unicode this will insert unicde at the used location.<br>
+    <code>%clipboard(rtf)%</code> 
+    if the clipboard contains rtf this will insert the code at the used location.<br>
+    <code>%clipboard(rtf,text,plain)%</code> 
+    if the clipboard contains rtf this will insert the code at the used location.
+    otherwise it will fall back to text and failing that plain format.<br>
+
+    <a href="https://github.com/RealRaven2000/SmartTemplates/issues/330">[issue 330]</a>
   </p>
 
 
