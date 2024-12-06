@@ -540,11 +540,7 @@ SmartTemplate4.Util = {
     util.logDebug("popupLicenseNotification(" + featureName + ")");
 
     if (typeof specialTabs == "object" && specialTabs.msgNotificationBar) {
-      // Tb 68
       notifyBox = specialTabs.msgNotificationBar;
-    } else if (typeof gNotification == "object" && gNotification.notificationbox) {
-      // Tb 68
-      notifyBox = gNotification.notificationbox;
     } else {
       if (window.location.toString().endsWith("messengercompose.xhtml")) {
         notifyBox = gComposeNotification || document.getElementById("attachmentNotificationBox"); // Tb91 vs 78
@@ -645,27 +641,15 @@ SmartTemplate4.Util = {
       ? "chrome://smarttemplate4/content/skin/proFeature.png"
       : "chrome://smarttemplate4/content/skin/licensing.png";
 
-    let newNotification;
-    if (notifyBox.shown) {
-      // new notification format (Post Tb 99)
-      newNotification = await notifyBox.appendNotification(
-        notificationKey, // "String identifier that can uniquely identify the type of the notification."
-        {
-          priority: isProFeature ? notifyBox.PRIORITY_INFO_HIGH : notifyBox.PRIORITY_WARNING_HIGH,
-          label: theText,
-          eventCallback: null,
-        },
-        nbox_buttons
-      );
-    } else {
-      newNotification = await notifyBox.appendNotification(
-        theText,
-        notificationKey,
-        imgSrc,
-        isProFeature ? notifyBox.PRIORITY_INFO_HIGH : notifyBox.PRIORITY_WARNING_HIGH,
-        nbox_buttons
-      );
-    }
+    let newNotification = await notifyBox.appendNotification(
+      notificationKey, // "String identifier that can uniquely identify the type of the notification."
+      {
+        priority: isProFeature ? notifyBox.PRIORITY_INFO_HIGH : notifyBox.PRIORITY_WARNING_HIGH,
+        label: theText,
+        eventCallback: null,
+      },
+      nbox_buttons
+    );
 
     let containerSelector; //
     switch (newNotification?.messageImage?.tagName) {
@@ -3532,17 +3516,36 @@ SmartTemplate4.Util = {
     if (formatter?.isCamelcase) {
       const words = txt.split(" ");
       for (let i = 0; i < words.length; i++) {
-        words[i] = words[i][0].toLowerCase() + words[i].substr(1);
+        words[i] = words[i][0].toLowerCase() + words[i].slice(1);
       }
       return words.join(" ");
     }
     if (formatter?.isCapitalize) {
-      const words = txt.split(" ");
+      let txtDebug = "";
+      function capitalize(input, delimiters) {
+        const delimiterArray = delimiters.split(""); // make an array of single characters
+        // Lowercase the entire input first
+        input = input.toLowerCase();
 
-      for (let i = 0; i < words.length; i++) {
-        words[i] = words[i][0].toUpperCase() + words[i].substr(1).toLowerCase();
+        delimiterArray.forEach((delimiter) => {
+          input = input
+            .split(delimiter)
+            .map((word) => {
+              txtDebug += `capitalize(${delimiter}): ${word}\n`;
+              // Capitalize the first letter of each word
+              return word[0].toUpperCase() + word.slice(1);
+            })
+            .join(delimiter);
+        });
+        SmartTemplate4.Util.logDebugOptional(
+          "transformStrings",
+          `capitalized ${input}\n` + txtDebug
+        );
+
+        return input;
       }
-      return words.join(" ");
+
+      txt = capitalize(txt, " -'"); // [issue 343] capitalize after other delimiters
     }
     return txt;
   },

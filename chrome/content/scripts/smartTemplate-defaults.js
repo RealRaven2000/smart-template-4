@@ -97,6 +97,7 @@ pref("extensions.smartTemplate4.debug.signatures", false);
 pref("extensions.smartTemplate4.debug.regularize", false);
 pref("extensions.smartTemplate4.debug.tokens", false);
 pref("extensions.smartTemplate4.debug.tokens.deferred", false);
+pref("extensions.smartTemplate4.debug.transformStrings", false);
 pref("extensions.smartTemplate4.debug.mime", false);
 pref("extensions.smartTemplate4.debug.mime.split", false);
 pref("extensions.smartTemplate4.debug.msg",false);
