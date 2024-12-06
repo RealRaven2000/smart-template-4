@@ -355,7 +355,7 @@ SmartTemplate4.Settings = {
 		Services.scriptloader.loadSubScript("chrome://global/content/preferencesBindings.js", window, "UTF-8");
 
 		// Check and set common preference
-		this.setPref1st("extensions.smartTemplate4.");
+		this.setPref1st("extensions.smartTemplate4.common.");
 		this.disableWithCheckbox();
     
 		// Set account popup, duplicate DeckB to make account isntances
