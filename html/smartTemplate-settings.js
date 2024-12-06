@@ -994,7 +994,7 @@ SmartTemplates.Settings = {
     let composeType = null;
     this.logDebug("onLoad() …");
 		// Check and set common preference
-		await this.setPref1st("extensions.smartTemplate4.");
+		await this.setPref1st("extensions.smartTemplate4.common.");
 		await this.disableWithCheckbox();
 
 		// Set account popup, duplicate DeckB to make account isntances
