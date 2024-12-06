@@ -195,7 +195,7 @@ END LICENSE BLOCK
     # Improved headline for Examples tab and added jump to support side.
     # Variables page now support dark mode.
 
-  Version 4.9 - WIP
+  Version 4.9 - 11/11/2024
     # [issue 320] %tags% = new variable to insert tags in Email
     # [issue 330] Added preferred flavor parameter to %clipboard()%: plain, text, unicode, html
     # [issue 321] missing text in explanation of the %preHeader% parameter headerText 
@@ -208,15 +208,20 @@ END LICENSE BLOCK
     # [issue 328] Text search should include contents contained in tables. Also improved whitespace collapsing.
     # [issue 329] Sandbox script: Support reading variables without parameters (e.g. %from%) within script
 
-
+  Version 4.9.1 - WIP
+    # [issue 326] Feature request: retrieve an email from address book using name / nickname
+    # [issue 331] Add features to insert unquoted email and remove styles
+    # [issue 340] Common settings are not stored
+    # [issue ] deal with removal of MozElements.NotificationBox.shown() 
+    # [issue 343] Improved Capitalization for double-barrelled names (such as Tyler-Smith)
 
 
 =========================
   KNOWN ISSUES / FUTURE FUNCTIONS
   Version 4.x - WIP
-    # [issue ] 
-    # [issue ] 
-    # [issue ] 
+    # [issue 285] remove: "load_template" is a Premium feature
+    # [issue 277] "Reply All" from SmartTemplates menu behave the same as "Reply"
+    # [issue 325] Add XNote++ variable.
     # [issue 253] recreate unified toolbar menu using API functions
 
     # New Idea: Add an account templates submenu - only for accounts with dedicated settings.
