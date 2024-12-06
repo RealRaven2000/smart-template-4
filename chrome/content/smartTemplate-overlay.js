@@ -619,9 +619,9 @@ SmartTemplate4.mimeDecoder = {
 		}
 		if (!charset) { 
       if (!supressDefault) {
-			let defaultSet = SmartTemplate4.Preferences.getMyStringPref ('defaultCharset');
-			charset = defaultSet ? defaultSet : '';  // should we take this from Thunderbird instead?
-		}
+        let defaultSet = SmartTemplate4.Preferences.getMyStringPref ('defaultCharset');
+        charset = defaultSet ? defaultSet : '';  // should we take this from Thunderbird instead?
+      }
 		}
 		SmartTemplate4.Util.logDebugOptional('mime','mimeDecoder.detectCharset guessed charset: ' + charset +'...');
 		return charset;
@@ -661,19 +661,9 @@ SmartTemplate4.mimeDecoder = {
 			}
 			else {
 				// for Mailers who have no manners.
-				if (util.versionGreaterOrEqual(util.AppverFull, "61")) {
-					util.logDebug("Mailer has no manners, trying to decode string: " + theString);
-					decodedStr = decodeURIComponent(escape(theString));
-					util.logDebug("...decoded string: " + decodedStr);
-				}
-				else {
-					if (charset === "")
-						charset = this.detectCharset(theString);
-					let skip = charset.search(/ISO-2022|HZ-GB|UTF-7/gmi) !== -1;
-					// this will always fail if theString is not an ACString?
-					let cvtUTF8 = Components.classes["@mozilla.org/intl/utf8converterservice;1"].getService(Components.interfaces.nsIUTF8ConverterService),
-					decodedStr = this.cvtUTF8.convertStringToUTF8(theString, charset, skip);
-				}
+        util.logDebug("Mailer has no manners, trying to decode string: " + theString);
+        decodedStr = decodeURIComponent(escape(theString));
+        util.logDebug("...decoded string: " + decodedStr);
 			}
 		}
 		catch(ex) {
