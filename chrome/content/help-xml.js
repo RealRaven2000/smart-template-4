@@ -13,12 +13,7 @@ function initXHTML() {
   }
   // [mx l10n] 
 
-  var { AppConstants } = ChromeUtils.importESModule("resource://gre/modules/AppConstants.sys.mjs");
-  var ESM = parseInt(AppConstants.MOZ_APP_VERSION, 10) >= 128;
-
-  var { ExtensionParent } = ESM
-    ? ChromeUtils.importESModule("resource://gre/modules/ExtensionParent.sys.mjs")
-    : ChromeUtils.import("resource://gre/modules/ExtensionParent.jsm");
+  var { ExtensionParent } = ChromeUtils.importESModule("resource://gre/modules/ExtensionParent.sys.mjs");
 
   let extension = ExtensionParent.GlobalManager.getExtension("smarttemplate4@thunderbird.extension");
   Services.scriptloader.loadSubScript(
