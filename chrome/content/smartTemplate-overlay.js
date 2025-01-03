@@ -1440,8 +1440,9 @@ SmartTemplate4.parseModifier = function(msg, composeType, firstPass = false) {
           util.clipboardWrite(replaceGroupString); // [issue 187]
           if (!replaceGroupString) {
             msg = msg.replace(matchPart[i], ""); 
-          } else { 
-            msg = msg.replace(matchPart[i], `%toclipboard(${replaceGroupString})%`);// [issue 210]
+          } else {
+            let escapedGroupString = replaceGroupString.replaceAll(",", "\\,"); // [issue 344]
+            msg = msg.replace(matchPart[i], `%toclipboard(${escapedGroupString})%`); // [issue 210]
           }
         } else {
           util.logDebug('matchTextParser(' + fromPart + ') - Replacing Pattern with:\n' + replaceGroupString);
@@ -2474,7 +2475,7 @@ SmartTemplate4.regularize = async function regularize(msg, composeType, isStatio
               if (!util.hasLicense() || util.licenseInfo.keyType == 2) {
                 util.addUsedPremiumFunction("clipboard");
               } else {
-                textParamList += util.clipboardRead("plain");
+                textParamList += util.clipboardRead("plain").replaceAll(",", "\,"); // [issue 344]
               }
             } else {
               // for setting / prefixing or appending, concatenate all arguments to a single string
@@ -2968,6 +2969,7 @@ SmartTemplate4.regularize = async function regularize(msg, composeType, isStatio
                   attributes.set("removestyles", true);
                   break;
                 case "noquote":
+                  // Future use
                   attributes.set("unquoteblock", true);
                   break;
               }
