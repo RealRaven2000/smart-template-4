@@ -208,12 +208,13 @@ END LICENSE BLOCK
     # [issue 328] Text search should include contents contained in tables. Also improved whitespace collapsing.
     # [issue 329] Sandbox script: Support reading variables without parameters (e.g. %from%) within script
 
-  Version 4.9.1 - WIP
-    # [issue 326] Feature request: retrieve an email from address book using name / nickname
-    # [issue 331] Add features to insert unquoted email and remove styles
-    # [issue 340] Common settings are not stored
-    # [issue ] deal with removal of MozElements.NotificationBox.shown() 
+  Version 4.10 - WIP
+    # [issue 326] Feature request: retrieve an email address from AB using name / nickname (WIP)
+    # [issue 331] Add features to insert unquoted email and remove styles using %quotePlaceHolder% (implemented in 4.9)
+    # [issue 340] Fixed: Common settings are not stored
     # [issue 343] Improved Capitalization for double-barrelled names (such as Tyler-Smith)
+    # [issue ] deal with removal of MozElements.NotificationBox.shown() 
+    # [issue 344] %header.set(subject,clipboard)% fails at commas
 
 
 =========================

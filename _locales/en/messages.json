@@ -2032,7 +2032,7 @@
     "message": "Read the detailed change log here (English only):"
   },
   "whats-new-list": {
-    "message": "{L1}Add {{%tags%}} variable for SmartTemplates Pro users [issue 320].{L2}{L1} Added link to examples page.{L2}{L1}Support for multiple address parameters in {{header.set}} / {{header.append}}. [issue 314]{L2} {L1} The {{%clipboard%}} variable now accepts optional flavor parameters to insert plain text or html. [issue 330]{L2} {L1} Improved text search on Variables page.{L2} {L1} Sandboxed script updates, now support empty parameter list on async variable functions. If you use script, please read about the changes in the documentation. [issue 329] {L2} {L1} Corrected  spelling for Dutch months and days (to be lowercase). {L2}"
+    "message": "{L1} Add feature to remove styles when inserting the quoted part of the email {{%quotePlaceHolder(nostyles)%}} [issue 331].{L2}{L1} retrieve an email address from AB using name / nickname [issue 326].{L2}{L1} Fixed: Common settings were not stored. [issue 340]{L2} {L1} Improved Capitalization for double-barrelled names (such as Tyler-Smith). [issue 343]{L2}{L1} Compatibility with Thunderbird 134.0{L2}"
   },
   "whitespace_note": {
     "message": "Note that whitespace can be best represented as \\s because it can also contain line breaks. Commas and double quote characters cannot be used."
