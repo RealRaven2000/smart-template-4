@@ -375,23 +375,49 @@ async function onLoad(activatedWhileWindowOpen) {
 
 function onUnload(isAddOnShutDown) {
   const util = window.SmartTemplate4.Util;
+  let isError = false;
   window.SmartTemplate4.Util.notifyTools.disable();
   
   for (let m in mylisteners) {
-    if (m == "BackgroundUpdate")
-      window.removeEventListener("SmartTemplates.BackgroundUpdate", mylisteners[m]);
-    else
-      window.removeEventListener(`SmartTemplates.BackgroundUpdate.${m}`, mylisteners[m]);
+    try {
+      if (m == "BackgroundUpdate") {
+        window.removeEventListener("SmartTemplates.BackgroundUpdate", mylisteners[m]);
+      } else {
+        window.removeEventListener(`SmartTemplates.BackgroundUpdate.${m}`, mylisteners[m]);
+      }
+    } catch(ex) {
+      console.error(`SmartTemplates - Error removing listener for ${m}:`, ex);
+      isError = true;
+    }
   }
   
-  window.removeEventListener("SmartTemplates.BackgroundUpdate", window.SmartTemplate4.initLicensedUI);
-  window.removeEventListener("SmartTemplates.BackgroundUpdate.updateTemplateMenus", window.SmartTemplate4.fileTemplates.initMenusWithReset);
+  try {
+    window.removeEventListener(
+      "SmartTemplates.BackgroundUpdate",
+      window.SmartTemplate4.initLicensedUI
+    );
+  } catch (ex) {
+    console.error(`SmartTemplates - Error removing listener initLicensedUI:`, ex);
+    isError = true;
+  }
+  try {
+    window.removeEventListener(
+      "SmartTemplates.BackgroundUpdate.updateTemplateMenus",
+      window.SmartTemplate4.fileTemplates.initMenusWithReset
+    );
+  } catch (ex) {
+    console.error(`SmartTemplates - Error removing listener initMenusWithReset:`, ex);
+    isError = true;
+  }
   
-  util.logDebug("onUnload(" + isAddOnShutDown + ")...");
-    
+  util.logDebug("shutDown(true)...");
   // remove UI modifications + clean up all listeners
-  window.SmartTemplate4.shutDown(true); // true = this is a main window - remove all message listeners established
-  
-  util.logDebug("onUnload(" + isAddOnShutDown + ") FINISHED");
+  try {
+    window.SmartTemplate4.shutDown(true); // true = this is a main window - remove all message listeners established
+  } catch(ex) {
+    console.error(`SmartTemplates - Error running shutdown():`, ex);
+    isError = true;
+  }  
+  util.logDebug(`onUnload(${isAddOnShutDown}) FINISHED. isError = ${isError}`);
 }
 
