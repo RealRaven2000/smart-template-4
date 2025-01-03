@@ -1368,7 +1368,7 @@ SmartTemplate4.Util = {
    * @param global = true returns a regular expression from a quoted string
    *                 false returns a string from a quoted string
    */
-  unquotedRegex: function unquotedRegex(s, global) {
+  unquotedRegex: function (s, global) {
     if (s == "clipboard") {
       // [issue 183]
       if (!SmartTemplate4.Util.hasLicense() || SmartTemplate4.Util.licenseInfo.keyType == 2) {
@@ -4927,11 +4927,10 @@ SmartTemplate4.AB = {
   },
 };
 
-var { ExtensionParent } = SmartTemplate4.Util.isESM
-  ? ChromeUtils.importESModule("resource://gre/modules/ExtensionParent.sys.mjs")
-  : ChromeUtils.import("resource://gre/modules/ExtensionParent.jsm");
-
-	SmartTemplate4.Util.extension = ExtensionParent.GlobalManager.getExtension("smarttemplate4@thunderbird.extension");
+var { ExtensionParent } = ChromeUtils.importESModule(
+  "resource://gre/modules/ExtensionParent.sys.mjs"
+);
+SmartTemplate4.Util.extension = ExtensionParent.GlobalManager.getExtension("smarttemplate4@thunderbird.extension");
 // test:
 // console.log(`SmartTemplates %cLoading notifyTools.js`, `color: white; background: rgb(180,0,0)`);
 Services.scriptloader.loadSubScript(
