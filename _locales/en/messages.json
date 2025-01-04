@@ -2032,7 +2032,7 @@
     "message": "Read the detailed change log here (English only):"
   },
   "whats-new-list": {
-    "message": "{L1} Add feature to remove styles when inserting the quoted part of the email {{%quotePlaceHolder(nostyles)%}} [issue 331].{L2}{L1} retrieve an email address from AB using name / nickname [issue 326].{L2}{L1} Fixed: Common settings were not stored. [issue 340]{L2} {L1} Improved Capitalization for double-barrelled names (such as Tyler-Smith). [issue 343]{L2}{L1} Compatibility with Thunderbird 134.0{L2}"
+    "message": "{L1} Add feature to remove styles when inserting the quoted part of the email {{%quotePlaceHolder(nostyles)%}} [issue 331].{L2}{L1} retrieve an email address from AB using name / nickname [issue 326].{L2}{L1} Fixed: Common settings were not stored. [issue 340]{L2} {L1} Improved Capitalization for double-barrelled names (such as Tyler-Smith). [issue 343]{L2}{L1} Fixed {{%header.set(…,clipboard)%}} and {{%matchTextFromBody(…,toclipboard)%}} failing to process commas correctly. [issue 344]{L2}{L1} Compatibility with Thunderbird 134.0{L2}"
   },
   "whitespace_note": {
     "message": "Note that whitespace can be best represented as \\s because it can also contain line breaks. Commas and double quote characters cannot be used."
