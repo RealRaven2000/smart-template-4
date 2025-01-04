@@ -214,7 +214,7 @@ END LICENSE BLOCK
     # [issue 340] Fixed: Common settings are not stored
     # [issue 343] Improved Capitalization for double-barrelled names (such as Tyler-Smith)
     # [issue ] deal with removal of MozElements.NotificationBox.shown() 
-    # [issue 344] %header.set(subject,clipboard)% fails at commas
+    # [issue 344] %header.set(subject,clipboard)% and %matchTextFromBody(..,toclipboard)% fail at commas
 
 
 =========================
