@@ -1334,11 +1334,12 @@ SmartTemplate4.parseModifier = function(msg, composeType, firstPass = false) {
   // %matchTextFromSubject("regeX",MatchGroup[,textTransform],toclipboard)%
 	function matchTextParser(regX, fromPart) {
 	  try {
-			if (prefs.isDebugOption('parseModifier')) debugger;
 			let matchPart = msg.match(regX);
 			if (!matchPart) {
         return;
       }
+			if (prefs.isDebugOption("parseModifier")) debugger;
+      let bodySource = "";
       for (let i=0; i<matchPart.length; i++) {
         let isClipboardPart =  (matchPart[i].lastIndexOf(",toclipboard")>0);
         if (isClipboardPart && !clipboardMode || !isClipboardPart && clipboardMode) {
@@ -1365,8 +1366,10 @@ SmartTemplate4.parseModifier = function(msg, composeType, firstPass = false) {
             util.logDebugOptional('parseModifier',"Extracting " + rx + " from Subject:\n" + extractSource);
             break;
           case 'body':
-            let rootEl = SmartTemplate4.composer.body;
-            extractSource = rootEl.innerText;
+            if (!bodySource) {
+              bodySource = SmartTemplate4.Util.getBodyComposer(); // only do this once
+            }
+            extractSource = bodySource;
             // util.popupLicenseNotification("matchTextFromBody", true, true);
             util.addUsedPremiumFunction("matchTextFromBody");
             util.logDebugOptional('parseModifier',"Extracting " + rx + " from editor.root:\n" + extractSource);
@@ -2305,17 +2308,7 @@ SmartTemplate4.regularize = async function regularize(msg, composeType, isStatio
                 );
                 break;
               case "body":
-                let rootEl = SmartTemplate4.composer.body;
-                // we may still need to remove the div.moz-cite-prefix, let's look for a blockquote
-                if (rootEl.childNodes.length) {
-                  for (let c = 0; c < rootEl.childNodes.length; c++) {
-                    let el = rootEl.childNodes[c];
-                    if (el.tagName && el.tagName.toLowerCase() == "blockquote") {
-                      extractSource = el.innerText; // quoted material
-                    }
-                  }
-                }
-                if (!extractSource) extractSource = rootEl.innerText;
+                extractSource = SmartTemplate4.Util.getBodyComposer();
                 util.addUsedPremiumFunction("matchTextFromBody");
                 util.logDebugOptional(
                   "parseModifier",
@@ -3192,7 +3185,7 @@ SmartTemplate4.regularize = async function regularize(msg, composeType, isStatio
         // any headers (to/cc/from/date/subject/message-id/newsgroups, etc)
         case "messageRaw": { //returns the arg-th first characters of the content of the original message
           // was hdr.content(argumentLength)
-          let bodyContent = hdr.get("content"),
+          let bodyContent = hdr.get("content") || SmartTemplate4.Util.getBodyComposer(),
             length = arg ? /\((.*)\)/.exec(arg)[1] * 1 : 2048;
           return bodyContent.substring(0, length);
         }

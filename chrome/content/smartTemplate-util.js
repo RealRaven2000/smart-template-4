@@ -3740,6 +3740,54 @@ SmartTemplate4.Util = {
     }
     return results;
   },
+
+  getBodyComposer: function () {
+    try {
+      let extractSource = "";
+      let rootEl = SmartTemplate4.composer.body;
+      // we may still need to remove the div.moz-cite-prefix, let's look for a blockquote
+      if (rootEl.childNodes.length) {
+        for (let c = 0; c < rootEl.childNodes.length; c++) {
+          let el = rootEl.childNodes[c];
+          if (!el.tagName) { continue; }
+          // reply
+          if (el.tagName.toLowerCase() == "blockquote") {
+            extractSource = el.innerText; // quoted material
+          }
+          // forward
+          if (el.classList.contains("moz-forward-container")) {
+            let startProcess = false;
+            for (let f of el.childNodes) {
+              // leave out content of forwarded mail upto including headers tables
+              if (f.classList && f.classList.contains("moz-email-headers-table")) {
+                startProcess = true;
+                continue;
+              }
+              if (!startProcess) continue;
+              if (f?.tagName) {
+                if (["meta","style","img"].includes(f.tagName.toLowerCase())) continue;
+              }
+              switch (f.nodeType) {
+                case 1: /* element */
+                  extractSource += f?.innerText || "";
+                  break;
+                case 3: /* text node - let's omit these as they are all whitespace? */
+                  // extractSource += f.textContent;
+                  break;
+              }
+            }
+          }
+        }
+      }
+      if (!extractSource) extractSource = rootEl.innerText;    
+      return extractSource;
+    } catch (ex) {
+      SmartTemplate4.Util.logError("getBodyComposer failed: ", ex);
+      return "";
+    }
+  }
+  
+
 };  // ST4.Util
 
 
@@ -4924,8 +4972,8 @@ SmartTemplate4.AB = {
       }
     }
     return r;
-  },
-};
+  }
+}; // ST4.AB
 
 var { ExtensionParent } = ChromeUtils.importESModule(
   "resource://gre/modules/ExtensionParent.sys.mjs"
