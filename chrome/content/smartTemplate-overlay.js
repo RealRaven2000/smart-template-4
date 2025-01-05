@@ -2182,6 +2182,40 @@ SmartTemplate4.regularize = async function regularize(msg, composeType, isStatio
 	// TokenMap["headerName"] = mail Header
 	// TokenMap["reserved"] = ST4 function
 	var TokenMap = {};
+  // the following array is used for passing parameters within sandbox,
+  // for example  from($firstname)
+  var ContextualParams = [
+    "to", "from", "subject", "identity", "recipient", "fwd",
+    "uppercase", "lowercase", "capitalize", "camelcase",
+    "name", "firstName", "lastName","displayName", "fullname", "fn",  "nickname",
+    "prefix", "suffix", "chatname", "mail", "additionalmail",
+    "workphone", "homephone", "fax", "pager", "mobile",
+    "addressbook", "clipboard", "toclipboard"
+  ]
+  ContextualParams.push(
+    "private.address1",
+    "private.address2",
+    "private.city",
+    "private.state",
+    "private.country",
+    "private.zipcode"
+  );
+  ContextualParams.push(
+    "work.title",
+    "work.department",
+    "work.organization",
+    "work.address1",
+    "work.address2",
+    "work.city",
+    "work.state",
+    "work.country",
+    "work.zipcode",
+    "work.webpage"
+  );
+  for (let i=1; i<=5; i++) {
+    ContextualParams.push( `other.custom${i}` )
+  }
+
 	// building a hash table?
 	// addTokens("header", "reserved word",,,)
 	function addTokens() { // build a map
@@ -2201,7 +2235,7 @@ SmartTemplate4.regularize = async function regularize(msg, composeType, isStatio
     "card","card.find",
 		"cursor", "quotePlaceholder", "language", "spellcheck", "quoteHeader", "internal-javascript-ref",
 		"messageRaw", "file", "style", "attach", "basepath",//depends on the original message, but not on any header
-		"header.set", "header.append", "header.prefix, header.delete",
+		"header.set", "header.append", "header.prefix", "header.delete",
     "header.deleteFromSubject",
 		"header.set.matchFromSubject", "header.append.matchFromSubject", "header.prefix.matchFromSubject",
 		"header.set.matchFromBody", "header.append.matchFromBody", "header.prefix.matchFromBody", "logMsg",
@@ -2523,7 +2557,7 @@ SmartTemplate4.regularize = async function regularize(msg, composeType, isStatio
         if (isMultiPass) {
           dbgParamsList = `[${multiArgs.join(", ")}]`;
         }
-        util.logHighlightDebug(`modifyHeader( ${hdrField}, ${cmd}, ${dbgParamsList})`,"black","lightgreen");
+        util.logHighlightDebug(`modifyHeader(${hdrField}, ${cmd}, ${dbgParamsList})`,"black","lightgreen");
 
         if (whiteList.indexOf(hdrField) < 0) {
           // not in whitelist
@@ -3835,7 +3869,6 @@ SmartTemplate4.regularize = async function regularize(msg, composeType, isStatio
     return str;
   }
 
-  // sandboxing strings still works in 68.1.2, not sure when they will deprecate it...
   let supportEval = prefs.getMyBoolPref('allowScripts'), // disabled and hidden by default.
       sandbox,
       javascriptResults = [];
@@ -3846,33 +3879,44 @@ SmartTemplate4.regularize = async function regularize(msg, composeType, isStatio
     // we are allowing certain (string) Javascript functions in concatenation to our %variable%
     // as long as they are in a script block %{%    %}%
     // local variables can be defined within these blocks, only 1 expression line is allowed per block,
-    // hence best to wrap all code in (function() { ..code.. })()  
+    // hence best to wrap all code in (function() { ..code.. })()
     // function must return "" in order not to insert an error
+
+    const userDefinedHeaders=["x-list"]; // for custom expansion, later
+    // merge both arrays and remove any duplicates using Set()
+    const allContextualHeaders = [...new Set([...ContextualParams, ...userDefinedHeaders])];
+
     async function replaceJavascript(dmy, script) {
-      util.logDebugOptional('sandbox', `replaceJavascript() ${script}`);
+      util.logDebugOptional("sandbox", `replaceJavascript() ${script}`);
       if (!sandbox) {
-        sandbox = new Cu.Sandbox(
-          window,
-          {
+        sandbox = new Cu.Sandbox(window, {
           //  'sandboxName': aScript.id,
-            'sandboxPrototype': window,
-            'wantXrays': true
-          });
-          
+          sandboxPrototype: window,
+          wantXrays: true,
+        });
+
         //useful functions (especially if you want to change the template depending on the received message)
-        sandbox.choose = function(a){ return a[Math.floor(Math.random()*a.length)] };
-        sandbox.String.prototype.contains = function(s, startIndex){return this.indexOf(s, startIndex) >= 0};
-        sandbox.String.prototype.containsSome = function(a){return a.some(function(s){return this.indexOf(s) >= 0}, this)};
-        sandbox.String.prototype.count = function(s, startIndex){
-          let count = 0; 
+        sandbox.choose = function (a) {
+          return a[Math.floor(Math.random() * a.length)];
+        };
+        sandbox.String.prototype.contains = function (s, startIndex) {
+          return this.indexOf(s, startIndex) >= 0;
+        };
+        sandbox.String.prototype.containsSome = function (a) {
+          return a.some(function (s) {
+            return this.indexOf(s) >= 0;
+          }, this);
+        };
+        sandbox.String.prototype.count = function (s, startIndex) {
+          let count = 0;
           let pos = this.indexOf(s, startIndex);
-          while (pos != -1) { 
-            count += 1; 
+          while (pos != -1) {
+            count += 1;
             pos = this.indexOf(s, pos + 1);
           }
           return count;
-        };        
-        sandbox.variable = async function(name, arg) {
+        };
+        sandbox.variable = async function (name, arg) {
           arg = arg || "";
           if (prefs.isDebugOption("sandbox")) debugger;
           let retVariable = await replaceReservedWords("", name, arg || "");
@@ -3886,81 +3930,150 @@ SmartTemplate4.regularize = async function regularize(msg, composeType, isStatio
         };
         // eventually, "new Function()" will be deprecated. Don't exactly know when.
         var implicitNull = {},
-            stringFunctionHack = new Function(),
-        // overloading our strings using sandbox
-            props = ["charAt", "charCodeAt", "concat", "contains", "endsWith", "indexOf", "lastIndexOf", 
-                     "localeCompare", "match", "quote", "repeat", "replace", "search", "slice", "split", 
-                     "startsWith", "substr", "substring", "toLocaleLowerCase", "toLocaleUpperCase", "toLowerCase", 
-                     "toUpperCase", "trim", "trimLeft", "trimRight", "containsSome", "count",
-                     "includes"];
-        for (let i=0; i<props.length; i++) {
+          stringFunctionHack = new Function(),
+          // overloading our strings using sandbox
+          props = [
+            "charAt",
+            "charCodeAt",
+            "concat",
+            "contains",
+            "endsWith",
+            "indexOf",
+            "lastIndexOf",
+            "localeCompare",
+            "match",
+            "quote",
+            "repeat",
+            "replace",
+            "search",
+            "slice",
+            "split",
+            "startsWith",
+            "substr",
+            "substring",
+            "toLocaleLowerCase",
+            "toLocaleUpperCase",
+            "toLowerCase",
+            "toUpperCase",
+            "trim",
+            "trimLeft",
+            "trimRight",
+            "containsSome",
+            "count",
+            "includes",
+          ];
+        for (let i = 0; i < props.length; i++) {
           let s = props[i];
           stringFunctionHack[s] = sandbox.String.prototype[s];
         }
-        stringFunctionHack.valueOf = function(){ return this(implicitNull); };
-        stringFunctionHack.toString = function(){ return this(implicitNull); };
-          
-        for (let name in TokenMap) {
-          sandbox[name] = (function(aname) {
-            /* if (aname == "clipboard") { 
-              // for some reason, clipboard as tokane doesn't replace with the string in time
-              return async function() { 
-                return util.clipboardRead(); 
-              }
-            } */
-            return async function(arg){
-              if (prefs.isDebugOption("sandbox")) debugger;
-              if (typeof arg === "undefined") {
-                // [[issue 329]] try to support empty parens: e.g. await from("")
-                util.logDebugOptional(
-                  "sandbox",
-                  "sandbox[] arg undefined, returning %" + aname + "()%"
-                );
-                arg = "";
-                // return "%" + aname + "()%"; //do not allow name()
-              }
-              // Handle the case %%name(arg)%% and return the same as %name(arg)%
-              arg = (arg === implicitNull) ? "" : "(" + arg + ")";
+        stringFunctionHack.valueOf = function () {
+          return this(implicitNull);
+        };
+        stringFunctionHack.toString = function () {
+          return this(implicitNull);
+        };
 
-              let sbVal = removeEmptyString(await replaceReservedWords("", aname, arg));
-              util.logDebugOptional("sandbox", "sandbox[" + aname + "] returns:" + sbVal);
+        for (let name in TokenMap) {
+          const transposedName = name.replaceAll(".", "_"); // [349] allow composite functions
+          sandbox[transposedName] = (function (aname) {
+            return async function (...args) {
+              if (prefs.isDebugOption("sandbox")) debugger;
+
+              const processedArgs =
+                args.length > 0
+                  ? args.map((arg) => {
+                      if (arg === undefined || arg === null) {
+                        util.logDebugOptional(
+                          "sandbox",
+                          `sandbox[${aname}] undefined or null parameter`
+                        );
+                        return ""; // Handle undefined or null args
+                      }
+
+                      // Handle numeric arguments, which should not be wrapped in quotes
+                      if (typeof arg === "number" && !isNaN(arg)) {
+                        return arg; // Return the number as is
+                      }
+
+                      // If it's a contextual header (e.g., $from, $to), leave it as is
+                      if (sandbox.contextualHeaders[arg]) {
+                        return arg; // Directly returns the contextual parameter
+                      }
+
+                      // Otherwise, rewrap non-contextual arguments in double quotes:
+                      return `"${arg}"`;
+                    })
+                  : [];
+
+
+              // Handle the case %%name(arg)%% and return the same as %name(arg)%
+              // arg = arg === implicitNull ? "" : "(" + [...arguments].join(",") + ")"; // []
+
+              // If arguments exist, wrap them in parentheses; otherwise, no parentheses
+              const finalArgs = processedArgs.length > 0 ? `(${processedArgs.join(",")})` : "";
+
+              const origName = aname.replaceAll("_", "."); // [349]
+              if (prefs.isDebugOption("sandbox")) {
+                util.logHighlight(
+                  "Sandbox calls replaceReservedWords()\n",
+                  "#f6e965",
+                  "#8e0477a4",
+                  `              %${origName}${finalArgs}%`
+                );
+              }
+                
+              let sbVal = removeEmptyString(await replaceReservedWords("", origName, finalArgs));
               return sbVal;
             };
           })(name);
-          // Complex hack so that sandbox[name] is a function that can be called with 
+
+          // Complex hack so that sandbox[name] is a function that can be called with
           // (sandbox[name]) and (sandbox[name](...))
-          sandbox[name].__proto__ = stringFunctionHack; 
+          sandbox[transposedName].__proto__ = stringFunctionHack;
           // does not work:( sandbox[name].__defineGetter__("length", (function(aname){return function(){return sandbox[aname].toString().length}})(name));
-        }  // for
-      };  // (!sandbox)
-      //  alert(script);
+        } // for
+      } // (!sandbox)
+
+      // Create a headers object in the sandbox and map each contextual keyword to a prefixed variable:
+      // usage: from($name)  header.append($to,"joe@test.com")
+      // then wrap all remaining "string" variables with double quotes
+      sandbox.contextualHeaders = allContextualHeaders.reduce((acc, key) => {
+        // Replace "." with "_" for the transformed key name, then prefix $ to avoid overwriting functions.
+        // The value to be stored in the sandbox as a string
+        const parameter = `$${key.replaceAll(".", "_")}`;
+        // Add the contextual header to the accumulator with the original key and transformed value
+        acc[key] = parameter;
+        // Set the original contextual parameter in the sandbox with the transformed name (paramName)
+        sandbox[parameter] = key;
+        return acc;
+      }, {});
+
       var x;
       try {
-        if (prefs.isDebugOption('sandbox')) debugger;
+        if (prefs.isDebugOption("sandbox")) debugger;
         x = await Cu.evalInSandbox("(" + script + ")", sandbox); //todo: need to check if await is safe here
         //prevent sandbox leak by templates that redefine toString (no idea if this works, or is actually needed)
         if (x.toString === String.prototype.toString) {
-          x = x.toString(); 
-        }
-        else { 
+          x = x.toString();
+        } else {
           x = "security violation";
         }
-      } 
-      catch (ex) {
+      } catch (ex) {
         x = "ERR: " + ex;
       }
       javascriptResults.push(x);
-      return "%internal-javascript-ref("+(javascriptResults.length-1)+")%"; //todo: safety checks (currently the sandbox is useless)
+      return "%internal-javascript-ref(" + (javascriptResults.length - 1) + ")%"; //todo: safety checks (currently the sandbox is useless)
     }
-    
+
     //process javascript insertions first, so the javascript source is not broken by the remaining processing
     //but cannot insert result now, or it would be double html escaped, so insert them later
     if (SmartTemplate4.Preferences.getMyBoolPref("sandbox")) {
-      // THIS NEEDS TO BECOME ASYNC. 
-      // NOT SURE IF POSSIBLE BECAUSE OF call to Cu.evalInSandbox  !!
-      msg = await SmartTemplate4.Util.replaceAsync(msg, /%\{%((.|\n|\r)*?)%\}%/gm, replaceJavascript); // also remove all newlines and unnecessary white spaces
+      msg = await SmartTemplate4.Util.replaceAsync(
+        msg,
+        /%\{%((.|\n|\r)*?)%\}%/gm,
+        replaceJavascript
+      ); // also remove all newlines and unnecessary white spaces
     }
-    
   }
 	
 	/*  deprecating bs code. */
