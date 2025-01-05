@@ -1992,20 +1992,9 @@ SmartTemplate4.fileTemplates = {
 					inStream =		Cc["@mozilla.org/scriptableinputstream;1"].createInstance(Ci.nsIScriptableInputStream);
 			
 			try {
-				let isFU = FileUtils && FileUtils.File,
-						localFile;
-
-				if (isFU) {    // not in Postbox
-					localFile	=	new FileUtils.File(template.path);
-				}
-				else {
-					localFile	= Cc["@mozilla.org/file/local;1"].createInstance(Ci.nsILocalFile);
-					localFile.initWithPath(template.path);
-				}
-				
+				const localFile	=	new FileUtils.File(template.path);
 				if (!localFile.exists()) {
 					let text = util.getBundleString("st.fileTemplates.error.filePath");
-					
 					this.lastError = text.replace('{0}', template.label).replace('{1}', template.path);
 					return false;
 				}

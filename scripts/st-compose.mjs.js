@@ -52,9 +52,6 @@ import {Parser} from "./st-parser.mjs.js"; //
 				if (!isPlainText) // AG change: only delete text nodes if we are in HTML mode.
 					match = true;
 				break;
-      case 'span':  // Postbox
-        // Postbox 4 simple check whether string ends with :
-        break;
 			case 'div': // tb 13++
 				if (node.className &&
 				    node.className.indexOf('moz-cite-prefix')>=0) {

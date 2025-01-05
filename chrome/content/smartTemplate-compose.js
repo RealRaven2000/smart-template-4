@@ -159,7 +159,7 @@ SmartTemplate4.classSmartTemplate = function() {
       sigText = ''
     }
     else {
-      if (Ident.attachSignature) { // Postbox never gets here:
+      if (Ident.attachSignature) { 
         util.logDebugOptional('signatures,functions.extractSignature', 'attachSignature is set for Identity [' + Ident.key + '] ' + Ident.identityName + "\nPath: " + sigPath);
         let fileSig = readSignatureFile(Ident);
         if (fileSig) {
@@ -358,38 +358,28 @@ SmartTemplate4.classSmartTemplate = function() {
 	function deleteNodeTextOrBR(node, idKey, isPlainText)	{
 		let isCitation = false,
 		    match=false,
-		    theNodeName='',
 		    cName = '';
-		if (node && node.nodeName)
-			theNodeName = node.nodeName.toLowerCase();
-		else
-			return 'unknown';
+		if (!node) return;
+		if (!node.nodeName) return "unknown";
+		const theNodeName = node.nodeName.toLowerCase();
 
 		let content = '';
-		if (node.innerHTML)
-			content += '\ninnerHTML: ' + node.innerHTML;
-		if (node.nodeValue)
-			content += '\nnodeValue: ' + node.nodeValue;
-		if (!content)
-			content = '\nEMPTY';
+		if (node.innerHTML) content += '\ninnerHTML: ' + node.innerHTML;
+		if (node.nodeValue) content += '\nnodeValue: ' + node.nodeValue;
+		if (!content) content = '\nEMPTY';
 		switch(theNodeName) {
 			case 'p':
-				match = true;
-				break;
-			case 'br':
+			case 'br': // fall through
 				match = true;
 				break;
 			case '#text':
         // the text "Axel wrote:" is also a plain text node! So we must delete this even in Text mode.
-				if (!isPlainText) // AG change: only delete text nodes if we are in HTML mode.
+				if (!isPlainText) { // only delete text nodes if we are in HTML mode.
 					match = true;
+				}
 				break;
-      case 'span':  // Postbox
-        // Postbox 4 simple check whether string ends with :
-        break;
-			case 'div': // tb 13++
-				if (node.className &&
-				    node.className.indexOf('moz-cite-prefix')>=0) {
+			case 'div':
+				if (node.classList.contains("moz-cite-prefix")) {
 					if (prefs.isDebugOption('composer')) debugger;
 					cName = node.className;
 					match = true;
@@ -399,21 +389,19 @@ SmartTemplate4.classSmartTemplate = function() {
 		}
 
 		if (match) {
-				let msg = cName ? ('div class matched: ' + cName + '  ' + theNodeName) : theNodeName;
-				util.logDebugOptional('deleteNodes','deleteNodeTextOrBR() - deletes node ' + msg
-						+ '\n_________' + node.nodeName + '_________' + content);
-			if (isCitation) {
+			let msg = cName ? ('div class matched: ' + cName + '  ' + theNodeName) : theNodeName;
+			util.logDebugOptional('deleteNodes',`deleteNodeTextOrBR() - deletes node ${msg}\n`
+						+ `\n_________${node.nodeName}_________${content}`);
+			if (isCitation && !SmartTemplate4.pref.isDeleteHeaders(idKey, "rsp", false)) {
 				// lets not remove it if the box [x] "Use instead of default quote header" is not checked
-				if (!SmartTemplate4.pref.isDeleteHeaders(idKey, "rsp", false))
-					return 'cite-prefix'; // we do not remove the citation prefix if this account doesn't have this option specified
-
+				return 'cite-prefix'; // we do not remove the citation prefix if this account doesn't have this option specified
 			}
 			orgQuoteHeaders.push(node);
 			// rescue the signature from citation before deleting the node
 			gMsgCompose.editor.deleteNode(node);
-		}
-		else
+		} else {
 			util.logDebugOptional('deleteNodes','deleteNodeTextOrBR() - ignored nonmatching ' + theNodeName);
+		}
 		return isCitation ? 'cite-prefix' : theNodeName;
 	};
 
