@@ -114,6 +114,7 @@ pref("extensions.smartTemplate4.debug.timeZones", false);
 pref("extensions.smartTemplate4.debug.timeStrings", false);
 pref("extensions.smartTemplate4.debug.headers", false);
 pref("extensions.smartTemplate4.debug.sandbox", false);
+pref("extensions.smartTemplate4.debug.snippets", false);
 pref("extensions.smartTemplate4.debug.notifications", false);
 pref("extensions.smartTemplate4.debug.notifications.menus", false);
 pref("extensions.smartTemplate4.debug.premium.licenser", false);

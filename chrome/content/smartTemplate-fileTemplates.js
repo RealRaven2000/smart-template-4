@@ -1757,17 +1757,21 @@ SmartTemplate4.fileTemplates = {
       flags.isFragment = true;
       flags.isFileTemplate = true;
       if (!flags.filePaths) flags.filePaths = [];
-      SmartTemplate4.Util.logDebugOptional("fileTemplates", `insertFileEntryInComposer: Add file to template stack: ${theFileTemplate.path}`);
+      SmartTemplate4.Util.logDebugOptional(
+        "fileTemplates",
+        `insertFileEntryInComposer: Add file to template stack: ${theFileTemplate.path}`
+      );
       flags.filePaths.push(theFileTemplate.path); // remember the path. let's put it on a stack.
       let idkey = SmartTemplate4.Util.getIdentityKey(document);
       const ignoreHTML = true;
       let code;
-      if (isFormatCSS) { // [issue 238]
+      if (isFormatCSS) {
+        // [issue 238]
         // create a style block!
-        let lastUnixPos = theFileTemplate.path.lastIndexOf('/'),
-            lastWindowsPos = theFileTemplate.path.lastIndexOf('\\'),
-            pos = Math.max(lastUnixPos, lastWindowsPos),
-            name = theFileTemplate.path.substring(pos+1);
+        let lastUnixPos = theFileTemplate.path.lastIndexOf("/"),
+          lastWindowsPos = theFileTemplate.path.lastIndexOf("\\"),
+          pos = Math.max(lastUnixPos, lastWindowsPos),
+          name = theFileTemplate.path.substring(pos + 1);
         code = `
 <!-- ${name} -->
 <style>
@@ -1775,16 +1779,24 @@ SmartTemplate4.fileTemplates = {
 </style>
 
         `;
+      } else {
+        code = await SmartTemplate4.smartTemplate.getProcessedText(
+          html,
+          idkey,
+          SmartTemplate4.Util.getComposeType(),
+          ignoreHTML
+        );
       }
-      else {
-        code = await SmartTemplate4.smartTemplate.getProcessedText(html, idkey, SmartTemplate4.Util.getComposeType(), ignoreHTML);
-      }
-      gMsgCompose.editor.insertHTML(code); 
-      // we should probably place the cursor at the end of the inserted HTML afterwards!
-      
-      let popped = flags.filePaths.pop();
-      SmartTemplate4.Util.logDebugOptional("fileTemplates", `insertFileEntryInComposer: Removed file from template stack: ${popped}`);
 
+      gMsgCompose.editor.insertHTML(code);
+      
+      // we should probably place the cursor at the end of the inserted HTML afterwards!
+
+      let popped = flags.filePaths.pop();
+      SmartTemplate4.Util.logDebugOptional(
+        "fileTemplates",
+        `insertFileEntryInComposer: Removed file from template stack: ${popped}`
+      );
     }    
   } ,
   

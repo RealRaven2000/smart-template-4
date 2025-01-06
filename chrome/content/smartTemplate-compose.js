@@ -1896,89 +1896,236 @@ SmartTemplate4.classSmartTemplate = function() {
 			editor.enableUndo(true);
 		}
 	};
-	
-  // returns html code from selection in composer.
-  function unpackSelection(selection) {
-    // debugger;
-    let aOf, fOf;
-    let isFocusDifferent = false;
-    let range = selection.getRangeAt(0);
-    if (!range.startContainer)
-      return range.toString();
-    
-    let html = "";
-    let ranges = [];
-    for(let i = 0; i < selection.rangeCount; i++) {
-      let r = selection.getRangeAt(i);
-      ranges.push(r);
-      // we assume start of selection has same nodeType as end
-      // so we can span across text nodes or surround elements with an outer element
-      switch (r.startContainer.nodeType) {
-        case 1: // ELEMENT_NODE
-          for (let i=0; i<r.startContainer.childNodes.length; i++) {
-            if (i<r.startOffset || i>r.endOffset) continue;
-            if (r.startContainer.childNodes[i].nodeType == 1) {
-              html += r.startContainer.childNodes[i].outerHTML;  
-            }
-            else if (r.startContainer.childNodes[i].nodeType == 3) {
-              html += r.startContainer.childNodes[i].textContent;
-            }
-          }
-          break;
-        case 3:  // TEXT_NODE
-          if (r.endContainer==r.startContainer) {
-            if (r.endOffset) {
-              html += r.startContainer.textContent.substring(r.startOffset, r.endOffset);
-            }
-            else {
-              html += r.startContainer.textContent.substring(r.startOffset);
-            }
-          }
-          else {
-            html += r.startContainer.textContent.substring(r.startOffset);
-            let ns = r.startContainer.nextSibling;
-            if (ns) {
-              switch (ns.nodeType) {
-                case 1: // ELEMENT_NODE
-                  html += ns.outerHTML;
-                  break;
-                case 3:  // TEXT_NODE
-                  html += ns.textContent;
-                  break;
-              }
-            }
-            if (r.endOffset) {
-              html += r.endContainer.textContent.substring(0,r.endOffset);
-            }
-            else
-              html += r.endContainer.textContent;
-          }
-          aOf = 0;
-          break;
-      }
-    }  
-    /*
-    aOf = selection.anchorOffset;
-    if (selection.focusNode != selection.anchorNode) {
-      isFocusDifferent = true;
-      fOf = selection.focusOffset;
-    }
 
-    if (isFocusDifferent) {
-      switch (selection.focusNode.nodeType) {
-        case 1: // ELEMENT_NODE
-          html += selection.focusNode.outerHTML;
-          break;
-        case 3:  // TEXT_NODE
-          html += selection.focusNode.textContent.substring(0,fOf);
-          aOf = 0;
-          break;
+	function logSelectionHtml(selection) {
+    // Grab the content of the selection as a DocumentFragment
+		if(!selection) {
+			console.log("Nothing selected before processing!");	
+			return;
+		}
+		try {
+			const range = selection.getRangeAt(0);
+			const fragment = range.cloneContents();
+
+			// Create a temporary container to hold the fragment's content
+			const tempDiv = gMsgCompose.editor.document.createElement("div");
+			tempDiv.appendChild(fragment);
+
+			// Log the HTML as a string
+			console.log("Selected HTML before processing:", tempDiv.innerHTML);
+		} catch(ex) {
+			SmartTemplate4.Util.logException("logSelectionHtml", ex);
+		}
+
+  }
+
+	// returns html code from selection in composer.
+	function unpackSelection(selection) {
+		let html = "";
+		const isDebug = SmartTemplate4.Preferences.isDebugOption("snippets");
+
+		for (let i = 0; i < selection.rangeCount; i++) {
+			const range = selection.getRangeAt(i);
+			const { startContainer, endContainer, startOffset, endOffset } = range;
+
+			if (isDebug) {
+				logSelectionHtml(selection);
+        console.log({
+          startContainer,
+          endContainer,
+          ancestor: range.commonAncestorContainer,
+          startOffset,
+          endOffset,
+        });
       }
-    }
-    */
-    return html;
+
+			// Handle selection within a single container
+			if (startContainer === endContainer) {
+				// Handle element nodes and text nodes inside the same container
+				switch (startContainer.nodeType) {
+					case 1: // ELEMENT_NODE
+						for (let i = 0; i < startContainer.childNodes.length; i++) {
+							if (i < startOffset || i > endOffset) continue;
+							const node = startContainer.childNodes[i];
+							if (node.nodeType === 1) {
+								// Handle element nodes (including <img> tags)
+								if (["IMG", "VIDEO", "AUDIO"].includes(node.tagName)) {
+                  html += node.outerHTML;
+                } else {
+                  html += node.outerHTML; // Other element nodes
+                }
+							} else if (node.nodeType === 3) {
+								// Handle text nodes
+								html += node.textContent;
+							}
+						}
+						break;
+					case 3: // TEXT_NODE
+						html += startContainer.textContent.substring(startOffset, endOffset);
+						break;
+					default:
+						break;
+				}
+				continue; // Skip to next range
+			}
+
+			const walker = document.createTreeWalker(range.commonAncestorContainer, NodeFilter.SHOW_ALL, {
+				acceptNode: (node) => NodeFilter.FILTER_ACCEPT,
+			});
+
+			const processedNodes = []; // Array to track processed nodes
+			let node = walker.currentNode;
+
+			while (node) {
+				const insideRange = range.isPointInRange(node, 0);
+
+				if (insideRange) {
+					if (node === endContainer) {
+						// If we've reached the endContainer, stop processing
+						if (node.nodeType === Node.TEXT_NODE) {
+							if (!processedNodes.includes(node.parentNode)) {
+								const partialText = node.textContent.substring(0, endOffset);
+								if (isDebug) console.log("Partial text added:", partialText);
+								html += partialText; // Add the remaining part of the text node
+							} else {
+								if (isDebug)
+                  console.log(
+                    "Skipping text node inside already processed parent:",
+                    node.parentNode
+                  );
+							}
+						} else if (node.nodeType === Node.ELEMENT_NODE) {
+							if (node.tagName === "BR") {
+								if (isDebug) console.log("Skipping extra <br> node at endContainer.");
+							} else {
+								if (isDebug) console.log("Element node content (outerHTML):", node.outerHTML);
+								html += node.outerHTML; // Add the last element node
+								processedNodes.push(node); // Mark this element as processed
+							}
+						}
+						if (isDebug) console.log("HTML after endContainer:", html);
+						break; // Exit the loop after processing the endContainer
+					}
+
+					// Process element nodes
+					if (node.nodeType === Node.ELEMENT_NODE) {
+						html += node.outerHTML; // Add the element's HTML
+						processedNodes.push(node); // Mark this element as processed
+					}
+
+					// Process text nodes
+					if (node.nodeType === Node.TEXT_NODE) {
+						if (!processedNodes.includes(node.parentNode)) {
+							html += node.textContent; // Add the text content
+						} else {
+							if (isDebug){
+                console.log("Skipping text node inside already processed parent:", node.parentNode);
+							}
+						}
+					}
+				}
+				// Move to the next node
+				node = walker.nextNode();
+			}
+
+		}
+		if (isDebug) {
+			console.log("unpackSelection() created the following markup:\n", html);
+		}
+		return html.trim();
+	}
+
+
+
+
+	// Helper function to process a range inside an element node
+	function processElementRange(range) {
+		let html = "";
+		const container = range.startContainer;
+
+		// Iterate over child nodes within the range
+		container.childNodes.forEach((node, index) => {
+			if (index < range.startOffset || index >= range.endOffset) {
+				return; // Skip nodes outside the range
+			}
+			html += node.nodeType === Node.ELEMENT_NODE
+				? node.outerHTML
+				: node.textContent;
+		});
+
+		return html;
+			
   }
 	
+	// Helper function to process a range inside a text node
+	function processTextRange(range) {
+		const { startContainer, endContainer, startOffset, endOffset } = range;
+
+		if (startContainer === endContainer) {
+			// Single text node
+			return startContainer.textContent.substring(startOffset, endOffset);
+		}
+
+		let html = "";
+		let started = false;
+
+		// Iterate through nodes within the common ancestor container
+		const ancestor = range.commonAncestorContainer;
+		ancestor.childNodes.forEach((node) => {
+			if (!started && node === startContainer) {
+				// Start from the start offset
+				started = true;
+				html += node.textContent.substring(startOffset);
+			} else if (started) {
+				if (node === endContainer) {
+					// Stop at the end offset
+					html += node.textContent.substring(0, endOffset);
+					return;
+				}
+
+				// Append full content of intermediate nodes
+				html += node.nodeType === Node.ELEMENT_NODE
+					? node.outerHTML
+					: node.textContent;
+			}
+		});
+
+		return html;
+	}	
+
+	// Helper function to process a range inside a text node
+	function unpackSelection_legacy(selection) {
+    if (!selection || selection.rangeCount === 0) {
+      return ""; // No selection
+    }
+
+    let html = "";
+
+    // Process each range in the selection
+    for (let i = 0; i < selection.rangeCount; i++) {
+      const range = selection.getRangeAt(i);
+
+      if (!range.startContainer) {
+        html += range.toString();
+        continue;
+      }
+
+      // Handle text and element nodes
+      switch (range.startContainer.nodeType) {
+        case Node.ELEMENT_NODE:
+          html += processElementRange(range);
+          break;
+        case Node.TEXT_NODE:
+          html += processTextRange(range);
+          break;
+        default:
+          console.warn("Unsupported node type:", range.startContainer.nodeType);
+      }
+    }
+
+    return html.trim(); // Return the combined HTML
+  }
+
 	
 	// -----------------------------------
 	// Constructor

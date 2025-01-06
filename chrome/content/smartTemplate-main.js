@@ -213,10 +213,11 @@ END LICENSE BLOCK
     # [issue 331] Add features to insert unquoted email and remove styles using %quotePlaceHolder% (implemented in 4.9)
     # [issue 340] Fixed: Common settings are not stored
     # [issue 343] Improved Capitalization for double-barrelled names (such as Tyler-Smith)
-    # [issue ] deal with removal of MozElements.NotificationBox.shown() 
+    # [issue ] Compatibility: deal with removal of MozElements.NotificationBox.shown() 
     # [issue 344] %header.set(subject,clipboard)% and %matchTextFromBody(..,toclipboard)% fail at commas
     # [issue 349] Support "composite" ST variables in sandboxed script (e.g. header.set)
     # [issue 350] Support multiple parameters in sandboxed script (e.g. %from(name,uppercase)% ) 
+    # [issue 351] Fixed: *selection* truncates content in text nodes
 
 
 =========================
