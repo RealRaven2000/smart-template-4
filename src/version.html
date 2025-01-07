@@ -248,6 +248,66 @@ permalink: version.html
 
 <ul id="version-history">
 
+
+<a id="4.10"> &nbsp; </a>
+<li>
+  <h4>
+		<a href="#contact" 
+      href1="https://addons.thunderbird.net/thunderbird/addon/324497/versions/4.10"
+      onclick="alert('This is still Work in Progress!\nPlease mail us if you want a preview version for testing.\n\nThank you!')">
+      Version 4.10 - Work in Progress</a>
+		<br>
+		<span class="appWrapper">
+			<span class="thunderbird">111.0 - 134.*</span>
+		</span>
+  </h4>
+  <ul>
+    <h5 class="inList"><span class="inListTitle">Enhancements</span></h5>
+    <li> 
+      (WIP) Retrieve an email address from AB using name / nickname 
+      <a href="https://github.com/RealRaven2000/SmartTemplates/issues/326">[issue 326]</a>
+    </li>
+    <li>
+      Add features to insert unquoted email and remove styles 
+      using <code>%quotePlaceHolder% </code>
+      <a href="https://github.com/RealRaven2000/SmartTemplates/issues/331">[issue 331]</a>
+    </li>
+    <li>
+      Improved Capitalization for double-barrelled names (such as Tyler-Smith)
+      <a href="https://github.com/RealRaven2000/SmartTemplates/issues/343">[issue 343]</a>
+    </li>
+    <li>
+      Support "composite" ST variables in sandboxed script (e.g. header.set)
+      <a href="https://github.com/RealRaven2000/SmartTemplates/issues/349">[issue 349]</a>
+    </li>
+    <li>
+      Support multiple parameters in sandboxed script (e.g. %from(name,uppercase)% ) 
+      <a href="https://github.com/RealRaven2000/SmartTemplates/issues/350">[issue 350]</a>
+    </li>
+    <li>
+      Fixed: *selection* truncates content in text nodes
+      <a href="https://github.com/RealRaven2000/SmartTemplates/issues/351">[issue 351]</a>
+    </li>
+
+    <h5 class="inList"><span class="inListTitle">Bug Fixes</span></h5>
+    <li>
+      Fixed: <code>%header.set(subject,clipboard)%</code> and 
+             <code>%matchTextFromBody(..,toclipboard)%</code> fail 
+      at commas contained in clipboard.
+      <a href="https://github.com/RealRaven2000/SmartTemplates/issues/344">[issue 344]</a>
+    </li>
+    <li>
+      Fixed: Common settings are not stored
+      <a href="https://github.com/RealRaven2000/SmartTemplates/issues/340">[issue 340]</a>
+    </li>
+    <li>
+      Fixed Problems with messageRaw( ) function in Sandboxed script
+      <a href="https://github.com/RealRaven2000/SmartTemplates/issues/347">[issue 347]</a>
+    </li>
+  </ul>
+</li> 
+
+
   <a id="4.8.2"> &nbsp; </a>
   <a id="4.9"> &nbsp; </a>
 <li>
