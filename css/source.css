@@ -1,0 +1,7 @@
+/* pre inside <li> in <ul class="checkList"> used only in source.html */
+.checkList pre {
+  margin-left: -150px;
+  font-family: Consolas, 'Courier New', Geneva, sans-serif;
+  font-size: 0.8em !important;
+  font-weight: normal;
+}

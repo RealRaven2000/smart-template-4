@@ -1,0 +1,359 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Smart Templates - Knowledge Base Basics</title>
+   <!-- LOCAL HEAD.TXT -->
+
+   <!-- META-KEYWORDS BEGIN -->
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width; user-scalable=0; initial-scale=1.0; maximum-scale=1.0; minimum-scale=1.0;">
+   <!--<meta name="viewport" content="width=device-width; initial-scale=1; maximum-scale=1; minimum-scale=1">-->
+   <meta name="keywords" content="SmartTemplates, mailheader, customize, e-Mail, modification, quote, html, plain, stationery">
+   <meta name="google-site-verification" content="LTKICtodcLDl0nhBl2mUiXWMJbOtmEJmhYXVAqm_mJM" />
+   <meta name="description" content="SmartTemplates offers an easy way to customize Thunderbirds, SeaMonkeys and Postboxs default quote header by using templates. Templates can be created for every account as well as for global settings (for all email accounts).">
+   <meta name="author" content="Axel Grude, Marky Mark DE">
+   <!-- META-KEYWORDS END -->
+
+   <!-- BASICS BEGIN -->
+   <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+   <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico">
+   <link rel="apple-touch-icon-precomposed" href="http://smarttemplate4.mozdev.org/img/apple-touch-icon-precomposed-57x57.png">
+   <link rel="apple-touch-icon-precomposed" href="http://smarttemplate4.mozdev.org/img/apple-touch-icon-precomposed-72x72.png">
+   <link rel="apple-touch-icon-precomposed" href="http://smarttemplate4.mozdev.org/img/apple-touch-icon-precomposed-114x114.png">
+   <link rel="apple-touch-icon-precomposed" href="http://smarttemplate4.mozdev.org/img/apple-touch-icon-precomposed-144x144.png">
+   <!-- BASICS END -->
+
+   <!-- GLOBAL STYLESHEETS BEGIN -->
+   <link rel="stylesheet" type="text/css" media="print" href="/css/print.css">
+   <link rel="stylesheet" type="text/css" media="scree, all" href="/css/b-i-f.css">
+   <link rel="stylesheet" type="text/css" media="screen" href="/css/media.css?v=4">
+   <link rel="stylesheet" type="text/css" media="screen, all" href="/css/webFonts.css">
+   <link rel="stylesheet" type="text/css" media="screen, all" href="/css/project.css?v=3">
+   <link rel="stylesheet" type="text/css" media="screen, all" href="/css/project_nav.css?v=1">   
+   <link rel="stylesheet" type="text/css" media="screen, all" href="/css/jqueryPlugins.css?v=3">
+   <!--[if lte IE 7]>
+   <link rel="stylesheet" type="text/css" media="screen, all" href="/css/ie7.css">
+   <![endif]-->
+   <!-- GLOBAL STYLESHEETS END -->
+
+   <!-- JQUERY JS FRAMEWORK BEGIN -->
+   <!--[if lt IE 9]>
+   <script src="/js/modernizr.custom.js" charset="UTF-8"></script>
+   <![endif]-->
+   <script src="/js/jquery-3.7.1.min.js" charset="UTF-8"></script>
+   <script src="/js/jqueryPlugins.js" charset="UTF-8"></script>
+   <!-- JQUERY JS FRAMEWORK END -->
+
+   <!-- ADDITIONAL JS BEGIN -->
+   <script src="/js/environment.js" charset="UTF-8"></script>
+   <script src="/js/scripts.js" charset="UTF-8"></script>
+   <script src="/js/navibar.js" charset="UTF-8"></script>
+   <script src="/js/ga.js" charset="UTF-8"></script>
+   <script src="/js/premium.js?v=13" charset="UTF-8"></script>
+   <!-- ADDITIONAL JS END -->
+
+ </head>
+<!-- END LOCAL HEAD.TXT -->
+
+<!-- HTML_BODY.HTML -->
+<body>
+
+<noscript>
+	<div class="msgBox error" id="msgBox_error">
+		<h1>Our website requires JavaScript.</h1>
+		The instruction how to enable JavaScript in your browser, you can find <a href="http://www.enable-javascript.com/" rel="nofollow" title="How to enable Javascript in your browser" target="_blank">here</a>.
+	</div>
+</noscript>
+
+<!-- ####################### BEGIN MAIN CONTENT ########################## -->
+<div id="main-content-no-nav">
+<!-- PROJECT_NAV.HTML -->
+<h1 class="project-name" id="content"><img src="/img/logo-pro.png" alt="SmartTemplates"></h1>
+
+ <table id="project-navigation"> 
+  <tbody id="resources" class="project-navigations">
+   <tr>
+    <td class="navigation-list">
+     <!-- a class for media query -->
+     <a class="index" href="/index.html">Home</a>
+     <a class="variables" href="/variables.html">Variable Definitions</a>
+     <a class="templates" href="/templates.html?jquery=on">Example Templates</a>
+     <a class="screenshots" href="/screenshots.html">Screenshots</a>
+     <a class="version" href="/version.html">Version History</a>
+     <a class="bugs" href="/kb-main.html">Knowlegebase</a>
+     <a class="faq" href="/faq.html">FAQ</a>
+     <a class="bugs" href="/bugs.html">Bugs &amp; Features</a>
+     <a class="premium" href="/premium.html">Premium Features</a>
+     <a class="contribute" href="/contribute.html">Licenses</a>
+     <a class="gdpr" href="/gdpr.html">GDPR + Impressum</a>
+    </td>
+		<tr id="navKB">
+		 <td class="kb-nav-list navigation-list">
+			 <a class="kb-nav" href="/kb-basics.html">HTML Basics</a>
+			 <a class="kb-nav" href="/kb-fonts.html">Fonts</a>
+			 <a class="kb-nav" href="/kb-tags.html">General Tips</a>
+			 <a class="kb-nav" href="/kb-inspector.html">Troubleshooting Styles</a>
+			 <a class="kb-nav" href="/support.html">Add-on Troubleshooting</a>
+		 </td>
+		</tr>
+   </tr>
+ </tbody>
+</table>
+<!-- END PROJECT_NAV.HTML -->
+
+
+<!-- KB-BASICS.HTML -->
+<script type="text/javascript">
+"use strict"; // use ECMAScript5 strict mode
+  markActiveNavigation("kb-basics.html");
+  /* Apply this site specific file to <head> element */
+  loadStyleSheet("kb.css");
+</script>
+
+  <h2 class="page-header">SmartTemplates :: Knowledgebase: Basics</h2>
+	
+	<br>
+	<a name="fragment"> </a>
+  <h3>Making a HTML Fragment</h3>	
+
+  <p>
+   If you write html templates for your e-Mail you should first have to know that you don't write complete html files like for websites.<br>
+   Please don't write something like this in your e-Mail template:
+  </p>
+
+  <pre class="code_block bad_example">
+   &lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+    "http://www.w3.org/TR/html4/loose.dtd"&gt;
+   &lt;html&gt;
+     &lt;head&gt;
+      &lt;meta http-equiv="content-type" content="text/html; charset=UTF-8"&gt;
+      &lt;title&gt; &lt;/title&gt;
+     &lt;/head&gt;
+    &lt;body&gt;
+    &lt;/body&gt;
+   &lt;/html&gt;</pre>
+
+  <p>
+   If you write this you cause some trouble because your mail client inserts the elements 
+   <code class="html tag">&lt;body&gt;</code> and <code class="html tag">&lt;head&gt;</code> automatically.<br>  
+   Your e-Mail content itself will be embedded only.
+  </p>
+ 
+  <pre class="code_block bad_example">
+   &lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+    "http://www.w3.org/TR/html4/loose.dtd"&gt;
+    &lt;html&gt;
+     &lt;head&gt;
+      &lt;meta http-equiv="content-type" content="text/html; charset=UTF-8"&gt;
+      &lt;title&gt; &lt;/title&gt;
+     &lt;/head&gt;
+    &lt;body&gt;
+     <span style="color: #31B404;">&lt;div&gt;your content inside div tag&lt;/div&gt;
+     &lt;span&gt;your content inside span tag&lt;/span&gt;</span>
+    &lt;/body&gt;
+   &lt;/html&gt;</pre>
+
+
+  <a name="font-tag-bad">&nbsp;</a>
+  <h3>Why the <span class="tag">&lt;font&gt;</span> tag is bad</h3>
+  
+  <p>Thunderbird achieves its default font settings in composer by inserting a pair of 
+     <code class="html tag">&lt;font&gt;</code> tags, like this:</p>
+  <pre class="code_block">
+  &lt;font size="-1"&gt;&lt;font face="Calibri"&gt; [Your Cursor here]  &lt;/font&gt;&lt;/font&gt;</pre>
+
+  
+  <p>Any <code class="html tag">&lt;font&gt;</code> tag needs a closing 
+    <code class="html tag">&lt;/font&gt;</code> tag. 
+  </p>
+  <p><span class="tag">&lt;font&gt;</span> is bad and wasteful because it requires these tags to be inserted for every new 
+	   paragraph / block level element and it cannot be wrapped around paragraphs. It is easily error prone and leads
+		 to a lot of extra work especially if you are quoting text while writing your email. Every time you change the 
+		 font or font size within composer, more  <code class="html tag">&lt;/font&gt;</code> tags are added, leading
+		 to a quite error-prone mess of html.
+	</p>
+	<p>
+		Therefore, when composing a new email, SmartTemplate will always remove these codes and relies on the user 
+		to make their own font choices within the template code. Instead of using this deprecated tag, one would be 
+		much better off wrapping the whole SmartTemplate template in a <code class="html tag">&lt;div&gt;</code> 
+    with a <i>style attribute</i>.
+	</p>
+  <pre class="code_block">
+&lt;div <span style="color:rgb(160,0,0);">style=</span><span style="color:#C1510B;">"font-family: Calibri; font-size: 13pt;"</span>&gt;
+  &lt;p&gt;Dear %from(name)%,&lt;/p&gt;
+  &lt;p&gt;Your template text here...&lt;/p&gt;
+&lt;/div&gt;</pre>  
+
+  <a name="inline-or-style">&nbsp;</a>
+  <h3>Inline style or the style tag</h3>
+
+  <p>
+	  You can either style elements directly as in the example of wrapping everything in a <code class="tag">&lt;div&gt;</code> 
+		above, or you can specify a section rules for specific parts of your html. This is entirely up to 
+		personal preference - inline styles potentially are more work if you need to copy sections whereas
+		style blocks can be a little harder to trouble shoot. If your HTML styles do not behave as expected
+		take a look at our <a href="kb-inspector.html">troubleshooting styles</a> section.
+  </p>
+
+  <a name="style-tag">&nbsp;</a>
+  <h4>The <span class="tag">&lt;style&gt;</span> tag</h4>
+
+  <p>
+    A nice of way of styling is using CSS classes. A css class is a name of your choice, starting with a full stop (.)
+    It can be used in any html tag by adding the html attribute <code class="html tag">class="<i>name of the class</i>"</code>.<br>
+    <b>Advantage: it can be used on multiple elements to make them look the same without lots of copying and pasting of style attributes.</b>
+  </p>
+  
+<pre class="code_block">
+   &lt;style type="text/css"&gt;
+   .veryLegible {
+     font-family: "Comic Sans MS",cursive;
+     font-size: 30pt;
+   }
+   &lt;/style&gt;
+   ...
+   ...
+   &lt;p class="veryLegible"&gt;
+   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+   incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
+   exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+   &lt;/p&gt;
+   &lt;p class="veryLegible"&gt;
+   Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore 
+   eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
+   sunt in culpa qui officia deserunt mollit anim id est laborum.
+   &lt;/p&gt;</pre>
+   
+<pre class="code_block">
+   &lt;style type="text/css"&gt;
+   #introduction {
+     color: #888888;
+     font-family: Arial,sans-serif;
+     font-size: 1em;
+   }
+   &lt;/style&gt;
+   ...
+   ...
+   &lt;p id="introduction"&gt;Dear John,&lt;br&gt;
+   how have you been?&lt;/p&gt;</pre>  
+   
+  <p>
+    Apart from class selectors e.g. <code class="html selector">.myLine</code> the most important CSS selectors are 
+    id selectors e.g. <code class="html selector">#introduction</code> which are meant for single elements, such as
+    <code class="html tag">&lt;p id="introduction"&gt;</code>
+  </p>
+   
+
+  <a name="inline-style">&nbsp;</a>
+  <h4>"Inline" Styling</h4>
+
+  <p>
+   This is the most robust way of styling because it will always "stay" with the element (here: div) no matter where you move it
+   or whether it is quoted in another email.<br>
+   <b>Disadvantage: If you want to style 2 elements the same way you have to copy/paste the whole lot.</b>
+  </p>
+
+  <pre class="code_block">
+   &lt;div style="font-family: 'Comic Sans MS',cursive; font-size: 30pt;"&gt;my line&lt;/div&gt;</pre>
+
+  <p>
+   The visual result is for both variants the same<br>
+   <img src="/screenshots/kb/style_tags.png" class="screenshot query" alt="Style tag results" style="border: 1px solid #000000;"/>
+  </p>
+
+  <p class="tip">
+   <em>TIP:</em> The only difference between both variants is the way you write font names with white-space<br>
+   style tag = "inside double quote marks"<br>
+   inline = 'inside single quote marks'.
+  </p>
+<!-- END KB-BASICS.HTML -->
+
+<!-- FOOTER.HTML -->
+<script>
+"use strict"; // use ECMAScript5 strict mode
+
+  /* Apply this site specific files to <head> element */
+  loadStyleSheet("footer.css");
+  loadStyleSheet("navibar.css");
+</script>
+
+  <div id="footer">
+   <div class="horizontalRule"></div>
+    <a id="contact"></a><!-- this anchor is just an in-page jump point, DO NOT REMOVE WE USE THIS ANCHOR ON ATN -->
+      <div id="mailToLink">
+       You have questions / comments about SmartTemplates? Please feel free to 
+       <p class="mail_link">
+        <script>mailtoLine();</script><!-- Mailto Line filled by JavaScript -->
+       </p>
+      </div>
+
+       <div class="attribution"><b>Attributions:</b><br>
+         Flagset by  Matthias Slovig under CC, see:
+        <a href="http://flags.blogpotato.de/" title="Visit Flagpotato Website" target="_blank">http://flags.blogpotato.de/</a><br>
+         Fugue Icons (or based on) by Yusuke Kamiyamane under CC, see:
+        <a href="http://p.yusukekamiyamane.com/" title="Visit Yusuke Kamiyamane Website" target="_blank">http://p.yusukekamiyamane.com/</a><br>
+         Noia Icons (or based on) by Carles Carbonell Bernado under LGPL, see:
+       <a href="http://carlitus.deviantart.com/" title="Visit Noia on Deviantart" target="_blank">http://carlitus.deviantart.com/</a>
+       </div>
+
+       <!--Special Attributions -->
+       <!-- Brands Carousel (jquery) in Alphabetically Order -->
+        <div id="brandsCarousel">
+         <a href="https://www.7-zip.org" target="_blank" title="Visit 7-Zip Website"><img class="brands" src="/brands/50/7zip.png" height="50" width="50" alt="7-Zip"></a>
+         <a href="https://addons.thunderbird.net/" target="_blank" title="Visit addons.thunderbird.net (ATN)"><img class="brands" src="/brands/50/amo.png" height="50" width="50" alt="ATN"></a>
+         <a href="https://www.thunderbird.net/" target="_blank" title="Visit thunderbird.net"><img class="brands" src="/brands/50/thunderbird_102.png" height="50" width="50" alt="ATN"></a>
+         <a href="https://www.betterbird.eu/" target="_blank" title="Visit Betterbird"><img class="brands" src="/brands/50/betterbird.png" height="50" width="50" alt="ATN"></a>
+         <a href="https://www.android.com" target="_blank" title="Visit Android Website"><img class="brands" src="/brands/50/android.png" height="50" width="50" alt="Android"></a>
+         <a href="https://bluefish.openoffice.nl/index.html" target="_blank" title="Visit Bluefish Website"><img class="brands" src="/brands/50/bluefish.png" height="50" width="50" alt="Bluefish"></a>
+         <a href="https://www.creativecommons.org" target="_blank" title="Visit Creative Commons Website"><img class="brands" src="/brands/50/creativecommons.png" height="50" width="50" alt="CreativeCommons"></a>
+         <a href="https://duckduckgo.com" target="_blank" title="DuckDuckGo is a search engine that does not track you"><img class="brands" src="/brands/50/duckduckgo.png" height="50" width="50" alt="DuckDuckGo"></a>
+         <a href="https://www.mozilla.org/firefox/fx/" target="_blank" title="Visit Firefox Website"><img class="brands" src="/brands/50/firefox.png" height="50" width="50" alt="Firefox"></a>
+         <a href="https://www.gimp.org" target="_blank" title="Visit Gimp Website"><img class="brands" src="/brands/50/gimp.png" height="50" width="50" alt="Gimp"></a>
+         <a href="https://www.gnu.org" target="_blank" title="Visit GNU Website"><img class="brands" src="/brands/50/gnu.png" height="50" width="50" alt="GNU"></a>
+         <a href="https://www.jquery.com" target="_blank" title="Visit jQuery.com"><img class="brands" src="/brands/50/jquery.png" height="50" width="50" alt="jQuery"></a>
+         <a href="https://kompozer-web.de/en" target="_blank" title="Visit KompoZer Website"><img class="brands" src="/brands/50/kompozer.png" height="50" width="50" alt="KompoZer"></a>
+         <a href="https://www.libreoffice.org/" target="_blank" title="Visit LibreOffice Website"><img class="brands" src="/brands/50/libreoffice.png" height="50" width="50" alt="LibreOffice"></a>
+         <a href="https://www.linux.org" target="_blank" title="Visit Linux Website"><img class="brands" src="/brands/50/linux.png" height="50" width="50" alt="Linux"></a>
+         <a href="https://developer.mozilla.org" target="_blank" title="Visit developer.mozilla.org Website"><img class="brands" src="/brands/50/mdn.png" height="50" width="50" alt="MDN"></a>
+         <a href="https://www.mozilla.org/foundation/about.html" target="_blank" title="Visit Mozilla Foundation Website"><img class="brands" src="/brands/50/mozilla.png" height="50" width="50" alt="Mozilla"></a>
+         <a href="https://www.notepad-plus-plus.org" target="_blank" title="Visit Notepad++ Website"><img class="brands" src="/brands/50/notepad++.png" height="50" width="50" alt="Notepad++"></a>
+         <a href="https://www.opensource.org" target="_blank" title="Visit Open Source Initiative Website"><img class="brands" src="/brands/50/opensource.png" height="50" width="50" alt="OpenSource"></a>
+         <a href="https://www.postbox-inc.com/" target="_blank" title="Visit PostBox Website"><img class="brands" src="/brands/50/postbox.png" height="50" width="50" alt="Postbox"></a>
+         <a href="https://www.seamonkey-project.org/" target="_blank" title="Visit Seamonkey Project Website"><img class="brands" src="/brands/50/seamonkey.png" height="50" width="50" alt="Seamonkey"></a>
+         <a href="https://www.tortoisesvn.net" target="_blank" title="Visit Tortoise SVN Website"><img class="brands" src="/brands/50/tortoise_svn.png" height="50" width="50" alt="Tortoise SVN"></a>
+         <a href="https://www.w3.org" target="_blank" title="Visit World Wide Web Consortium Website"><img class="brands" src="/brands/50/w3c.png" height="50" width="50" alt="W3C"></a>
+         <a href="https://www.w3schools.com" target="_blank" title="Visit W3Schools Website"><img class="brands" src="/brands/50/w3schools.png" height="50" width="50" alt="W3 Schools"></a>
+        </div>
+        <!-- END Brands Carousel -->
+
+        <div class="copyright" id="copyright">
+          <script>copyrightLine();</script><!-- Copyright Line filled by JavaScript -->
+        </div>
+
+      </div><!-- CLOSE <div id="footer"> -->
+    </div><!-- CLOSE <div id="main-content-no-nav"> with the blue box -->
+
+    <!-- Overlay Navibar -->
+    <div class="outerTable" id="navbarTable">
+     <table class="innerTable">
+      <tbody>
+       <tr class="innerTableTR">
+        <td class="innerTableTD"><div class="homeButton"><a href="/index.html" target="_self" title="To our Startpage">Home</a></div></td>
+        <td class="innerTableTD"><div class="historyBackButton"><a href="javascript:goBack();" title="Previous Page">Previous</a></div></td>
+        <td class="innerTableTD"><div class="scrollButton"><a href="javascript:window.scrollTo(0,0);" title="Scroll to Top">Up</a></div></td>
+        <td class="innerTableTD"><div class="historyFwdButton"><a href="javascript:goForward();" title="Next Page">Next</a></div></td>
+        <td class="innerTableTD"><div class="printButton"><a href="javascript:window.print();" title="Print this Page">Print</a></div></td>
+        <td class="innerTableTD"><div class="fontPlusButton"><a href="" onclick="resizeText(1);return false;" title="increase font size">Font +</a></div></td>
+        <td class="innerTableTD"><div class="fontMinusButton"><a href="" onclick="resizeText(-1);return false;" title="reduce font size">Font -</a></div></td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+    <!-- END Overlay Navibar -->
+
+    <div id="downPusher"></div><!-- push down the black main background -->
+    <!-- END FOOTER.HTML -->
+  </body>  
+</html>
+<!-- END HTML SITES IN FOOTER.HTML -->
+

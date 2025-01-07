@@ -1,0 +1,151 @@
+/* h1#content in project_nav.html */
+.project-name {
+  color: #FFFFFF;
+  font-size: 1.4em;
+  font-weight: bold;
+  margin: 0 0 0.5em;
+  padding: 0.2em 0 0.4em;
+  line-height: 32px;
+  text-align: center;
+  text-shadow: black 0px 0px 2px, rgba(0, 0, 0, 0.85) 1px 1px 2px;
+}
+.project-name:before {
+  content: url('/img/icon32x32.png'); 
+  vertical-align: bottom;
+  padding-right: 0.3em;
+  line-height: 32px;
+}
+.project-name img {
+  vertical-align: bottom;
+}
+
+/* Navbar Style URL order left to right */
+td.navigation-list {
+  vertical-align: middle;
+}
+
+td.navigation-list a,
+td.navigation-list a:visited {
+  background: rgb(73,186,201);
+  background: linear-gradient(to bottom,  rgba(73,186,201,1) 0%,rgba(49,148,159,1) 24%,rgba(21,104,113,1) 50%,rgba(43,133,143,1) 79%,rgba(51,159,171,1) 100%);
+}
+td.navigation-list a[href].active,
+td.navigation-list a[href].active:visited,
+td.navigation-list a:active,
+td.navigation-list a.active:visited {
+  background: rgb(149,234,237); 
+  background: linear-gradient(to bottom,  rgba(149,234,237,1) 0%,rgba(71,221,223,1) 24%,rgba(9,179,181,1) 50%,rgba(44,215,218,1) 79%,rgba(88,223,226,1) 100%);
+  border: 1px solid #26558B;
+  color: #FFFFFF !important;
+  /* height: 23px !important; */
+  font-weight: bold;
+}
+
+/* knowledgebase menu */
+td.kb-nav-list a,
+td.kb-nav-list a:visited {
+  background: linear-gradient(to bottom, #c949b1 0%,#9f318d 24%,#711562 50%,#8f2b7e 79%,#ab3397 100%) !important;
+  color: rgb(255, 192, 203) !important;
+}
+td.kb-nav-list a[href]:hover {
+  color: white !important;
+}
+
+td.kb-nav-list a[href].active,
+td.kb-nav-list a[href].active:visited,
+td.kb-nav-list a:active,
+td.kb-nav-list a.active:visited {
+  background:  linear-gradient(to bottom, #ed95d7 0%,#df47bb 24%,#b5098d 50%,#da2cb1 79%,#e258c2 100%) !important;
+}
+
+/* contribute URL other Style */
+td.navigation-list a[href$='/contribute.html']:active {
+  color: #FFF084;
+  box-shadow: 0px 0px 5px 5px rgba(180,237,69,0.5); /* CSS3 = IE9 / Firefox 4+ */ 
+}
+td.navigation-list a[href$='/contribute.html'],
+td.navigation-list a[href$='/contribute.html']:visited {
+  background: rgb(230,240,163);
+  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2U2ZjBhMyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjIwJSIgc3RvcC1jb2xvcj0iI2QyZTYzOCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjUxJSIgc3RvcC1jb2xvcj0iI2MzZDgyNSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNkYmYwNDMiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+  background: linear-gradient(to bottom,  rgba(230,240,163,1) 0%,rgba(210,230,56,1) 20%,rgba(195,216,37,1) 51%,rgba(219,240,67,1) 100%);
+  background-repeat: repeat-x;
+  color: rgb(0, 80, 40) !important;
+}
+td.navigation-list a[href$='/contribute.html'].active,
+td.navigation-list a[href$='/contribute.html'].active:visited {
+  background: rgb(207,237,61);
+  background: linear-gradient(to bottom,  rgba(207,237,61,1) 0%,rgba(123,137,17,1) 27%,rgba(106,118,20,1) 61%,rgba(137,154,12,1) 100%);
+  color: #ffffff !important;
+  font-weight:bold;
+}
+td.navigation-list a[href$='/contribute.html']:hover {
+  background: rgb(217,239,165);
+  background: linear-gradient(to bottom,  rgba(217,239,165,1) 0%,rgba(180,237,59,1) 20%,rgba(94,186,33,1) 51%,rgba(140,240,68,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d9efa5', endColorstr='#8cf044',GradientType=0 );
+  -webkit-box-shadow: 0px 0px 3px 3px rgba(180, 237, 69, 0.4); /* Safari / Chrome (Webkit) */
+  box-shadow: 0px 0px 3px 3px rgba(180, 237, 69, 0.4); /* CSS3 = IE9 / Firefox 4+ */ 
+  -khtml-box-shadow: 0px 0px 3px 3px rgba(180, 237, 69, 0.4); /* KHTML */
+  behavior: url(js/PIE.js); /* CSS3 Fix for IE 6-8 */
+}
+
+/* Table project-navigation */
+#project-navigation {
+  margin-left:  auto;
+  margin-right: auto;
+}
+
+/* href formatting for URLS in navigation */
+#project-navigation a {
+  display: inline-block; /* force hasLyout in IE */
+  padding: 1px 8px;
+}
+
+td.navigation-list a {
+  border: 1px solid transparent;
+  margin: 3px 0px 0px 2px;
+  line-height: 20px;
+  height: 20px;
+  -webkit-border-radius: 0.2em; /* Safari / Chrome (Webkit) */
+  border-radius: 0.2em; 
+  -khtml-border-radius: 0.2em; /* KHTML */
+  -webkit-box-shadow: 2px 2px 4px 1px rgba(0, 0, 60, 0.3); /* Safari / Chrome (Webkit) */
+  box-shadow: 2px 2px 4px 1px rgba(0, 0, 60, 0.3); /* CSS3 = IE9 / Firefox 4+ */ 
+  -khtml-box-shadow: 2px 2px 4px 1px rgba(0, 0, 60, 0.3); /* KHTML */
+  behavior: url(js/PIE.js); /* CSS3 Fix for IE 6-8 */
+}
+
+td.navigation-list a[href],
+td.navigation-list a[href]:visited {
+  color: rgb(50, 210, 255);
+  white-space: nowrap;
+}
+
+td.navigation-list a:hover {
+  background: rgb(187,214,227);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(187,214,227,1)), color-stop(50%,rgba(122,201,230,1)), color-stop(51%,rgba(91,192,229,1)), color-stop(100%,rgba(154,220,246,1)));
+  background: -webkit-linear-gradient(top,  rgba(187,214,227,1) 0%,rgba(122,201,230,1) 50%,rgba(91,192,229,1) 51%,rgba(154,220,246,1) 100%);
+  background: -o-linear-gradient(top,  rgba(187,214,227,1) 0%,rgba(122,201,230,1) 50%,rgba(91,192,229,1) 51%,rgba(154,220,246,1) 100%);
+  background: -ms-linear-gradient(top,  rgba(187,214,227,1) 0%,rgba(122,201,230,1) 50%,rgba(91,192,229,1) 51%,rgba(154,220,246,1) 100%);
+  background: linear-gradient(to bottom,  rgba(187,214,227,1) 0%,rgba(122,201,230,1) 50%,rgba(91,192,229,1) 51%,rgba(154,220,246,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bbd6e3', endColorstr='#9adcf6',GradientType=0 );
+  height: 20px;
+  margin-top: 2px !important;
+  box-shadow: none;
+  border: 1px solid #26558B;
+  behavior: url(js/PIE.js); /* CSS3 Fix for IE 6-8 */
+}
+td.navigation-list a[href]:hover {
+  color: black;
+}
+
+ /* tbody project-navigations */
+.project-navigations {
+  border: none; /* work around weird ns4 bug */
+  font-size: 0.95em;
+  margin: 1.2em auto 0.2em auto;
+}
+
+td.navigation-list {
+  margin: 0;
+  padding: 0 0 0px 0;
+}

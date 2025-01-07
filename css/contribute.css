@@ -1,0 +1,139 @@
+#paymentForm {
+  -moz-border-radius: 2em; /* Firefox 1-4 */
+  -webkit-border-radius: 2em; /* Safari / Chrome (Webkit) */
+  border-radius: 2em; /* CSS3 = IE9 / Firefox 4+ */
+  -khtml-border-radius: 2em; /* KHTML */
+  -moz-box-shadow: 3px 3px 8px -1px rgba(0,0,0,0.5); /* Firefox 1-4 */
+  -webkit-box-shadow: 3px 3px 8px -1px rgba(0,0,0,0.5); /* Safari / Chrome (Webkit) */
+  box-shadow: 3px 3px 8px -1px rgba(0,0,0,0.5); /* CSS3= IE9 / Firefox 4+ */ 
+  -khtml-box-shadow: 3px 3px 8px -1px rgba(0,0,0,0.5); /* KHTML */
+  padding: 1em; 
+  background: rgb(230,240,163);
+  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2U2ZjBhMyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjUwJSIgc3RvcC1jb2xvcj0iI2QyZTYzOCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjUxJSIgc3RvcC1jb2xvcj0iI2MzZDgyNSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNkYmYwNDMiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+  background: -moz-linear-gradient(top,  rgba(230,240,163,1) 0%, rgba(210,230,56,1) 50%, rgba(195,216,37,1) 51%, rgba(219,240,67,1) 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(230,240,163,1)), color-stop(50%,rgba(210,230,56,1)), color-stop(51%,rgba(195,216,37,1)), color-stop(100%,rgba(219,240,67,1)));
+  background: -webkit-linear-gradient(top,  rgba(230,240,163,1) 0%,rgba(210,230,56,1) 50%,rgba(195,216,37,1) 51%,rgba(219,240,67,1) 100%);
+  background: -o-linear-gradient(top,  rgba(230,240,163,1) 0%,rgba(210,230,56,1) 50%,rgba(195,216,37,1) 51%,rgba(219,240,67,1) 100%);
+  background: -ms-linear-gradient(top,  rgba(230,240,163,1) 0%,rgba(210,230,56,1) 50%,rgba(195,216,37,1) 51%,rgba(219,240,67,1) 100%);
+  background: linear-gradient(top,  rgba(230,240,163,1) 0%,rgba(210,230,56,1) 50%,rgba(195,216,37,1) 51%,rgba(219,240,67,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e6f0a3', endColorstr='#dbf043',GradientType=0 );
+  border: 1px solid #BBCCEE;
+  behavior: url(js/PIE.js); /* CSS3 Fix for IE 6-8 */
+}
+
+#paymentForm th {
+  font-family: Arial;
+  font-size: 0.8em;
+  text-align: right;
+}
+
+#paymentForm td {
+  text-align: left;
+}
+
+h2.page-header a {
+  font-weight: normal;
+  text-shadow: #777 2px 2px 3px;
+  margin: 0 2px 2px 0;
+}
+
+h2.page-header a:hover {
+  margin:2px 0 0 2px;
+  text-shadow: #777 1px 1px 2px;
+  text-decoration: none;
+}
+h2.page-header a:active {
+  margin:2px 0 0 2px;
+  text-shadow: #777 0px 0px 2px;
+  text-decoration: none;
+}
+
+.payLabel {
+  white-space:nowrap;
+  min-width:50px;
+}
+#euroButton {
+  -moz-box-shadow: 2px 2px 4px -1px rgba(0,0,0,0.5); /* Firefox 1-4 */
+  -webkit-box-shadow: 2px 2px 4px -1px rgba(0,0,0,0.5); /* Safari / Chrome (Webkit) */
+  box-shadow: 2px 2px 4px -1px rgba(0,0,0,0.5); /* CSS3= IE9 / Firefox 4+ */ 
+  -khtml-box-shadow: 2px 2px 4px -1px rgba(0,0,0,0.5); /* KHTML */
+  -moz-border-radius: 12px; /* Firefox 1-4 */
+  -webkit-border-radius: 12px; /* Safari / Chrome (Webkit) */
+  border-radius: 12px; /* CSS3 = IE9 / Firefox 4+ */
+  -khtml-border-radius: 12px; /* KHTML */
+  behavior: url(js/PIE.js); /* CSS3 Fix for IE 6-8 */
+  margin-left: 5px; /* pushes the button 5px away from label */
+}
+#paypalButton{}
+
+
+.payLink,
+.payLabel {
+  vertical-align: middle;
+}
+
+#contribute {
+  border: 0;
+}
+
+p#noPaypalCallout {
+  text-align:center;
+  margin-top: 0px;
+}
+
+img {
+  border:0;
+}
+/* span class Greeting Phrase "Thank you for update [...]" */
+.thankYou {
+  font-family: 'Architects Daughter';
+  font-size: 1.4em;
+  font-style: italic;
+}
+/* own tooltip on pay buttons */
+a.tooltip[href] {
+  outline:none !important;
+  background: none !important;
+  padding: 0 !important; 
+  border-style: none !important;
+}
+a.tooltip strong {
+ line-height:30px;
+}
+a.tooltip:hover {
+  text-decoration:none;
+}
+a.tooltip span {
+  z-index:10;
+  display:none;
+  padding:14px 20px;
+  margin-top:60px;
+  margin-left:-160px;
+  width:240px; 
+  line-height:16px;
+}
+a.tooltip:hover span{
+  display:inline;
+  position:absolute;
+  border:2px solid #FFF;
+  color:#EEE;
+  background:#000 url(src/css-tooltip-gradient-bg.png) repeat-x 0 0;
+} 
+.callout {
+  z-index:20;
+  position:absolute;
+  border:0;
+  top:-14px;
+  left:120px;
+} 
+/*CSS3 extras*/ 
+a.tooltip span {
+  border-radius:2px;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  -moz-box-shadow: 0px 0px 8px 4px #666;
+  -webkit-box-shadow: 0px 0px 8px 4px #666;
+  box-shadow: 0px 0px 8px 4px #666;
+  opacity: 0.8;
+}
+ 

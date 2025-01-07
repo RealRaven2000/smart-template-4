@@ -1,0 +1,115 @@
+/******************************************************************/
+/*********************** Toggle Screenshots ***********************/
+/******************************************************************/
+.popupBackground {
+  opacity: 10%; 
+  filter: alpha(opacity=75); 
+  background-color: rgba(0,0,0,0.90);
+  z-index: 10;
+  background-color: black;
+  display: none;
+  width: 100%; 
+  min-height: 100%;
+  overflow: hidden;
+  position: fixed;
+  top: 0; 
+  left: 0; 
+  color: white;
+}
+.popupSelf{ 
+  z-index: 900;
+  border: 1px solid #808080; 
+  display: none; 
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  left: 50%;
+  top: 50%;
+  max-width: 550px;
+  max-height: 655px;
+  margin-top: -328px;
+  margin-left: -275px;
+  box-shadow: rgba(0,0,0,0.5) 7px 7px 2px;
+}
+.closeButton {
+  position: absolute;
+  top: -16px;
+  right: -16px;
+  cursor: pointer;
+}
+.popupSelf .closeButton:hover,
+.popupSelf:hover .closeButton:hover {
+  opacity: 1;
+  filter: alpha(opacity=10);
+}
+.popupSelf .closeButton {
+  opacity: 0.6;
+  filter: alpha(opacity=60);
+}
+.popupSelf:hover .closeButton {
+  opacity: 0.9;
+  filter: alpha(opacity=90);
+}
+
+/******************************************************************/
+/************************* Image Scroller *************************/
+/******************************************************************/
+
+#loading {
+  background-image: url('/preloader/50/708da8.gif');
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 50px; 
+}
+
+/* brandsContainer (brands carousel in footer.html) */
+#brandsCarousel {
+  white-space: nowrap; /* not remove */  
+  margin: 0px;
+  width: 100%;
+  height: 70px; /* needed for maximize effect on hover otherwise the complete blue box jump arround */
+  overflow: hidden;
+}
+/* images inside slide container */
+.brands {
+  border: 0px;  
+  vertical-align: middle; /* not remove */ 
+  cursor: pointer;
+}
+#loading, .brands {
+  margin: 10px 15px 5px 15px; /* top 10px for shadow attribution box */
+}
+
+#brandsCarousel a[href] img {
+  -webkit-transition: width 0.3s ease-out, height 0.3s ease-out, margin-left 0.3s;
+  -moz-transition: width 0.3s ease-out, height 0.3s ease-out, margin-left 0.3s;
+  -ms-transition: width 0.3s ease-out, height 0.3s ease-out, margin-left 0.3s;
+  -o-transition: width 0.3s ease-out, height 0.3s ease-out, margin-left 0.3s;
+  transition: width 0.3s ease-out, height 0.3s ease-out, margin-left 0.3s;
+  height: 50px;
+  width: 50px;
+}
+
+/* maximize img on hover */
+#brandsCarousel a[href] img:hover {
+  height: 70px;
+  width: 70px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+#brandsCarousel a[href] {
+  opacity: 0.9;
+  filter: alpha(opacity=90);
+}
+
+#brandsCarousel a[href]:hover {
+  background-color: transparent !important; /* removes our global style (project.css) on this element */
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+#brandsCarousel,
+.brands {
+  padding: 0px;
+  clear: both;
+}

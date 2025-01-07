@@ -1,0 +1,613 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Smart Templates - Contribute</title>
+   <!-- LOCAL HEAD.TXT -->
+
+   <!-- META-KEYWORDS BEGIN -->
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width; user-scalable=0; initial-scale=1.0; maximum-scale=1.0; minimum-scale=1.0;">
+   <!--<meta name="viewport" content="width=device-width; initial-scale=1; maximum-scale=1; minimum-scale=1">-->
+   <meta name="keywords" content="SmartTemplates, mailheader, customize, e-Mail, modification, quote, html, plain, stationery">
+   <meta name="google-site-verification" content="LTKICtodcLDl0nhBl2mUiXWMJbOtmEJmhYXVAqm_mJM" />
+   <meta name="description" content="SmartTemplates offers an easy way to customize Thunderbirds, SeaMonkeys and Postboxs default quote header by using templates. Templates can be created for every account as well as for global settings (for all email accounts).">
+   <meta name="author" content="Axel Grude, Marky Mark DE">
+   <!-- META-KEYWORDS END -->
+
+   <!-- BASICS BEGIN -->
+   <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+   <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico">
+   <link rel="apple-touch-icon-precomposed" href="http://smarttemplate4.mozdev.org/img/apple-touch-icon-precomposed-57x57.png">
+   <link rel="apple-touch-icon-precomposed" href="http://smarttemplate4.mozdev.org/img/apple-touch-icon-precomposed-72x72.png">
+   <link rel="apple-touch-icon-precomposed" href="http://smarttemplate4.mozdev.org/img/apple-touch-icon-precomposed-114x114.png">
+   <link rel="apple-touch-icon-precomposed" href="http://smarttemplate4.mozdev.org/img/apple-touch-icon-precomposed-144x144.png">
+   <!-- BASICS END -->
+
+   <!-- GLOBAL STYLESHEETS BEGIN -->
+   <link rel="stylesheet" type="text/css" media="print" href="/css/print.css">
+   <link rel="stylesheet" type="text/css" media="scree, all" href="/css/b-i-f.css">
+   <link rel="stylesheet" type="text/css" media="screen" href="/css/media.css?v=4">
+   <link rel="stylesheet" type="text/css" media="screen, all" href="/css/webFonts.css">
+   <link rel="stylesheet" type="text/css" media="screen, all" href="/css/project.css?v=3">
+   <link rel="stylesheet" type="text/css" media="screen, all" href="/css/project_nav.css?v=1">   
+   <link rel="stylesheet" type="text/css" media="screen, all" href="/css/jqueryPlugins.css?v=3">
+   <!--[if lte IE 7]>
+   <link rel="stylesheet" type="text/css" media="screen, all" href="/css/ie7.css">
+   <![endif]-->
+   <!-- GLOBAL STYLESHEETS END -->
+
+   <!-- JQUERY JS FRAMEWORK BEGIN -->
+   <!--[if lt IE 9]>
+   <script src="/js/modernizr.custom.js" charset="UTF-8"></script>
+   <![endif]-->
+   <script src="/js/jquery-3.7.1.min.js" charset="UTF-8"></script>
+   <script src="/js/jqueryPlugins.js" charset="UTF-8"></script>
+   <!-- JQUERY JS FRAMEWORK END -->
+
+   <!-- ADDITIONAL JS BEGIN -->
+   <script src="/js/environment.js" charset="UTF-8"></script>
+   <script src="/js/scripts.js" charset="UTF-8"></script>
+   <script src="/js/navibar.js" charset="UTF-8"></script>
+   <script src="/js/ga.js" charset="UTF-8"></script>
+   <script src="/js/premium.js?v=13" charset="UTF-8"></script>
+   <!-- ADDITIONAL JS END -->
+
+ </head>
+<!-- END LOCAL HEAD.TXT -->
+
+<!-- HTML_BODY.HTML -->
+<body>
+
+<noscript>
+	<div class="msgBox error" id="msgBox_error">
+		<h1>Our website requires JavaScript.</h1>
+		The instruction how to enable JavaScript in your browser, you can find <a href="http://www.enable-javascript.com/" rel="nofollow" title="How to enable Javascript in your browser" target="_blank">here</a>.
+	</div>
+</noscript>
+
+<!-- ####################### BEGIN MAIN CONTENT ########################## -->
+<div id="main-content-no-nav">
+<!-- PROJECT_NAV.HTML -->
+<h1 class="project-name" id="content"><img src="/img/logo-pro.png" alt="SmartTemplates"></h1>
+
+ <table id="project-navigation"> 
+  <tbody id="resources" class="project-navigations">
+   <tr>
+    <td class="navigation-list">
+     <!-- a class for media query -->
+     <a class="index" href="/index.html">Home</a>
+     <a class="variables" href="/variables.html">Variable Definitions</a>
+     <a class="templates" href="/templates.html?jquery=on">Example Templates</a>
+     <a class="screenshots" href="/screenshots.html">Screenshots</a>
+     <a class="version" href="/version.html">Version History</a>
+     <a class="bugs" href="/kb-main.html">Knowlegebase</a>
+     <a class="faq" href="/faq.html">FAQ</a>
+     <a class="bugs" href="/bugs.html">Bugs &amp; Features</a>
+     <a class="premium" href="/premium.html">Premium Features</a>
+     <a class="contribute" href="/contribute.html">Licenses</a>
+     <a class="gdpr" href="/gdpr.html">GDPR + Impressum</a>
+    </td>
+		<tr id="navKB">
+		 <td class="kb-nav-list navigation-list">
+			 <a class="kb-nav" href="/kb-basics.html">HTML Basics</a>
+			 <a class="kb-nav" href="/kb-fonts.html">Fonts</a>
+			 <a class="kb-nav" href="/kb-tags.html">General Tips</a>
+			 <a class="kb-nav" href="/kb-inspector.html">Troubleshooting Styles</a>
+			 <a class="kb-nav" href="/support.html">Add-on Troubleshooting</a>
+		 </td>
+		</tr>
+   </tr>
+ </tbody>
+</table>
+<!-- END PROJECT_NAV.HTML -->
+
+<!-- CONTRIBUTE.HTML -->
+<script type="text/javascript">
+"use strict"; // use ECMAScript5 strict mode
+  markActiveNavigation("contribute.html");
+  /* Apply this site specific files to <head> element */
+  loadStyleSheet("contribute.css");
+  loadStyleSheet("infoBox.css");
+	loadStyleSheet('smarttemplate-pro.css');
+  
+  function getDiff() {
+		var currentYear = new Date().getFullYear();
+		var startYear = "2010";
+		document.write(currentYear - startYear);
+  }
+</script>
+
+
+
+
+<!-- moved infoTabs down from here -->
+  <div class="smartTemplateProRenew psa">
+    <p> Dear SmartTemplates Pro users, </p>
+    <p>
+      To Renew your license you can go to the SmartTemplates license tab and click the green renew / extend button.
+      This will extend or renew your license so that you get at least a year extra usage (if your license
+      expires in the future the year is added to that date) - even if you license is expired
+      you will get a full year. It is important that you go through this process from the 
+      SmartTemplates license screen as this is the only way to get the cheaper renewal price. 
+    </p>
+    <p>
+      As part of the renewal process, the old license will be automatically transmitted to the fastspring 
+      shop site to determine eligibility. That why there is no external link outside of the SmartTemplates
+      Licensing screen to give you these special perks.
+    </p>
+    <p>
+      Thank you for supporting the SmartTemplates project!
+    </p>
+  </div>
+
+	<div class="smartTemplateFreeUser" style="height:20px;">&nbsp;</div>
+	
+	<table class="smartTemplateFreeUser bargain"> 
+		<tr>
+			<td style="vertical-align:top;">
+				<!--  -->
+				<h3 class="shillBox"> SMARTTEMPLATES - Licensing</h3>
+				<!--
+				<p>Get the NEW YEAR DEAL for <a href="https://sites.fastspring.com/quickfolders/instant/smarttemplate4?referrer=st-contribute-page">25% off</a> 
+					 from (01/01 - 07/01). </p> 
+					 -->
+				<p>
+				  Going Forward, SmartTemplates will <span class="emphasis">require a license</span> for continued use - the reason for this 
+					is that unlike compiled software that runs on an operating system, the constant changes on the host mail software
+					(Thunderbird) require substantial ongoing changes with a high effort; something which cannot be provided for free 
+					("as in beer") anymore. You may have noticed many Add-on authors abandoning their Add-ons on Firefox and 
+					Thunderbird because it was not possible for them to support their Add-ons anymore - this is directly caused
+					by not trying to involve the users in funding the required work.
+				</p>
+				
+				<p>
+				  I tried to finance the changes with some extra features through the 
+					<a href="https://sites.fastspring.com/quickfolders/instant/smarttemplate4?referrer=st-contributepage-explain">SmartTemplates Pro license</a>, 
+					but the adoption has been too low - it was not enough to warrant the many days spent on free support and writing features but now 
+					on top fixing all the issues (and rewriting a lot of code) so that SmartTemplates continues to run on the
+					Thunderbird 68 platform. Therefore I decided to add an affordable "Standard" License which will be required for continued
+					use of this Add-on in the future. 
+				</p>
+				
+				<p> Alternatively, you can buy the <a href="https://sites.fastspring.com/quickfolders/product/smarttemplatestandard?referrer=st-contributepage-explain">standard license here</a>. 
+				   This is now available at <span class="emphasis">a third of the price</span> of the Pro License.
+				   It is valid for one full year after purchase, after which it can be extended for a lower price. 
+         </p>
+         <p>
+          Read this <span class="emphasis"><a href="premium.html#featureComparison">feature comparison chart</a></span> to get an overview about the differences.
+         </p>
+           
+         <p>
+           A lot of the Add-on code needs to be rewritten to keep working on 
+           future versions of Thunderbird, as the "classic Add-on" system
+					 has been replaced with a different technology. Currently SmartTemplates it is in an interim stage
+           using the "experimental API" route to access important low level code. This will 
+           be deprecated in the future! Only through funding this work can SmartTemplates
+					 survive - it may be the price of a cup of coffee to you but consider whether you think it is not worth 
+					 supporting the many features that SmartTemplates gives you.<br>
+					 If you cannot support it at the moment I would encourage you to look for a free replacement Add-on, such as quickText.
+				</p>				
+				
+				
+				<p> To get a license for SmartTemplates click on the rightmost tab on the settings dialog:
+				</p>
+				<p style="text-align:center;">
+					<img style="max-width: 560px;" src="img/pro/smarttemplate-preferences-pro.png"  alt="How to buy a license from settings dialog"/>
+				</p>
+				<p>
+				  This will bring you to the license page within Thunderbird, where you can select 
+					the license most appropriate for you:
+				</p>
+				<p style="text-align:center;">
+					<img style="max-width: 866px;" src="img/license-screen.png" alt="licensing dialog"/>
+				</p>
+				<p>
+					It's the easiest way to get a license as you get to select an email address for registration and delivery.
+					If you prefer, you can also go to the web shop directly: <br>
+          <ul>
+            <li><a href="https://sites.fastspring.com/quickfolders/instant/smarttemplate4?referrer=st-contribute-page">Pro License</a></li>
+            <li><a href="https://sites.fastspring.com/quickfolders/instant/smarttemplatestandard?referrer=st-contribute-page">Standard License</a></li>
+            <li><a href="https://sites.fastspring.com/quickfolders/instant/smarttemplate4domain?referrer=st-contribute-page">Domain License</a></li>
+          </ul>
+				</p>
+				<p>
+				  You can use  SmartTemplates on as many Thunderbird installations as you like as long 
+					as it has your active, registered email address on it. Just select it from the account dropdown.
+					The registration email address  is not  given to any third parties or used 
+					for marketing purposes, it is only used for order fulfillment and license verification. Validation is 100% offline and your key is not transmitted 
+					anywhere.
+				</p>
+			</td>
+			<!-- bargain offer -->
+			<td style="vertical-align:top; max-width:0">
+				<a class="nohover" href="https://sites.fastspring.com/quickfolders/product/smarttemplatestandard?referrer=st-contribute-page-bargain">
+					<img id="bargainStar" src="img/bargain-standard-66.png" />
+				</a>			
+			
+			</td>
+		</tr>
+	</table>
+
+
+	<div id="infoTabs">
+		<div class="infoTab" id="on-a-word">
+			<h5 class="infoHeader">Thanks for updating!</h5>
+				<p class="miniquote">
+					"Life is going on in the West of Ireland. My wife had a large operation and I was 
+					laid off working full time as a software developer. Instead I have decided to 
+					build up a music production career and dedicate more time to addons development.
+					You can help best by 
+					<a href="https://sites.fastspring.com/quickfolders/instant/smarttemplate4?referrer=contribute-page">buying a Pro license</a> 
+					but donations are also welcome.
+				</p>
+				<p class="miniquote">
+					Thanks again in advance."
+				</p>
+				<p style="text-align: center;"><!-- aligns the nested image -->
+					<img src="https://smarttemplates.quickfolders.org/img/S+A-Penny-2012.jpg" class="gallery" alt="daughter / dog / developer" title="your's truly, 2012..." />
+				</p>
+		</div>
+
+		<div class="infoTab" id="free-pigs">
+			<h5 class="infoHeader">The "free" Model</h5>
+				<p style="text-align: center;"><!-- aligns the nested image -->
+					<a href="#freesoftware">
+						<img src="https://smarttemplates.quickfolders.org/img/Pigs_Free_Model.jpg" class="gallery" alt="the free model." title="the free model...">
+					</a>
+				</p>
+				<p class="miniquote">
+					As users, we like to use the software the way we want, and we more or less expect it to be free of charge. The question is what
+					do the commercial software vendors make of this? Since the advent of facebook is a shift of users (and their data) from being the customers
+					becoming the merchandise, and the corporations becoming the customer. This is because even the best community sites cannot operate without
+					profit. The web is already overfraught with advertisement and data mining - The alternative is truly <a href="#freesoftware" title="The Free Software model">Free software</a> that is
+					funded by donations.
+				</p>
+				<p class="miniquote">
+					I don't want to fund SmartTemplates through pushing advertisements on the users. Also IMO the user's data is something that belongs to only them; it is not a
+					commodity for companies to trade and play with.
+				</p>
+		</div>
+	</div>
+		
+<h2 class="page-header">SmartTemplates :: Licenses / Monetization</h2>
+
+<p>
+	SmartTemplates is completely funded by its users, mainly through the various licenses available 
+	at fastspring.com - to find out our current prices click one of the links below:
+	<ul>
+		<li><a href="https://sites.fastspring.com/quickfolders/instant/smarttemplate4?referrer=contribute-page">SmartTemplates Pro</a></li>
+		<li><a href="https://sites.fastspring.com/quickfolders/product/smarttemplatestandard?referrer=contribute-page">SmartTemplates Standard</a></li>
+		<li><a href="https://sites.fastspring.com/quickfolders/product/smarttemplate4domain?referrer=contribute-page">Domain License</a></li>
+	</ul>
+  I also regularly do sales with reduced prices, usually when I release new versions of SmartTemplates. 
+	Just read the news link when a new version is dropped to check the actual prices then.
+</p>
+
+
+<h3> Donations </h3>
+
+<a name="donate"> </a>
+<p> Not ready to buy a license yet? You can still help by donating some money using the paypal links below!</p>
+
+
+<table id="donation">
+	<tr>
+		<td style="vertical-align:top;">
+			<table id="paymentForm">
+				<tr>
+					<th class="payLabel">in &euro;:</th>
+            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+              <input type="hidden" name="cmd" value="_s-xclick" />
+              <input type="hidden" name="hosted_button_id" value="5RKEHLBJ8T24N" />
+              <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+              <img alt="" border="0" src="https://www.paypal.com/en_IE/i/scr/pixel.gif" width="1" height="1" />
+            </form>
+          <td class="payLink">
+
+          </td>
+				</tr>
+				<tr>
+					<th class="payLabel">in US $:</th>
+						<td class="payLink">
+              <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                <input type="hidden" name="cmd" value="_s-xclick" />
+                <input type="hidden" name="hosted_button_id" value="KYCY7P6SAR7LJ" />
+                <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+              <img alt="" border="0" src="https://www.paypal.com/en_IE/i/scr/pixel.gif" width="1" height="1" />
+              </form>
+						</td>
+				</tr>
+			</table>
+
+			<p id="noPaypalCallout">
+				<a href="#noPaypal" title="Don't like Paypal?">Don't like paypal?</a>
+			</p>
+		</td>
+		<td style="padding-left: 25px; vertical-align: top;">
+			<p>
+				<i>I love SmartTemplates - it makes my emails look awesome! I want to buy you a coffee!</i> 
+				<a href="#amount" title="Any Questions?">Any Questions?</a>
+			</p>
+			<p class="mini">
+				If you actually have donated already or only like freebies (yes, there is them...) please recommend SmartTemplates to your friends and colleagues!
+			</p>
+		</td>
+	</tr>
+</table>
+
+<h4>
+	<span class="thankYou">
+		<script type="text/javascript">thanksForUpdate();</script><!-- thank Phrase filled by JavaScript -->
+	</span>
+</h4>
+
+<br>
+<br>
+
+<h3>
+	<a id="amount"></a><!-- this anchor is just an in-page jump point, it doesn't need to contain anything -->
+    Do you suggest any amount?
+</h3>
+
+<p>
+	US$ donations: we suggest 10$ as that seems to be be a what most people like to donate - but of course smaller and greater amounts are always welcome.<br>
+	Euro donations: 5 Euros would be nice and 10 Euros or more considered generous!
+
+	Your tip is important to make SmartTemplates even more excellent! If you can'ty afford it right now, consider it at the next update - in the meantime, recommend to friends and colleagues.
+</p>
+
+<p>
+	You can also add some feature requests here: <a href="https://smarttemplates.quickfolders.org/bugs.html" title="Visit our Bugpage" target="_blank">Bugs &amp; Features</a>.
+</p>
+
+<h3>Other ways you can help</h3>
+
+<p>
+	If you like to translate SmartTemplates in your own language, please visit <a href="http://www.babelzilla.org/index.php?option=com_wts&amp;amp;extension=5535&amp;amp;type=show" title="Visit SmartTemplates on BabelZilla" target="_blank">Babelzilla</a>
+</p>
+
+<p class="scream">
+	You can also <a href="https://addons.thunderbird.net/thunderbird/addon/smarttemplate4#reviews" title="Leave some Feedback for SmartTemplates on ATN" target="_blank">leave a positive review</a> at the Mozilla Addons Page - spread the word so more people start using it!
+</p>
+
+<a id="noPaypal"></a><!-- this anchor is just an in-page jump point, it doesn't need to contain anything -->
+<h3>But I don't like / never use Paypal!</h3>
+
+<p>
+	Just send me an email, and I give you my address for a cheque or note.
+</p>
+
+<h2 class="page-header">
+  <a id="freesoftware">Free Software, Yayh!!</a><!-- this anchor is just an in-page jump point, it doesn't need to contain anything -->
+</h2>
+
+<p>
+	What does it mean then, <em>free software</em> ??
+</p>
+
+<h3><em>Free</em> as in <em>Free Speech</em>, not <em>Free Beer</em>.</h3>
+
+<p>
+	The reason I am putting a lot of work into SmartTemplates is because I am using it every day, in order to make my daily work
+	easier. I think it also important to share any tool that makes working easier and allow improvement of the tools.
+</p>
+
+<p>
+	I think the most important aspect on free software is that it is a political statement to avoid the pitfalls of
+	proprietary, monopoly driven software that coined terms such as "Embrace, Extend and Extinguish" and the innovation crippling
+	model of patenting software (for further reading, please see links below).
+	At the moment there is a conflict raging between the old proprietary model of software and the Free Software Concept,
+	and its you, the users who will really decide where the future will take us. By downloading the Mozilla products and extensions by
+	independant software developers, like SmartTemplates, you are actively helping the cause.
+	<br>
+	there is an excellent description of this concept here:
+</p>
+
+<ul>
+  <li><a href="http://www.gnu.org/philosophy/free-sw.html" title="Philosophy of Free Software model" target="_blank">http://www.gnu.org/philosophy/free-sw.html</a></li>
+</ul>
+
+<p class="mini">
+	Quote: <em>"Free software"</em> is a matter of liberty, not price. To understand the concept, you should think of <em>"free"</em> as in <em>"free speech,"</em> not as in <em>"free beer."</em><br>
+	Free software is a matter of the users' freedom to run, copy, distribute, study, change and improve the software.
+</p>
+
+<p>
+	It is also important to note that you can always modify SmartTemplates as it is open source and send me improvement suggestions.
+	Or you can use features in the existing software and use them in your own extension, provided you stick to the license
+	(you can not create commercial versions of the extension and you need to attribute / credit the original authors).
+	I have tried to make the code as readable as possible, so that you can check how SmartTemplates achieves its various goals.
+</p>
+
+<h2 class="page-header">The Web of Freedom - but how much longer?</h2>
+
+<br>
+
+<h3>What's happening right now?</h3>
+
+<p>
+	The American congress now tries to introduce censorship of the internet. <a href="http://vimeo.com/31100268" title="Censorship" target="_blank">Click here for more information.</a>
+</p>
+
+<p class="iframe">
+ <script type="text/javascript">embedVideo('http://player.vimeo.com/video/31100268?title=0&amp;byline=0&amp;portrait=0', 'Censorship Video', 560, 315);</script>
+</p>
+
+<p>
+	The web is changing very massively over the last <script type="text/javascript">getDiff();</script> years. This requires rethinking on how we use this community resource.
+	Community Sites are gaining a big amount of the power and the market share, the "login with facebook" idea
+	is now trying to lock our identities into their systems; building huge silos that lock in our data in order to keep users "within" their systems;
+	and while the web is still an open place and there are lots of "login with facebook" buttons, yet it has become increasingly difficult
+	to move our own data, determine when and where it is used and stored. This is because in this new model, the users become the
+	merchandise and the corporations become the customers. It is because in a "free" world this seems to be the only way to
+	generate some revenue, and believe me that community sites such as facebook are _not_ there to server the users. Like anything else
+	they are there to make money. The question is whether financing by loosing the ownership of one's own data and getting channeled into
+	advertisment slots, is really the way we want to go?
+</p>
+
+<h3>We are not the product! We are the community!</h3>
+
+<p>
+	Mozilla is currently working on a new conecept called BrowserId, which aims to allow users to bring their data with them,
+	makes sure the data is encrypted on the server so it cannot be abused or mined without the user's consent. It also should make
+	it easier for the user to move the data across to a different community provider or remove it altogether. This is clearly not
+	in the interest of the community sites themselves if they base their business model around being "the only one", but it is another
+	necessary step for the webn to grow up, and for us users to emancipate ourselves from the providers.
+</p>
+
+<a id="donations"></a><!-- this anchor is just an in-page jump point, it doesn't need to contain anything -->
+<h3>A word on donations</h3>
+
+<p>
+	I think that the donation model as such works, although I wish more people of the daily users (currently about 3,100) would take the
+	time to donate some money. There is only a minute fraction who actually click the donation link. So, if you've found SmartTemplates to improve your work or business productivity,
+	please take a moment. I _really_ appreciate the support. Thanks again in advance.
+</p>
+ 
+<p>
+	One thing that I think is a bad idea is to try to use advertisement or constant "nagging" at the users in order to earn some money. The only time you will hear from me
+	is when I release a new version, usually with new usability features and bug fixes.
+	I am actively refusing extensions that try to do things like add advertisements, change browser links (by adding referrers) or redirect users in order to achieve
+	this, there is a very fruitful discussion on the ATN Editors team who constantly review issues that the users bring to our attention
+	around this topic.
+</p>
+
+<p>
+	However, I also acknowledge that it is an inconvenience and a bit of a leap of faith to make a donation,
+	so I would like to sincerely thank you for reading this and considering.
+</p>
+
+<p>
+	Yours sincerely,
+	<br>
+	<span class="sigAxel">Axel</span>
+</p>
+
+<br>
+
+<h3>Further Reading</h3>
+
+<ul>
+	<li>
+		<a href="http://www.youtube.com/watch?v=uJi2rkHiNqg" title="Richard Stallman - What is free software? - Youtube" target="_blank">Richard Stallman - What is free software? - Youtube</a>
+	</li>
+
+	<li>
+		<a href="http://www.gnu.org/philosophy/free-sw.html" title="Free Software Definition" target="_blank">Free Software Definition</a>
+	</li>
+
+	<li>
+		<a href="http://en.wikipedia.org/wiki/Embrace_extend_extinguish" title="Embrace, Extend and Extinguish - Wikipedia" target="_blank">Embrace, Extend and Extinguish - Wikipedia</a>
+	</li>
+
+	<li>
+		<a href="http://patentabsurdity.com/watch.html" title="Patent Absurdity - How software patents broke the system" target="_blank">Patent Absurdity - How software patents broke the system</a>
+	</li>
+
+	<li>
+		<a href="http://www.catb.org/~esr/writings/cathedral-bazaar/cathedral-bazaar/index.html" title="The Cathedral and the Bazaar - an article about the philosphy behind the Open Source development model" target="_blank">The Cathedral and the Bazaar - an article about the philosphy behind the Open Source development model</a>
+	</li>
+
+	<li>
+		<a href="http://www.youtube.com/watch?v=b3uX5XwdN_8&amp;feature=related" title="An in depth Stallman interview on free software and software patent - Youtube" target="_blank">An in depth Stallman interview on free software and software patent - Youtube</a>
+	</li>
+
+	<li>
+		<a href="http://en.wikipedia.org/wiki/Open_source" title="Open Source - Wikipedia" target="_blank">Open Source - Wikipedia</a>
+	</li>
+
+	<li>
+		<a href="http://en.wikipedia.org/wiki/Browser_Wars" title="The Browser Wars - Wikipedia" target="_blank">The Browser Wars - Wikipedia</a>
+	</li>
+</ul>
+<!-- END CONTRIBUTE.HTML -->
+
+<!-- FOOTER.HTML -->
+<script>
+"use strict"; // use ECMAScript5 strict mode
+
+  /* Apply this site specific files to <head> element */
+  loadStyleSheet("footer.css");
+  loadStyleSheet("navibar.css");
+</script>
+
+  <div id="footer">
+   <div class="horizontalRule"></div>
+    <a id="contact"></a><!-- this anchor is just an in-page jump point, DO NOT REMOVE WE USE THIS ANCHOR ON ATN -->
+      <div id="mailToLink">
+       You have questions / comments about SmartTemplates? Please feel free to 
+       <p class="mail_link">
+        <script>mailtoLine();</script><!-- Mailto Line filled by JavaScript -->
+       </p>
+      </div>
+
+       <div class="attribution"><b>Attributions:</b><br>
+         Flagset by  Matthias Slovig under CC, see:
+        <a href="http://flags.blogpotato.de/" title="Visit Flagpotato Website" target="_blank">http://flags.blogpotato.de/</a><br>
+         Fugue Icons (or based on) by Yusuke Kamiyamane under CC, see:
+        <a href="http://p.yusukekamiyamane.com/" title="Visit Yusuke Kamiyamane Website" target="_blank">http://p.yusukekamiyamane.com/</a><br>
+         Noia Icons (or based on) by Carles Carbonell Bernado under LGPL, see:
+       <a href="http://carlitus.deviantart.com/" title="Visit Noia on Deviantart" target="_blank">http://carlitus.deviantart.com/</a>
+       </div>
+
+       <!--Special Attributions -->
+       <!-- Brands Carousel (jquery) in Alphabetically Order -->
+        <div id="brandsCarousel">
+         <a href="https://www.7-zip.org" target="_blank" title="Visit 7-Zip Website"><img class="brands" src="/brands/50/7zip.png" height="50" width="50" alt="7-Zip"></a>
+         <a href="https://addons.thunderbird.net/" target="_blank" title="Visit addons.thunderbird.net (ATN)"><img class="brands" src="/brands/50/amo.png" height="50" width="50" alt="ATN"></a>
+         <a href="https://www.thunderbird.net/" target="_blank" title="Visit thunderbird.net"><img class="brands" src="/brands/50/thunderbird_102.png" height="50" width="50" alt="ATN"></a>
+         <a href="https://www.betterbird.eu/" target="_blank" title="Visit Betterbird"><img class="brands" src="/brands/50/betterbird.png" height="50" width="50" alt="ATN"></a>
+         <a href="https://www.android.com" target="_blank" title="Visit Android Website"><img class="brands" src="/brands/50/android.png" height="50" width="50" alt="Android"></a>
+         <a href="https://bluefish.openoffice.nl/index.html" target="_blank" title="Visit Bluefish Website"><img class="brands" src="/brands/50/bluefish.png" height="50" width="50" alt="Bluefish"></a>
+         <a href="https://www.creativecommons.org" target="_blank" title="Visit Creative Commons Website"><img class="brands" src="/brands/50/creativecommons.png" height="50" width="50" alt="CreativeCommons"></a>
+         <a href="https://duckduckgo.com" target="_blank" title="DuckDuckGo is a search engine that does not track you"><img class="brands" src="/brands/50/duckduckgo.png" height="50" width="50" alt="DuckDuckGo"></a>
+         <a href="https://www.mozilla.org/firefox/fx/" target="_blank" title="Visit Firefox Website"><img class="brands" src="/brands/50/firefox.png" height="50" width="50" alt="Firefox"></a>
+         <a href="https://www.gimp.org" target="_blank" title="Visit Gimp Website"><img class="brands" src="/brands/50/gimp.png" height="50" width="50" alt="Gimp"></a>
+         <a href="https://www.gnu.org" target="_blank" title="Visit GNU Website"><img class="brands" src="/brands/50/gnu.png" height="50" width="50" alt="GNU"></a>
+         <a href="https://www.jquery.com" target="_blank" title="Visit jQuery.com"><img class="brands" src="/brands/50/jquery.png" height="50" width="50" alt="jQuery"></a>
+         <a href="https://kompozer-web.de/en" target="_blank" title="Visit KompoZer Website"><img class="brands" src="/brands/50/kompozer.png" height="50" width="50" alt="KompoZer"></a>
+         <a href="https://www.libreoffice.org/" target="_blank" title="Visit LibreOffice Website"><img class="brands" src="/brands/50/libreoffice.png" height="50" width="50" alt="LibreOffice"></a>
+         <a href="https://www.linux.org" target="_blank" title="Visit Linux Website"><img class="brands" src="/brands/50/linux.png" height="50" width="50" alt="Linux"></a>
+         <a href="https://developer.mozilla.org" target="_blank" title="Visit developer.mozilla.org Website"><img class="brands" src="/brands/50/mdn.png" height="50" width="50" alt="MDN"></a>
+         <a href="https://www.mozilla.org/foundation/about.html" target="_blank" title="Visit Mozilla Foundation Website"><img class="brands" src="/brands/50/mozilla.png" height="50" width="50" alt="Mozilla"></a>
+         <a href="https://www.notepad-plus-plus.org" target="_blank" title="Visit Notepad++ Website"><img class="brands" src="/brands/50/notepad++.png" height="50" width="50" alt="Notepad++"></a>
+         <a href="https://www.opensource.org" target="_blank" title="Visit Open Source Initiative Website"><img class="brands" src="/brands/50/opensource.png" height="50" width="50" alt="OpenSource"></a>
+         <a href="https://www.postbox-inc.com/" target="_blank" title="Visit PostBox Website"><img class="brands" src="/brands/50/postbox.png" height="50" width="50" alt="Postbox"></a>
+         <a href="https://www.seamonkey-project.org/" target="_blank" title="Visit Seamonkey Project Website"><img class="brands" src="/brands/50/seamonkey.png" height="50" width="50" alt="Seamonkey"></a>
+         <a href="https://www.tortoisesvn.net" target="_blank" title="Visit Tortoise SVN Website"><img class="brands" src="/brands/50/tortoise_svn.png" height="50" width="50" alt="Tortoise SVN"></a>
+         <a href="https://www.w3.org" target="_blank" title="Visit World Wide Web Consortium Website"><img class="brands" src="/brands/50/w3c.png" height="50" width="50" alt="W3C"></a>
+         <a href="https://www.w3schools.com" target="_blank" title="Visit W3Schools Website"><img class="brands" src="/brands/50/w3schools.png" height="50" width="50" alt="W3 Schools"></a>
+        </div>
+        <!-- END Brands Carousel -->
+
+        <div class="copyright" id="copyright">
+          <script>copyrightLine();</script><!-- Copyright Line filled by JavaScript -->
+        </div>
+
+      </div><!-- CLOSE <div id="footer"> -->
+    </div><!-- CLOSE <div id="main-content-no-nav"> with the blue box -->
+
+    <!-- Overlay Navibar -->
+    <div class="outerTable" id="navbarTable">
+     <table class="innerTable">
+      <tbody>
+       <tr class="innerTableTR">
+        <td class="innerTableTD"><div class="homeButton"><a href="/index.html" target="_self" title="To our Startpage">Home</a></div></td>
+        <td class="innerTableTD"><div class="historyBackButton"><a href="javascript:goBack();" title="Previous Page">Previous</a></div></td>
+        <td class="innerTableTD"><div class="scrollButton"><a href="javascript:window.scrollTo(0,0);" title="Scroll to Top">Up</a></div></td>
+        <td class="innerTableTD"><div class="historyFwdButton"><a href="javascript:goForward();" title="Next Page">Next</a></div></td>
+        <td class="innerTableTD"><div class="printButton"><a href="javascript:window.print();" title="Print this Page">Print</a></div></td>
+        <td class="innerTableTD"><div class="fontPlusButton"><a href="" onclick="resizeText(1);return false;" title="increase font size">Font +</a></div></td>
+        <td class="innerTableTD"><div class="fontMinusButton"><a href="" onclick="resizeText(-1);return false;" title="reduce font size">Font -</a></div></td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+    <!-- END Overlay Navibar -->
+
+    <div id="downPusher"></div><!-- push down the black main background -->
+    <!-- END FOOTER.HTML -->
+  </body>  
+</html>
+<!-- END HTML SITES IN FOOTER.HTML -->
+

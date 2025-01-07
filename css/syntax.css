@@ -1,0 +1,94 @@
+
+
+  /* will be used in variables.html, variableTable.html and screenshots.html */
+  #keywords code,
+  code {
+    background: rgb(230,240,163);
+    background-image: linear-gradient(to bottom,  rgba(230,240,163,1) 0%,rgba(210,230,56,1) 50%,rgba(195,216,37,1) 51%,rgba(219,240,67,1) 100%);
+    border-radius: 0.3em;
+    border: 1px solid #bbb;
+    margin: 2px 4px;  
+    display: inline-block; 
+    font-family: Consolas, 'Courier New', Geneva, sans-serif;
+    font-size: 10pt !important;
+    padding: 0 0.2em;
+  }
+
+  #keywords code.noWrite,
+  code.noWrite {
+    background: rgb(239,205,236);
+    background: linear-gradient(to bottom,  rgba(239,205,236,1) 0%,rgba(223,145,218,1) 50%,rgba(215,133,209,1) 51%,rgba(230,152,224,1) 100%);
+  }
+
+
+  #keywords code.deferable, code.deferable {
+    background: linear-gradient(to bottom, rgba(252,234,187,0.8) 0%,rgba(252,205,77,0.8) 40%,rgba(248,181,0,0.8) 51%,rgba(251,223,147,0.8) 100%);
+  }
+
+  /* sepcial class for less obtrusive code variable that doesn't stick out when we just mention the keyword */
+  code.inline {
+    background-image: none !important;
+    background: rgba(250,250,250,0.2) !important;
+    border: 1px solid #606060;
+    font-style: normal !important; /* undo italics if in note */
+    text-shadow: 1px 1px 3px rgba(250,250,250,0.5);
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  code.html {
+    background: transparent;
+    border: none;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  span.codeLine {
+    font-family: consolas,"courier new",monospace;
+  }
+
+  /* inline html code */
+  code.html {
+    background-color: #f6f9f6;
+    background-image: none !important;
+    color: #001010;
+    padding: 0px 6px !important;
+    border-radius: 0;
+  }
+  
+  pre.code, .paramLiteral {
+    font-family: Consolas, 'Courier New', Geneva, sans-serif;
+    font-size: 10pt !important;
+  }
+
+  pre.code { 
+    background-color: #ffffff;
+    color: #303030;
+    padding: 1em;
+    box-shadow: inset 4px 4px 10px #000000;
+  }
+
+  code.parameter, .paramLiteral {
+    background-color: rgba(172,172,172,0.2);
+    border: 1px rgba(20,20,20,0.3) solid !important;
+    border-radius: 3px;
+    color: rgb(20,20,20,0.8);
+    font-style: normal !important;
+    font-weight: 500 !important;
+    padding: 0 0.2em;
+  }
+
+  code .paramLiteral {
+    color: rgb(150,90,10) !important;
+  }  
+
+
+  key {
+    background-color: rgb(50,50,50,0.85);
+    border-radius: 3px !important;
+    color: white;
+    font-family: Consolas, 'Courier New', Geneva, sans-serif;
+    margin: 2px 0 !important;    
+    padding: 0 2px !important;
+  }
+  

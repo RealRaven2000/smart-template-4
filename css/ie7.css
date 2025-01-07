@@ -1,0 +1,19 @@
+#main-content-no-nav {
+  background-color: #cbe0f4; /* bright blue */
+  margin-left:4% !important;
+  margin-right:4% !important;
+}
+.project-name, td.mozdev-fries, td.mozdev-date {
+  color: #003366 !important;
+}
+
+div.old,
+div.new {
+  zoom: 1; /* trigger haslayout */
+  display: inline; /* inline=block seems to be borked here */
+}
+
+div.new { color: rgb(00,150,0) !important; }
+
+#infoTabs { margin-right: -5% !important; }
+

@@ -1,0 +1,32 @@
+/* feature list */
+#featureTbl th a {
+  font-weight: bold;
+}
+#featureTbl th {
+  font-weight: normal;
+}
+#featureTbl  {
+  border: 1px solid rgba(80,80,80,0.4);
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+#featureTbl td, #featureTbl th {
+  padding: 6px;
+  border: 1px solid rgba(80,80,80,0.4);
+  vertical-align: middle;
+}
+#featureTbl td,
+#featureTbl tr:nth-child(1) th
+{
+  text-align: center;
+}
+#featureTbl th {
+  text-align: left;
+}
+#featureTbl .check {
+  font-size: 1.4em;
+  color: green;
+}
+#featureTbl .check.negative {
+  color: red;
+}

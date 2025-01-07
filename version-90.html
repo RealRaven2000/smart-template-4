@@ -1,0 +1,3187 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Smart Templates - Legacy Change Log</title>
+   <!-- LOCAL HEAD.TXT -->
+
+   <!-- META-KEYWORDS BEGIN -->
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width; user-scalable=0; initial-scale=1.0; maximum-scale=1.0; minimum-scale=1.0;">
+   <!--<meta name="viewport" content="width=device-width; initial-scale=1; maximum-scale=1; minimum-scale=1">-->
+   <meta name="keywords" content="SmartTemplates, mailheader, customize, e-Mail, modification, quote, html, plain, stationery">
+   <meta name="google-site-verification" content="LTKICtodcLDl0nhBl2mUiXWMJbOtmEJmhYXVAqm_mJM" />
+   <meta name="description" content="SmartTemplates offers an easy way to customize Thunderbirds, SeaMonkeys and Postboxs default quote header by using templates. Templates can be created for every account as well as for global settings (for all email accounts).">
+   <meta name="author" content="Axel Grude, Marky Mark DE">
+   <!-- META-KEYWORDS END -->
+
+   <!-- BASICS BEGIN -->
+   <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+   <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico">
+   <link rel="apple-touch-icon-precomposed" href="http://smarttemplate4.mozdev.org/img/apple-touch-icon-precomposed-57x57.png">
+   <link rel="apple-touch-icon-precomposed" href="http://smarttemplate4.mozdev.org/img/apple-touch-icon-precomposed-72x72.png">
+   <link rel="apple-touch-icon-precomposed" href="http://smarttemplate4.mozdev.org/img/apple-touch-icon-precomposed-114x114.png">
+   <link rel="apple-touch-icon-precomposed" href="http://smarttemplate4.mozdev.org/img/apple-touch-icon-precomposed-144x144.png">
+   <!-- BASICS END -->
+
+   <!-- GLOBAL STYLESHEETS BEGIN -->
+   <link rel="stylesheet" type="text/css" media="print" href="/css/print.css">
+   <link rel="stylesheet" type="text/css" media="scree, all" href="/css/b-i-f.css">
+   <link rel="stylesheet" type="text/css" media="screen" href="/css/media.css?v=4">
+   <link rel="stylesheet" type="text/css" media="screen, all" href="/css/webFonts.css">
+   <link rel="stylesheet" type="text/css" media="screen, all" href="/css/project.css?v=3">
+   <link rel="stylesheet" type="text/css" media="screen, all" href="/css/project_nav.css?v=1">   
+   <link rel="stylesheet" type="text/css" media="screen, all" href="/css/jqueryPlugins.css?v=3">
+   <!--[if lte IE 7]>
+   <link rel="stylesheet" type="text/css" media="screen, all" href="/css/ie7.css">
+   <![endif]-->
+   <!-- GLOBAL STYLESHEETS END -->
+
+   <!-- JQUERY JS FRAMEWORK BEGIN -->
+   <!--[if lt IE 9]>
+   <script src="/js/modernizr.custom.js" charset="UTF-8"></script>
+   <![endif]-->
+   <script src="/js/jquery-3.7.1.min.js" charset="UTF-8"></script>
+   <script src="/js/jqueryPlugins.js" charset="UTF-8"></script>
+   <!-- JQUERY JS FRAMEWORK END -->
+
+   <!-- ADDITIONAL JS BEGIN -->
+   <script src="/js/environment.js" charset="UTF-8"></script>
+   <script src="/js/scripts.js" charset="UTF-8"></script>
+   <script src="/js/navibar.js" charset="UTF-8"></script>
+   <script src="/js/ga.js" charset="UTF-8"></script>
+   <script src="/js/premium.js?v=13" charset="UTF-8"></script>
+   <!-- ADDITIONAL JS END -->
+
+ </head>
+<!-- END LOCAL HEAD.TXT -->
+
+<!-- HTML_BODY.HTML -->
+<body>
+
+<noscript>
+	<div class="msgBox error" id="msgBox_error">
+		<h1>Our website requires JavaScript.</h1>
+		The instruction how to enable JavaScript in your browser, you can find <a href="http://www.enable-javascript.com/" rel="nofollow" title="How to enable Javascript in your browser" target="_blank">here</a>.
+	</div>
+</noscript>
+
+<!-- ####################### BEGIN MAIN CONTENT ########################## -->
+<div id="main-content-no-nav">
+<!-- PROJECT_NAV.HTML -->
+<h1 class="project-name" id="content"><img src="/img/logo-pro.png" alt="SmartTemplates"></h1>
+
+ <table id="project-navigation"> 
+  <tbody id="resources" class="project-navigations">
+   <tr>
+    <td class="navigation-list">
+     <!-- a class for media query -->
+     <a class="index" href="/index.html">Home</a>
+     <a class="variables" href="/variables.html">Variable Definitions</a>
+     <a class="templates" href="/templates.html?jquery=on">Example Templates</a>
+     <a class="screenshots" href="/screenshots.html">Screenshots</a>
+     <a class="version" href="/version.html">Version History</a>
+     <a class="bugs" href="/kb-main.html">Knowlegebase</a>
+     <a class="faq" href="/faq.html">FAQ</a>
+     <a class="bugs" href="/bugs.html">Bugs &amp; Features</a>
+     <a class="premium" href="/premium.html">Premium Features</a>
+     <a class="contribute" href="/contribute.html">Licenses</a>
+     <a class="gdpr" href="/gdpr.html">GDPR + Impressum</a>
+    </td>
+		<tr id="navKB">
+		 <td class="kb-nav-list navigation-list">
+			 <a class="kb-nav" href="/kb-basics.html">HTML Basics</a>
+			 <a class="kb-nav" href="/kb-fonts.html">Fonts</a>
+			 <a class="kb-nav" href="/kb-tags.html">General Tips</a>
+			 <a class="kb-nav" href="/kb-inspector.html">Troubleshooting Styles</a>
+			 <a class="kb-nav" href="/support.html">Add-on Troubleshooting</a>
+		 </td>
+		</tr>
+   </tr>
+ </tbody>
+</table>
+<!-- END PROJECT_NAV.HTML -->
+
+
+
+<script type="text/javascript">
+  "use strict"; // use ECMAScript5 strict mode
+    markActiveNavigation("version.html");
+    /* Apply this site specific files to <head> element */
+    loadStyleSheet('version.css');
+    loadStyleSheet('infoBox.css');
+    loadStyleSheet('myProjects.css');
+    loadStyleSheet('smarttemplate-pro.css');
+    loadStyleSheet('syntax.css?v=2');
+    loadScriptFile('window.js');
+  </script>
+
+<style>
+  .variableSwitches pre {
+    font-size: 0.9em;
+  }
+  .variableSwitches h5 {
+    font-size: 1em;
+    margin: 0.2em 0;
+  }
+  pre.maxW {
+    max-width: 600px;
+  }
+  
+  li.psa {
+    padding: 0.1em 1em !important;
+    margin-top: 0.5em;
+    border-radius: 0.3em;
+    background-color: #3A3D41 !important;
+    box-shadow: inset 0.5em 0.5em 10px rgba(0,0,0,0.7);
+  }  
+  
+  .psa .emphasis,
+  .psa78 .emphasis {
+    color: yellow;
+    font-weight: bold;
+  }  
+  
+  .psa78 .emphasis {
+    text-shadow: #000 0px 0px 1px !important;
+  }
+  
+  .psa78 {
+    background-color: #3A3D41 !important;
+    box-shadow: inset 0.5em 0.5em 10px rgba(0,0,0,0.7);
+    color: rgba(250,250,250,0.9);
+    max-width: 950px;
+    padding: 0.2em 1em !important;
+  }
+  
+  
+  #version-history div.announcement {
+    background: rgba(40,30,30,.85) !important;
+    border-radius: 4px;
+    box-shadow: inset 0.5em 0.5em 10px rgba(0,0,0,0.7);
+    margin: 0.5em 2em 2em;
+    max-width: 835px;
+    padding: 0.5em 0.8em;
+  }
+    
+  .reinstallInstructions img {
+    margin-top: 0.8em;
+    max-width: 720px;
+  }
+  
+  .expandInstructions {
+    display: inline-block;
+    cursor: pointer;
+    background-color: #006EB7; /* blue */
+    background-image: linear-gradient(to bottom, #0380bf 0%,#006eb7 100%) !important;
+    border-radius: 0.6em;
+    color: white;
+    font: 10pt arial,verdana,sans-serif bold;
+    padding: 0.4em 0.3em;
+  }
+  
+  .reinstallInstructions {
+    display: none;
+  }
+  
+</style>
+
+<!-- note &#8308; is the same as <sup>4</sup>  -->
+
+<h2 class="page-header">SmartTemplates :: Legacy Version History</h2>
+<br>
+<p>Welcome to the LEGACY change log / version history of SmartTemplates.
+    Please <a href="contribute.html">Contribute</a> to SmartTemplates!
+</p>
+
+
+<h3>Change Log</h3>
+  <p class="tip">
+    <em>TIP:</em> All dates are displayed in UK format dd/mm/yyyy
+  </p>
+
+
+  <ul id="version-history">
+
+    <p>Legacy versions (for Thunderbird 90 and older) can be <a href="version-90.html">found here.</a></p>
+
+<a id="3.6"> &nbsp; </a>
+<li>
+  <h4>
+		<a href="https://addons.thunderbird.net/thunderbird/addon/324497/versions/3.6">Version 3.6 - 17/06/2021</a>
+		<br>
+		<span class="appWrapper">
+			<span class="thunderbird">74.* - 90.0</span> 
+		</span>
+  </h4>
+
+  <ul>
+    <h5 class="inList"><span class="inListTitle">Enhancements</span></h5>
+    <li>
+      <p>
+        <a href="https://github.com/RealRaven2000/SmartTemplates/issues/135">[issue 135]</a> Expand multiple recipients 
+        with <code class="inline">%to(firstname)%</code> in New Mail Template.
+      </p>
+      <p>
+        When replying to an email we expect the variable <code class="inline">%to(firstname)%</code> to fill in all recipient names, 
+        using the address widget. They will be delimited by the character entered in advanced 
+        settings under the Name Rules box.
+      </p>
+    </li>
+    <li>
+      <a href="https://github.com/RealRaven2000/SmartTemplates/issues/137">[issue 137]</a>
+      SmartTemplates doesn't auto-update to 3.5.4 (because it needs permissions?)
+      <p>
+        After adding necessary permissions for using the new mail extension APIs (for accounts and notifications), 
+        the user isn't prompted to install the updated Add-on anymore. Instead there is a small yellow "warning"
+        icon added to the main menu button, which must be clicked to reveal questions about adding permissions.
+      </p>
+      <p>
+        I noticed that the majority of users suddenly stopped updating and found that the permissions was the likely 
+        cause. As this is now standard behavior in Thunderbird in order to prevent users being distracted from their
+        daily workflow, I had to remove the permissions and modern API code and create my own version so I could make sure
+        my users are updated with the latest version. I have no final satisfactory solution for this behavior as 
+        conversion to the new APIs is 100% necessary in order to rewrite SmartTemplates for future versions of 
+        Thunderbird. 
+      </p>
+      <p>
+        The main menu button currently looks like this if Add-ons are awaiting new permissions:<br>
+        <img src="img/permissions.png" />
+      </p>
+      <p>
+        To complete the installation you need to click on the menu item "SmartTemplates requires new permissions..."<br>
+        <img src="img/permissions-menu.png" />
+      </p>
+      <p>
+        I hope to either educate my users to complete upgrades by clicking this button or code another method
+        of directly alerting the user from the previous version of SmartTemplates when a new version is
+        available.
+      </p>
+    </li>
+    <li>
+      If your previous version was 3.4.4 or earlier you were likely affected by the previously described issue. 
+      This means that also the changes in <a href="#3.5.4">section 3.5.4</a> below will be relevant to you.
+    </li>
+    <h5 class="inList"><span class="inListTitle">Bug Fixes</span></h5>
+    <li> <a href="https://github.com/RealRaven2000/SmartTemplates/issues/134">[issue 134]</a>
+      Support tab was missing in version 3.5.4
+    </li>
+    <li>
+      Added an option for skipping the splash screen (licensed users only). This also means that any changes
+      have to be looked up manually on the website, where they are only available in English language.
+    </li>
+    <h5 class="inList"><span class="inListTitle">Miscellaneous</span></h5>
+    <li>
+      Removed animation on Splash screen for licensed users.
+    </li>
+  </ul>
+</li> 
+
+<a id="3.5"> &nbsp; </a>
+<a id="3.5.1"> &nbsp; </a>
+<a id="3.5.2"> &nbsp; </a>
+<a id="3.5.3"> &nbsp; </a>
+<a id="3.5.4"> &nbsp; </a>
+<li>
+  <h4>
+		<a href="https://addons.thunderbird.net/thunderbird/addon/324497/versions/3.5.4">Version 3.5.4 - 03/06/2021</a>
+		<br>
+		<span class="appWrapper">
+			<span class="thunderbird">74.* - 90.0</span> 
+		</span>
+  </h4>
+
+  <ul>
+    <h5 class="inList"><span class="inListTitle">Enhancements</span></h5>
+    <li>
+      <a href="https://github.com/RealRaven2000/SmartTemplates/issues/125">[issue 125]</a> 
+      Improved support for converting encoded characters used in address fields such as "from"
+    </li>
+    <li>
+      3.5.4 - Added wrench button to open settings from Add-ons Manager with a single click.
+    </li>
+    <h5 class="inList"><span class="inListTitle">Bug Fixes</span></h5>
+    <li> 
+      <a href="https://github.com/RealRaven2000/SmartTemplates/issues/133">[issue 133]</a> 
+      Fixed in 3.5.3 - a Problem with Licensing Dialog that couldn't open the web shop if valid license was already entered.
+    </li>
+    <li>
+      <a href="https://github.com/RealRaven2000/SmartTemplates/issues/126">[issue 126]</a> 
+      Fixed: Enabling 'Resolve names from Address book' falsely disables advanced options
+    </li>
+    <li>
+      <a href="https://github.com/RealRaven2000/SmartTemplates/issues/130">[issue 130]</a> 
+      Fixed: Error in localization for Traditional Chinese (zh-TW) breaks settings dialog.
+    </li>
+    <li>
+      Added Localization for Catalan language - this is partly derived from the Occitan
+      locale of an older version.
+    </li>
+    <li> Problem with Trial date calculation due to new Legacy Prefs method - fixed in 3.5.2 </li>
+    <h5 class="inList"><span class="inListTitle">Miscellaneous</span></h5>    
+    <li>
+      <a href="https://github.com/RealRaven2000/SmartTemplates/issues/127">[issue 127]</a> 
+      Make SmartTemplates compatible with Thunderbird 89.0 - this is ongoing work
+      which aims for a smooth transition toward the next ESR version,
+      Thunderbird 91 which is planned to be released in Summer 2022.
+    </li>
+    <li>
+      SmartTemplates now supports multiple Thunderbird windows, via the new background script notifications.
+      Using the new background script notification mechanism for all template menus. When configuring the menus, these are now updated properly across all windows once the settings dialog is closed. Even with multiple Thunderbird windows opened.
+    </li>
+  </ul>
+  
+  <ul>
+    <h5 class="inList"><span class="inListTitle">Maintenance version history</span></h5>
+    <li>3.5.1 - released on 21/05/2021</li>
+    <li>3.5.2 - released on 26/05/2021</li>
+    <li>3.5.3 - released on 27/05/2021</li>
+    <li>3.5.4 - released on 03/06/2021</li>
+  </ul>    
+  
+</li> 
+
+
+
+<a id="3.4"> &nbsp; </a>
+<a id="3.4.1"> &nbsp; </a>
+<a id="3.4.2"> &nbsp; </a>
+<a id="3.4.3"> &nbsp; </a>
+<a id="3.4.4"> &nbsp; </a>
+<li>
+  <h4>
+		<a href="https://addons.thunderbird.net/thunderbird/addon/324497/versions/3.4.4">Version 3.4.4 - 15/02/2021</a>
+		<br>
+		<span class="appWrapper">
+			<span class="thunderbird">74.* - 78.*</span> 
+		</span>
+  </h4>
+  
+    
+  <ul>
+    <h5 class="inList"><span class="inListTitle">Enhancements</span></h5>
+    <li><a href="https://github.com/RealRaven2000/SmartTemplates/issues/91">[issue 91]</a> 
+      Improved the functions <code class="inline">%deleteQuotedText%</code> and <code class="inline">%replaceQuotedText%</code> 
+      so they can  be used in plain text mode (quote level argument will be ignored).
+      <p>
+       In plain text mode, you can now use this to remove quote marks, with the command<code> %deleteQuotedText("\>\s")%</code> 
+       or use <code>%replaceQuotedText("\>\s","| ")%</code> to replace the quote marks with straight vertical lines
+      </p>
+    </li>
+    <li>
+      Added examples in variables window for %header.delete(subject)% and %header.set(from)% 
+      in (Modify Mail Header) section.
+    </li>
+    <li>
+      <a href="https://github.com/RealRaven2000/SmartTemplates/issues/71">[issue 71]</a> 
+      Added support for setting non-standard header attributes starting with "List" e.g. List-Unsubscribe
+    </li>
+    <li>
+      Improved / fixed warning messages for users with expired licenses.
+      <a href="https://github.com/RealRaven2000/SmartTemplates/issues/82">[issue 82]</a>
+      Added a notice about soon-to-expire license in status bar.<br>
+      <img class="screenshot" src="img/status-license-expiry.png">
+    </li>
+    <li>
+      3.4.3 - open the license tab when status icon is clicked with expired license to make renewal easier.
+    </li>
+  </ul>
+  
+  <ul>
+    <h5 class="inList"><span class="inListTitle">Bug Fixes</span></h5>
+    <li><a href="https://github.com/RealRaven2000/SmartTemplates/issues/115">[issue 115]</a> 
+      Fixed - Erratic <code>%datetime()%</code> results when forcing HTML with Shift.
+      This was caused by converting Spaces to html entities.
+    </li>
+    <li>
+      <a href="https://github.com/RealRaven2000/SmartTemplates/issues/117">[issue 117]</a> 
+      <code class="inline">%header.set(from,"some@address.com")%</code> not working in Thunderbird 78.
+      You can now also add a name when setting the from address. For example
+      <code>%header.set(from,"Postmaster &lt;postm@address.com&gt;")%</code>
+      This function only works if the Email address is listed in any identity (including aliases).
+    </li>
+    <li>
+      With option "Remove email address unless format parameter is specified", mail parts such as 
+      %from(...,mail)%, %from(...,bracketMail())% were removed
+    </li>
+    <li>
+      <a href="https://github.com/RealRaven2000/SmartTemplates/issues/119">[issue 119]</a> 
+      (fixed in 3.4.2) XML Parsing Error settings dialog (it / sv / uk locales)
+    </li>
+    <h5 class="inList"><span class="inListTitle">Known Issues - Fixed in 3.4.4</span></h5>
+    <li>
+      <a href="https://github.com/RealRaven2000/SmartTemplates/issues/120">[issue 120]</a> 
+      Spanish locale broken which creates an error when options screen is displayed (since 3.4.1)
+    </li>
+    <li><a href="https://github.com/RealRaven2000/SmartTemplates/issues/121">[issue 121]</a> 
+      Important bug: Common settings are shown even though the correct account seems to be selected!
+    </li>
+  </ul>
+  
+  <ul>
+    <h5 class="inList"><span class="inListTitle">Maintenance version history</span></h5>
+    <li>3.4.4 - released on 15/02/2021</li>
+    <li>3.4.3 - released on 08/02/2021</li>
+    <li>3.4.2 - released on 06/02/2021</li>
+  </ul>    
+</li> 
+
+
+<a id="3.3"> &nbsp; </a>
+<a id="3.3.1"> &nbsp; </a>
+<li>
+  <h4>
+		<a href="https://addons.thunderbird.net/thunderbird/addon/324497/versions/3.3.1">Version 3.3.1 - 04/01/2021</a>
+		<br>
+		<span class="appWrapper">
+			<span class="thunderbird">74.* - 78.*</span> 
+		</span>
+  </h4>
+  <div class="psa smartTemplateProUser">
+    Thank you for supporting SmartTemplates with a Pro License! Some of the new features
+    and bug fixes below were also now back ported into 2.13 for the benefit of my legacy users
+    who decided to stay with Thunderbird 68.
+  </div>
+  <div class="psa smartTemplateFreeUser">  
+    If you don't have a SmartTemplates license yet, please consider 
+    <a href="http://sites.fastspring.com/quickfolders/product/smarttemplate4?referrer=st-version-page">getting one</a> 
+    to support the project. There are a lot of helpful changes done in this version and more to come 
+    - see the github <a href="https://github.com/RealRaven2000/SmartTemplates/issues/">issues tracker</a>
+    for what's planned next.
+  </div>  
+  
+  <ul>
+    <h5 class="inList"><span class="inListTitle">Enhancements</span></h5>
+    <li><a href="https://github.com/RealRaven2000/SmartTemplates/issues/61">[issue 61]</a> 
+      <code>%quotePlaceholder(<i>quoteLevel</i>)%</code> newly implemented function for 
+      including quoted mail within the template for styling - use the numeric <i>quoteLevel</i>
+      parameter to exclude older quotes from the conversation. 
+      If a quote Header is configured in the account template settings this will also be moved 
+      to the top of the first quote.
+    </li>
+    <li>
+      <a href="https://github.com/RealRaven2000/SmartTemplates/issues/96">[issue 96]</a> 
+      Provide keyboard accelerators for Template picker.
+    </li>
+    <li>Improved Scrolling behavior if <code class="inline">%cursor%</code> is used.</li>
+    <li><a href="https://github.com/RealRaven2000/SmartTemplates/issues/110">[issue 110]</a> Enhancement: Maximize "Account" selector in settings.</li>
+    <li><a href="https://github.com/RealRaven2000/SmartTemplates/issues/112">[issue 112]</a> Enhancement: Preselect account of current folder when opening settings (like in Tb68).</li>
+  </ul>
+  <ul>
+    <h5 class="inList"><span class="inListTitle">Bug Fixes</span></h5>
+    <li>
+      <a href="https://github.com/RealRaven2000/SmartTemplates/issues/104">[issue 104]</a> 
+      Fixed: Polish locale crashes settings dialog.
+    </li>
+    <li>
+      <a href="https://github.com/RealRaven2000/SmartTemplates/issues/102">[issue 102]</a> 
+      Fixed: %dateformat()% fails if month name / day name variables are included and %language()% set.
+    </li>
+    <li>
+      <a href="https://github.com/RealRaven2000/SmartTemplates/issues/108">[issue 108]</a> 
+      Fixed: Other Add-ons may accidentally lead to duplicated template if they change the 
+      from address in Composer.
+    </li>      
+  </ul>
+</li> 
+
+<a id="3.2"> &nbsp; </a>
+<li>
+  <h4>
+		<a href="https://addons.thunderbird.net/thunderbird/addon/324497/versions/3.2">Version 3.2 - 20/12/2020</a>
+		<br>
+		<span class="appWrapper">
+			<span class="thunderbird">74.* - 78.*</span> 
+		</span>
+  </h4>
+  <div class="psa smartTemplateFreeUser">
+    If you don't have a SmartTemplates license yet, please consider 
+    <a href="http://sites.fastspring.com/quickfolders/product/smarttemplate4?referrer=st-version-page">getting one</a> 
+    to support the project. There are a lot of helpful changes done in this version and more to come 
+    - see the github <a href="https://github.com/RealRaven2000/SmartTemplates/issues/">issues tracker</a>
+    for what's planned next.
+  </div>
+  <div class="psa smartTemplateProUser">
+    Thank you for supporting SmartTemplates with a Pro License! This version resolves some 
+    issues with the trial period not resetting once your license runs out, this is to
+    ensure there is no delay while writing your emails and give you a fresh 28 days to renew your 
+    license without interruptions after the license is expired.
+  </div>
+  <ul>
+    <h5 class="inList"><span class="inListTitle">Enhancements</span></h5>
+    <li>New function: <code>%conditionalText(forwardMode,"inline text","forward text")%</code> inserts text based 
+        on forwarding inline vs attached; added by Artem (conductor111 on github).</li>
+    <li>Omit update popup for users with licenses > 40days</li>
+    <li>Domain Licenses can now be renewed (and extended 30 days before expiry) directly from the license dialog.</li>
+    <li>Reopening existing tabs on support site now correctly jumps to in page links (such as #donate)</li>
+    <li>Some minor improvements in layout for settings dialog and license screen.</li>
+  </ul>
+  <ul>
+    <h5 class="inList"><span class="inListTitle">Bug Fixes</span></h5>
+    <li><a href="https://github.com/RealRaven2000/SmartTemplates/issues/98">[issue 98]</a> - Fixed: %header.set(to,"[addressee]")% no longer working.</li>
+    <li><a href="https://github.com/RealRaven2000/SmartTemplates/issues/100">[issue 100]</a> - Trial period should restart on license expiry.</li>
+    <li>Fixed some errors in Serbian, Slovenian and Portuguese help sections.</li>
+    <li>Fixed reminder for Pro functions - this notification should be shown if a Standard User uses functions reserved for SmartTemplates Pro Users</li>
+  </ul>
+</li> 
+
+
+<a id="3.1"> &nbsp; </a>
+<li>
+  <h4>
+		<a href="https://addons.thunderbird.net/thunderbird/addon/324497/versions/3.1">Version 3.1 - 24/11/2020</a>
+		<br>
+		<span class="appWrapper">
+			<span class="thunderbird">74.0 - 78.*</span> 
+		</span>
+  </h4>
+  <ul>
+    <h5 class="inList"><span class="inListTitle">Bug Fixes</span></h5>
+    <li>
+      This new early version after release of 3.0 for Thunderbird 78 was necessary after 
+      releasing 2.12.1 for my legacy users (Thunderbird 60 and older)
+    </li>
+    <li class="psa smartTemplateFreeUser">
+      <p style="text-align: center;">
+        <img src="img/esr78/logo-pro.png" alt="logo"/>
+      </p>
+      <p>
+        We had to rewrite much of the code to become compatible with Thunderbird 78. 
+        To keep having support sites and ongoing development, please 
+        <a href="http://sites.fastspring.com/quickfolders/product/smarttemplate4?referrer=st-version-page">buy a Pro license</a>
+      </p>
+      <p> 
+        Migration to the Thunderbird 78 Add-ons system - mail extensions with experimental APIs - was time intensive and costly.
+        This is only the first step toward future proofing, next year Thunderbird may restrict the use of experimental
+        APIs, which depends on having new APIs available on the Core side of the code. This relies on a good
+        relationship between Add-on developers and the Core team (Thunderbird Council) and requires ongoing
+        talking and design work on both sides; that's why the licensing model once again shows its superiority
+        as it is able to fund the necessary time that needs to be spent.
+      </p>
+      <p>
+        To make sure this still works, please
+        <a href="http://sites.fastspring.com/quickfolders/product/smarttemplate4?referrer=st-version-page">buy a license</a>.
+      </p>
+    </li>
+   <li>
+      <a href="https://github.com/RealRaven2000/SmartTemplates/issues/94">[issue 94]</a>
+      SmartTemplates does not insert template when Forwarding inline based on an Email written with ST</li>
+    <li><a href="https://github.com/RealRaven2000/SmartTemplates/issues/85">[issue 85]</a>
+      fixed more dead links linking to old mozdev bugzilla bugs (these are now archived on quickfolders.org)</li>
+    <li>
+      Reenable the sandboxed string scripting by Benito van der Zander. 
+      Set the the config option <tt>extensions.smartTemplate4.allowScripts = true</tt>
+      to get them back!
+    </li>
+  </ul>
+</li> 
+
+
+<a id="3.0"> &nbsp; </a>
+<li>
+  <h4>
+		<a href="https://addons.thunderbird.net/thunderbird/addon/324497/versions/3.0">Version 3.0 - 04/11/2020</a>
+		<br>
+		<span class="appWrapper">
+			<span class="thunderbird">74.* - 78.*</span> 
+		</span>
+  </h4>
+  
+  <ul>
+    <li><a href="https://github.com/RealRaven2000/SmartTemplates/issues/69">[issue 69]</a>
+      Make SmartTemplate4 compatible with Thunderbird 78
+    </li>
+    <li>
+      Use the new mail extension with experiment APIs method (WindowLoader).
+      This loads the overlay dynamically -  the advantage being that the Add-ons now 
+      works without restarting. You can also disable / uninstall without having to 
+      restart Thunderbird.
+    </li>
+    <li>
+      Remove Shim Code - this was code for backwards compatibilty with older Thundebrird versions 
+      as well as SeaMonkey and Postbox
+    </li>
+    <li>
+      Remove support for SeaMonkey
+    </li>
+    <li>
+      Remove Stationery references & configuration
+    </li>
+    <li>
+      Rewrote filling in variables and focus method to work with new address widgets
+    </li>
+    <li>
+      Rewrite all template dropdowns. This is based on a hack supplied by John Bieling, thanks very much for all the help.
+    </li>
+  </ul>
+  
+</li> 
+
+<h3>Versions for Thunderbird 68 and older.</h3>
+
+<!-- STUB
+
+<a id="2.xx"> &nbsp; </a>
+<li>
+  <h4>
+		<a href="https://github.com/RealRaven2000/quickfolders/releases/2.xx" onclick="alert('This is still Work in Progress!\nPlease mail us if you want a preview version for testing.\n\nThank you!')">Version 2.xx - WIP</a>
+		<br>
+		<span class="appWrapper">
+			<span class="thunderbird">60.0 - 68.*</span> 
+			<span class="seamonkey">2.0.0 - 2.49.*</span> 
+		</span>
+  </h4>
+  <ul>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
+</li> 
+
+-->
+
+<a id="2.18"> &nbsp; </a>
+<li>
+  <h4>
+		<a href="https://github.com/RealRaven2000/SmartTemplates/releases/tag/2.18" >Version 2.18 - 03/02/2022</a>
+		<br>
+		<span class="appWrapper">
+			<span class="thunderbird">60.0 - 68.*</span> 
+			<span class="seamonkey">2.0.0 - 2.49.*</span> 
+		</span>
+  </h4>
+  
+  <div class="psa announcement">
+    <p>
+      ATN (addons.thunderbird.net) does not accept versions for Thunderbird 68 anymore - so 
+      any future version for legacy Add-ons will now be released to 
+      <a href="https://github.com/RealRaven2000/SmartTemplates/releases">the SmartTemplates github releases page</a>.
+    </p>
+    <p>
+      Please note that <span class="emphasis">SmartTemplates is compatible with the latest version of Thunderbird (91.4)</span> - if you get a message 
+      that says otherwise after updating from earlier versions (Tb68 or Tb78) or <b>if SmartTemplates cannot be enabled</b> with 
+      the blue slider, simply remove it and reinstall it via "Find more Add-ons" on the Extensions tab of Add-ons Manager:
+    </p>
+    <div class="reinstallInstructions">
+      <p>First try if you can enable SmartTemplates using the slider: <br>
+        <img class="screenshot" src="img/enable-st.png" alt="enable SmartTemplates" /> 
+      </p>
+      <p> 
+        If this doesn't work, then removing the Add-on via Thunderbird the Add-ons Manager will still retain your settings:<br>
+        <img class="screenshot" src="img/remove-st.png" alt="remove to reinstall" /> 
+      </p>
+      <p>
+        In the Search box, enter the term <i>SmartTemplates</i>, and press the Enter key:<br>
+        <img class="screenshot" src="img/search-st-addon.png" alt="force reinstallation via Addon Manager" /> 
+      </p>
+    <p>
+      Then click on the <i>Add to Thunderbird</i> button:<br>
+        <img class="screenshot" src="img/install-from-atn.png" alt="Add to Thunderbird" />
+      </p>
+    </div>
+    <div class="expandInstructions">Click to read instructions for reinstalling:</div> <br>
+  </div>  
+  
+  <ul>
+    <h5 class="inList"><span class="inListTitle">Enhancements</span></h5>
+    <li>
+      <a href="https://github.com/RealRaven2000/SmartTemplates/issues/151">[issue 151]</a> 
+      New single variable <code>%recipient%</code> for final recipient to replace <code class="inline">%to%</code> / <code class="inline">%from%</code> in all compose case templates. This makes it easier to reuse the same template for writing / replying / forwarding and is also less confusing, as it does not "change perspective" as <code class="inline">%to%</code> does!
+    </li>
+    <li><a href="https://github.com/RealRaven2000/SmartTemplates/issues/166">[issue 166]</a>  
+      <code>%recipient%</code> should use reply-to header id present when replying.
+    </li>
+    <li></li>
+  </ul>
+</li> 
+
+<a id="2.17"> &nbsp; </a>
+<li>
+  <h4>
+		<a href="https://github.com/RealRaven2000/SmartTemplates/releases/tag/2.17">Version 2.17 - 09/12/2021</a>
+		<br>
+		<span class="appWrapper">
+			<span class="thunderbird">60.0 - 68.*</span> 
+			<span class="seamonkey">2.0.0 - 2.49.*</span> 
+		</span>
+  </h4>
+  
+  <ul>
+    <h5 class="inList"><span class="inListTitle">Enhancements</span></h5>
+    <li>
+      <p>
+        <a href="https://github.com/RealRaven2000/SmartTemplates/issues/142">[issue 142]</a> 
+        New feature to insert html Smart snippets within Composer.<br>
+        To get started, add the new "Insert Snippet" button to composer:<br>
+        <img src="img/snippets-configure.png" class="screenshot"> 
+      </p>
+      <p>
+        You can add fragments here by opening files and adding them to the list, just like the
+        HTML template files for the cases "write", "reply" and "forward". This list will be
+        shared globally across all these cases:<br>
+        <img src="img/settings-snippets.png" class="screenshot"> 
+      </p>
+    </li>
+    <li>
+      <a href="https://github.com/RealRaven2000/SmartTemplates/issues/164">[issue 164]</a>
+      Feature: Added *selection* placeholder for inserting HTML snippets (fragments).
+    </li>
+    <li>
+      <p>
+        <a href="https://github.com/RealRaven2000/SmartTemplates/issues/147">[issue 147]</a> 
+        Added category submenus to structure template lists.<br>
+        Type a category into the field and update the menu item to make the 
+        template appear in a new submenu:<br>
+        <img src="img/template-category.png" class="screenshot"> 
+      </p>
+    </li>
+    
+    <h5 class="inList"><span class="inListTitle">Bug Fixes</span></h5>
+    <li>
+      Fixed: <a href="https://github.com/RealRaven2000/SmartTemplates/issues/139">[issue 139]</a> 
+      Double template inserted when replying to own email - Tb Conversations Add-on!
+    </li>
+
+    <li>
+      Fixed: <a href="https://github.com/RealRaven2000/SmartTemplates/issues/156">[issue 156]</a> 
+      When FORWARDING, <code class="inline">%quotePlaceholder%</code> doesn't position forwarded mail text correctly.
+    </li>
+    <li> 
+      Fixed: <a href="https://github.com/RealRaven2000/SmartTemplate4/issues/149">[issue 149]</a>
+      If no <code class="inline">%cursor%</code> is entered, HTML template may be truncated / reformatted at the end
+    </li>
+    <li> 
+      Fixed: <a href="https://github.com/RealRaven2000/SmartTemplate4/issues/153">[issue 153]</a>
+      Recipient Names which are only 1 Character long are dropped
+    </li>
+    <li> 
+      Fixed: <a href="https://github.com/RealRaven2000/SmartTemplate4/issues/152">[issue 152]</a>
+      Tb 68 - when starting Thunderbird, the template submenus are intermittently not populated
+    </li>
+    <li>
+      Fixed: <a href="https://github.com/RealRaven2000/SmartTemplate4/issues/163">[issue 163]</a> With Cardbook installed, SmartTemplates statusbar icon may not be shown
+    </li>
+  </ul>
+</li> 
+
+<a id="2.16"> &nbsp; </a>
+<li>
+  <h4>
+		<a href="https://addons.thunderbird.net/thunderbird/addon/324497/versions/2.16">Version 2.16 - 16/02/2021</a>
+		<br>
+		<span class="appWrapper">
+			<span class="thunderbird">60.0 - 68.*</span> 
+			<span class="seamonkey">2.0.0 - 2.49.*</span> 
+		</span>
+  </h4>
+  
+  <ul>
+    <li>
+      <p>
+        <a href="https://github.com/RealRaven2000/SmartTemplates/issues/135">[issue 135]</a> Expand multiple recipients with %to(firstname)% in New Mail Template.
+      </p>
+      <p>
+        When replying to an email we expect the variable %from(firstname)% to fill in all recipient names, using the address widget. They will be delimited by the character entered in advanced settings under the Name Rules box.
+      </p>
+    </li>
+  </ul>
+</li> 
+
+<a id="2.15"> &nbsp; </a>
+<li>
+  <h4>
+		<a href="https://addons.thunderbird.net/thunderbird/addon/324497/versions/2.15">Version 2.15 - 20/05/2021</a>
+		<br>
+		<span class="appWrapper">
+			<span class="thunderbird">60.0 - 68.*</span> 
+			<span class="seamonkey">2.0.0 - 2.49.*</span> 
+		</span>
+  </h4>
+  
+  <ul>
+    <h5 class="inList"><span class="inListTitle">Enhancements</span></h5>
+    <li>
+      <a href="https://github.com/RealRaven2000/SmartTemplates/issues/125">[issue 125]</a> 
+      Improved support for converting encoded characters used in address fields such as "from"
+    </li>
+    <h5 class="inList"><span class="inListTitle">Bug Fixes</span></h5>
+    <li>
+      <a href="https://github.com/RealRaven2000/SmartTemplates/issues/125">[issue 125]</a> 
+      Fixed: Cardbook address names are resolved with weird characters
+    </li>
+    <li>
+      <a href="https://github.com/RealRaven2000/SmartTemplates/issues/126">[issue 126]</a> 
+      Fixed: Enabling 'Resolve names from Address book' falsely disables advanced options
+    </li>
+    <h5 class="inList"><span class="inListTitle">Miscellaneous</span></h5>    
+    <li>
+      <a href="https://github.com/RealRaven2000/SmartTemplates/issues/127">[issue 127]</a> 
+      Make SmartTemplates compatible with Thunderbird 88.0 - this is ongoing work
+      which aims for a smooth transition toward the next ESR version,
+      Thunderbird 91 which is planned to be released in Summer 2022.
+    </li>
+  </ul>
+</li> 
+
+<a id="2.14"> &nbsp; </a>
+<a id="2.14.1"> &nbsp; </a>
+<a id="2.14.2"> &nbsp; </a>
+<a id="2.14.2.1"> &nbsp; </a>
+<a id="2.14.3"> &nbsp; </a>
+<a id="2.14.4"> &nbsp; </a>
+<a id="2.14.4.1"> &nbsp; </a>
+<li>
+  <h4>
+		<a href="https://addons.thunderbird.net/thunderbird/addon/324497/versions/2.14.4">Version 2.14.4 - 15/02/2021</a>
+		<br>
+		<span class="appWrapper">
+			<span class="thunderbird">60.0 - 68.*</span> 
+			<span class="seamonkey">2.0.0 - 2.49.*</span> 
+		</span>
+  </h4>
+  <div class="psa smartTemplateProUser">
+    Thank you for supporting SmartTemplates with a Pro License! Some of the new features
+    and bug fixes below were also now back ported into 2.14 for the benefit of my legacy users
+    who decided to stay with Thunderbird 68.
+  </div>
+  
+  <div class="psa smartTemplateFreeUser">  
+    If you don't have a SmartTemplates license yet, 
+    <a href="http://sites.fastspring.com/quickfolders/product/smarttemplate4?referrer=st-version-page">consider getting one</a> 
+    to support the project. There are a lot of helpful changes done in this version and more to come 
+    - see the github <a href="https://github.com/RealRaven2000/SmartTemplates/issues/">issues tracker</a>
+    for what's planned next.
+  </div>  
+
+  <ul>
+  
+    <h5 class="inList"><span class="inListTitle">Known Issue - Thunderbird 60 only</span></h5>
+    <li>
+      <a href="https://github.com/RealRaven2000/SmartTemplates/issues/123">[issue 123]</a> 
+      Only affects older Thunderbird versions which read install.rdf - version 2.14.4 keeps auto-updating 
+      because of an internally wrong version number. There is a patched version  at the link above.
+    </li>
+  
+  
+    <h5 class="inList"><span class="inListTitle">Enhancements</span></h5>
+    <li>
+      Added examples in variables window for %header.delete(subject)% and %header.set(from)% 
+      in (Modify Mail Header) section and documentation for %conditionalText()%.
+    </li>
+    <li>
+      Improved / fixed warning messages for users with expired licenses.
+      <a href="https://github.com/RealRaven2000/SmartTemplates/issues/82">[issue 82]</a>
+      Added a notice about soon-to-expire license in status bar.<br>
+      <img class="screenshot" src="img/status-license-expiry.png"><br>
+      Click the panel to extend or renew your license.
+    </li>
+    <li>
+      <a href="https://github.com/RealRaven2000/SmartTemplates/issues/71">[issue 71]</a> 
+      Added support for setting non-standard header attributes starting with "List" e.g. List-Unsubscribe
+    </li>
+    <li><a href="https://github.com/RealRaven2000/SmartTemplates/issues/91">[issue 91]</a> 
+      Improved the functions <code class="inline">%deleteQuotedText%</code> and <code class="inline">%replaceQuotedText%</code> 
+      so they can  be used in plain text mode (quote level argument will be ignored).
+      <p>
+       In plain text mode, you can now use this to remove quote marks, with the command<code> %deleteQuotedText("\>\s")%</code> 
+       or use <code>%replaceQuotedText("\>\s","| ")%</code> to replace the quote marks with straight vertical lines
+      </p>
+    </li>
+    <li>Reopening existing tabs on support site now correctly jumps to in page links (such as #donate)</li>
+  </ul>
+
+  
+  <ul>
+    <h5 class="inList"><span class="inListTitle">Bug Fixes</span></h5>
+    <li><a href="https://github.com/RealRaven2000/SmartTemplates/issues/115">[issue 115]</a> 
+      Fixed - Erratic <code>%datetime()%</code> results when forcing HTML with Shift.
+      This was caused by converting Spaces to html entities.
+    </li>
+    <li>
+      With option "Remove email address unless format parameter is specified", mail parts such as 
+      %from(...,mail)%, %from(...,bracketMail())% were removed
+    </li>
+    <li>
+      <a href="https://github.com/RealRaven2000/SmartTemplates/issues/119">[issue 119]</a> 
+      (fixed in 2.14.2) XML Parsing Error settings dialog (it / sv / uk locales)
+    </li>
+    <li> 
+      2.14.3 - open the license tab when status icon is clicked with expired license to make renewal easier.
+    </li>
+    
+    <h5 class="inList"><span class="inListTitle">Known Issues - Fixed in 2.14.4</span></h5>
+    <li>
+      <a href="https://github.com/RealRaven2000/SmartTemplates/issues/120">[issue 120]</a> 
+      Spanish locale broken which creates an error when options screen is displayed (since 3.4.1)
+    </li>
+    <li>
+      <a href="https://github.com/RealRaven2000/SmartTemplates/issues/121">[issue 121]</a> 
+      Important bug: Common settings are shown even though the correct account seems to be selected!
+    </li>
+  </ul>
+  
+  <ul>
+    <h5 class="inList"><span class="inListTitle">Maintenance version history</span></h5>
+    <li>2.14.4- released on 15/02/2021</li>
+    <li>2.14.3 - released on 08/02/2021</li>
+    <li>2.14.2.1 - released on 06/02/2021</li>
+    <li>2.14.1 - released on 05/02/2021</li>
+  </ul>    
+
+</li> 
+
+<a id="2.13"> &nbsp; </a>
+<li>
+  <h4>
+		<a href="https://addons.thunderbird.net/thunderbird/addon/324497/versions/2.13">Version 2.13 - 01/01/2021</a>
+		<br>
+		<span class="appWrapper">
+			<span class="thunderbird">60.0 - 68.*</span> 
+			<span class="seamonkey">2.0.0 - 2.49.*</span> 
+		</span>
+  </h4>
+  <div class="psa">
+    There are already several compatible versions for Thunderbird 78 (see above). If you still are running
+    Thunderbird 68 or an older versions consider what is holding you back from upgrading. A lot of 
+    Add-ons have since been rewritten for the more modern, faster version of Thunderbird which is 
+    going to be in ESR support until the end of 2021.
+  </div>    
+  <p>Backported features for users of Thunderbird 68. This is a selection of the more important features implemented in the Tb78 compatible versions 3.x</p>
+  <ul>
+    <h5 class="inList"><span class="inListTitle">Enhancements</span></h5>
+    <li><a href="https://github.com/RealRaven2000/SmartTemplates/issues/61">[issue 61]</a> 
+      <code>%quotePlaceholder(<i>quoteLevel</i>)%</code> new function for including quoted mail within the template for styling
+      - use the numeric <i>quoteLevel</i> parameter to exclude older quotes from the conversation. 
+      If a quote Header is configured in the account template this will be moved with the top of the quote.
+    </li>
+    <li>
+      <a href="https://github.com/RealRaven2000/SmartTemplates/issues/96">[issue 96]</a> Provide keyboard accelerators for Template picker.
+    </li>
+    <li>Rebranded from SmartTemplate4 to SmartTemplates for simplification.</li>
+    <li>
+      <a href="https://github.com/RealRaven2000/SmartTemplates/issues/100">[issue 100]</a> 
+      Trial period should restart on license expiry for registered users who had a valid license before.
+      This way there will be no disruptive waiting periods when opening Composer after license expiry.
+    </li>
+    <li>Fixed support links to use secure protocol.</li>
+    <li>Improved shop integration for extending / renewing Domain licenses.</li>
+    <li>Made toggling spellcheck through %spellcheck()% function more reliable.</li>
+  </ul>
+  <ul>
+    <h5 class="inList"><span class="inListTitle">Bug Fixes</span></h5>
+    <li><a href="https://github.com/RealRaven2000/SmartTemplates/issues/108">[issue 108]</a>
+      Fixed: Other Add-ons may accidentally duplicate template if they change the from address in Composer.
+    </li>
+  </ul>
+</li> 
+
+
+<a id="2.12"> &nbsp; </a>
+<a id="2.12.1"> &nbsp; </a>
+<li>
+  <h4>
+		<a href="https://addons.thunderbird.net/thunderbird/addon/324497/versions/2.12.1">Version 2.12.1 - 24/11/2020</a>
+		<br>
+		<span class="appWrapper">
+			<span class="thunderbird">60.0 - 68.*</span> 
+			<span class="seamonkey">2.0.0 - 2.49.*</span> 
+		</span>
+  </h4>
+  <ul>
+    <li>Known issue - on Thunderbird versions before 68, there is a fauly "pre7" tag in the version number leading 
+      to an unintended daily update. I have fixed this in emergency build 2.12.1</li>
+    <li><a href="https://github.com/RealRaven2000/SmartTemplates/issues/85">[issue 85]</a>
+      Dead link on addons homepage</li>
+    <li><a href="https://github.com/RealRaven2000/SmartTemplates/issues/77">[issue 77]</a>
+      %file()% path truncated at front by 1 letter on Mac OS</li>
+    <li><a href="https://github.com/RealRaven2000/SmartTemplates/issues/94">[issue 94]</a>
+      SmartTemplates does not insert template when Forwarding inline based on an Email written with ST</li>
+    <li class="psa">The new version of SmartTemplates for Thunderbird 78 is also available on atn since 04/Nov/2020
+      so if you held of on updating because of it, there is no need to stay behind on Thunderbird 68 anymore.
+      I am trying to backport important bugs on the old version in parallel, as long as it is feasible; 
+      this doubles my workload in some respect so please consider updating at some stage.
+    </li>
+  </ul>
+</li> 
+
+<a id="2.11.2"> &nbsp; </a>
+<li>
+  <h4>
+		<a href="https://addons.thunderbird.net/thunderbird/addon/324497/versions/2.11.2">Version 2.11.2 - 10/07/2020</a>
+		<br>
+		<span class="appWrapper">
+			<span class="thunderbird">60.0 - 68.*</span> 
+			<span class="seamonkey">2.0.0 - 2.49.*</span> 
+		</span>
+  </h4>
+  <ul>
+    <li class="psa smartTemplateFreeUser">
+      <p> 
+        I have started to rewrite all mail Add-ons for compatibility with Thunderbird 78. I have hired
+        a developer and am currently thinking of ways to fund raise the development effort - probably several
+        man weeks of rewriting. please do not manually update to Thunderbird78 yet. An automatic update will 
+        not happen until September 2020.
+        If you are interested in using a version of SmartTemplates  that works with Thunderbird 78,
+        consider         
+        <a href="http://sites.fastspring.com/quickfolders/product/smarttemplate4?referrer=st-version-page">buying a license</a>
+        to support the project.
+      </p>
+      <p>
+        In other news we have just successfully migrated all Add-on support sites away from the free host on 
+        <span class="emphasis">mozdev.org, which is now closed</span>. 
+        To keep having support sites and ongoing development, please 
+        <a href="http://sites.fastspring.com/quickfolders/product/smarttemplate4?referrer=st-version-page">buy a license</a>
+        (the migration has cost around $650, so there are some expense I hope to recover from the 
+        community of users).
+      </p>
+    </li>  
+  
+    <h5 class="inList"><span class="inListTitle">Bug Fixes</span></h5>
+    <li><a href="https://github.com/RealRaven2000/SmartTemplates/issues/75">[issue 75]</a> 
+      Clicking <code>%style%</code> from variables tabs inserts <code class=html>%file%</code> instead.
+      This is not intended, as only the <code>%style(file.css)%</code> command will produce
+      predictable results for including file names. With this fix, clicking on 
+      the <code>%file()%</code> variable in the variables tab will now insert the correct syntax
+      in the template area.
+    </li>
+    <li><a href="https://github.com/RealRaven2000/SmartTemplates/issues/74">[issue 74]</a> 
+      In some cases the menu templates in compact header reply buttons are doubled up
+    </li>
+    <li><a href="https://github.com/RealRaven2000/SmartTemplates/issues/73">[issue 73]</a> 
+      Improve Name Capitalization: support double names, such as "Klaus-Dieter"
+    </li>
+    <li><a href="https://github.com/RealRaven2000/SmartTemplates/issues/62">[issue 62]</a> 
+      Reply with template doesn't work from "single message" window
+    </li>
+    
+  </ul>
+  
+</li>
+
+<a id="2.11.1"> &nbsp; </a>
+<li>
+  <h4>
+		<a href="https://addons.thunderbird.net/thunderbird/addon/324497/versions/2.11.1" >Version 2.11.1 - 21/06/2020</a>
+		<br>
+		<span class="appWrapper">
+			<span class="thunderbird">60.0 - 68.*</span> 
+			<span class="seamonkey">2.0.0 - 2.49.*</span> 
+		</span>
+  </h4>
+  <ul>
+    <li class="psa smartTemplateFreeUser">
+      <p>
+        We have just successfully migrated all my Add-on support sites away from the free host on 
+        <span class="emphasis">mozdev.org, which is going to close operation end of June</span>. 
+        To keep having support sites and ongoing development, please 
+        <a href="http://sites.fastspring.com/quickfolders/product/smarttemplate4?referrer=st-version-page">buy a license</a>
+        (the migration has cost around $650, so there are some expense I hope to recover from the 
+        community of users).
+      </p>
+      <p> 
+        I will also have to rewrite all mail Add-ons as web extensions, which is currently 
+        not yet possible as all necessary APIs to replace the deprecated tech has not been implemented.
+        As in between step I plan to release SmartTemplates  as a "web experiment" for Thunderbird 78+
+        but this will take a few weeks of work. If you are interested in using a version of 
+        SmartTemplates  that works with Thunderbird 78, 
+        <a href="http://sites.fastspring.com/quickfolders/product/smarttemplate4?referrer=st-version-page">buy a license</a> to support the project.
+      </p>
+    </li>  
+    
+    <li> 2.11.1
+       <p> SmartTemplates  now adds the new <a href="https://github.com/RealRaven2000/SmartTemplates/issues/24">change template button</a> 
+       to toolbar automatically. I don't think many people have actually seen or tried it so far
+       even though it was a much requested feature. Keep forgetting that nobody has time to read change logs - 
+       a feature that cannot be seen might as well not be there.</p>
+       <p>You can use this button in the Email editor to select a different external template, but you have to do it 
+         <b>before editing / writing something</b> in the Email.
+         <img class="screenshot" src="img/change-template-select.png" alt="change template menu" />
+       </p>
+    </li>
+    
+    <li>2.11.1 <a href="https://github.com/RealRaven2000/SmartTemplates/issues/67">[issue 67]</a>
+      Regression (2.11): License warning screen comes up unexpectedly and number of "To:" rows restricted.
+      It can also lead to the Add-on "Copy Sent to Current" malfunctioning.
+    </li>  
+    <li>2.11.1 <a href="https://github.com/RealRaven2000/SmartTemplates/issues/68">[issue 68]</a>  
+      Regression (2.11): After update SmartTemplates always displays nonlicensed support sites
+    </li>  
+    <li><a href="https://github.com/RealRaven2000/SmartTemplates/issues/64">[issue 64]</a>
+      Regression: external template is removed when changing "from:" address.
+      This was caused by changes in [<a href="https://github.com/RealRaven2000/SmartTemplates/issues/24">issue 24</a>].
+    </li>
+    
+    <li>New web pages - migrated from the old (free) mozdev.org server to github by <a href="https://avinash.com.np/">Avinash Kundaliya.</a></li>
+  </ul>
+</li> 
+
+<a id="2.10.2">&nbsp;</a>
+<a id="2.11">&nbsp;</a>
+<li>
+  <h4>
+		<a href="https://addons.thunderbird.net/thunderbird/addon/324497/versions/2.11">Version 2.11 - 09/06/2020</a>
+		<br>
+		<span class="appWrapper">
+			<span class="thunderbird">60.0 - 68.*</span> 
+			<span class="seamonkey">2.0.0 - 2.49.*</span> 
+		</span>
+  </h4>
+  <ul>
+    <li class="psa smartTemplateFreeUser">
+      <p>
+        I am currently paying somebody to migrate all my Add-on support sites away from the free host on 
+        <span class="emphasis">mozdev.org, which is going to close operation end of June</span>. 
+        To keep having support sites and ongoing development, please 
+        <a href="http://sites.fastspring.com/quickfolders/product/smarttemplate4?referrer=qf-version-page">buy a license</a>
+        (the migration will cost around $650, so there are some expense I hope to recover from the 
+        community of users).
+      </p>
+      <p> 
+        I will also have to rewrite all mail Add-ons as web extensions, which is currently 
+        not yet possible as all necessary APIs to replace the deprecated tech has not been implemented.
+        As in between step I plan to release QuickFolders as a "web experiment" for Thunderbird 78+
+        but this will take a few weeks of work. If you are interested in using a version of 
+        QuickFolders that works with Thunderbird 78, 
+        <a href="http://sites.fastspring.com/quickfolders/product/smarttemplate4?referrer=qf-version-page">buy a license</a> 
+        to support the project.
+      </p>
+    </li>  
+    <li>New web pages - migrated from the old (free) mozdev.org server to github by <a href="https://avinash.com.np/">Avinash Kundaliya.</a></li>
+
+    <li><a href="https://github.com/RealRaven2000/SmartTemplates/issues/24">[issue 24]</a>
+       Select a different html template file while composer is open.
+       <br>
+       <img class="screenshot" src="img/change-template-menu.png" />
+       <br>
+       Note that <i>any manually entered text will be discarded</i> when you change the 
+       template, so do this before you start typing.
+       <br>
+       In order to do this the new <i>Change Template</i> button can be added via 
+       right-click and <i>Customize</i> on the composer toolbar.
+       After adding the button, reopen the Composer window to update it 
+       with the appropriate template list (write / reply or forward).
+       <br>
+       <img class="screenshot" src="img/change-template-customize.png" />
+    </li>
+    <li><a href="https://github.com/RealRaven2000/SmartTemplates/issues/60">[issue 60]</a>
+       Fixed some barriers with screenreader navigation in Settings Dialog.
+       All buttons on the settings screen can now be executed without mouse clicks.
+       Also the licensing message will be displayed as a OS notification which will be read out 
+       by the widely accepted JAWS reader. It appears that NVDA still cannot read these.
+       Many thanks to my user Rüdiger L. for testing this with me.
+       </li>
+    <li>Completed translations for Serbian locale.</li>
+  </ul>
+</li> 
+
+
+<a id="2.9.2"> &nbsp; </a>
+<a id="2.10"> &nbsp; </a>
+<a id="2.10.1"> &nbsp; </a>
+<li>
+  <h4>
+		<a href="https://addons.thunderbird.net/thunderbird/addon/324497/versions/2.10.1" >Version 2.10.1 - 14/04/2020</a>
+		<br>
+		<span class="appWrapper">
+			<span class="thunderbird">60.0 - 68.*</span> 
+			<span class="seamonkey">2.0.0 - 2.49.*</span> 
+		</span>
+  </h4>
+  <h5 class="inList"><span class="inListTitle">Enhancements</span></h5>
+  <ul>
+    <li>
+      <p><a href="https://github.com/RealRaven2000/SmartTemplates/issues/59">[issue 59]</a>
+        External templates: SmartTemplates  now supports image tags with relative location. 
+        This will make external templates management more compatible with Stationery and make it 
+        easier to preview / trouble shoot our templates in a web browser.
+      </p>
+      <p>
+        In order to use relative image paths, such as <code class="html">&lt;img src="images/img1.jpg"&gt;</code> such tags
+        must be included in a html (external) template. 
+        In order to use this technique in an account template instead, simply include the external html file
+        using the <code class="inline">%file()%</code> variable. When SmartTemplate opens the file, it will now
+        remember the file's location and be able to insert images from this position, just like when loading a 
+        stored web page.<br>
+        After placing the cursor in the template field, expand the dialog via <i>Advanced</i> and open the 
+        chapter <i>fixed variables</i>.<br>
+        <img class="screenshot" src="img/open-variables-tab.png" alt="click to insert %file()%" />
+        <br>
+        Click on the <code class="inline">%file()%</code> variable and select a file from disk.<br>
+        <img class="screenshot" src="img/insert-file-variable.png" alt="click to insert %file()%" />
+        <br>
+        The external template will be automatically loaded on the account, and images will be included
+        as expected.
+      </p>
+    </li>
+    <li><a href="https://github.com/RealRaven2000/SmartTemplates/issues/56">[issue 56]</a>
+       Support including external style sheets. Use the new <code>%style()%</code> variable 
+       to insert a style block wtih CSS rules. Also, supports relative paths, just like 
+       <code class="inline">%file()%</code>.</li>
+  </ul>
+  <h5 class="inList"><span class="inListTitle">Bug Fixes</span></h5>
+  <ul>
+    <li><a href="https://github.com/RealRaven2000/SmartTemplates/issues/51">[issue 51]</a>
+      Outgoing SMTP always using DEFAULT account. When changing the <i>from</i> address from the drop down
+      before editing the email, Thunderbird did not internally change the from header, which 
+      could cause emails to be sent from the wrong account. This is now fixed.
+    </li>
+    <li><a href="https://github.com/RealRaven2000/SmartTemplates/issues/54">[issue 54]</a>
+      Fixed: SmartTemplates now removes unwanted empty lines in reply/forward headers in plain-text emails.
+    </li>
+    <li><a href="https://github.com/RealRaven2000/SmartTemplates/issues/55">[issue 55]</a>
+      Added back some of the support for Postbox, which was broken since v2.1. 
+      You can find patched versions of previous releases at the issue.</li>
+    <li><a href="https://github.com/RealRaven2000/SmartTemplates/issues/58">[issue 58]</a>
+      If <code class="html">firstName</code> is guessed from the address book field <i>DisplayName</i>, 
+      it can lead to last name duplication in case a format like <code class="inline">%from(firstname,lastname)%</code> i
+      is used and the first name field in the address card is empty.</li>
+  </ul>
+</li> 
+
+<a id="2.8.1"> &nbsp; </a>
+<a id="2.9"> &nbsp; </a>
+<a id="2.9.1"> &nbsp; </a>
+<li>
+  <h4>
+		<a href="https://addons.thunderbird.net/thunderbird/addon/324497/versions/2.9.1">Version 2.9.1 - 14/02/2020</a>
+		<br>
+		<span class="appWrapper">
+			<span class="thunderbird">60.0 - 68.*</span> 
+			<span class="seamonkey">2.0.0 - 2.49.*</span> 
+		</span>
+  </h4>
+
+  <div style="font-size:smaller;"><a href="#changes2.9">Skip to change log</a></div> 
+
+  <a id="changes2.9">&nbsp; </a>
+  <p>
+    <iframe class="youtube" src="https://www.youtube.com/embed/HhnA3RbOgIw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </p>    
+
+  <h5 class="inList"><span class="inListTitle">Hotfix - 2.9.1</span></h5>
+  <ul>
+    <li>
+      Fixed on 13/03/2020 in version 2.9.1:
+      <a href="https://github.com/RealRaven2000/SmartTemplates/issues/53">[issue 53]</a>
+      template may not work if signature path is invalid:
+      <br>
+      <img class="screenshot" src="img/issue53.png" />
+      <p>
+        On mail accounts where a non-existent path is defined for signature the 
+        template functionality may break on singular accounts.
+        <br>
+        typically an exception will be displayed in error log:
+        <pre class="code">
+  insertTemplate - exception during parsing. Continuing with inserting template
+</pre>
+        Workaround: to fix the issue, remove the path from the signature field 
+        in Thunderbird account settings on the affected account. Or try to install
+        the prerelease 2.9.1 pre 1 from 
+        <a href="https://github.com/RealRaven2000/SmartTemplates/issues/53">[issue 53]</a>
+      <p>
+
+    </li>
+  </ul>
+    
+  
+  <h5 class="inList"><span class="inListTitle">Enhancements</span></h5>
+  <ul>
+    <li>
+    <a href="https://github.com/RealRaven2000/SmartTemplates/issues/45">[issue 45]</a>
+      Support for using <code class="inline">%file()%</code>  with relative paths and nesting 
+      <code class="inline">%file()%</code> variables within a template.
+      This way, you build your template with fragments, for example
+      in a subfolder <i>components</i>:
+<pre class="code maxW">
+&lt;div id="testContainer"&gt;
+  %file(components\header.html)%&lt;br&gt;
+  &lt;p&gt;Dear %from(name%) &lt;/p&gt;
+    &lt;p&gt;%cursor% &lt;/p&gt;
+  %file(components\footer.html)%&lt;br&gt;
+&lt;/div&gt;</pre>
+
+  You can then have separate header / footer files in a subfolder "components" along with the image using
+  <code class="inline">%file()%</code> with a relative path; 
+  in this example the <i>components</i> subfolder may contain the following header.html:
+<pre class="code maxW">
+&lt;div id="header"&gt;
+  %file(banner-top.png,"top banner")%&lt;br&gt;
+&lt;/div&gt;</pre>
+and the same rules for footer.html:
+<pre class="code maxW">
+&lt;div id="footer"&gt;
+  %file(banner-bottom.png,"top banner")%&lt;br&gt;
+&lt;/div&gt;</pre>
+      <p>
+        In these cases the image path is viewed "relative" to the location of the containing 
+        html file. (Here it denotes the same folder as the header and footer html fragments.)
+      </p>
+      <p>
+        As before, SmartTemplates will convert all %file(image)% instances into data
+        so that Thunderbird will not question the image's origin and require the user to
+        manually mark them as safe.
+      </p>
+    </li>
+    <li>
+      <a href="https://github.com/RealRaven2000/SmartTemplates/issues/48">[issue 48]</a>
+      Support [[optional double brackets]] syntax for all extended address book fields.
+      This will make it possible to show more information from the Addressbook without 
+      causing half-empty lines:
+<pre class="code maxW">
+&lt;h3&gt;Sender Info&lt;/h3&gt;
+Sender: %from% 
+[[Mail: %from(mail)% &lt;br&gt;]]
+[[First Name: %from(firstname)% &lt;br&gt;]]
+[[Name: %from(name)% &lt;br&gt;]]
+[[Additional mail: %from(additionalmail)% &lt;br&gt;]]
+[[Work City: %from(work.city)%&lt;br&gt;]]
+[[Web Page: %from(work.webpage)%&lt;br&gt;]]</pre>      
+    </li>
+    <li>
+      Remember the last path separately for opening templates from the menu directly.
+    </li>
+  </ul>
+  <h5 class="inList"><span class="inListTitle">Bug Fixes</span></h5>		
+  <ul>
+    <li>
+        Fixed: <a href="https://github.com/RealRaven2000/SmartTemplates/issues/42">[issue 42]</a>
+        The <code class="inline">(lastname)</code> switch uses first name from 
+        address book if only a single name is matched from the received address.
+        This affects any address book switch of the format
+        <code class="inline">%from(lastname)%</code>,
+        provided there is only a single name in the transmitted email address,
+        e.g. john@mail.com.
+    </li>
+    <li>
+       Fixed: <a href="https://github.com/RealRaven2000/SmartTemplates/issues/41">[issue 41]</a>
+       No file template menus in single message window<br>
+       Single message windows (not tabs) did not support replying / writing mails using the
+       external HTML template files.
+    </li>
+    <li>
+      Fixed: <a href="https://github.com/RealRaven2000/SmartTemplates/issues/43">[issue 43]</a>
+      <code class="inline">%file(template)%</code> doesn't work on Mac for paths that start with "/user".
+      Unfortunately, it is still not supported to use relative <code class="html">&lt;img&gt;</code> paths in a html file,
+      but when using <code class="inline">%file(img)%</code> using a path relative to 
+      the location of the template should be possible now when used from within 
+      an external HTML template file. 
+      <p>
+      Ideally we will need this to support <code class="html">&lt;img&gt;</code> paths as well.
+      </p>
+    </li>
+    <li>
+      Fix: Remove double quote from alt attribute in %file(image,alttext)%
+    </li>
+    <li>
+      Fixed: Do not run cleanupDeferredFields() on quoted elements. 
+      This leads to problems with <code class="inline">%file()%</code> variables in replied emails 
+      (both correspondents have to use SmartTemplates for this problem to occur.
+    </li>
+    <li>
+      Fixed: <a href="https://github.com/RealRaven2000/SmartTemplates/issues/46">[issue 46]</a>
+      In Thunderbird 60, mixed Stationery / SmartTemplate, external html file items added by
+      SmartTemplates do not work.
+    </li>
+    <li>
+      Fixed: <a href="https://github.com/RealRaven2000/SmartTemplates/issues/49">[issue 49]</a>
+      CSS pattern <code class="html">%;-ms-text-size-adjust:100%;</code> is falsely recognized as header variable.
+    </li>
+  </ul>
+</li> 
+
+<a id="2.8"> &nbsp; </a>
+<li>
+  <h4>
+		<a href="https://addons.thunderbird.net/thunderbird/addon/324497/versions/2.8">Version 2.8 - 24/01/2020</a>
+		<br>
+		<span class="appWrapper">
+			<span class="thunderbird">60.0 - 68.*</span> 
+			<span class="seamonkey">2.0.0 - 2.49.*</span> 
+		</span>
+  </h4>
+  
+  <div style="font-size:smaller;"><a href="#changes2.8">Skip to change log</a></div> 
+  <a id="changes2.8">&nbsp; </a>
+  <h5 class="inList"><span class="inListTitle">Enhancements</span></h5>
+  <ul>
+    <li><a href="https://github.com/RealRaven2000/SmartTemplates/issues/31">[issue 31]</a> 
+      New Pro variables to remove text / tags from quoted parts.
+      <p>
+        <code>%deleteQuotedText("<i>searchText</i>",<i>quoteLevel</i>)%</code> Deletes quoted Text <br>
+        <code>%replaceQuotedText("<i>searchText</i>","<i>replacementHTML</i>",<i>quoteLevel</i>)%</code> Replaces quoted text <br>
+        <i>searchText</i> - must be in double quotes - the searchText argument must be a regular expression. 
+        Note that whitespace can be best represented as \s because it can also contain line breaks. 
+        Commas and double quote characters cannot be used.<br>
+        <i>replacementHTML</i> - must be in double quotes - text or a html tag which will be inserted in page.
+        <i>quoteLevel</i> - optional, (number) which minimal quote level to start from
+      </p>
+      <p>
+        <code>%deleteQuotedTags("<i>selector</i>",<i>quoteLevel</i>,<i>minSize</i>)%</code> Deletes tags from the quote<br>
+        <code>%replaceQuotedTags("<i>selector</i>","<i>replacementHTML</i>",<i>quoteLevel</i>,<i>minSize</i>)%</code> Deletes tags from the quote<br>
+        <i>selector</i> -  what you would use to address the tag in css. simplest case "img", or "p" but attribute selectors 
+        can be added as long as double quotes can be avoided.<br>
+        <i>quoteLevel</i> - A note on quoteLevel, for images I would recommend 2 if you want to 
+        remove images to retain some context in your replies. This will dramatically decrease email 
+        sizes in long threads which contain a lot of images (e.g. screenshots).<br>
+        <i>minSize</i> - (optional, numeric) - number of kByte, minimum size for removing the tag. 
+        This way you can keep smaller images like icons / emojis while discarding large images.
+      </p>
+    </li>
+    <li>Variables window: Added documentation for address book functions and 
+        modernized layout. Added accordion UI to minimize scrolling.
+        Simply click one of the headers to read an article <br>
+        <img class="screenshot" src="img/variables-ui.png" alt="new variables window" />
+    </li> 
+    <li><a href="https://github.com/RealRaven2000/SmartTemplates/issues/33">[issue 33]</a>
+      New variable <code>%mailto(body)%</code> for including text of an internet mail link within your email. 
+      Also slightly improved behaviour if the body argument is empty, so that a standard template can be used 
+      when a mailto link is clicked on.</li>
+    <li><a href="https://github.com/RealRaven2000/SmartTemplates/issues/35">[issue 35]</a>
+      Extended <code>%identity%</code> with the variable 'addressbook' in order to extract <a href="variables.html#ab_fields">extended info
+      from the Address Book</a> based on an email match, some examples:<br>
+      <code class="inline">%identity(addressbook,work.title)%</code><br>
+      <code class="inline">%identity(addressbook,work.organization)%</code><br>
+      <code class="inline">%identity(addressbook,homephone)%</code>
+      <p>The addressbook variables also support using the optionality syntax [[ ... ]] in order to leave 
+         out a section of text or html if the particular addressbook field is empty. 
+         The following line will be omitted if State information is not available from the address book
+         for the current identity.<br>
+         [[State: <code class="inline">%identity(addressbook,work.state)%</code>]]
+         
+      </p>
+    </li>
+    <li>Completed translations for locales: cs, es-ES, fi, it, pl,pt-BR, ru, sl, sv-SE.</li>
+    <li>The template editor boxes now resize vertically with dialog for easier editing.</li>
+    <li>Added international examples for <code class="inline">%dateformat%</code> in the variables tab.</a>
+  </ul>
+  
+  <h5 class="inList"><span class="inListTitle">Bug Fixes</span></h5>		
+  <ul>
+    <li>
+      <a href="https://github.com/RealRaven2000/SmartTemplates/issues/32">[issue 30]</a>,
+      <a href="https://github.com/RealRaven2000/SmartTemplates/issues/32">[issue 32]</a>, 
+      <a name="26755" href="http://quickfolders.org/bugzilla/bugs/show_bug.cgi@id=26755" target="_blank">[Bug 26755]</a>
+      Fixed: some reply / forward buttons were missing the file template dropdowns<br>
+      In some cases the reply / forward buttons in the header area were not configured
+      with file templates. This could happen if no preview area was configured and no
+      single message window was opened during Thunderbird startup, which caused the 
+      necessary buttons to be missing on Application startup. It could also happen if 
+      reply all button and reply button were both configured to be always shown on 
+      the header preview.
+    </li>
+    <li>
+      <p>
+        <a href="https://github.com/RealRaven2000/SmartTemplates/issues/36">[issue 36]</a>
+        Fixed: Smart-Reply button is missing template menus / template menus not working on combined
+        "Reply All" / "Reply to Sender" / "Reply to List" button in preview header area.
+      </p>
+      <p>
+        I have added a simplified menu solution for this case:<br/>
+        <img class="screenshot" src="img/smartreply.png" alt="smart reply menu"/><br/>
+        Instead of having template submenus for each command, clicking a template below is modified
+        through the keys <key>Shift</key> and <key>Ctrl</key>. The template items will:
+        <ul style="list-style-type:disc !important; list-style-image: none !important;">
+          <li>trigger the top command (e.g. reply all) by clicking on any templates below</li>
+          <li>trigger the 2nd command (e.g. reply to sender) via Shift+click</li>
+          <li>trigger the 3rd command via Ctrl+click</li>
+        </ul>
+      </p>
+    </li>
+    <li>
+      <p>
+        <a href="https://github.com/RealRaven2000/SmartTemplates/issues/38">[issue 38]</a>
+        Fixed: Images with encoded file URLs are not loaded correctly<br>
+        An image tag that contains URLencoded characters can lead to the image not being loaded,
+        for example:
+        <code class="html">&lt;img src="file:///C%3A%5CUsers%5CJohn%5Cimg%5Cimg3.png"&gt;</code>
+      </p>
+    </li>
+  </ul>
+</li> 
+
+
+<a id="2.7"> &nbsp; </a>
+<li>
+  <h4>
+		<a href="https://addons.thunderbird.net/thunderbird/addon/324497/versions/2.7">Version 2.7 - 09/01/2020</a>
+		<br>
+		<span class="appWrapper">
+			<span class="thunderbird">60.0 - 68.*</span> 
+			<span class="seamonkey">2.0.0 - 2.49.*</span> 
+		</span>
+  </h4>
+  
+  <h5 class="inList"><span class="inListTitle">Enhancements</span></h5>
+  <ul>
+    <li><a href="https://github.com/RealRaven2000/SmartTemplates/issues/25">[issue 25]</a> 
+      Set variables from addressbook fields. 
+      <p>When replying to a matching email address you can now use
+        additional part switches for address variables such as <code class="inline">%from%</code><br>
+        Example: <code>%from(firstname,workphone)%</code>
+      </p>
+      <div class="variableSwitches">
+<h5>Contact</h5>
+<pre>
+  firstname
+  lastname
+  name  (uses Display Name but only if the option 'Resolve Name from Address Book' is enabled)
+  nickname
+  additionalmail
+  chatname
+  workphone
+  homephone
+  fax
+  pager
+  mobile
+</pre>
+<h5>Private</h5>
+<pre>
+  private.city
+  private.address1
+  private.address2
+  private.state
+  private.country
+  private.zipcode
+  private.webpage
+</pre>
+<h5>Other</h5>
+<pre>
+  other.custom1
+  other.custom2
+  other.custom3
+  other.custom4
+  other.notes
+</pre>
+<h5>Work</h5>
+<pre>
+  work.title
+  work.department
+  work.organization
+  work.address1
+  work.address2
+  work.city
+  work.state
+  work.country
+  work.zipcode
+  work.webpage
+</pre>
+      </div>
+      
+    </li>
+    <li><a href="https://github.com/RealRaven2000/SmartTemplates/issues/29">[issue 29]</a> 
+      Added configuration item to file template menus.<br>
+      <p>This will make it easier to add new items to the write / reply / forward dropdown lists 
+      that contain external templates (Stationery replacement)<br>
+      
+      </p>
+    </li>
+    <li>Pro function: Added an optional 3rd parameter to 
+       <code>%matchTextFromBody(<i>regular Expression</i>,<i>group #</i>,<i>"<b>alternative text</b>"</i>)%</code>.<br>
+       If the quoted email has no match, then the alternative text will be inserted instead.
+    </li>
+    <li>Completed translations for Brazil (Portuguese) and Russian - thanks to google translate.</li>
+  </ul>
+</li> 
+
+<a id="2.6"> &nbsp; </a>
+<li>
+  <h4>
+		<a href="https://addons.thunderbird.net/thunderbird/addon/324497/versions/2.6">Version 2.6 - 29/11/2019</a>
+		<br>
+		<span class="appWrapper">
+			<span class="thunderbird">60.0 - 68.*</span> 
+			<span class="seamonkey">2.0.0 - 2.49.*</span> 
+		</span>
+  </h4>
+  
+  <ul>
+    <li><a href="https://github.com/RealRaven2000/SmartTemplates/issues/7">[issue 7]</a> 
+      Losing all typed text in compose window when changing identity / signature not updated correctly.
+      <p>Normally, SmartTemplates  is designed to do all processing (building the email and replacing variables)
+      when opening the compose window; it also does this when you change identity provided you have not typed
+      any text in the body of the email. In that case, Thunderbird rebuilds the email itself, 
+      thereby ignoring SmartTemplate and reusing the typed text. This could also lead to losing typed text 
+      and variables within the signature not being replaced.</p>
+      <p>In this new version this behavior is improved: SmartTemplates  will now process the (replaced) Signature 
+        if it contains SmartTemplate variables. It will also replace all "late resolved" variable fields (such as
+        <code class="inline">%to(name)%</code>) when changing the identity. Since Thunderbird cannot recreate the JavaScript
+        necessary for these advanced functions all "late resolved" variables will be replaced; they will be removed if they
+        cannot be replaced meaningfully. 
+      </p>
+      <p>When working with these variable fields in New Emails, I recommend to either resolve them first by making sure 
+        the <i>To</i> address and <i>subject</i> line are populated, or to  not start typing until the correct identity is selected.
+       </p>
+      <p>For using variables such as <code class="inline">%identity(name)%</code> within the signature, make sure to 
+         activate the Global Signature settings: <br>
+       <img class="screenshot" src="img/signature-processing.png" alt="signature settings"/>
+      </p>
+    </li>
+    <li>Remember that you can disable update messages - once you have a license you can set the change log tab 
+        not to open after a SmartTemplates  update. The setting can be found on the
+        license tab:<br>
+      <img class="screenshot" src="img/silentUpdates.png" alt="silent updates option"/>
+    </li>    
+  </ul>
+</li> 
+
+
+<a id="2.5.1"> &nbsp; </a>
+<a id="2.5.2"> &nbsp; </a>
+<li>
+  <h4>
+		<a href="https://addons.thunderbird.net/thunderbird/addon/324497/versions/2.5">Version 2.5.2 - 21/11/2019</a>
+		<br>
+		<span class="appWrapper">
+			<span class="thunderbird">60.0 - 68.*</span> 
+			<span class="seamonkey">2.0.0 - 2.49.*</span> 
+		</span>
+  </h4>
+  <ul>
+    <li><a href="https://github.com/RealRaven2000/SmartTemplates/issues/22">[issue 22]</a> 
+      Cannot add new recipients to address widget after 
+       modification through <code class="inline">%header.set()%</code> or  <code class="inline">%header.append()%</code></li>
+    <li><a href="https://github.com/RealRaven2000/SmartTemplates/issues/23">[issue 23]</a> 
+      Settings dialog broken in Czech version.
+    </li>
+    <li>Fixed "cut off descriptions in extended settings" in Linux </li>
+    <li>Added silent update feature - if you have a license you can now disable the change log tab 
+        which is normally opened after a SmartTemplates  update. The setting can be found on the
+        license tab:<br>
+        <img class="screenshot" src="img/silentUpdates.png" alt="silent updates option"/>
+        </li>
+  </ul>
+</li> 
+
+<a id="2.5"> &nbsp; </a>
+<li>
+  <h4>
+		<a href="https://addons.thunderbird.net/thunderbird/addon/324497/versions/2.5">Version 2.5 - 11/11/2019</a>
+		<br>
+		<span class="appWrapper">
+			<span class="thunderbird">60.0 - 68.*</span> 
+			<span class="seamonkey">2.0.0 - 2.49.*</span> 
+		</span>
+  </h4>
+  <!-- <div style="font-size:smaller;"><a href="#changes2.5">Skip to change log</a></div> -->
+  <a name="changes2.5"> </a>
+  <ul>
+    <li><p>Added switch for toggling automatic proofing: use <code>%spellcheck(off)%</code> to disable proofing. 
+      To toggle proofing ON, use <code>%spellcheck(on)%</code>. As usual, without this, Composer will use the global
+      settings. Different languages can be set using the language parameter, e.g. <code class="inline">%spellcheck(it)%</code> to
+      switch to Italian spell check.</p>
+      
+      <p>To force switching and change to a different language do the toggle command first.</p>
+      
+      </li>
+    <li><a href="https://github.com/RealRaven2000/SmartTemplates/issues/21">[issue 21]</a> 
+      Fixed: <code class="inline">%spellcheck%</code> sometimes doesn't remove red proofing lines after setting language 
+    </li>
+    <li>Improved UI on Template Files page for Stationery users:<br>
+        - removed irrelevant Save and Load buttons<br>
+        - added a <img src="/img/fugue-question.png" alt="question mark"/> button which links to the 
+        <a href="http://smarttemplate4.mozdev.org/stationery.html" target="_blank">Stationery help page</a>.<br>
+        <img class="screenshot" src="img/file-templates-help.png" />        
+      </li>
+    <li>Completed some of the missing translations for new functionality in the Finnish, French, Czech, Spanish, Italian, Polish and Swedish locales.</li>
+    <li>Extended error log for trouble shooting the getFileAsDataURI() function; this is used to improve behavior when 
+        images are included using the <code class="inline">%file()%</code> function, by replacing them with inline data without Thunderbird
+        complaining about security problems. note that image file names should have an extension in order to determine
+        file type correctly.</li>
+  </ul>
+</li>
+
+
+<a id="2.4.2"> &nbsp; </a>
+<li>
+  <h4>
+		<a href="https://addons.thunderbird.net/thunderbird/addon/324497/versions/2.4.2">Version 2.4.2 - 28/10/2019</a>
+		<br>
+		<span class="appWrapper">
+			<span class="thunderbird">60.0 - 69.*</span> 
+			<span class="seamonkey">2.0.0 - 2.49.*</span> 
+		</span>
+  </h4>
+  <ul>
+    <li><a href="https://github.com/RealRaven2000/SmartTemplates/issues/20">[issue 20]</a> 
+      If a html template file starts with certain UTF detection characters, 
+      the "missing file" warning is wrongly displayed.
+    </li>
+    <li>Sandboxed Javascript (script blocks enclosed in <code>&#37;{&#37;</code> <code>&#37;}&#37;</code>) implemented in [Bug 25676]
+      stopped working in Thunderbird 68, due to the call to Cu.nukeSandbox failing... 
+      for now, SmartTemplates allows using these again for versions smaller than 69
+    </li>
+  </ul>
+</li> 
+
+
+<a id="2.3.2"> &nbsp; </a>
+<a id="2.4"> &nbsp; </a>
+<a id="2.4.1"> &nbsp; </a>
+<li>
+  <h4>
+		<a href="https://addons.thunderbird.net/thunderbird/addon/324497/versions/2.4.1" >Version 2.4.1 - 22/10/2019</a>
+		<br>
+		<span class="appWrapper">
+			<span class="thunderbird">60.0 - 68.*</span> 
+			<span class="seamonkey">2.0.0 - 2.49.*</span> 
+		</span>
+  </h4>
+	<h5 class="inList"><span class="inListTitle">Enhancements</span></h5>		
+  <ul>
+    <li>
+		  <a href="https://github.com/RealRaven2000/SmartTemplates/issues/17">[issue 17]</a>
+			Add %spellcheck()% variable for changing spellchecker to a different language.<br>
+      <code>%spellcheck(language)%</code> <br>
+      This is the new variable to switch the spell checked to a different language.
+      language can be any locale string of a dictionary that is already installed, e.g. en, de, en-GB etc. <br>
+      Additional dictionaries can be installed from 
+      <a href="https://addons.thunderbird.net/thunderbird/language-tools/">addons.thunderbird.net</a> using Add-ons Manager.
+    </li>
+  </ul>
+	<h5 class="inList"><span class="inListTitle">Bug Fixes</span></h5>		
+  <ul>
+    <li>
+		  <a href="https://github.com/RealRaven2000/SmartTemplates/issues/16">[issue 16]</a>
+			In some cases, images in signature triggered the "blocked file" warning. 
+      The latest version of SmartTemplates will now parse the signature and replace the 
+      file-based image source with a base64 encoded data link to avoid this warning.
+    </li>
+    <li>
+		  <a href="https://github.com/RealRaven2000/SmartTemplates/issues/19">[issue 19]</a>
+			File templates can generate unexpected line breaks, and contained images may break
+      this can happen if option "replacing line breaks with &lt;br&gt;" is active
+    </li>
+  </ul>
+  
+</li> 
+
+<a id="2.3"> &nbsp; </a>
+<a id="2.3.1"> &nbsp; </a>
+<li>
+  <h4>
+		<a href="https://addons.thunderbird.net/thunderbird/addon/324497/versions/2.3.1">Version 2.3.1 - 20/09/2019</a>
+		<br>
+		<span class="appWrapper">
+			<span class="thunderbird">60.0 - 69.0</span> 
+			<span class="seamonkey">2.0.0 - 2.49.*</span> 
+		</span>
+  </h4>
+	
+	
+	<h5 class="inList"><span class="inListTitle">Enhancements</span></h5>		
+  <ul>
+		<li>Release video below - Please help my YouTube channel by subscribing. 
+				Click the YouTube link in the bottom right corner of the video to visit my channel.<br>
+				<iframe class="youtube"  src="https://www.youtube.com/embed/AWdZWB0_ym0" frameborder="0" allowfullscreen></iframe>
+		</li>	
+    <li>2.3.1 - Improved handling of non-working Stationery in Thunderbird 68. 
+		  You can now jump straight into configuring file templates and "support stationery" 
+			will be automatically disabled if it cannot be run in the current Tb version.</li>
+		<li>
+		  <p>[<a href="https://github.com/RealRaven2000/SmartTemplates/issues/8">issue #8</a>] 
+		  Support File Templates - to replace Stationery from Thunderbird 68 forward.</p>
+			<p>
+			  I have repeatedly reached out to the author of the excellent 
+				<a href="https://addons.thunderbird.net/en-US/thunderbird/addon/stationery/">Stationery
+				Add-on </a> over the last 8 months, but unfortunately did not get any reply. 
+				I also attempted to patch it for Thunderbird68 but it is just too much work. (I estimate 2-3 man weeks)
+			</p>
+			<p>
+				SmartTemplates still supports it, but it looks like it will stop working as soon as Thunderbird 68 lands 
+				in August / September 2019; therefore we need another solution to be able to
+				use ad-hoc templates in the form of HTML files.
+			</p>
+			<p>
+			  To replace the missing functionality of Stationery which is sadly going away with Thunderbird 68, 
+				you can now add a list of external HTML templates, integrated into the Write / Reply and Forward buttons, 
+				by selecting the item <i>Template Files</i> from the accounts drop down:<br>
+				<img class="screenshot" src="screenshots/fileTemplates.png" />
+			</p>
+			<p><b>Important note:</b><br>
+			  In order for file templates to work correctly, you have to disable the option <i>Global Settings</i>&#xbb;<i>Global Settings</i>&#xbb;<i>Advanced Functions</i>&#xbb;<i>Support Stationery Add-on</i><br>
+				<img class="screenshot" src="/img/disable-stationery.png" alt="disable stationery support"><br>
+				I have raised <a href="https://github.com/RealRaven2000/SmartTemplates/issues/13">issue 13</a> to handle this bug.
+			</p>
+		</li>
+		<li>2.3.1 Maintenance update: 
+		  <p>Fixed <a href="https://github.com/RealRaven2000/SmartTemplates/issues/14">[issue 14]</a>:
+			If Lightning is not installed in Thunderbird 68, currently the new "file templates" function will 
+			not load the template, but may open 2 composer windows instead.</p>
+		  <p>Fixed <a href="https://github.com/RealRaven2000/SmartTemplates/issues/15">[issue 15]</a>:
+			file templates only work on an account if the box <i>Apply following template</i> is active.</p>
+		</li>
+    <li>
+			<p>
+			<a name="26689" href="http://quickfolders.org/bugzilla/bugs/show_bug.cgi@id=26689" target="_blank">[Bug 26689]</a>
+		  New function to set E-mail priority </p>
+			<p>
+			  Add a function to set the priority of the composed Email.
+			</p>
+			<p>
+			  <b>Examples:</b><br><br>
+
+				<code>%header.set(priority,highest)%</code><br>
+				<code>%header.set(priority,high)%</code><br>
+				<code>%header.set(priority,normal)%</code><br>
+				<code>%header.set(priority,low)%</code><br>
+				<code>%header.set(priority,lowest)%</code><br>
+			</p>
+		</li>
+  </ul>
+	<h5 class="inList"><span class="inListTitle">Bug Fixes</span></h5>		
+  <ul>
+    <li>
+		  <a href="https://github.com/RealRaven2000/SmartTemplates/issues/9">[issue 9]</a>
+			%header.set(from)% not working in Tb60.9
+		</li>
+    <li>
+		  Fixed a problem with the Czech translation file that caused an error when trying to display the 
+			SmartTemplate Settings dialog.
+		</li>
+  </ul>
+</li> 
+
+<a id="2.2.1"> &nbsp; </a>
+<a id="2.2.2"> &nbsp; </a>
+<a id="2.2"> &nbsp; </a>
+<li>
+  <h4>
+		<a href="https://addons.thunderbird.net/thunderbird/addon/324497/versions/2.2.2">Version 2.2.2 - 13/08/2019</a>
+		<br>
+		<span class="appWrapper">
+			<span class="thunderbird">52.0 - 68.*</span> 
+			<span class="seamonkey">2.0.0 - 2.49.*</span> 
+		</span>
+  </h4>
+	
+	<p style="font-size:0.85em;">This version fixes some backwards compatibility issues with Thunderbird 52 
+	  and SeaMonkey.It also has fixes for date and language functions. 
+		Note that Thunderbird versions prior to Tb 60 will not pick up this version via auto-update,
+		this is caused by the "hybrid" natuire of the Add-on which is not fully supported by the 
+		Add-ons site: it only sees the "modern" version of the Add-on which is packaged as a webextension
+		and visible to Thunderbird 60 and later. You can still download this version and install it manually
+		on Thunderbird 52.
+	</p>
+	 <p class="smartTemplateFreeUser">
+	   Note that you will need at least a cheap standard license to use it. To read more about licenses, just 
+		 continue reading. <br>
+		 Or <a href="#changes2.2">skip to the change set here</a>.
+	 </p>
+	
+	
+	<a id="changes2.2"> &nbsp; </a>
+	<h5 class="inList"><span class="inListTitle">Maintenance Version 2.2.2</span></h5>
+	
+	<ul>
+		<li> 
+		  It is now possible to use the <code>%dateformat()%</code> function with the 
+			<code class="inline">%X:=sent%</code> modifier when replying to / forwarding emails.
+		</li>
+    <li>
+		  <a href="https://github.com/RealRaven2000/SmartTemplates/issues/5" target="_blank">[issue #5]</a> 
+		  <code class="inline">%timezone%</code> was not working correctly - it was giving wrong time
+			corrections based on time zone + utc calculations.
+		</li>
+	</ul>
+	<hr>	
+	<p style="font-size:0.85em;">Change Log for Version 2.2, released on 12/08/2019:</p>
+	<h5 class="inList"><span class="inListTitle">Enhancements</span></h5>
+  <ul>
+		<li>
+		  Increased the trial period to 28 days. As adoption of the Standard License were decent I want 
+			to give more users a chance to test SmartTemplates  with the next version of Thunderbird.
+		</li>
+		<li>
+		  On popular demand, I localized the license shop for Japanase, Russian, German, Polish, Italian,
+			Spanish and Dutch users. Additional Domain Seats can now be purchased after the fact.
+		</li>
+		<li>
+			Removed License button animation in composer's sliding notification for Linux 
+			and Mac systems as allegedly they caused performance issues on some systems. 
+			Also fixed OS specific style paths so platform specific rules work again.
+		</li>
+		<li><a href="https://github.com/RealRaven2000/SmartTemplates/issues/3" target="_blank">[issue #3]</a> 
+		  <p>Allow displaying leading zeroes for parts of <code class="inline">%dateshort%</code> 
+			and <code class="inline">%datelocal%</code></p>
+			<p> You can now modify the following settings in about:config</p>
+			<p> 
+<tt>extensions.smartTemplate4.dateformat.hour = "numeric" <br>
+extensions.smartTemplate4.dateformat.day = "numeric" <br>
+extensions.smartTemplate4.dateformat.month = "numeric" <br>
+extensions.smartTemplate4.dateformat.year = "numeric" <br></tt>
+			</p>
+			<p> 
+			hour: change to "2-digit" for forcing 2digit hours in datelocal / dateshort <br>
+			day: change to "2-digit" for forcing 2digit day in datelocal / dateshort <br>
+			month: change to "2-digit" for forcing 2digit month (dateshort only) <br>
+			year: change to "2-digit" for forcing 2digit year (dateshort only) <br>
+			</p>
+		</li>
+		<li>
+			Made sure settings dialog is not cropped by right hand edge of screen.
+		</li>
+	</ul>
+	<h5 class="inList"><span class="inListTitle">Bug Fixes</span></h5>
+  <ul>
+		<li>
+		  Wrote some backward fixes for Thunderbird 52. In the last version the file
+			smartTemplate-overlay.js didn't load successfully because of importing
+		  XPCOMUtils.jsm in a non-backward compatible format. 
+			(ChromeUtils.import replaces Components.utils.import from Tb60 forward)
+		</li>
+    <li><a href="https://github.com/RealRaven2000/SmartTemplates/issues/4" target="_blank">[issue #4]</a> 
+		  Fixed locale problems. SmartTemplates due to a regression in 2.0 the current
+		  locale of the mail client cannot correctly be determined.
+			The <code>%language()%</code> switch can now be used to force correct display of day / month names in the variables
+			<code class="inline">%A%</code> <code class="inline">%a%</code> 
+			<code class="inline">%B%</code> <code class="inline">%b%</code> 
+			and related <code class="inline">%dateformat()%</code> function)
+			It will also force using the installed language pack for date formatting through the 
+			<code class="inline">%datelocal%</code> and <code class="inline">%dateshort%</code> function. 
+			If the language pack is missing or disabled, this will be indicated
+			in JavaScript error console - not a potentially disruptive message box.
+		</li>
+    <li><a name="26688" href="http://quickfolders.org/bugzilla/bugs/show_bug.cgi@id=26688" target="_blank">[Bug 26688]</a> 
+		  Multiple <code class="inline">%matchTextFromBody%</code> in a line yielded only a single result. 
+			This is now fixed also for <code class="inline">%matchTextFromSubject%</code>, so they can better be used 
+			multiple times in the same template.
+		</li>
+		<li>
+		  Fixed status icon mode on Thunderbird 68 startup.
+		</li>
+  </ul>
+</li> 
+
+<a id="2.1"> &nbsp; </a>
+<a id="2.1.1"> &nbsp; </a>
+<li>
+  <h4>
+		<a href="https://addons.thunderbird.net/thunderbird/addon/324497/versions/2.1.1">Version 2.1.1 - 03/08/2019</a>
+		<br>
+		<span class="appWrapper">
+			<span class="thunderbird">60.0 - 68.0</span> 
+			<span class="seamonkey">2.0.0 - 2.49.*</span> 
+		</span>
+  </h4>
+	
+	<p style="font-size:0.85em;">2.2 - released 29/07/2019: after 7 months of work, finally a version 
+	  that is fully compatible with Thunderbird 68.0. You will need at least a cheap standard license 
+		to use it. <a href="http://smarttemplate4.mozdev.org/contribute.html">More about licenses here.</a>
+	
+	<p style="font-size:0.85em;">2.1.1: Maintenance release - this was quickly released after 2.1, 
+	   <a href="#changes2.1.1">to read about these latest changes only, click here.</a></p>
+	
+	<a id="changes2.1"> &nbsp; </a>
+	<p>Change Log for Version 2.1, released on 29/07/2019:</p>
+	<h5 class="inList"><span class="inListTitle">2.1 - Enhancements</span></h5>
+  <ul>
+    <li><a name="26536" href="http://quickfolders.org/bugzilla/bugs/show_bug.cgi@id=26536" target="_blank">[Bug 26536]</a> 
+			Support using SmartTemplates variables in Thunderbird Templates (Tb 60).
+		</li>
+    <li><a name="26626" href="http://quickfolders.org/bugzilla/bugs/show_bug.cgi@id=26629" target="_blank">[Bug 26629]</a> 
+			Added a variable to set a specific time zone (e.g. GMT) for date/time variables.<br>
+			Use the new <code>%X:=timezone(<i>timezone</i>)%</code> switch to force displaying the time with a fixed time zone.
+			<br>
+			For example:<br>
+			<code class="inline">%X:=timezone(EST)%</code> for inserting Eastern Standard Time in date functions such as
+			<code class="inline">%dateshort%</code> or <code class="inline">%dateformat()%</code>
+		</li>
+    <li><p>
+		  <a name="26634" href="http://quickfolders.org/bugzilla/bugs/show_bug.cgi@id=26634" target="_blank">[Bug 26634]</a> 
+			header.*.matchFrom* functions: append/prepend arbitrary text to field based on match.
+			</p>
+			<p>You can now use the matchFromSubject and matchFromBody functions in the following way:<br>
+			  <code>%header.set.matchFromBody(<i>header</i>,<i>search pattern</i>,<b>"<i>replacement text</i>"</b>)%</code><br>
+				this is different from the already supported usage<br>
+				<code class="inline">%header.set.matchFromBody(<i>header</i>,<i>search pattern</i>,<i><b>match group</b></i>)%</code><br>
+				The main difference is that match group is a number - which will insert / set / append the matched text found 
+				during the search, whereas <tt><i>replacement text</i></tt> is a text that is used instead if the search pattern
+				is found. For usage simply add the double quotation marks around the 3rd parameter.
+			</p>
+		</li>
+		<li> 
+		  <a name="26677" href="http://quickfolders.org/bugzilla/bugs/show_bug.cgi@id=26677" target="_blank">[Bug 26677]</a> 
+			<code>%header.set.matchFromBody()</code> improvements for use with subject line.
+			It is now possible to quote the first n characters of the quoted email like this:<br>
+			<tt>%header.set.matchFromBody(subject,"(\s*\S){1,75}",0)%</tt>
+		</li>
+		<li>
+		  Added button for <i>extending</i> your SmartTemplates Pro License. This will now show up
+			on the  SmartTemplates Pro Tab 30 days before the current license expires. The
+			web shop will give you an additional year based on the current expiry date for
+			a smaller price (typically 20 %) than a new license. If the license is already
+			expired, then the current date is used to calculate new expiry date, giving 
+			you	also a full year.
+		</li>
+		<li>
+		  From now on, SmartTemplates  will remember the last selected folder using the 
+			file picker when saving / loading templates.
+		</li>
+		<li> Added a button for opening the Stationery configuration tab. </a>
+  </ul>
+	<h5 class="inList"><span class="inListTitle">2.1 - Bug Fixes</span></h5>
+  <ul>
+    <li><a name="26626" href="http://quickfolders.org/bugzilla/bugs/show_bug.cgi@id=26626" target="_blank">[Bug 26626]</a> 
+			Edit As New duplicated email content unless Stationery is installed.
+		</li>
+		<li><a name="26627" href="http://quickfolders.org/bugzilla/bugs/show_bug.cgi@id=26627" target="_blank">[Bug 26627]</a> 
+			Signature was always removed when creating message from templates. With this fix, 
+			when creating a mail from a thunderbird template the signature will be treated according to
+			the rules set up in account settings composition section. <br>
+			To omit the signature, use <code class="inline">%sig(none)%</code> within the template.<br>
+		  To determine a specific position other than specified in account settings, use <code class="inline">%sig(html)%</code>.
+		</li>
+		<li>
+		  Fixed: <code class="inline">%attach()%</code> command previously had a filter to only append HTML files.
+		</li>
+		<li>
+			<a name="26628" href="http://quickfolders.org/bugzilla/bugs/show_bug.cgi@id=26628" target="_blank">[Bug 26628]</a>
+			Fixed: <code class="inline">%dateshort%</code> and <code class="inline">%datelocal%</code> left out time portion.
+		</li>
+		<li>
+			<a name="26632" href="http://quickfolders.org/bugzilla/bugs/show_bug.cgi@id=26632" target="_blank">[Bug 26632]</a>
+			Using <code class="inline">%dateformat%</code> in reply / forward: deferred fields are not automatically tidied up.
+		</li>
+		<li>
+			<a name="26635" href="http://quickfolders.org/bugzilla/bugs/show_bug.cgi@id=26635" target="_blank">[Bug 26635]</a>
+			Cursor not placed in "To:" Row when writing/forwarding email. <br>
+			Fix: SmartTemplates will now check when writing new emails if the "To:" address is already set. If not,
+			the cursor will be placed into the address widget and <code class="inline">%cursor%</code> ignored.
+		</li>
+		<li>
+			<a name="26636" href="http://quickfolders.org/bugzilla/bugs/show_bug.cgi@id=26636" target="_blank">[Bug 26636]</a>
+			Stationery broken with %sig(text)%. When using a Stationery template with the 
+			"Use instead of default quote header" option switched off, some of the template text may be accidentally
+			deleted from the Email.
+		</li>
+		<li> Improved matchTextFromBody: avoid scanning inserted quote header or anything outside of the replied to email.
+		</li>
+  </ul>
+	<h5 class="inList"><span class="inListTitle">2.1 - Miscellaneous</span></h5>
+	<ul>
+		<li>
+		  Added a new knowledgebase page for <a href="http://smarttemplate4.mozdev.org/kb-inspector.html">investigating font styles</a> using Thunderbird's Inspector.
+		</li>
+		<li>
+		  Raised minimum version for Postbox to 5.0.
+		</li>
+		<li> <a href="http://quickfolders.org/bugzilla/bugs/show_bug.cgi@id=26667" target="_blank">[Bug 26667]</a> 
+				 ESR 2019 Readiness - compatibility with Thunderbird 68
+			 <p>Made SmartTemplates compatible with Thunderbird 68 - part of the ongoing effort to 
+				 future proof SmartTemplates for 2020. This will also mean eventually making the minimum requirement 
+				 using Thunderbird version 60. <br>
+				 The latest test version (2.1 pre 244) can be be found <a href="http://quickfolders.org/bugzilla/bugs/show_bug.cgi@id=26667#c2">here</a>.
+				 </p>
+			 <p>
+				 I may back-port new features to older versions on demand - these will be handled on 
+				 a <a href="https://github.com/RealRaven2000/SmartTemplates/tree/Tb52">separate Github branch</a>.
+			 </p>
+			<ul> 
+				<li> Replaced prefwindows with dialogs. There are a lot of changes in the code to make 
+				     storing preferences in Thunderbird's configuration database work again.</li>
+				<li> Use newer preferences script.</li>
+				<li> Replace groupbox caption elements with hbox + additional layout fixes.</li>
+				<li> Replace statusbar element with hbox (Tb65 and higher). </li>
+				<li> Use new promise-based AddonManager object.</li>
+				<li> Remove document.createElement in xul documents (replace with createXULElement until Mozilla decides to deprecate that too).</li>
+				<li> Improved loading script in composer to be more reliable.</li>
+			</ul> 
+		</li>
+	</ul>	
+	
+	<a id="changes2.1.1"> &nbsp; </a>
+	<h5 class="inList"><span class="inListTitle">2.1.1 - Maintenance Release - Published on 03/08/2019</span></h5>
+	<p> This contains mainly fixes affecting problems in Thunderbird 68, 
+	    caused by its changes to the preferences system</i>
+	<ul>
+		<li>(licensed users only) Added support tab. </li>
+		<li>Added the Pro feature <a href="premium.html#deferredVariables">'deferred variables in "Write" template'</a> (such as %to%) to standard features. Important: this only works in HTML mode - plain text is not supported.</li>
+		<li>Improved panel sizing on Preferences dialog. </li>
+		<li>ESR - Eliminated deprecated getCharPref / setCharPref functions</li>
+		<li>Fixed regression caused by ESR work for Thunderbird 68 <a href="http://quickfolders.org/bugzilla/bugs/show_bug.cgi@id=26657" target="_blank">[Bug 26657]</a>, 
+			some account specific options (use HTML, replace BR) were greyed out when opening 
+			the dialog and had to be reactivated by enabling / disabling "Apply the following template".
+			Use Common should always disable account specific settings for clarity. </li>
+		<li>Improvement: When opening settings for the current Id and "use common" is selected, 
+		  display common settings instead.</li>
+	</ul>	
+	<p><a href="#changes2.1">back to main changes</a></p>
+</li> 
+
+<a id="1.5.2"> &nbsp; </a>
+<a id="1.6"> &nbsp; </a>
+<a id="2.0"> &nbsp; </a>
+<li>
+  <h4>
+		<a href="https://addons.thunderbird.net/thunderbird/addon/324497/versions/2.0">Version 2.0 - 23/12/2018</a>
+		<br>
+		<span class="appWrapper">
+			<span class="thunderbird">9.0 - 60.*</span> 
+			<span class="seamonkey">2.0.0 - 2.49.*</span> 
+			<span class="postbox">4.0.0 - 5.52b6</span>
+		</span>
+  </h4>
+	
+	<h5 class="inList"><span class="inListTitle">Enhancements</span></h5>
+  <ul>
+		<li>Release video below - Please help my YouTube channel by subscribing. 
+				Click the YouTube link in the bottom right corner of the video to visit my channel.<br>
+				<iframe class="youtube"  src="https://www.youtube.com/embed/Iah85SdtqNE" frameborder="0" allowfullscreen></iframe>
+		</li>	
+		<li>
+		  <p><a name="24993" href="http://quickfolders.org/bugzilla/bugs/show_bug.cgi@id=24993" target="_blank">[Bug 24993]</a> 
+			   <span class="premium">Pro Feature</span>
+			   Added support for using the following fields when composing a *new* Email:</p>
+			<ul>
+			  <li><code class="inline">%subject%</code></li>
+			  <li><code class="inline">%from%</code></li>
+			  <li><code class="inline">%to%</code> <code class="inline">%cc%</code> <code class="inline">%bcc%</code></li>
+			  <li><code class="inline">%date%</code></li>
+			  <li><code class="deferable">%dateformat()%</code>New function for building date strings for current date, <a href="#26588">see below</a>.</li>
+			</ul>
+			<p>Note, to  insert the real recipient in a <i>forwarded</i> email, you can now use the <tt>fwd</tt> argument:
+			   e.g. <code class="deferable">%to(firstname,fwd)%</code> 
+			<p>The variables are shown as colored placeholder blocks and can be updated with a simple mouse-click:
+			<br>
+				<img class="screenshot" src="/img/deferred-vars-example.png" alt="deferred variables"><br>
+			  This will pull in the correct information when available and can be clicked multiple times.
+			<br>
+			</p>
+			<p>A new button for a final clean up - for "tidying up ALL variables" can also be added to the Composer toolbar:<br>
+				<img class="screenshot" src="/img/clean-up-button.png" alt="clean up">
+			</p>
+		</li>
+		<li>
+      <p>
+		   <a name="26588" href="http://quickfolders.org/bugzilla/bugs/show_bug.cgi@id=26588" target="_blank">[Bug 26588]</a>
+			   <code class="deferable">%dateformat%</code> <span class="premium">Pro Feature</span> Function for inserting / updating current time.
+			</p>
+			<p>
+			  The format variables are taken from the regular formats such as %Y% for 4-digit
+        Years, with the % symbols stripped. Use as follows: <br>
+				%dateformat(<i>formatString</i>)%
+			</p>
+			<p>
+				Supported Field Switches:
+				Y, y, n, m, e, d, k, H, l, I, M, S, tz_name, B, b, A, a, p1, p2, p
+			</p>
+			<p>
+				Examples:<br>
+				<code class="inline">%dateformat(A, e/n/Y, H:M)%</code> creates: Wednesday, 23/02/2018, 14:23
+			</p>
+		</li>
+
+		<li>
+      <a href="http://quickfolders.org/bugzilla/bugs/show_bug.cgi@id=26597" target="_blank">[Bug 26597]</a>
+				Added new ?? operator to make parts of address header arguments optional, e.g. 
+				<code>%from(name,??mail)%</code> - this will omit the mail part if a name part is given in the 
+				from address.
+				Also you can now make the brackets conditional by using ?? as the first to characters of 
+				the bracketMail() and bracketName() arguments:<br>
+				For example, <code class="inline">bracketMail(??angle)</code> will only display the angle brackets &lt; &gt; 
+				around the email address if no other parts can be determined (no Name parts). <br>
+				<code class="inline">%from(firstname,bracketMail(??angle))</code><br>
+				<table>
+					<tr>
+					  <td style="margin-right:2em">
+						  First name known:
+					  </td>
+					  <td>
+						  Axel &lt;<i>email address</i>&gt;
+					  </td>
+					</tr>
+					<tr>
+					  <td style="margin-right:2em">
+						  First name unknown:
+					  </td>
+					  <td>
+						  <i>email address</i>
+					  </td>
+					</tr>
+				</table>
+		</li>
+		
+		<li>
+      Added advanced option for setting default address variable format for variables like %to% %from% %bcc%.
+      With "firstname,??mail" %to% will show the first name; if that is unavailable, it will show the plain mail address.
+      It can be used with all possible <code class="inline">%to()%</code> arguments:<br> 
+      <i>name,fullname,firstname,lastname,mail,bracketMail(),bracketName(),initial</i>.
+		</li>
+		
+		<li>
+      <a href="http://quickfolders.org/bugzilla/bugs/show_bug.cgi@id=26307" target="_blank">[Bug 26307]</a>
+      <span class="premium">Pro Feature</span>
+      Improved switch for adding (subtracting) days from date fields:<br>
+      <code>%X:=calculated(d,h:mm)%</code> where <i>d</i> = is the number of days to add. <i>h</i> = number of hours and <i>mm</i> number of minutes.
+      Note this needs to be reset using
+      <code>%X:=calculated(0)%</code> to unapply it to the rest of the Email.
+		</li>				
+		
+		<li>
+      <a href="http://quickfolders.org/bugzilla/bugs/show_bug.cgi@id=26552" target="_blank">[Bug 26552]</a>
+      <code>%attach(<i>filePath</i>)%</code> added function for attaching files.
+		</li>
+
+		<li>Address Book: Added option to replace firstname with Display Name if no first name is recorded.</li>
+		<li><a href="http://quickfolders.org/bugzilla/bugs/show_bug.cgi@id=26595" target="_blank">[Bug 26595]</a>
+				Option to disable guessing Name functionality.
+		</li>
+		<li>
+      Made extracting Name from (parentheses) optional.
+      SmartTemplates tried to "guess" a preferred Name from an expression within parentheses, 
+      such as Axel (Administrator) axel@xxx123.com - this is likely wrong in most situations.
+      It's now disabled by default and can be turned back on with the config setting
+      <span class="codeLine">extensions.smartTemplate4.names.extractNameFromParentheses</span>
+		</li>
+		
+
+		<li>
+      <a href="http://quickfolders.org/bugzilla/bugs/show_bug.cgi@id=26536" target="_blank">[Bug 26536]</a>
+		  Support using SmartTemplates variables in Thunderbird Templates. 
+			<p>You can now use things like <code class="inline">%datelocal%</code> within a 
+				Thunderbird template. However when editing Templates using Thunderbird composer, 
+				the Add-on ThunderHTMLedit should be used to remove the 
+				<code class="html">smarttemplateinserted="true"</code> attribute from the 
+				<code class="html">&lt;body&gt;</code> tag. 
+			</p>
+			<p>Also	all variables should be within the 
+				<code class="html">&lt;div id="smartTemplate4-template"&gt;</code> tag and additionally 
+				inserted tags like this should be removed. There is still some work to be done
+				as currently opening Composer to edit the template resolves all variables as if a new
+				reply was created.
+			</p>
+		</li>
+		
+		<li><a href="http://quickfolders.org/bugzilla/bugs/show_bug.cgi@id=26551" target="_blank">[Bug 26551]</a>
+			Add Domain License key support for SmartTemplates Pro
+		</li>
+		<li>
+		  Added Indonesian Locale - thanks to Mienz Louveinski (Babelzilla.org)
+		</li>
+	</ul>
+	
+	<h5 class="inList"><span class="inListTitle">Bug Fixes</span></h5>
+	<ul>
+		<li><a href="http://quickfolders.org/bugzilla/bugs/show_bug.cgi@id=26524" target="_blank">[Bug 26524]</a>
+		    <code class="inline">%datelocal%</code> and <code class="inline">%dateshort%</code> are broken in Thunderbird 60
+		</li>
+		<li><a href="http://quickfolders.org/bugzilla/bugs/show_bug.cgi@id=26526" target="_blank">[Bug 26526]</a>
+		    <code class="inline">%file(<i>imageFile</i>)%</code> falsely creates 
+				"The Variable %5C.. can not be used for new messages" when including 
+				images in a NEW Email (in Windows Only).
+		</li>
+		<li>Fixed: When adding inline text using <code class="inline">%file%</code>, new lines were not expanded in Composer (HTML view). </li>
+		
+		<li><a href="http://quickfolders.org/bugzilla/bugs/show_bug.cgi@id=26523" target="_blank">[Bug 26523]</a>
+		    Extra <code class="html">&lt;br&gt;</code> before blockquote if standard quote header is used
+		</li>
+				
+		<li><a href="http://quickfolders.org/bugzilla/bugs/show_bug.cgi@id=26541" target="_blank">[Bug 26541]</a>
+			SmartTemplates 1.5 not working correctly in Postbox 5.0
+		</li>
+
+  </ul>
+
+</li> 
+
+<a id="1.5.1"> </a>
+<li>
+  <h4>
+		<a href="https://addons.thunderbird.net/thunderbird/addon/324497/versions/1.5.1">Version 1.5.1 - 01/05/2018</a>
+		<br>
+		<span class="appWrapper">
+			<span class="thunderbird">9.0 - 60.*</span> 
+			<span class="seamonkey">2.0.0 - 2.49.*</span> 
+			<span class="postbox">3.0.0 - 5.52b6</span>
+		</span>
+  </h4>
+	
+  <ul>
+    <li><a href="http://quickfolders.org/bugzilla/bugs/show_bug.cgi@id=26434" target="_blank">[Bug 26434]</a>
+		    Forwarding email with embedded images removes images
+		</li>
+		<li><a href="http://quickfolders.org/bugzilla/bugs/show_bug.cgi@id=26465" target="_blank">[Bug 26465]</a>
+		    Composer does not focus into body of mail.
+		</li>
+    <li>Updated locales for French and Slovenian language. Thanks to Jo&euml;l Bauer and Peter Klofutar at Babelzilla.</li>
+		<li>Raised minimum Thunderbird version to 45.0 </li>
+		<li>Release video below - Please help my YouTube channel by subscribing. 
+				Click the YouTube link in the bottom right corner of the video to visit my channel.<br>
+				<iframe class="youtube"  src="https://www.youtube.com/embed/zJu9tpa0cHY" frameborder="0" allowfullscreen></iframe>
+		</li>	
+    <li>Changed license to Attribution-NoDerivatives 4.0 International <a href="http://creativecommons.org/licenses/by-nd/4.0/">(CC BY-ND 4.0)</a></li>		
+		<li><b>IF you are updating from version 1.4, there are more changes below <a href="#features1_5">please click here</a> to read on!</b></li>
+  </ul>
+</li> 
+
+<a id="1.5"> </a>
+<li>
+  <h4>
+		<a href="https://addons.thunderbird.net/thunderbird/addon/324497/versions/1.5">Version 1.5 - 27/04/2018</a>
+		<br>
+		<span class="appWrapper">
+			<span class="thunderbird">9.0 - 60.*</span> 
+			<span class="seamonkey">2.0.0 - 2.49.*</span> 
+			<span class="postbox">3.0.0 - 5.52b6</span>
+		</span>
+  </h4>
+	
+	<div>Release video below - Please help my YouTube channel by subscribing. 
+		     Click the YouTube link in the bottom right corner of the video to visit my channel.<br>
+				<iframe class="youtube"  src="https://www.youtube.com/embed/zJu9tpa0cHY" frameborder="0" allowfullscreen></iframe>
+	</div>	
+	
+		
+	<a name="features1_5">&nbsp;</a>
+	<h5 class="inList"><span class="inListTitle">Enhancements</span></h5>
+  <ul>
+		<li><a href="http://quickfolders.org/bugzilla/bugs/show_bug.cgi@id=26340" target="_blank">[Bug 26340]</a>
+		    New "unmodified field" option for %To()%, %CC()% and %From()%
+		    <code>%from(<i>initial</i>)%</code> New <i>initial</i> keyword to avoid any changes of header; just displays the header as received.</li>
+		<li><a href="http://quickfolders.org/bugzilla/bugs/show_bug.cgi@id=26307" target="_blank">[Bug 26307]</a>
+		    <span class="premium">Pro Feature</span>
+				New switch for adding (subtracting) days from date fields:<br>
+				<code>%X:=calculated(n)%</code> where n = is the number of days to add. Note this needs to be reset using
+				<code>%X:=calculated(0)%</code> to unapply it to the rest of the Email.
+        </li>				
+				<hr>
+    <li><a href="http://quickfolders.org/bugzilla/bugs/show_bug.cgi@id=26411" target="_blank">Bug 26411</a>
+				New: Expanded functions for manipulation of headers, based on 
+		    <a href="http://www.regular-expressions.info/quickstart.html" target="_blank">Regular Expressions</a>.<span class="premium">Pro Feature</span></li>
+    <li><code>%header.set.matchFromSubject(<i>hdr,regex,group</i>)%</code> Set the header if a matching regular expression is found in subject line.</li>
+    <li><code>%header.append.matchFromSubject(<i>hdr,regex,group</i>)%</code> Append text to header / recipient if a matching regular expression is found in subject line.</li>
+    <li><code>%header.prefix.matchFromSubject(<i>hdr,regex,group</i>)%</code> Prefix text to header if a matching regular expression is found in subject line.</li>
+    <li><code>%header.set.matchFromBody(<i>hdr,regex,group</i>)%</code> Set the header if a matching regular expression is found in quoted email.</li>
+    <li><code>%header.append.matchFromBody(<i>hdr,regex,group</i>)%</code> Append text to header / recipient if a matching regular expression is found in quoted email.</li>
+    <li><code>%header.prefix.matchFromBody(<i>hdr,regex,group</i>)%</code> Prefix text to header if a matching regular expression is found in quoted email.</li>
+    <li><code>%header.delete(<i>hdr,regex</i>)%</code> Remove matching regular expression from text.</li>
+  </ul>
+	<p><i>hdr</i>: One of the following list {subject | to | from | cc | bcc | reply-to}</p>
+	<p><i>regex</i>: A regular expression within double quotes, e.g. 
+	 "You got an email from .* \((\b[a-zA-Z0-9._+-]+@[a-z0-9.-]+\.[a-z]{2,4}\b)\)" - 
+   Note that this function supports <a href="http://www.regular-expressions.info/brackets.html" target="_blank">match groups</a>.</p>
+	<p><i>group</i>: The number of the match group, type 0 for inserting the match from the complete expression.</p>
+  <p>Notes: if no match is found the header will not be deleted or modified in any way. Therefore it is important 
+	  to  do a visual check on all fields before you send of your emails. No error messages will be issued when no
+		match is found. Prefix and append will check whether the value already exist and avoid duplication. The prefix 
+		command should not be used with address fields, instead use append to add more recipients.</p>
+	<p>More information on regular expressions and examples can be found on the 
+	   <a href="variables.html#stringManipulation">variables page</a>.</p>
+	<h5 class="inList"><span class="inListTitle">Bug Fixes</span></h5>
+	<ul>
+		<li><a href="http://quickfolders.org/bugzilla/bugs/show_bug.cgi@id=26494" target="_blank">[Bug 26494]</a> 
+			ESR 2018 readiness - Make SmartTemplates compatible with Thunderbird 60
+		</li>
+	  <li>
+			<a href="http://quickfolders.org/bugzilla/bugs/show_bug.cgi@id=26446" target="_blank">[Bug 26446]</a>
+			Thunderbird 57 hangs on start with SmartTemplates enabled.<br>
+			See also the <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1417209">Related Thunderbird bug </a>
+		</li>
+		<li>
+			(Gecko 57) Local date fails due to codebase changes - deprecated <a href="https://developer.mozilla.org/en-US/docs/Mozilla/Tech/XPCOM/Reference/Interface/nsILocaleService">nsILocaleService</a> causing local date to fail
+		</li>
+		<li>
+			(Gecko 57) Most date functions (datelocal, dateshort) Caused by deprecated <a href="https://dxr.mozilla.org/comm-central/search?q=nsIScriptableDateFormat&redirect=false">nsIScriptableDateFormat</a>
+		</li>
+	  <li><a href="http://quickfolders.org/bugzilla/bugs/show_bug.cgi@id=26300" target="_blank">[Bug 26300]</a>
+        %cursor% leaves an unnecessary space character </li>
+	  <li><a href="http://quickfolders.org/bugzilla/bugs/show_bug.cgi@id=26345" target="_blank">[Bug 26345]</a>
+        Unexpected "Â" character in mail body </li>
+		<li><a href="http://quickfolders.org/bugzilla/bugs/show_bug.cgi@id=26356" target="_blank">[Bug 26356]</a>
+				Thunderbird 52 - Forwarding an email inline adds empty paragraph on top.</li>
+		<li><a href="http://quickfolders.org/bugzilla/bugs/show_bug.cgi@id=25571" target="_blank">[Bug 25571]</a>
+		    "Replace line breaks with <code class="html">&lt;br&gt;</code>" on when not enabled - if Common settings are used:
+				this inserted unwanted extra line breaks causing ugly spacing issues when forwarding email.
+				</li>
+		<li><a href="http://quickfolders.org/bugzilla/bugs/show_bug.cgi@id=26364" target="_blank">[Bug 26364]</a>
+				Inline Images are not shown. The fix will look for file:\\\ paths and replace with the 
+				raw image data. This won't work if there is no "file:\\\" portion given (relative path / 
+				current folder not supported)
+				</li>
+	</ul>
+	
+	<h5 class="inList"><span class="inListTitle">Postbox</span></h5>
+	<ul>
+		<li><a href="http://quickfolders.org/bugzilla/bugs/show_bug.cgi@id=26485" target="_blank">[Bug 26485]</a>
+				 Make SmartTemplates compatible with the next Postbox build - 5.52 beta 6 (modern Gecko build) - as of beta 7, Postbox is following Mozilla Quantum in <a href="https://support.postbox-inc.com/hc/en-us/articles/115004234013" target="_blank">dropping 3rd party Addons support altogether</a>:
+				 <quote>
+					 <p> Postbox is based on Mozilla code, and as of Firefox Quantum, Mozilla has discontinued support for add-ons. As such, a decision has been made to remove add-ons functionality from Postbox at this time.</p>
+					 <p> Postbox's Signatures and Responses add-ons have been rolled into the core product. Cloud File Sharing and installable Dictionaries will be supported in future BETA releases. </p>
+					 <p>Add-ons from 3rd parties will no longer operate in Postbox, but we may opt to roll certain 3rd party add-on functionality into Postbox in the future.</p>
+				 </quote>
+		</li>
+	</ul>
+</li>
+
+<a id="1.4"> </a>
+<li>
+  <h4>
+		<a href="https://addons.thunderbird.net/thunderbird/addon/324497/versions/1.4">Version 1.4 - 22/01/2017</a>
+		<br>
+		<span class="appWrapper">
+			<span class="thunderbird">9.0 - 50.*</span> 
+			<span class="seamonkey">2.0.0 - 2.44</span> 
+			<span class="postbox">3.0.0 - 5.*</span>
+		</span>
+  </h4>
+  <p class="shilling box">Please <a href="contribute.html">contribute to SmartTemplates</a></p>
+  <ul>
+		 <li>Release video below - Please help my YouTube channel by subscribing. Click the YouTube link in the bottom right corner of the video to visit my channel.<br>
+				<iframe class="youtube"  src="https://www.youtube.com/embed/u72yHAPNkZE" frameborder="0" allowfullscreen></iframe></li>	
+		<li>Added Postbox 5.0 compatibility</li>
+	  <li>Fixed: mailto links are missing signature</li>
+		<li>Extended <code>%matchTextFromBody( )%</code> function. <span class="premium">Pro Feature</span><br>
+		   <code class="inline">%matchTextFromBody("Regular Expression",MatchGroup)%</code> finds a pattern in the quoted Email and inserts it at function location. The first parameter must be the regular expression within double quotes. The second parameter is a number which denotes the "match group". Match groups are usually designated with round parentheses (). Use 0 to match the complete expression, 1 for the first group etc.
+		</li>
+		<li>New <code>%matchTextFromSubject( )%</code> function <span class="premium">Pro Feature</span><br>
+		    Same as above, but searches the Subject line for the pattern. Parameters are also the same, first the pattern, second the match group number. See the <a href="http://smarttemplate4.mozdev.org/variables.html#stringManipulation">variables page</a> for a detailed explanation and examples.
+		</li>
+  </ul>
+	<p>More information on regular expressions and examples can be found on the 
+	   <a href="variables.html#stringManipulation">variables page</a>.</p>
+</li> 
+
+<a id="1.3.1"> </a>
+<li>
+  <h4>
+		<a href="https://addons.thunderbird.net/thunderbird/addon/324497/versions/1.3.1">Version 1.3.1 - 23/09/2016</a>
+		<br>
+		<span class="appWrapper">
+			<span class="thunderbird">15.0 - 49.*</span> 
+			<span class="seamonkey">2.10 - 2.40</span> 
+			<span class="postbox">3.0.0 - 4.*</span>
+		</span>
+  </h4>
+  <p class="shilling box">Please <a href="contribute.html">contribute to SmartTemplates</a></p>
+  <ul>
+		<li>Please check out my new YouTube channel and help by subscribing. We will post tips on using 
+		    Thunderbird and Addons on a regular basis. Click on the YouTube link in the bottom
+				right corner to visit my channel:
+				<a href="https://www.youtube.com/c/thunderbirddaily">Thunderbird Daily</a></li>
+		<li><a href="http://quickfolders.org/bugzilla/bugs/show_bug.cgi@id=26260" target="_blank">[Bug 26260]</a>
+		    Browser's "EMail Link" feature doesn't copy link
+				<p>In some circumstances choosing the browser feature to email a link will
+				   generate a new email but  not copy in the actual link into the body of the
+					 email. I haven't been able to reproduce this yet but assume it is related to
+					 plain text email.</p></li>
+	  <li><a href="http://quickfolders.org/bugzilla/bugs/show_bug.cgi@id=26261" target="_blank">[Bug 26261]</a>
+		    Quote header not inserted in plain text mode.
+				</li>
+  </ul>
+</li> 
+
+
+<a id="1.3"> </a>
+<li>
+  <h4>
+		<a href="https://addons.thunderbird.net/thunderbird/addon/324497/versions/1.3">Version 1.3 - 11/07/2016</a>
+		<br>
+		<span class="appWrapper">
+			<span class="thunderbird">9.0 - 47.*</span> 
+			<span class="seamonkey">2.0.0 - 2.42</span> 
+			<span class="postbox">3.0.0 - 4.*</span>
+		</span>
+  </h4>
+  <p class="shilling box">Please <a href="contribute.html">contribute to SmartTemplates</a></p>
+  <ul>
+		<li>Please check out my new YouTube channel and help by subscribing. We will post tips on using 
+		    Thunderbird and Addons on a regular basis. Click on the YouTube link in the bottom
+				right corner to visit my channel.<br>
+				<iframe class="youtube" src="https://www.youtube.com/embed/xKh7FkU8A1w" frameborder="0" allowfullscreen></iframe></li>
+	  <li><a href="http://quickfolders.org/bugzilla/bugs/show_bug.cgi@id=26207" target="_blank">[Bug 26207]</a>
+		    Add option to delimit address list with semicolons<br>
+				<img class="screenshot" src="/img/multi-correspondents-demiliter.png" alt="multi c delimiter">
+				</li>
+		<li><a href="http://quickfolders.org/bugzilla/bugs/show_bug.cgi@id=26208" target="_blank">[Bug 26208]</a>
+		    Lastname and Firstname arguments omit part of the name when broken up</li>
+		<li><a href="http://quickfolders.org/bugzilla/bugs/show_bug.cgi@id=26257" target="_blank">[Bug 26257]</a>
+		    Default quote header not removed in complex Stationery</li>
+		<li>Force Replacing default quote header in Stationery even if no <code class="inline">%quoteHeader%</code> variable is contained</li>
+		<li><a href="http://quickfolders.org/bugzilla/bugs/show_bug.cgi@id=26215" target="_blank">[Bug 26215]</a>
+		    Bad interaction between SmartTemplates and "When using paragraph format, the enter key creates a new paragraph".
+				With this new option, we can force SmartTemplates to always start in a Paragraph to better integrate
+				with the recently updated behavior of Thunderbird 45.<br>
+				<img class="screenshot" src="/img/force-paragraph.png" alt="force paragraph mode"></li>
+		<li><a href="http://quickfolders.org/bugzilla/bugs/show_bug.cgi@id=26209" target="_blank">[Bug 26209]</a>
+		    Add option to wrap full name in double quotes if it contains comma or semicolon<br>
+				Set <span class="codeLine">extensions.smartTemplate4.names.quoteIfComma = true</span> </li>
+		<li>When clicking on a mailto link from a web browser with a given text body, this was replaced by SmartTemplates.
+		    The new behavior bypasses smartTemplate to avoid losing information from the web site. </li>
+		<li>Added Czech Locale - thanks to jmarek at beta.babelzilla.org</li>
+		<li>Added button to visit our <a href="https://www.youtube.com/c/thunderbirddaily">Thunderbird Daily</a> Youtube channel</li>
+		<li>Updated outdated links to language libraries from ftp to https</li>
+  </ul>
+</li> 
+
+<a id="1.2"> </a>
+<li>
+  <h4>
+		<a href="https://addons.thunderbird.net/thunderbird/addon/324497/versions/1.2.1">SmartTemplates 1.2.1 - 20/04/2016</a>
+		<br>
+		<span class="appWrapper">
+			<span class="thunderbird">9.0 - 45.*</span> 
+			<span class="seamonkey">2.0.0 - 2.45</span> 
+			<span class="postbox">3.0.0 - 4.*</span>
+		</span>
+  </h4>
+  <p class="shilling box">Please <a href="contribute.html">contribute to SmartTemplates</a> once a year to make sure the project thrives!</p>
+  <ul>
+		<li>Please check out my new YouTube channel and help by subscribing. We will post tips on using 
+		    Thunderbird and Addons on a regular basis. Click on the YouTube link in the bottom
+				right corner to visit my channel.<br>
+				<iframe class="youtube" src="https://www.youtube.com/embed/Rk-T465fkEw" frameborder="0" allowfullscreen></iframe></li>
+    <li><a href="http://quickfolders.org/bugzilla/bugs/show_bug.cgi@id=26100" target="_blank">[Bug 26061]</a> 
+				Thunderbird doesn't remember to disable Icon on status bar</li>
+    <li><a href="http://quickfolders.org/bugzilla/bugs/show_bug.cgi@id=26100" target="_blank">[Bug 26100]</a> 
+		    Double brackets not working with <code class="inline">%cc(name,bracketMail(angle))%</code></li>
+    <li><a href="http://quickfolders.org/bugzilla/bugs/show_bug.cgi@id=26159" target="_blank">[Bug 26159]</a> 
+		    <code class="inline">%cursor%</code> variable breaks paragraphs style</li>
+    <li><a href="http://quickfolders.org/bugzilla/bugs/show_bug.cgi@id=26126" target="_blank">[Bug 26126]</a> 
+		    Unwanted space added after cursor</li>
+		<li><a href="http://quickfolders.org/bugzilla/bugs/show_bug.cgi@id=26139" target="_blank">[Bug 26139]</a> 
+		    Fix position of warning message for variables that are not supported in New Emails.</li>
+		<li><a href="http://quickfolders.org/bugzilla/bugs/show_bug.cgi@id=26197" target="_blank">[Bug 26197]</a>
+		    Thunderbird 45 - unwanted paragraph after quote header.</li>
+  </ul>
+</li> 
+
+<a id="1.1"> </a>
+<li>
+  <h4>
+   <a href="https://addons.thunderbird.net/thunderbird/addon/324497/versions/1.1" >SmartTemplates 1.1 - 30/08/2015</a>
+   <br>
+   <span class="appWrapper">
+	   <span class="thunderbird">9.0 - 42.*</span> 
+		 <span class="seamonkey">2.0 - 2.39</span> 
+		 <span class="postbox">3.0 - 4.*</span>
+		</span>
+  </h4>
+	<p class="shilling box">Please <a href="contribute.html">contribute to SmartTemplates</a> once a year to make sure the project thrives!</p>
+  <ul>
+	  <h5 class="inList"><span class="inListTitle">Enhancements</span></h5>
+    <li><a href="http://quickfolders.org/bugzilla/bugs/show_bug.cgi@id=26043" target="_blank">[Bug 26043]</a> 
+		    Save Template / Load Template feature<br>
+				<img class="screenshot" src="/img/Save-Template.png" alt="Save and Restore Templates"><br>
+				Save / load the current template to / from a file.
+				</li>
+    <li><a href="http://quickfolders.org/bugzilla/bugs/show_bug.cgi@id=25904" target="_blank">[Bug 25904]</a> Functions to Modify Mail Headers: To, Cc, Bcc, Subject and Others<br>
+		    <code>%header.set(name,"value")%</code> replaces the field of the Email.<br>
+		    <code>%header.append(name,"value")%</code> appends text or recipient to the field of the Email.<br>
+		    <code>%header.prefix(name,"value")%</code> prefixes text to the field of the Email.<br>
+				<img class="screenshot" src="/screenshots/header-function.png" alt="Change mail headers"><br>
+				This currently supports the following headers: subject, to, from, cc, bcc, reply-to. 
+				For example, <code class="inline">%header.prefix(subject,"[Project 1] ")%</code>
+				will turn the subject "Re: Support Request" into "[Project 1] Re: Support Request".
+				The <i>append</i> function can also be used to add more additional recipients. In all cases, duplicates
+				should be checked and avoided - please double check this is the case and report it to the 
+				bug if there are problems. The value has to be wrapped in " and doesn't currently support these 
+				characters: <i>" , %</i> used within.
+		</li>
+    <li>Removed automatic suppression of "mailTo" links and added an Advanced Setting for re-activating it.
+		    Going forward, we recommend keeping this option off, as it may have some undesirable side-effects.</li>
+    <h5 class="inList"><span class="inListTitle">Miscellaneous</span></h5>
+		<li>Postbox 4 compatibility. Raised minimum version for Thunderbird to 9.0.</li>
+  </ul>
+</li> 
+
+<a name="0.9.7"> </a>
+<a name="1.0.1"> </a>
+<li>
+  <h4>
+   <a href="https://addons.thunderbird.net/thunderbird/addon/324497/versions/1.0.1">SmartTemplates 1.0.1 - 25/05/2015</a>
+   <br>
+   <span class="appWrapper"><span class="thunderbird">3.1.20 - 38.*</span> <span class="seamonkey">2.0.0 - 2.38</span> <span class="postbox">3.0.0 - 4.0.*</span></span>
+  </h4>
+  <ul>
+    <h5 class="inList"><span class="inListTitle">Enhancements</span></h5>
+    <li><a href="http://quickfolders.org/bugzilla/bugs/show_bug.cgi@id=25902" target="_blank">[Bug 25902]</a>  
+		    <code class="inline">%from%</code> and <code class="inline">%to%</code> fail if no argument is given. While addressing this bug 
+        I also revised the treatment of variables within the arguments so multiple elements 
+        can be added e.g. <code class="inline">%from(firstname,lastname,mail)%</code> This also helps when adding a list
+        of multiple addresses (as multiple <code class="inline">%from%</code> statements are expanded individually which is 
+        unusable as list.</li>
+    <li><a href="http://quickfolders.org/bugzilla/bugs/show_bug.cgi@id=26020" target="_blank">[Bug 26020]</a>
+        Added bracketMail() and bracketName() functions use  within from() to() cc() etc. 
+        to "wrap" mail address with non-standard characters<br>
+    
+    <pre class="inList">
+  bracketMail(arg) - use  within from() to() cc() etc. to "wrap" mail address with non-standard characters
+  bracketName(arg) - same using "name portion"
+  usage: bracketMail(startDel;endDel)  startDel = characters before the mail portion 
+                                     endDel = characters after the mail portion
+                                     e.g. bracketMail(";") unsupported characters are:  ; , < > ( ) [ ]
+       bracketMail()        =  &lt;mail@domain.com&gt;
+       bracketMail(angle)   =  &lt;mail@domain.com&gt;
+       bracketMail(round)   =  (mail@domain.com)
+       bracketMail(square)  =  [mail@domain.com]
+       bracketMail(;)        =  mail@domain.com</pre>
+    </li>
+    <li><a href="http://quickfolders.org/bugzilla/bugs/show_bug.cgi@id=25871">[Bug 25871]</a> Added <code>%file()%</code> <span class="premium">Pro Feature</span>- insert html, text or image from file (for customized signatures)
+          use a local file path in order to insert a file from the computer you are sending from.
+          You can also use it to insert an image file. To insert the correct file path / name, simply click 
+          on the %file% link in the "Variables" window.<br>
+          <code>%file(fileName,encoding)%</code>  <code>%file(fileName)%</code> <br>
+          If the optional encoding parameter is omitted, we assume UTF-8 (recommended)
+          <code>%file(imageName,altText)%</code>  <code>%file(imageName)%</code> <br>
+          The optional altText is displayed at the recipient if the image cannot be displayed. It may not contain the characters ,)(><
+    </li>
+		<li> Added Slovenian Locale - thanks to <a href="http://beta.babelzilla.org/accounts/profile/Klofutar/">Klofutar</a> for providing the translation!</li>
+    <h5 class="inList"><span class="inListTitle">Bug Fixes</span></h5>
+    <li><a href="http://quickfolders.org/bugzilla/bugs/show_bug.cgi@id=25903" target="_blank">[Bug 25903]</a> In address fields Quotation marks are escaped: \"</li>
+    <li>Fixed: Capitalize Names doesn't work if string is quoted. Makes the whole string lowercase. 
+        Also capitalisation should work with Names in brackets now.</li>
+    <li>Fixed: getSignatureInner inserts "undefined" in Postbox if no signature is defined for current identity.</li>
+    <li><a href="http://quickfolders.org/bugzilla/bugs/show_bug.cgi@id=25951" target="_blank">[Bug 25951]</a> SmartTemplates not working in SeaMonkey 2.32 - Temporal Deadzone - This was caused by some code 
+        changes in the Mozilla code base that established different rules for variables declared with "var" 
+        causing addons to break which have the same variable declared with let or var multiple times </li>
+    <li><a href="http://quickfolders.org/bugzilla/bugs/show_bug.cgi@id=25976" target="_blank">[Bug 25976]</a> Reply to List: variables not resolved - Stationery Patch available</li>
+    <li><a href="http://quickfolders.org/bugzilla/bugs/show_bug.cgi@id=25089" target="_blank">[Bug 25089]</a> Default forward quote not hidden - in Postbox "Fred wrote:" was not removed in plain text mode.
+        Set <span class="codeLine">extensions.smartTemplate4.plainText.preserveTextNodes = true</span> for roll back to previous behavior.</li>
+    <li><a href="http://quickfolders.org/bugzilla/bugs/show_bug.cgi@id=26008" target="_blank">[Bug 26008]</a> Inserting Template in Postbox may fail with "XPCOMUtils not defined"</li>
+    <li><a href="http://quickfolders.org/bugzilla/bugs/show_bug.cgi@id=26013" target="_blank">[Bug 26013]</a> SmartTemplates picks template from common settings instead of identity (Tb38)</li>
+    <li>Fixed: SmartTemplates was reported to fail in Postbox 3.0.11 in some cases - this version fixes the issue.</li>
+    
+    <h5 class="inList"><span class="inListTitle">Known Issues</span></h5>
+    <li><a href="http://quickfolders.org/bugzilla/bugs/show_bug.cgi@id=25911" target="_blank">[Bug 25911]</a> Extra Spaces in long subject headers [Decoding Problem] - Work In Progress</li>
+  </ul>
+</li>
+
+<a id="0.9.5.3"></a>
+<a id="0.9.6"></a>
+<li>
+  <h4>
+   <a href="https://addons.thunderbird.net/thunderbird/addon/324497/versions/0.9.6">SmartTemplates 0.9.6 - 04/10/2014</a>
+   <br>
+   <span class="appWrapper"><span class="thunderbird">3.1.20 - 33.*</span> <span class="seamonkey">2.0.0 - 2.31.*</span> <span class="postbox">3.0 - 3.*</span></span>
+  </h4>
+  <ul>
+  
+    <li> Added a switch for removing emails when replacing Names from Address book</li>
+    <li> Added format <code>%sig(none)%</code> to completely remove the signature, overriding account settings.</li>
+    <li> <a href="http://quickfolders.org/bugzilla/bugs/show_bug.cgi@id=25089" target="_blank">[Bug 25089]</a> (reopened) default quote header wasn't removed anymore in Tb 31.0</li>
+    <li> <a href="http://quickfolders.org/bugzilla/bugs/show_bug.cgi@id=25816" target="_blank">[Bug 25816]</a> Missing names in reply caused by different Encodings - the Mime decoder fails when multiple addresses with varying encodings are contained </li>
+    <li> <a href="http://quickfolders.org/bugzilla/bugs/show_bug.cgi@id=25089" target="_blank">[Bug 25089]</a> Default forward quote not hidden </li>
+    <li> variable <code>%matchTextFromBody()%</code> to find and replace pattern <span class="premium">Pro Feature</span><br>
+         e.g. <code class="inline">%matchTextFromBody(TEST *)%</code> will retrieve '123' from 'TEST 123' </li>
+  </ul>
+</li> 
+
+<a id="0.9.5"> </a>
+<a id="0.9.5.1"> </a>
+<li>
+  <h4>
+   <a id="0.9.5.2" href="https://addons.thunderbird.net/thunderbird/addon/324497/versions/0.9.5.2">SmartTemplates 0.9.5.2 - 08/05/2014</a>
+   <br>
+   <span class="appWrapper"><span class="thunderbird">3.1.20 - 30.*</span> 
+   <span class="seamonkey">2.0.0 - 2.27.*</span> <span class="postbox">2.0.0 - 3.*</span></span>
+  </h4>
+<ul>
+  <li>Improved locale matching (allow matching en as en-US etc.)</li>
+  <li><a href="http://quickfolders.org/bugzilla/bugs/show_bug.cgi@id=25571" target="_blank">[Bug 25571]</a>  
+      "replace line breaks with <code class="html">&lt;br&gt;</code>" on when not enabled</li>
+  <li> Made sure that debug settings window stays on top.</li>
+  <li> Added <i>advanced</i> tab to settings dialog </li>
+  <li> Added option to disabling space for <code class="inline">%cursor%</code> </li>
+  <li> <a href="http://quickfolders.org/bugzilla/bugs/show_bug.cgi@id=25676" target="_blank">[Bug 25676]</a> 
+        JavaScript parser added by Benito van der Zander </li>
+  <li> <a href="http://quickfolders.org/bugzilla/bugs/show_bug.cgi@id=25710" target="_blank">[Bug 25710]</a> 
+        <code class="html">&lt;div id="smartTemplate4-template"&gt;</code> is inserted in Stationery body </li>
+  <li> <a href="http://quickfolders.org/bugzilla/bugs/show_bug.cgi@id=25643" target="_blank">[Bug 25643]</a> 
+        Display Names from Address book: if the email-address can be found in the Address books, use
+        the name information from there for variables like <code class="inline">%from(firstname)%</code> etc.<br>
+        <img class="screenshot" src="/img/options-resolveNames.png" alt="Resolve Names from Address book">
+        </li>
+  <li> Added option to use Nickname where it exists </li>
+  <li> Added option to capitalize all names </li>
+  <li> Fixed <a href="http://quickfolders.org/bugzilla/bugs/show_bug.cgi@id=25191" target="_blank">[Bug 25191]</a> 
+        Conflict with add-on Account Colors</li>
+  <li> Fixed a problem with name matching signature files -  depending on file name some 
+        textual signatures might be accidentally treated as images.</li>
+  <li> Fixed reading plain text signature files (linefeeds where lost) by inserting html line breaks - to disable this behavior toggle 
+        <span class="codeLine">extensions.smartTemplate4.signature.replaceLF.plaintext.br</span> in about:config</li>
+  <li> 0.9.5.2 Fixed <a href="http://quickfolders.org/bugzilla/bugs/show_bug.cgi@id=25762" target="_blank">[Bug 25762]</a> 
+      Address variables To and Cc replaced with ??  - this happened on remote address books and also in Postbox generally
+      of the option "Replace Names from Address book" was activated.</li>
+  </ul>
+</li>
+
+<a id="0.9.4"> </a>
+<li>
+  <h4>
+    <a href="https://addons.thunderbird.net/thunderbird/addon/324497/versions/0.9.4" >SmartTemplates 0.9.4 - 15/09/2013</a>
+    <br>
+    <span class="appWrapper"><span class="thunderbird">3.1.20 - 24.*</span> <span class="seamonkey">2.0.0 - 2.20.*</span> <span class="postbox">2.0.0 - 3.*</span></span>
+  </h4>
+  <ul>
+    <li> Added <code>%quoteHeader%</code> variable for Stationery Users - adds the quote header only in reply/forward case and is removed in new mail</li>
+    <li> Fixed <a href="http://quickfolders.org/bugzilla/bugs/show_bug.cgi@id=25523" target="_blank">[Bug 25523]</a>  Cannot use image as signature .</li>
+    <li> Fixed <a href="http://quickfolders.org/bugzilla/bugs/show_bug.cgi@id=25526" target="_blank">[Bug 25526]</a>  If no signature is defined, <code class="inline">%sig%</code> is not removed.</li>
+    <li> Added user interface for forcing adding '-- ' delimiters before signature </li>
+    <li> Redesigned Global Settings tab:<br>
+    <img class="screenshot" src="/screenshots/global-settings.png" alt="global settings tab">
+    </li>
+    <li> Added islinkable switch to address variables (to, from, cc, bcc, identity) to fix <a href="http://quickfolders.org/bugzilla/bugs/show_bug.cgi@id=25538" target="_blank">[Bug 25538]</a></li>
+    <li> Reopened <a href="http://quickfolders.org/bugzilla/bugs/show_bug.cgi@id=25088" target="_blank">[Bug 25088]</a> by making status bar icon status more resilient</li>
+    <li> Fixed <code class="inline">%subject%</code> removing expressions in <code class="html">&lt;brackets&gt;</code></li>
+  </ul>
+</li>
+
+<a id="0.9.3"> </a>
+<li>
+  <h4>
+      <a href="https://addons.thunderbird.net/thunderbird/addon/324497/versions/0.9.3" target="_blank">SmartTemplates 0.9.3 - Released 31/07/2013</a>
+      <br>
+      <span class="appWrapper"><span class="thunderbird">3.1.20 - 22.*</span> <span class="seamonkey">2.0.0 - 2.17.*</span> <span class="postbox">2.0.0 - 3.*</span></span>
+  </h4>
+
+  <h5 class="inList"><span class="inListTitle">Enhancements</span></h5>
+  <ul>
+    <li> Added <a href="stationery.html" title="Visit our dedicated support page for Stationery">support for Stationery 0.8</a>. Thanks to the cooperation of its author Arivald, we are now
+          able to replace variables that are injected in Stationery templates, which makes it possible to create 
+          form letters that can be used on demand from any mail account. See 
+          <a href="http://smarttemplate4.mozdev.org/stationery.html#howtoUse" title="How to use SmartTemplates with Stationery?">our dedicated support page</a> for instructions on 
+          how to use them together. <br>
+          note: Template inserting is disabled if a Template of Stationery 0.7.8 or older is used.</li>
+    <li> Added toolbar button<br>
+          <img class="screenshot" src="/screenshots/cutomize_toolbar_drag.png" alt="Drag &amp; Drop Toolbar Button">
+    </li>
+    <li> <a href="http://quickfolders.org/bugzilla/bugs/show_bug.cgi@id=24990" target="_blank">[FR 24990]</a>  Added <code>%cursor%</code> variable</li>
+    <li> <a href="http://quickfolders.org/bugzilla/bugs/show_bug.cgi@id=25083" target="_blank">[FR 25083]</a> New option "Correct Lastname, Firstname" to swap firstname to the front. </li>
+    <li> <code>%deleteText()%</code> and <code>%replaceText()%</code> functions - <span class="premium">Pro Feature</span></li>
+    <li> Replacement of variables in Signature</li>
+    <li> Added <a href="http://www.postbox-inc.com/index.php" target="_blank" title="Visit Postbox Website">Postbox</a> support</li>
+    <li> Mailto link support for the main header fields that hold email address data: 
+    <code>%to(mail,link)%</code> <code>%to(name,link)%</code> <code>%to(firstname,link)%</code>  etc.</li>
+    <li> new <code>%identity(name,link)%</code> function</li>
+    <li> <a href="http://quickfolders.org/bugzilla/bugs/show_bug.cgi@id=25248" target="_blank">[FR 25248]</a><code>%y%</code> for two digit years</li>
+    <li> added preferences textbox for default charset </li>
+    <li> added Examples tab:<br>
+          <img class="screenshot" src="/screenshots/examples.png" alt="examples tab"><br>
+          This tab loads examples from our support web site; they also are conveniently broken up  
+          into <i>template</i> and <i>quote header</i> to show into which box the code should go.
+          You can highlight the desired code and drag it into the appropriate field.<br>
+          <img class="screenshot" src="/screenshots/examples_copy-paste.png" alt="copy &amp; paste from examples Tab">
+    </li>
+  </ul>
+  <h5 class="inList"><span class="inListTitle">Bug Fixes</span></h5>
+  <ul>
+    <li> fixed a problem with preference not updating (found by AMO reviewer Nils Maier)</li>
+    <li> stabilised signature code base</li>
+    <li> fixed: Redefinition of Thunderbird's nsIMsgAccount interface broke account dropdown in settings</li>
+    <li> suppressed displaying string conversion prompt when clicking on the version number in advanced options</li>
+    <li> <a href="http://quickfolders.org/bugzilla/bugs/show_bug.cgi@id=25483" target="_blank">[Bug 25483]</a> when using <code class="inline">%sig(2)%</code> (option for removing dashes) - signature is missing on new mails in HTML mode </li>
+    <li> <a href="http://quickfolders.org/bugzilla/bugs/show_bug.cgi@id=25104" target="_blank">[Bug 25104]</a> when switching identity, old sig does not get removed.</li>
+    <li> <a href="http://quickfolders.org/bugzilla/bugs/show_bug.cgi@id=25486" target="_blank">[Bug 25486]</a> attaching a plain text file as signature leads to double spaces in signature</li>
+    <li> <a href="http://quickfolders.org/bugzilla/bugs/show_bug.cgi@id=25272" target="_blank">[Bug 25272]</a> reply below quote with signature placed curorsor below signature (should be above signature and below quote)</li>
+  </ul>
+  <h5 class="inList"><span class="inListTitle">Miscellaneous</span></h5>
+  <ul>
+    <li> added 24px icon</li>
+    <li> added change log</li>
+    <li> Numerous locale updates - Many thanks to the translation team at BabelZilla!</li>
+    <li> added a configuration setting to insert dashes "--" on top of plain text signature.<br>
+          <span class="codeLine chevron">extensions.smartTemplate4.insertSigDashes.plaintext</span></li>
+    <li> added a configuration setting for signature file encoding.<br>
+          <span class="codeLine chevron">extensions.smartTemplate4.signature.encoding</span></li>
+  </ul>
+  <h5 class="inList"><span class="inListTitle">Known Issues</span></h5>
+  <ul>
+    <li> <a href="http://quickfolders.org/bugzilla/bugs/show_bug.cgi@id=25523" target="_blank">[Bug 25523]</a> Cannot use image as signature (fix available) </li>
+  </ul>
+</li>
+
+<a id="0.9.2" > </a>
+<li>
+    <h4>
+      <a href="https://addons.thunderbird.net/thunderbird/addon/324497/versions/0.9.2" target="_blank">SmartTemplates 0.9.2 - Released 22/11/2012</a>
+      <br>
+      <span class="appWrapper"><span class="thunderbird">3.1.7 - 17.*</span> <span class="seamonkey">2.0.0 - 2.16.*</span></span>
+    </h4>
+    
+    <h5 class="inList"><span class="inListTitle">Enhancements</span></h5>
+    <ul>
+      <li>Redesigned Settings Window to support signature settings from Thunderbird even better<br>
+      <img class="screenshot" src="/screenshots/2-box-solution.png" alt="2-box-solution"></li>
+      <li>Added support for Seamonkey</li>
+      <li>Added global settings in advanced options pane; includes new font size setting for template editor.<br/>
+          <img class="screenshot" src="/screenshots/global-settings.png" alt="Global settings">
+      <li><a href="http://quickfolders.org/bugzilla/bugs/show_bug.cgi@id=25088" title="Show Details" target="_blank">[FR 25088]</a>: add option to hide status icon. You can also use right-click on the option to change label behavior through the configuration setting 
+			    <span class="codeLine">extensions.smartTemplate4.statusIconLabelMode</span> (it's not needed to change anything but you can do)<br>
+        <ul>
+          <li><span class="codeLine">0</span> - never show label
+          <li><span class="codeLine">1</span> - expand label on hover (default)
+          <li><span class="codeLine">2</span> - always show label<br>
+          <img class="screenshot" src="/screenshots/statusLabelConfig.png" alt="Status label configuration">
+        </ul>
+      </li>
+      <li><a href="http://quickfolders.org/bugzilla/bugs/show_bug.cgi@id=25012" title="Show Details" target="_blank">[FR 25012]</a> Added <code>%cwIso(offset)%</code> for week # of current year</li>
+      <li>Redesigned About Window (Add-On Manager &#8658; rightclick on SmartTemplates &#8658; About)<br>
+      <img class="screenshot" src="/screenshots/aboutWindow.png" alt="aboutWindow"></li>
+    </ul>
+    <h5 class="inList"><span class="inListTitle">Bug Fixes</span></h5>
+    <ul> 
+      <li><a href="http://quickfolders.org/bugzilla/bugs/show_bug.cgi@id=25103" title="Show Details" target="_blank">[Bug 25103]</a>: 0.9.1 inserts unwanted line break top of &lt;body&gt; in html mode</li>
+      <li><a href="http://quickfolders.org/bugzilla/bugs/show_bug.cgi@id=25099" title="Show Details" target="_blank">[Bug 25099]</a>: Support bottom reply with headers on top</li>
+      <li><a href="http://quickfolders.org/bugzilla/bugs/show_bug.cgi@id=25097" title="Show Details" target="_blank">[Bug 25097]</a>: Forward text message results in double header</li>
+      <li><a href="http://quickfolders.org/bugzilla/bugs/show_bug.cgi@id=25095" title="Show Details" target="_blank">[Bug 25095]</a>: 2 blank lines in plain text between header and quote</li>
+      <li><a href="http://quickfolders.org/bugzilla/bugs/show_bug.cgi@id=25093" title="Show Details" target="_blank">[Bug 25093]</a>: Signatur missing when replying below quote</li>
+      <li><a href="http://quickfolders.org/bugzilla/bugs/show_bug.cgi@id=25092" title="Show Details" target="_blank">[Bug 25092]</a>: Option window broken in Italian version</li>
+      <li><a href="http://quickfolders.org/bugzilla/bugs/show_bug.cgi@id=25084" title="Show Details" target="_blank">[Bug 25084]</a>: 0.9.1 regression: blank line is added before Reply template</li>
+      <li><a href="http://quickfolders.org/bugzilla/bugs/show_bug.cgi@id=25089" title="Show Details" target="_blank">[Bug 25089]</a>: Default forward quote can't be completely hidden - thanks to PeterM for providing a solution</li>
+      <li><a href="http://quickfolders.org/bugzilla/bugs/show_bug.cgi@id=25117" title="Show Details" target="_blank">[Bug 25117]</a>: Plaintext: Template always below the quoted message when replying</li>
+      <li><a href="http://quickfolders.org/bugzilla/bugs/show_bug.cgi@id=25155" title="Show Details" target="_blank">[Bug 25155]</a>: 0.9.1 regression - blank line is added AFTER Reply template</li>
+    </ul>
+    <h5 class="inList"><span class="inListTitle">Miscellaneous</span></h5>
+    <ul>
+      <li>Versions Bump to 17.*</li>
+      <li>Added uk-UA locale</li>
+      <li>Locale updates - Many thanks to the translation team at BabelZilla!</li>
+    </ul>    
+    <!--
+    <h5 class="inList"><span class="inListTitle">Miscellaneous</span></h5>
+    <li>locale updates<br>
+        Many thanks to the translation team at BabelZilla!</li>
+    <li> Versions Bump to xx.xx</li>
+      </ul>
+    -->
+</li>
+
+  <a id="0.9.1"> </a>
+  <li>
+    <h4>
+      <a href="https://addons.thunderbird.net/thunderbird/addon/324497/versions/0.9.1" target="_blank">SmartTemplates 0.9.1 - Released 16/08/2012</a>
+      <br>
+      <span class="appWrapper"><span class="thunderbird">3.1.7 - 14.*</span></span>
+    </h4>
+    <h5 class="inList"><span class="inListTitle">Enhancements</span></h5>
+    <ul>
+      <li><a href="http://quickfolders.org/bugzilla/bugs/show_bug.cgi@id=25109" title="Show Details" target="_blank">[Bug 25109]</a>: Automatically select Current Identity</li>
+      <li>Integrated variables help into options dialog</li>
+      <li>Statusbar button for quickly accessing template settings<br>
+      <img class="screenshot" src="/screenshots/statusbar-Button.png" alt="Statusbar Button"></li>
+      <li>Added <a href="https://www.mozdev.org/bugs/buglist.cgi?product=SmartTemplate4" title="SmartTemplates Bugs on Bugzilla" target="_blank">Bugzilla support</a></li>
+      <li>When switching between accounts, the current Tab (e.g. Reply to) remains selected</li>
+      <li>When updating from an earlier versions, all settings and templates should be migrated automatically, this prompt should show up once:<br>
+      <img class="screenshot" src="/screenshots/conversion.png" alt="ConSmartTemplates Wizard"><br>
+      simply press Ok to bring your old templates with you!
+    </ul>
+      <h5 class="inList"><span class="inListTitle">Bug Fixes</span></h5>
+    <ul>
+      <li>Fixed <a href="http://quickfolders.org/bugzilla/bugs/show_bug.cgi@id=24997" title="Show Details" target="_blank">[Bug 24997]</a>: "Edit as New" Sometimes Loses Message Body</li>
+      <li>Fixed <a href="http://quickfolders.org/bugzilla/bugs/show_bug.cgi@id=25002" title="Show Details" target="_blank">[Bug 25002]</a>: Signature will displayed two times</li>
+      <li>Fixed <a href="http://quickfolders.org/bugzilla/bugs/show_bug.cgi@id=24988" title="Show Details" target="_blank">[Bug 24988]</a>: Message body not included replying to "plain-text" messages</li>
+      <li>Fixed <a href="http://quickfolders.org/bugzilla/bugs/show_bug.cgi@id=24991" title="Show Details" target="_blank">[Bug 24991]</a>: Replace default quote header not working in some cases</li>
+    </ul>
+  </li>
+
+  <a id="0.8.5.6"> </a>
+  <li>
+    <h4>
+      <a href="https://addons.thunderbird.net/thunderbird/addon/324497/versions/0.8.5.6" title="Version 0.8.5.6 on ATN" target="_blank">SmartTemplates 0.8.5.6 - Released 18/06/2012</a>
+      <br>
+      <span class="appWrapper"><span class="thunderbird">3.1.7 - 14.*</span></span>
+    </h4>
+    <p class="attention">
+     <em>ATTENTION:</em> This and all following versions will not work properly before Thunderbird 13.*.*, if you use Thunderbird 12.*.* or before please use maximum 0.8.0!<br>
+     Thunderbird 13.*.* contains a lot of changes and this makes it impossible for us to support it the future!<br>
+     This also means that we can't support Thunderbird 1.5 from now!
+    </p>
+    <h5 class="inList"><span class="inListTitle">Enhancements</span></h5>
+    <ul>
+      <li>Redesigned Help Window</li>
+      <li>Added inserting variables/keywords using mouse click</li>
+      <li>Added validation during insert (if variable cannot be used in "Write New" it will be rejected<br>
+      <img src="/screenshots/help_onclick_error.png" class="screenshot" alt="onclick error"></li>
+    </ul>
+    <h5 class="inList"><span class="inListTitle">Bug Fixes</span></h5>
+    <ul>
+      <li>Fixed compatibility Problem with Thunderbird 13.* which broke a lot of the extension's functionality in 0.8.0 and previous</li>
+    </ul>
+    <h5 class="inList"><span class="inListTitle">Miscellaneous</span></h5>
+    <ul>
+      <li>Version Bump to 14.*</li>
+      <li>Added fi locale</li>
+      <li>Most locales are reviewed and corrected (currently not all) incomplete translations are in English, as always. Many thanks to the translation team at BabelZilla!</li>
+    </ul>
+  </li>
+
+  <a a id="0.8.0"> </a>
+  <li>
+    <h4>
+      <a href="https://addons.thunderbird.net/thunderbird/addon/324497/versions/0.8.0" title="SmartTemplates 0.8.0 on ATN" target="_blank">SmartTemplates 0.8.0 - Released 02/02/2012</a>
+      <br>
+      <span class="appWrapper"><span class="thunderbird">1.5 - 12.0a1</span></span>
+    </h4>
+    <p class="attention">
+     <em>ATTENTION:</em> This and all versions before works only up to Thunderbird 12.*.*, if you use Thunderbird 13.*.* please upgrade to 0.8.5.6 or newer!
+    </p> 
+    <h5 class="inList"><span class="inListTitle">Enhancements</span></h5>
+      <ul>
+          <li>made account list in option window easier to read</li>
+          <li>some visual improvements to the help file</li>          
+      </ul>
+    <h5 class="inList"><span class="inListTitle">Bug Fixes</span></h5>
+    <ul>
+      <li>fixed bug where a quotation that is edited loses its formatting or disappears.</li>
+    </ul>
+  </li>
+
+  <a id="0.7.9"> </a>
+  <li>
+    <h4>
+      <a href="https://addons.thunderbird.net/thunderbird/addon/324497/versions/0.7.9" title="SmartTemplates 0.7.9 on ATN" target="_blank">SmartTemplates 0.7.9 - Released 24/12/2011</a>
+      <br>
+      <span class="appWrapper"><span class="thunderbird">1.5 - 12.0a1</span></span>
+    </h4>
+    <h5 class="inList"><span class="inListTitle">Bug Fixes</span></h5>
+      <ul>
+        <li>corrected incorrect file encodings on many locale files. Incorrectly encoded errors.properties files caused SmartTemplates to crash this has also been corrected.</li>
+      </ul>
+      <h5 class="inList"><span class="inListTitle">Miscellaneous</span></h5>
+      <ul>
+        <li> Versions Bump to 12.0a1</li>
+      </ul>
+  </li>
+
+  <a id="0.7.8"> </a>
+  <li>
+    <h4>
+      <a href="https://addons.thunderbird.net/thunderbird/addon/324497/versions/0.7.8" title="SmartTemplates 0.7.8 on ATN" target="_blank">SmartTemplates 0.7.8 - Released 04/11/2011</a>
+      <br>
+      <span class="appWrapper"><span class="thunderbird">1.5 - 10.0a1</span></span>
+    </h4>
+    <h5 class="inList"><span class="inListTitle">Enhancements</span></h5>
+    <ul>
+      <li>added a new variable <code>%sig%</code> to allow users to put their signature where it should be placed in the template. If <code class="inline">%sig%</code> is not defined in the template it will be placed in the default Thunderbird location (above reply or below reply based on TB settings). 'Include Signature on Reply/Forward" must be checked in Thunderbird options for the <code class="inline">%sig%</code> to work as expected.</li>
+      <li>added a new option to variable <code class="inline">%subject%</code> to show the subject of the message being replied to/forwarded or the subject of the current message being composed</li>
+      <li><code class="inline">%tz_name%</code> variable has been added but it is system dependent and will have limited support. Some users will see abbreviated time zone names (EST, CDT) and some will see long names(Eastern Standard Time...) and some will not have any return depending on their operating system or the mailserver of the email being replied to.</li>
+    </ul >
+    <h5 class="inList"><span class="inListTitle">Miscellaneous</span></h5>
+    <ul>
+      <li> paste an list of all variables and in which case they can be used to all help files.</li>
+      <li> SmartTemplates no longer crashes when variables are used incorrectly; an error is logged to the Error Console.</li>
+    </ul>    
+  </li>
+
+  <a id="0.7.7"> </a>
+  <li>
+    <h4>
+      <a href="https://addons.thunderbird.net/thunderbird/addon/324497/versions/0.7.7" title="SmartTemplates 0.7.7 on ATN" target="_blank">SmartTemplates 0.7.7 - Released 04/11/2011</a>
+      <br>
+      <span class="appWrapper"><span class="thunderbird">1.5 - 10.0a1</span></span>
+      </h4>
+      <h5 class="inList"><span class="inListTitle">Bug Fixes</span></h5>
+    <ul>
+      <li>where reply header was being put above the signature when signature is placed 'above the quote'.</li>
+      <li>automatically add line break in message compose window</li>
+      <li><code class="inline">%date_tz%</code> variable was returning the local timezone instead of the senders timezone.</li>
+      <li>removed the 'automatically add two line breaks' that was added in 0.7.6. This affected many users and the correct way to add line breaks at the top of your message is to include them in your template.</li>
+    </ul>
+    <h5 class="inList"><span class="inListTitle">Miscellaneous</span></h5>
+    <ul>
+      <li>locale added: sv-SE <br>
+          Many thanks to BabelZilla Team!</li>
+      <li>Versions Bump to 10.0a1</li>
+    </ul>
+  </li>
+
+  <a id="0.7.6"> </a>
+  <li>
+    <h4>
+      <a href="https://addons.thunderbird.net/thunderbird/addon/324497/versions/0.7.6" title="SmartTemplates 0.7.6 on ATN" target="_blank">SmartTemplates 0.7.6 - Released 09/09/2011</a>
+      <br>
+      <span class="appWrapper"><span class="thunderbird">1.5 - 8.0a1</span></span>
+    </h4>
+      <h5 class="inList"><span class="inListTitle">Bug Fixes</span></h5>
+    <ul>
+      <li>Fixed issue if <code class="inline">%datelocal%</code> variable is used for new messages</li>
+      <li>a lot of small fixes</li>
+    </ul>
+      <h5 class="inList"><span class="inListTitle">Miscellaneous</span></h5>
+    <ul>
+      <li>changes in locale pt-BR</li>
+    </ul>
+  </li>
+
+  <a id="0.7.5"> </a>
+  <li>
+    <h4>
+      <a  href="https://addons.thunderbird.net/thunderbird/addon/324497/versions/0.7.5" title="extensions.smartTemplate4 0.7.5 on ATN" target="_blank">SmartTemplates 0.7.5 - Released 28/08/2011</a>
+      <br>
+      <span class="appWrapper"><span class="thunderbird">1.5 - 8.0a1</span></span>
+    </h4>
+    <h5 class="inList"><span class="inListTitle">Enhancements</span></h5>
+    <ul>
+      <li>An option was added in settings called "Use OS date/time format instead of Thunderbird".
+          Some users reported that SmartTemplate 4 was not using the custom date format they had set in their operating system.
+          This will give everyone that option if they want to use it.</li>
+    </ul>
+    <h5 class="inList"><span class="inListTitle">Bug Fixes</span></h5>
+    <ul>
+      <li> Some users reported subject lines not being displayed correctly. Specifically there were line breaks causing the subject to span more than one line. This could also occur with other  headers but subject was the only one reported.</li>
+      <li> corrected issue where headers longer than 4096 were being truncated.</li>
+    </ul>    
+    <h5 class="inList"><span class="inListTitle">Miscellaneous</span></h5>
+    <ul>
+      <li>updated all helpfiles 'added recent changes'</li>
+      <li>implemented some coding changes suggested by the Mozilla ATN review team.</li>
+    </ul>
+  </li>
+
+  <a id="0.7.4"> </a>
+  <li>
+    <h4>
+      <a  href="https://addons.thunderbird.net/thunderbird/addon/324497/versions/0.7.4" title="extensions.smartTemplate4 0.7.4 on ATN" target="_blank">SmartTemplates 0.7.4 - Released 09/08/2011</a>
+      <br>
+      <span class="appWrapper"><span class="thunderbird">1.5 - 8.0a1</span></span>
+    </h4>
+    <h5 class="inList"><span class="inListTitle">Enhancements</span></h5>
+    <ul>
+      <li>Originally the <code class="noWrite">X:=sent</code> switch would change all variables after it's use for the remainder of the template unless <code class="inline">X:=today</code> was used to switch them back. That behavior is now changed such that the <code class="inline">X:=sent</code> command only affects the line on which it is being used.</li>
+      <li><code class="inline">%datelocal%</code>, <code class="inline">%dateshort%</code>, <code class="inline">%date_tz%</code> are now affected by the <code class="inline">X:=sent</code> and <code class="inline">X:=today</code> variables.</li>
+    </ul>
+    <h5 class="inList"><span class="inListTitle">Bug fixes</span></h5>
+    <ul>
+      <li>fix CC line inner Brackets
+    </ul>
+  </li>
+
+
+  </ul>  <!-- #version-history -->
+
+  
+<h3>My other Extensions - highly recommended</h3><br>
+
+<h4 class="QuickFolders projects"><a href="https://addons.thunderbird.net/thunderbird/addon/3254/" title="QuickFolders for Thunderbird / Postbox / SeaMonkey on ATN" target="_blank">QuickFolders (Thunderbird / Postbox / SeaMonkey)</a></h4>
+<p>
+Takes the pain out of working with many mail folders; has currently 20,000 users and is 3rd of all top rated message reading extensions.
+</p>
+
+<h4 class="QuickFilters projects"><a href="https://addons.thunderbird.net/thunderbird/addon/372870/" title="quickFilters for Thunderbird / Postbox / SeaMonkey on ATN" target="_blank">quickFilters (Thunderbird / Postbox / SeaMonkey)</a></h4>
+<p>
+Quickly generate mail filters on the fly, by dragging and dropping mails and analyzing their attributes.
+</p>
+
+<h4 class="ZombieKeys projects"><a href="https://addons.thunderbird.net/thunderbird/addon/2335/" title="Zombie Keys for Thunderbird / Postbox / SeaMonkey on ATN" target="_blank">Zombie Keys (Thunderbird / Postbox / SeaMonkey)</a></h4>
+<h4 class="ZombieKeys projects">
+<a href="https://addons.thunderbird.net/thunderbird/addon/2335/" title="Zombie Keys for Firefox on ATN" target="_blank">Zombie Keys (Firefox)</a>
+</h4>
+<br>
+<p>Enter accents, diacritics, diaeresis, umlauts, ligatures etc. with keyboards of various countries (us,uk,ie,fr,it,ru,de,sv) - via easy to remember shortcuts or menu. Also supports all textboxes of the application (such as search, filters).
+</p>
+<h4 class="menuOnTop projects"><a href="https://addons.thunderbird.net/thunderbird/addon/menu-on-top/" title="Menu On Top for Thunderbird : Windows only! on ATN" target="_blank">Menu On Top (Thunderbird : Windows only!)</a></h4><!-- here we must take another url (name insteat of addon id) to amo otherwise we land on paloma personas -->
+<p>
+Moves the Thunderbird menu bar to the top. Choose from a selection of visual styles. It is convenient to have the menu on top of the tabs like Firefox; this is also a good area for placing "global" toolbar buttons like Navigation or get mail.
+</p>
+
+<script>
+  let expandBtns = document.querySelectorAll(".expandInstructions");
+  for (let el of expandBtns) {
+    el.addEventListener("click", function() {
+      let container = el.parentNode;
+      console.log(container);
+      let instruct = container.querySelector(".reinstallInstructions");
+      console.log(instruct);
+      if (instruct.style.display != "block") {
+        instruct.style.display = "block";
+        el.textContent = "Hide instructions";
+      }
+      else {
+        instruct.style.display = "none";
+        el.textContent = "Click to read instructions for reinstalling";
+      }
+    });
+  }    
+  
+</script>  
+
+<!-- END VERSION.HTML -->
+
+<!-- FOOTER.HTML -->
+<script>
+"use strict"; // use ECMAScript5 strict mode
+
+  /* Apply this site specific files to <head> element */
+  loadStyleSheet("footer.css");
+  loadStyleSheet("navibar.css");
+</script>
+
+  <div id="footer">
+   <div class="horizontalRule"></div>
+    <a id="contact"></a><!-- this anchor is just an in-page jump point, DO NOT REMOVE WE USE THIS ANCHOR ON ATN -->
+      <div id="mailToLink">
+       You have questions / comments about SmartTemplates? Please feel free to 
+       <p class="mail_link">
+        <script>mailtoLine();</script><!-- Mailto Line filled by JavaScript -->
+       </p>
+      </div>
+
+       <div class="attribution"><b>Attributions:</b><br>
+         Flagset by  Matthias Slovig under CC, see:
+        <a href="http://flags.blogpotato.de/" title="Visit Flagpotato Website" target="_blank">http://flags.blogpotato.de/</a><br>
+         Fugue Icons (or based on) by Yusuke Kamiyamane under CC, see:
+        <a href="http://p.yusukekamiyamane.com/" title="Visit Yusuke Kamiyamane Website" target="_blank">http://p.yusukekamiyamane.com/</a><br>
+         Noia Icons (or based on) by Carles Carbonell Bernado under LGPL, see:
+       <a href="http://carlitus.deviantart.com/" title="Visit Noia on Deviantart" target="_blank">http://carlitus.deviantart.com/</a>
+       </div>
+
+       <!--Special Attributions -->
+       <!-- Brands Carousel (jquery) in Alphabetically Order -->
+        <div id="brandsCarousel">
+         <a href="https://www.7-zip.org" target="_blank" title="Visit 7-Zip Website"><img class="brands" src="/brands/50/7zip.png" height="50" width="50" alt="7-Zip"></a>
+         <a href="https://addons.thunderbird.net/" target="_blank" title="Visit addons.thunderbird.net (ATN)"><img class="brands" src="/brands/50/amo.png" height="50" width="50" alt="ATN"></a>
+         <a href="https://www.thunderbird.net/" target="_blank" title="Visit thunderbird.net"><img class="brands" src="/brands/50/thunderbird_102.png" height="50" width="50" alt="ATN"></a>
+         <a href="https://www.betterbird.eu/" target="_blank" title="Visit Betterbird"><img class="brands" src="/brands/50/betterbird.png" height="50" width="50" alt="ATN"></a>
+         <a href="https://www.android.com" target="_blank" title="Visit Android Website"><img class="brands" src="/brands/50/android.png" height="50" width="50" alt="Android"></a>
+         <a href="https://bluefish.openoffice.nl/index.html" target="_blank" title="Visit Bluefish Website"><img class="brands" src="/brands/50/bluefish.png" height="50" width="50" alt="Bluefish"></a>
+         <a href="https://www.creativecommons.org" target="_blank" title="Visit Creative Commons Website"><img class="brands" src="/brands/50/creativecommons.png" height="50" width="50" alt="CreativeCommons"></a>
+         <a href="https://duckduckgo.com" target="_blank" title="DuckDuckGo is a search engine that does not track you"><img class="brands" src="/brands/50/duckduckgo.png" height="50" width="50" alt="DuckDuckGo"></a>
+         <a href="https://www.mozilla.org/firefox/fx/" target="_blank" title="Visit Firefox Website"><img class="brands" src="/brands/50/firefox.png" height="50" width="50" alt="Firefox"></a>
+         <a href="https://www.gimp.org" target="_blank" title="Visit Gimp Website"><img class="brands" src="/brands/50/gimp.png" height="50" width="50" alt="Gimp"></a>
+         <a href="https://www.gnu.org" target="_blank" title="Visit GNU Website"><img class="brands" src="/brands/50/gnu.png" height="50" width="50" alt="GNU"></a>
+         <a href="https://www.jquery.com" target="_blank" title="Visit jQuery.com"><img class="brands" src="/brands/50/jquery.png" height="50" width="50" alt="jQuery"></a>
+         <a href="https://kompozer-web.de/en" target="_blank" title="Visit KompoZer Website"><img class="brands" src="/brands/50/kompozer.png" height="50" width="50" alt="KompoZer"></a>
+         <a href="https://www.libreoffice.org/" target="_blank" title="Visit LibreOffice Website"><img class="brands" src="/brands/50/libreoffice.png" height="50" width="50" alt="LibreOffice"></a>
+         <a href="https://www.linux.org" target="_blank" title="Visit Linux Website"><img class="brands" src="/brands/50/linux.png" height="50" width="50" alt="Linux"></a>
+         <a href="https://developer.mozilla.org" target="_blank" title="Visit developer.mozilla.org Website"><img class="brands" src="/brands/50/mdn.png" height="50" width="50" alt="MDN"></a>
+         <a href="https://www.mozilla.org/foundation/about.html" target="_blank" title="Visit Mozilla Foundation Website"><img class="brands" src="/brands/50/mozilla.png" height="50" width="50" alt="Mozilla"></a>
+         <a href="https://www.notepad-plus-plus.org" target="_blank" title="Visit Notepad++ Website"><img class="brands" src="/brands/50/notepad++.png" height="50" width="50" alt="Notepad++"></a>
+         <a href="https://www.opensource.org" target="_blank" title="Visit Open Source Initiative Website"><img class="brands" src="/brands/50/opensource.png" height="50" width="50" alt="OpenSource"></a>
+         <a href="https://www.postbox-inc.com/" target="_blank" title="Visit PostBox Website"><img class="brands" src="/brands/50/postbox.png" height="50" width="50" alt="Postbox"></a>
+         <a href="https://www.seamonkey-project.org/" target="_blank" title="Visit Seamonkey Project Website"><img class="brands" src="/brands/50/seamonkey.png" height="50" width="50" alt="Seamonkey"></a>
+         <a href="https://www.tortoisesvn.net" target="_blank" title="Visit Tortoise SVN Website"><img class="brands" src="/brands/50/tortoise_svn.png" height="50" width="50" alt="Tortoise SVN"></a>
+         <a href="https://www.w3.org" target="_blank" title="Visit World Wide Web Consortium Website"><img class="brands" src="/brands/50/w3c.png" height="50" width="50" alt="W3C"></a>
+         <a href="https://www.w3schools.com" target="_blank" title="Visit W3Schools Website"><img class="brands" src="/brands/50/w3schools.png" height="50" width="50" alt="W3 Schools"></a>
+        </div>
+        <!-- END Brands Carousel -->
+
+        <div class="copyright" id="copyright">
+          <script>copyrightLine();</script><!-- Copyright Line filled by JavaScript -->
+        </div>
+
+      </div><!-- CLOSE <div id="footer"> -->
+    </div><!-- CLOSE <div id="main-content-no-nav"> with the blue box -->
+
+    <!-- Overlay Navibar -->
+    <div class="outerTable" id="navbarTable">
+     <table class="innerTable">
+      <tbody>
+       <tr class="innerTableTR">
+        <td class="innerTableTD"><div class="homeButton"><a href="/index.html" target="_self" title="To our Startpage">Home</a></div></td>
+        <td class="innerTableTD"><div class="historyBackButton"><a href="javascript:goBack();" title="Previous Page">Previous</a></div></td>
+        <td class="innerTableTD"><div class="scrollButton"><a href="javascript:window.scrollTo(0,0);" title="Scroll to Top">Up</a></div></td>
+        <td class="innerTableTD"><div class="historyFwdButton"><a href="javascript:goForward();" title="Next Page">Next</a></div></td>
+        <td class="innerTableTD"><div class="printButton"><a href="javascript:window.print();" title="Print this Page">Print</a></div></td>
+        <td class="innerTableTD"><div class="fontPlusButton"><a href="" onclick="resizeText(1);return false;" title="increase font size">Font +</a></div></td>
+        <td class="innerTableTD"><div class="fontMinusButton"><a href="" onclick="resizeText(-1);return false;" title="reduce font size">Font -</a></div></td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+    <!-- END Overlay Navibar -->
+
+    <div id="downPusher"></div><!-- push down the black main background -->
+    <!-- END FOOTER.HTML -->
+  </body>  
+</html>
+<!-- END HTML SITES IN FOOTER.HTML -->
+

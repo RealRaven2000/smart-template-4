@@ -1,0 +1,120 @@
+body {
+	margin: 0;
+	padding: 0;
+	font-family: verdana, arial, helvetica, sans-serif;
+	font-size: 76%;/* font sizing in ems, baby. if you want to change anything, just change this.*/
+	/*funny thing happens at 75% and lower. opera goes to a nice small size, but moz and ie pc change almost not at all. seems 76% is as small as you can go and stay the same across browsers. poop.*/
+}
+
+p#content,
+div#content {
+	margin: 0em;
+	padding: 4em 6em 2em 6em;/* use padding instead of margin for multicolumn layouts because of a really odd ie5pc bug where it sometimes relates the width of an unrelated menu div to this div. i'll, uh, write about that somewhere. it was hard to figure out what was causing it, so i want this note here to remind me. */
+	}
+        
+/*the following classes are to demonstrate better line heights for narrow columns*/	
+.narrow1{
+	width: 50%;
+	line-height: 1.3em;
+	}
+.narrow2{
+	width: 50%;
+	line-height: 1.5em;
+	}
+		
+/*typography*/
+a {
+	text-decoration: none;
+	font-weight: bold;
+	color: #000;
+	}
+a:link {
+	}
+a:visited {
+	}
+a:hover {
+	text-decoration: underline;
+	}
+a:active {
+	}
+h1 {
+	font-size: 2.0em;
+	font-weight: normal;
+	margin-top: 0em;
+	margin-bottom: 0em;/*both set to zero and padding in header div is used intead to deal with compound ie pc problems that are beyound summary in a simple comment.*/
+	}
+h2 {
+	font-size: 1.7em;
+	margin: 1.2em 0em 1.2em 0em;
+	font-weight: normal;
+	}
+h3 {
+	font-size: 1.4em;
+	margin: 1.2em 0em 1.2em 0em;
+	font-weight: normal;
+	}
+h4 {
+	font-size: 1.2em;
+	margin: 1.2em 0em 1.2em 0em;
+	font-weight: bold;
+	}
+h5 {
+	font-size: 1.0em;
+	margin: 1.2em 0em 1.2em 0em;
+	font-weight: bold;
+	}
+h6 {
+	font-size: 0.8em;
+	margin: 1.2em 0em 1.2em 0em;
+	font-weight: bold;
+	}
+img {
+	border: 0;
+	}
+ol, ul, li {/*
+	list-style: none;*/
+	font-size: 1.0em;
+	line-height: 1.5em;
+	margin-top: 0.2em;
+	margin-bottom: 0.1em; 
+	}
+p {
+	font-size: 1.0em;
+	line-height: 1.5em;
+	margin: 1.2em 0em 1.2em 0em;
+	}
+li > p {
+	margin-top: 0.2em;
+	}
+code, pre, samp, tt, xmp {
+	font-family: monospace;
+	font-size: 1.2em;
+	}
+strong, b {
+	font-weight: bold;
+	}
+
+div.note {
+  background-color: #ffd;
+  border: 1px dashed red;
+  color: inherit;
+  font-weight: bold;
+  margin-top: 1em;
+ /* opacity: 0.8; */
+  text-align: center;
+}
+
+#linspire-box {
+  margin:4px 2px 8px 0px;
+}
+
+#linspire-box img {
+  border: none;
+  display: block;
+  width: 148px;
+}
+
+
+/* 2017 mothballing */
+
+#mozdev-donate, .mozdev-shop, .mozdev-start-new-project { display: none }

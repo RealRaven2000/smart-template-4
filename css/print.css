@@ -1,0 +1,49 @@
+/*******************************************************************************************************/
+/***************************************** PRINT STYLE SUPPORT *****************************************/
+/*******************************************************************************************************/
+
+/* no print to save ink or toner */
+@media print {
+  body {
+    background: none !important;
+  }
+  table#mozdev-date,
+  .halloween,
+  .christmas,
+  .newYear1,
+  .newYear2,
+  #infoTabs,
+  iframe,
+  .outerTable,
+  #brandsCarousel,
+  #downPusher {
+    display:none;
+  }
+}
+
+/* margins */
+@media print {
+  #main-content-no-nav {
+    margin-left: 0px  !important; /* removed !important from project.css for this element */
+    margin-right: 0px !important; /* removed !important from project.css for this element */
+  }
+  h2.page-header,
+  h3,
+  h4 {
+    margin-top: 5px !important;
+    margin-bottom: 5px !important;
+  }
+}
+
+/* font-sizes */
+@media print {
+  h2.page-header,
+  span.sigMarc,
+  span.sigAxel {
+    font-size: 1.2em;
+  }
+  h3,
+  h4 {
+    font-size: 1em;
+  }
+}

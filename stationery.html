@@ -1,0 +1,367 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Smart Templates - Stationery</title>
+   <!-- LOCAL HEAD.TXT -->
+
+   <!-- META-KEYWORDS BEGIN -->
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width; user-scalable=0; initial-scale=1.0; maximum-scale=1.0; minimum-scale=1.0;">
+   <!--<meta name="viewport" content="width=device-width; initial-scale=1; maximum-scale=1; minimum-scale=1">-->
+   <meta name="keywords" content="SmartTemplates, mailheader, customize, e-Mail, modification, quote, html, plain, stationery">
+   <meta name="google-site-verification" content="LTKICtodcLDl0nhBl2mUiXWMJbOtmEJmhYXVAqm_mJM" />
+   <meta name="description" content="SmartTemplates offers an easy way to customize Thunderbirds, SeaMonkeys and Postboxs default quote header by using templates. Templates can be created for every account as well as for global settings (for all email accounts).">
+   <meta name="author" content="Axel Grude, Marky Mark DE">
+   <!-- META-KEYWORDS END -->
+
+   <!-- BASICS BEGIN -->
+   <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+   <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico">
+   <link rel="apple-touch-icon-precomposed" href="http://smarttemplate4.mozdev.org/img/apple-touch-icon-precomposed-57x57.png">
+   <link rel="apple-touch-icon-precomposed" href="http://smarttemplate4.mozdev.org/img/apple-touch-icon-precomposed-72x72.png">
+   <link rel="apple-touch-icon-precomposed" href="http://smarttemplate4.mozdev.org/img/apple-touch-icon-precomposed-114x114.png">
+   <link rel="apple-touch-icon-precomposed" href="http://smarttemplate4.mozdev.org/img/apple-touch-icon-precomposed-144x144.png">
+   <!-- BASICS END -->
+
+   <!-- GLOBAL STYLESHEETS BEGIN -->
+   <link rel="stylesheet" type="text/css" media="print" href="/css/print.css">
+   <link rel="stylesheet" type="text/css" media="scree, all" href="/css/b-i-f.css">
+   <link rel="stylesheet" type="text/css" media="screen" href="/css/media.css?v=4">
+   <link rel="stylesheet" type="text/css" media="screen, all" href="/css/webFonts.css">
+   <link rel="stylesheet" type="text/css" media="screen, all" href="/css/project.css?v=3">
+   <link rel="stylesheet" type="text/css" media="screen, all" href="/css/project_nav.css?v=1">   
+   <link rel="stylesheet" type="text/css" media="screen, all" href="/css/jqueryPlugins.css?v=3">
+   <!--[if lte IE 7]>
+   <link rel="stylesheet" type="text/css" media="screen, all" href="/css/ie7.css">
+   <![endif]-->
+   <!-- GLOBAL STYLESHEETS END -->
+
+   <!-- JQUERY JS FRAMEWORK BEGIN -->
+   <!--[if lt IE 9]>
+   <script src="/js/modernizr.custom.js" charset="UTF-8"></script>
+   <![endif]-->
+   <script src="/js/jquery-3.7.1.min.js" charset="UTF-8"></script>
+   <script src="/js/jqueryPlugins.js" charset="UTF-8"></script>
+   <!-- JQUERY JS FRAMEWORK END -->
+
+   <!-- ADDITIONAL JS BEGIN -->
+   <script src="/js/environment.js" charset="UTF-8"></script>
+   <script src="/js/scripts.js" charset="UTF-8"></script>
+   <script src="/js/navibar.js" charset="UTF-8"></script>
+   <script src="/js/ga.js" charset="UTF-8"></script>
+   <script src="/js/premium.js?v=13" charset="UTF-8"></script>
+   <!-- ADDITIONAL JS END -->
+
+ </head>
+<!-- END LOCAL HEAD.TXT -->
+
+<!-- HTML_BODY.HTML -->
+<body>
+
+<noscript>
+	<div class="msgBox error" id="msgBox_error">
+		<h1>Our website requires JavaScript.</h1>
+		The instruction how to enable JavaScript in your browser, you can find <a href="http://www.enable-javascript.com/" rel="nofollow" title="How to enable Javascript in your browser" target="_blank">here</a>.
+	</div>
+</noscript>
+
+<!-- ####################### BEGIN MAIN CONTENT ########################## -->
+<div id="main-content-no-nav">
+<!-- PROJECT_NAV.HTML -->
+<h1 class="project-name" id="content"><img src="/img/logo-pro.png" alt="SmartTemplates"></h1>
+
+ <table id="project-navigation"> 
+  <tbody id="resources" class="project-navigations">
+   <tr>
+    <td class="navigation-list">
+     <!-- a class for media query -->
+     <a class="index" href="/index.html">Home</a>
+     <a class="variables" href="/variables.html">Variable Definitions</a>
+     <a class="templates" href="/templates.html?jquery=on">Example Templates</a>
+     <a class="screenshots" href="/screenshots.html">Screenshots</a>
+     <a class="version" href="/version.html">Version History</a>
+     <a class="bugs" href="/kb-main.html">Knowlegebase</a>
+     <a class="faq" href="/faq.html">FAQ</a>
+     <a class="bugs" href="/bugs.html">Bugs &amp; Features</a>
+     <a class="premium" href="/premium.html">Premium Features</a>
+     <a class="contribute" href="/contribute.html">Licenses</a>
+     <a class="gdpr" href="/gdpr.html">GDPR + Impressum</a>
+    </td>
+		<tr id="navKB">
+		 <td class="kb-nav-list navigation-list">
+			 <a class="kb-nav" href="/kb-basics.html">HTML Basics</a>
+			 <a class="kb-nav" href="/kb-fonts.html">Fonts</a>
+			 <a class="kb-nav" href="/kb-tags.html">General Tips</a>
+			 <a class="kb-nav" href="/kb-inspector.html">Troubleshooting Styles</a>
+			 <a class="kb-nav" href="/support.html">Add-on Troubleshooting</a>
+		 </td>
+		</tr>
+   </tr>
+ </tbody>
+</table>
+<!-- END PROJECT_NAV.HTML -->
+
+<!-- STATIONERY.HTML -->
+<script type="text/javascript">
+"use strict"; // use ECMAScript5 strict mode
+  loadStyleSheet("variables.css?v=2");
+  loadStyleSheet("syntax.css?v=2");
+</script>
+<h2 class="page-header">Stationery Support / External HTML Template Files</h2>
+
+<style>
+/* number labels in screenshots */
+span.number {
+  background-color: rgb(180,0,0) !important;
+  color: white !important;
+  border-radius: 1.3em;
+  font-weight: bold;
+  padding: 4px 8px;
+}
+
+
+</style>
+
+<p>
+  You can add a list of external HTML templates, integrated into the Write / Reply and Forward buttons, just like 
+	with Stationery, by selecting the item <i>Template Files</i> from the accounts drop down:<br>
+	<img src="/screenshots/fileTemplates.png" class="screenshot" alt="SmartTemplate - Template Files Integration" />
+</p>
+<p>
+  Note: when using an external template file (just like with Stationery), then the account specific quote header 
+  and template are ignored. If you need any SmartTemplates variables, you can insert them directly in the
+  HTML template file.
+</p>
+
+<a name="templateFiles">&nbsp;</a>
+<h3>How to use Template Files (instead of Stationery Add-on)</h3>
+<p>You select an external template via a dropdown on the reply / write or forward button:
+  <br>
+	<img src="/img/file-templates-reply-ex1.png" class="screenshot" alt="Templates on reply" />
+  <br>
+  This will load the template (HTML file) from disk and replace all SmartTemplates variables 
+  based on your Thunderbird Identity and data of the replied / forwarded Mail
+  as expected.
+</p>
+<p>
+  To add more templates to each menu, select the command <i>configure menu items...</i>
+  <br>
+	<img src="/img/file-templates-reply-configure.png" class="screenshot" alt="configure templates" />
+</p>
+<p>
+  This will open the SmartTemplate Settings dialog with the page "Template Files" selected:
+  <br>
+	<img src="/img/file-templates-help-1.png" class="screenshot" alt="How to add template files" />
+  <ol>
+    <li>In Account, select "Template Files" <span class=number>1</span> </li>
+    <li>Click "Select Template File from disk" <span class=number>2</span><img
+src="data:image/png;filename=cbbcdhchmmcihlkb.png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAVCAYAAACpF6WWAAAC30lEQVQ4jdXR20/ScRjH8foHWl11202HWVlmtg4q6QrMVpBrTVsXWlnzosPWYd4g/XAM0nLMDGmlZhrL7LTONnNUlksnySQiCJgwXaiIGFEG+O6i1dZKpbUu+myfu+f72p7nO4N/kBn/H+q+v4e3hgzsV8TYGtOnrPve7vhQa0MqoXcafMZ8Bo0FhF6riXlrYODSzx00YG1IjQ+1XFwLwetMBJr57DmL/+VB3jZlMfFO/1Ppr/82Gw9qrltNbKSJqK+RqK+RWOAq5vpMgmYtEbuOmKOamKOaCW8d5rrV8aGmC6uIDhmIDNQTGagnOmTgVU0qnnY1nnY1UbuOqF1HzFOL6cKq+NAufTKR9w2Me2sY99YQed/A86oU+p6q6Huq4outCt3l3chKM8gqXoa+RT892nF2OeP9tYTdesJuPeP9tRi1K3AbS3EbS/lsrUSmXM+mQAqFg5vZImROj7ZXLuVT33lCjipCjio+9Z2n9fRynG0CzjaBsEWLVCkiy5vMwY9FSI4nTo8aKxIIu6oZs2kZs2kJu6p5cHIpp87tZLM8DakgQiqIyHKvpMi/F8nxRGQaGTKN7JdT/EBbyxYSslcyailn1FJOyF7JHdVitpaIyHiSiLgr6VstKeR5ctnv3MIR/wGOjhxCppH9Hn2ons+YtQJ/jxp/j5oxawU3lYvIlqeR2ZzExlvJiO+uJPvZGtY4t5HrSCN/eCf7hgsmR28L8xjtLWOoW8lQt5LR3jKaSxag0u0gW56KVEhHKqSz7ZGITG8eG4/Fsf6lI3MJ9GjwdSrwdSoI9Khpki/A0arA0argg/k0UkFEbouEXS4JG4rX4ff7p/6o0sIlPNam4HxYxHCXkhGTivJdMzmRN4sTebM4s38OosMJ5FxPI9+Wg1ghxuVyTY0CdDQf44o8gRvKBLoN29EWzsZkMhH6EARA36KfdOVJ0e9588LAtZMSaouTCAaDkz7+I/Rv80/Qr8HH7vafHjbjAAAAAElFTkSuQmCC"
+        alt="" class=""></li>
+    <li>[Optional step] <span class=number>3</span> change the Title  to display in the menu </li>
+    <li>[Optional step] <span class=number>4</span> add a Category  - this will create a submenu in order to structure your menu</li>
+    <li><span class=number>5</span> Click <i>Add</i> to add the template to the Write / Reply or Forward list.</li>
+  </ol>
+</p>
+
+<a name="snippets">&nbsp;</a>
+<h3>How to use Categories</h3>
+<p>
+  You can structure the template menus into submenus using the "Category" field.
+  These use alphabetical keyboard shortcuts (A, B, C...).
+  <br>
+  <img src="/img/template-categories.png" class="screenshot" alt="Categories menu list" />
+</p>
+<p>
+  To add a menu to an existing item, select it and enter the desired label for the popup menu:
+  <br>
+  <img src="/img/template-category.png" class="screenshot" alt="Category field" />
+  <br>
+  After that, click on the <i>Update</i> button. This will make a new submenu and move
+  the template underneath it. Note that the uppercae / lowercase spelling needs to match
+  exactly if you want multiple templates under the same submenu.
+</p>
+
+
+<a id="whatIsStationery"></a><!-- this anchor is just an in-page jump point, it doesn't need to contain anything -->
+ <h3>What is Stationery?</h3>
+ 
+<p>
+  From version 0.9.3 onwards, SmartTemplates supported integration with the Stationery addon by integration from 
+  its owner <a href="https://addons.mozilla.org/thunderbird/user/98987/" target="_blank" title="Visit arivald ATN Page">Arivald</a>. 
+  After Thunderbird 68, Stationery is not supported anymore, and you can use the internal template 
+  integration of SmartTemplates.
+</p>
+
+<p>Official Stationery page: <a href="https://addons.thunderbird.net/thunderbird/addon/stationery" target="_blank" title="Get Stationery!">Stationery for Thunderbird</a></p>
+ 
+ <p>Stationery is an addon that allows adding "outlook-style" stationery to your emails. 
+    What's more, it can be very well used to create powerful mail templates for repetitive tasks
+    such as sending out standard mails or replies; one thing that is missing in its functionality is
+    the ability to add in a variety of mail header based variables, this is where SmartTemplates comes in.</p>
+
+<p>Stationery uses HTML files as templates for mail. It allows using different templates in replies / forwarded mail
+   and makes it possible to select the template using a simple click on a chevron beside the reply button:
+   <br>
+   <img src="/screenshots/stationery-dropDown.png" class="screenshot" alt="template selection" />
+</p>
+
+<p>
+  Stationery used to add a handy html editing pane to the composer window; from Thunderbird 78 onwards, 
+   you can instead install the Add-on 
+   <a href="https://addons.thunderbird.net/en-US/thunderbird/addon/thunderhtmledit/">ThunderHTMLedit</a>
+   to get the same feature:
+   <br>
+   <img src="/screenshots/stationery-html.png" class="screenshot" alt="template selection" />
+</p>
+   
+
+ <a id="howtoUse"></a><!-- this anchor is just an in-page jump point, it doesn't need to contain anything -->
+ <h3>How do I use SmartTemplates with external templates?</h3>
+ 
+<p>
+  You can use pretty much all <a href="/variables.html">variables</a> directly in your stationery files. 
+  When you select a new Template during writing or replying to mail, then the 
+  <a href="/templates.html">account templates</a> which are bound to the account identity of
+  your current email will be temporarily <i>ignored</i>.
+  The quote header settings are still used, unless specified otherwise (see below).
+</p>
+<p>	Instead SmartTemplates will search and replace the special
+    header variables in the Stationery itself. This turns Stationery into a full blown templating application.</p>
+<p> 
+  Additionally, you can use the following powerful <a href="/variables.html">variables</a> to control the content 
+  and behavior of your Stationery Template:
+</p>
+
+<article>
+ <ul>
+   <li><code>%sig(HTML)%</code> / <code>%sig(Text)%</code> = Inserts Signature (will be read from Account Settings). Your signature may also contain other variables. 
+          If you want st4 to replace variables in the signature, make sure to enable the option <i>Process signature</i> in
+          SmartTemplates's advanced settings:<br>
+          <img src="/screenshots/settings-process-sig.png" class="screenshot" alt="process signature" />
+  </li>
+  <li><code>%cursor%</code> = Controls where your cursor will go when the email body gets the focus</li>
+  <li><code>%quotePlaceholder%</code> = Use this to determine where the text of the replied to mail should go. 
+          Note that this can also be used by just selecting some text from the original email and then hitting reply: 
+          only the selected portion will be quoted. Also, if you write a <i>new</i> email, the variable will simply be removed 
+					(as there is nothing to quote).
+  </li>
+  <li><code>%quoteHeader%</code> = From version 0.9.4 we will support injecting the (processed) contents of our quote header box into the 
+	    body of the Stationery. Interestingly the variable will only be filled in the cases <i>reply</i> and <i>forward</i>, and will simply
+			be removed when writing a <i>new</i> email. This way you can use the same stationery for all cases.
+	</li>
+  <br>
+   <span class="attention"><em>ATTENTION:</em>
+     You cannot use <code class="inline">%quotePlaceholder%</code> or <code class="inline">%quoteHeader%</code> in SmartTemplates directly; it is only allowed in your Stationery files.
+   </span>			
+ </ul>
+ <p>For a more complete list of variables that you can use in your Stationery, please read the <a href="/variables.html">variables page</a>.</p>
+</article>
+
+ <a id="example"></a><!-- this anchor is just an in-page jump point, it doesn't need to contain anything -->
+ <h3>Example of a Stationery with SmartTemplates variables</h3>
+ 
+ <p>Here is an example of a Stationery I use when I write support email. The quoted text is automatically inserted into the inner 
+    container via <code class="inline">%quotePlaceholder%</code>. Also, <code class="inline">%subject%</code> is used to show the conversation title 
+    in the top. Note that the signature (green box) is injected into the stationery using the <code class="inline">%sig(HTML)%</code> / <code class="inline">%sig(Text)%</code> variable. The signature
+    itself also contains SmartTemplates variables (<code class="inline">%identity(name)%</code>).</p>
+
+<p>
+ <img src="/screenshots/stationery-example.png" class="screenshot" alt="stationery example" style="border-radius: 0 !important; padding: 2em 1em; background: white;" />
+</p>
+
+<p>We hope you enjoy this new and powerful features of SmartTemplates.</p>
+
+<p class="scream">
+ Please, <a href="https://addons.thunderbird.net/thunderbird/addon/324497/reviews" title="Leave some Feedback for SmartTemplates on ATN" target="_blank">leave some feedback</a> at the Mozilla Addons Page - spread the word so more people start using it!
+</p>
+<!-- END STATIONERY.HTML -->
+
+<!-- FOOTER.HTML -->
+<script>
+"use strict"; // use ECMAScript5 strict mode
+
+  /* Apply this site specific files to <head> element */
+  loadStyleSheet("footer.css");
+  loadStyleSheet("navibar.css");
+</script>
+
+  <div id="footer">
+   <div class="horizontalRule"></div>
+    <a id="contact"></a><!-- this anchor is just an in-page jump point, DO NOT REMOVE WE USE THIS ANCHOR ON ATN -->
+      <div id="mailToLink">
+       You have questions / comments about SmartTemplates? Please feel free to 
+       <p class="mail_link">
+        <script>mailtoLine();</script><!-- Mailto Line filled by JavaScript -->
+       </p>
+      </div>
+
+       <div class="attribution"><b>Attributions:</b><br>
+         Flagset by  Matthias Slovig under CC, see:
+        <a href="http://flags.blogpotato.de/" title="Visit Flagpotato Website" target="_blank">http://flags.blogpotato.de/</a><br>
+         Fugue Icons (or based on) by Yusuke Kamiyamane under CC, see:
+        <a href="http://p.yusukekamiyamane.com/" title="Visit Yusuke Kamiyamane Website" target="_blank">http://p.yusukekamiyamane.com/</a><br>
+         Noia Icons (or based on) by Carles Carbonell Bernado under LGPL, see:
+       <a href="http://carlitus.deviantart.com/" title="Visit Noia on Deviantart" target="_blank">http://carlitus.deviantart.com/</a>
+       </div>
+
+       <!--Special Attributions -->
+       <!-- Brands Carousel (jquery) in Alphabetically Order -->
+        <div id="brandsCarousel">
+         <a href="https://www.7-zip.org" target="_blank" title="Visit 7-Zip Website"><img class="brands" src="/brands/50/7zip.png" height="50" width="50" alt="7-Zip"></a>
+         <a href="https://addons.thunderbird.net/" target="_blank" title="Visit addons.thunderbird.net (ATN)"><img class="brands" src="/brands/50/amo.png" height="50" width="50" alt="ATN"></a>
+         <a href="https://www.thunderbird.net/" target="_blank" title="Visit thunderbird.net"><img class="brands" src="/brands/50/thunderbird_102.png" height="50" width="50" alt="ATN"></a>
+         <a href="https://www.betterbird.eu/" target="_blank" title="Visit Betterbird"><img class="brands" src="/brands/50/betterbird.png" height="50" width="50" alt="ATN"></a>
+         <a href="https://www.android.com" target="_blank" title="Visit Android Website"><img class="brands" src="/brands/50/android.png" height="50" width="50" alt="Android"></a>
+         <a href="https://bluefish.openoffice.nl/index.html" target="_blank" title="Visit Bluefish Website"><img class="brands" src="/brands/50/bluefish.png" height="50" width="50" alt="Bluefish"></a>
+         <a href="https://www.creativecommons.org" target="_blank" title="Visit Creative Commons Website"><img class="brands" src="/brands/50/creativecommons.png" height="50" width="50" alt="CreativeCommons"></a>
+         <a href="https://duckduckgo.com" target="_blank" title="DuckDuckGo is a search engine that does not track you"><img class="brands" src="/brands/50/duckduckgo.png" height="50" width="50" alt="DuckDuckGo"></a>
+         <a href="https://www.mozilla.org/firefox/fx/" target="_blank" title="Visit Firefox Website"><img class="brands" src="/brands/50/firefox.png" height="50" width="50" alt="Firefox"></a>
+         <a href="https://www.gimp.org" target="_blank" title="Visit Gimp Website"><img class="brands" src="/brands/50/gimp.png" height="50" width="50" alt="Gimp"></a>
+         <a href="https://www.gnu.org" target="_blank" title="Visit GNU Website"><img class="brands" src="/brands/50/gnu.png" height="50" width="50" alt="GNU"></a>
+         <a href="https://www.jquery.com" target="_blank" title="Visit jQuery.com"><img class="brands" src="/brands/50/jquery.png" height="50" width="50" alt="jQuery"></a>
+         <a href="https://kompozer-web.de/en" target="_blank" title="Visit KompoZer Website"><img class="brands" src="/brands/50/kompozer.png" height="50" width="50" alt="KompoZer"></a>
+         <a href="https://www.libreoffice.org/" target="_blank" title="Visit LibreOffice Website"><img class="brands" src="/brands/50/libreoffice.png" height="50" width="50" alt="LibreOffice"></a>
+         <a href="https://www.linux.org" target="_blank" title="Visit Linux Website"><img class="brands" src="/brands/50/linux.png" height="50" width="50" alt="Linux"></a>
+         <a href="https://developer.mozilla.org" target="_blank" title="Visit developer.mozilla.org Website"><img class="brands" src="/brands/50/mdn.png" height="50" width="50" alt="MDN"></a>
+         <a href="https://www.mozilla.org/foundation/about.html" target="_blank" title="Visit Mozilla Foundation Website"><img class="brands" src="/brands/50/mozilla.png" height="50" width="50" alt="Mozilla"></a>
+         <a href="https://www.notepad-plus-plus.org" target="_blank" title="Visit Notepad++ Website"><img class="brands" src="/brands/50/notepad++.png" height="50" width="50" alt="Notepad++"></a>
+         <a href="https://www.opensource.org" target="_blank" title="Visit Open Source Initiative Website"><img class="brands" src="/brands/50/opensource.png" height="50" width="50" alt="OpenSource"></a>
+         <a href="https://www.postbox-inc.com/" target="_blank" title="Visit PostBox Website"><img class="brands" src="/brands/50/postbox.png" height="50" width="50" alt="Postbox"></a>
+         <a href="https://www.seamonkey-project.org/" target="_blank" title="Visit Seamonkey Project Website"><img class="brands" src="/brands/50/seamonkey.png" height="50" width="50" alt="Seamonkey"></a>
+         <a href="https://www.tortoisesvn.net" target="_blank" title="Visit Tortoise SVN Website"><img class="brands" src="/brands/50/tortoise_svn.png" height="50" width="50" alt="Tortoise SVN"></a>
+         <a href="https://www.w3.org" target="_blank" title="Visit World Wide Web Consortium Website"><img class="brands" src="/brands/50/w3c.png" height="50" width="50" alt="W3C"></a>
+         <a href="https://www.w3schools.com" target="_blank" title="Visit W3Schools Website"><img class="brands" src="/brands/50/w3schools.png" height="50" width="50" alt="W3 Schools"></a>
+        </div>
+        <!-- END Brands Carousel -->
+
+        <div class="copyright" id="copyright">
+          <script>copyrightLine();</script><!-- Copyright Line filled by JavaScript -->
+        </div>
+
+      </div><!-- CLOSE <div id="footer"> -->
+    </div><!-- CLOSE <div id="main-content-no-nav"> with the blue box -->
+
+    <!-- Overlay Navibar -->
+    <div class="outerTable" id="navbarTable">
+     <table class="innerTable">
+      <tbody>
+       <tr class="innerTableTR">
+        <td class="innerTableTD"><div class="homeButton"><a href="/index.html" target="_self" title="To our Startpage">Home</a></div></td>
+        <td class="innerTableTD"><div class="historyBackButton"><a href="javascript:goBack();" title="Previous Page">Previous</a></div></td>
+        <td class="innerTableTD"><div class="scrollButton"><a href="javascript:window.scrollTo(0,0);" title="Scroll to Top">Up</a></div></td>
+        <td class="innerTableTD"><div class="historyFwdButton"><a href="javascript:goForward();" title="Next Page">Next</a></div></td>
+        <td class="innerTableTD"><div class="printButton"><a href="javascript:window.print();" title="Print this Page">Print</a></div></td>
+        <td class="innerTableTD"><div class="fontPlusButton"><a href="" onclick="resizeText(1);return false;" title="increase font size">Font +</a></div></td>
+        <td class="innerTableTD"><div class="fontMinusButton"><a href="" onclick="resizeText(-1);return false;" title="reduce font size">Font -</a></div></td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+    <!-- END Overlay Navibar -->
+
+    <div id="downPusher"></div><!-- push down the black main background -->
+    <!-- END FOOTER.HTML -->
+  </body>  
+</html>
+<!-- END HTML SITES IN FOOTER.HTML -->
+

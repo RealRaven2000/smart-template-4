@@ -1,0 +1,997 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Smart Templates - Variables</title>
+   <!-- LOCAL HEAD.TXT -->
+
+   <!-- META-KEYWORDS BEGIN -->
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width; user-scalable=0; initial-scale=1.0; maximum-scale=1.0; minimum-scale=1.0;">
+   <!--<meta name="viewport" content="width=device-width; initial-scale=1; maximum-scale=1; minimum-scale=1">-->
+   <meta name="keywords" content="SmartTemplates, mailheader, customize, e-Mail, modification, quote, html, plain, stationery">
+   <meta name="google-site-verification" content="LTKICtodcLDl0nhBl2mUiXWMJbOtmEJmhYXVAqm_mJM" />
+   <meta name="description" content="SmartTemplates offers an easy way to customize Thunderbirds, SeaMonkeys and Postboxs default quote header by using templates. Templates can be created for every account as well as for global settings (for all email accounts).">
+   <meta name="author" content="Axel Grude, Marky Mark DE">
+   <!-- META-KEYWORDS END -->
+
+   <!-- BASICS BEGIN -->
+   <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+   <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico">
+   <link rel="apple-touch-icon-precomposed" href="http://smarttemplate4.mozdev.org/img/apple-touch-icon-precomposed-57x57.png">
+   <link rel="apple-touch-icon-precomposed" href="http://smarttemplate4.mozdev.org/img/apple-touch-icon-precomposed-72x72.png">
+   <link rel="apple-touch-icon-precomposed" href="http://smarttemplate4.mozdev.org/img/apple-touch-icon-precomposed-114x114.png">
+   <link rel="apple-touch-icon-precomposed" href="http://smarttemplate4.mozdev.org/img/apple-touch-icon-precomposed-144x144.png">
+   <!-- BASICS END -->
+
+   <!-- GLOBAL STYLESHEETS BEGIN -->
+   <link rel="stylesheet" type="text/css" media="print" href="/css/print.css">
+   <link rel="stylesheet" type="text/css" media="scree, all" href="/css/b-i-f.css">
+   <link rel="stylesheet" type="text/css" media="screen" href="/css/media.css?v=4">
+   <link rel="stylesheet" type="text/css" media="screen, all" href="/css/webFonts.css">
+   <link rel="stylesheet" type="text/css" media="screen, all" href="/css/project.css?v=3">
+   <link rel="stylesheet" type="text/css" media="screen, all" href="/css/project_nav.css?v=1">   
+   <link rel="stylesheet" type="text/css" media="screen, all" href="/css/jqueryPlugins.css?v=3">
+   <!--[if lte IE 7]>
+   <link rel="stylesheet" type="text/css" media="screen, all" href="/css/ie7.css">
+   <![endif]-->
+   <!-- GLOBAL STYLESHEETS END -->
+
+   <!-- JQUERY JS FRAMEWORK BEGIN -->
+   <!--[if lt IE 9]>
+   <script src="/js/modernizr.custom.js" charset="UTF-8"></script>
+   <![endif]-->
+   <script src="/js/jquery-3.7.1.min.js" charset="UTF-8"></script>
+   <script src="/js/jqueryPlugins.js" charset="UTF-8"></script>
+   <!-- JQUERY JS FRAMEWORK END -->
+
+   <!-- ADDITIONAL JS BEGIN -->
+   <script src="/js/environment.js" charset="UTF-8"></script>
+   <script src="/js/scripts.js" charset="UTF-8"></script>
+   <script src="/js/navibar.js" charset="UTF-8"></script>
+   <script src="/js/ga.js" charset="UTF-8"></script>
+   <script src="/js/premium.js?v=13" charset="UTF-8"></script>
+   <!-- ADDITIONAL JS END -->
+
+ </head>
+<!-- END LOCAL HEAD.TXT -->
+
+<!-- HTML_BODY.HTML -->
+<body>
+
+<noscript>
+	<div class="msgBox error" id="msgBox_error">
+		<h1>Our website requires JavaScript.</h1>
+		The instruction how to enable JavaScript in your browser, you can find <a href="http://www.enable-javascript.com/" rel="nofollow" title="How to enable Javascript in your browser" target="_blank">here</a>.
+	</div>
+</noscript>
+
+<!-- ####################### BEGIN MAIN CONTENT ########################## -->
+<div id="main-content-no-nav">
+<!-- PROJECT_NAV.HTML -->
+<h1 class="project-name" id="content"><img src="/img/logo-pro.png" alt="SmartTemplates"></h1>
+
+ <table id="project-navigation"> 
+  <tbody id="resources" class="project-navigations">
+   <tr>
+    <td class="navigation-list">
+     <!-- a class for media query -->
+     <a class="index" href="/index.html">Home</a>
+     <a class="variables" href="/variables.html">Variable Definitions</a>
+     <a class="templates" href="/templates.html?jquery=on">Example Templates</a>
+     <a class="screenshots" href="/screenshots.html">Screenshots</a>
+     <a class="version" href="/version.html">Version History</a>
+     <a class="bugs" href="/kb-main.html">Knowlegebase</a>
+     <a class="faq" href="/faq.html">FAQ</a>
+     <a class="bugs" href="/bugs.html">Bugs &amp; Features</a>
+     <a class="premium" href="/premium.html">Premium Features</a>
+     <a class="contribute" href="/contribute.html">Licenses</a>
+     <a class="gdpr" href="/gdpr.html">GDPR + Impressum</a>
+    </td>
+		<tr id="navKB">
+		 <td class="kb-nav-list navigation-list">
+			 <a class="kb-nav" href="/kb-basics.html">HTML Basics</a>
+			 <a class="kb-nav" href="/kb-fonts.html">Fonts</a>
+			 <a class="kb-nav" href="/kb-tags.html">General Tips</a>
+			 <a class="kb-nav" href="/kb-inspector.html">Troubleshooting Styles</a>
+			 <a class="kb-nav" href="/support.html">Add-on Troubleshooting</a>
+		 </td>
+		</tr>
+   </tr>
+ </tbody>
+</table>
+<!-- END PROJECT_NAV.HTML -->
+
+<!-- VARIABLES.HTML -->
+<script type="text/javascript">
+"use strict"; // use ECMAScript5 strict mode
+  markActiveNavigation("variables.html");
+  /* Apply this site specific file to <head> element */
+  loadStyleSheet("variables.css?v=3");
+  loadStyleSheet("syntax.css?v=2");
+</script>
+
+<style>
+ /* for the ab_fields section: */
+.ab_table h4 {
+  font-size: 12px;
+	margin: 0 0 !important;
+  padding: 5px;
+  background-image: none !important;
+  border-radius: 0 !important;
+	background-color: rgb(60,60,60);
+	color: rgb(180,180,180) !important;
+  max-width: 80%;
+  width: 150px;
+}
+
+
+.ab_table ul.contact_switches {
+  margin-left: 14px;
+  list-style: bullet;
+	margin: 5px 0 !important;
+	margin-block-start: 5px;
+	margin-block-end: 5px;
+}
+.ab_table ul.contact_switches li {
+  font-family: Consolas, monaco, monospace;
+  font-size: 10pt;
+	margin: 5px 0 0 15px !important;
+}
+
+.ab_table table.ab_fields * {
+  vertical-align: top !important;
+}
+
+/* inline html code */
+code.html {
+  background-color: #f6f9f6;
+  background-image: none !important;
+  color: #001010;
+  padding: 0px 6px !important;
+  border-radius: 0;
+}
+pre.code { 
+  background-color: #ffffff;
+  color: #303030;
+  font-family: Consolas, 'Courier New', Geneva, sans-serif;
+  font-size: 10pt !important;
+  padding: 1em;
+  box-shadow: inset 4px 4px 10px #000000;
+}
+pre.maxW {
+  max-width: 600px;
+}
+</style>
+
+
+<h2 class="page-header">SmartTemplates :: Variable Definitions</h2>
+<article>
+	<p class="attention">
+	 <em>ATTENTION:</em> This information is based on the latest Add-on version.<br>
+	 Maybe your installed version didn't contain all the variables listed here, please refer add-on help for further details!<br>
+	 From 0.9.3 and onward we have a new logic of our Variables, please use the <span class="new">NEW</span> ones from now instead of the <span class="obs">OLD</span> ones!
+	</p>
+</article>
+
+<h3 class="helpchapter">Common</h3>
+<article>
+	<p class="tip">
+	 <em>TIP:</em> Some variables cannot be used when composing new mails; a message will be displayed should you chose one accidentally.
+	</p>
+	<p style="padding-left: 50px;">
+	 <code>variable can be used always, including New E-Mails</code><br>
+	 <code class="deferable">variable can be used in New Emails, creating a clickable field</code><br>
+	 <code class="noWrite">variable can only be used in Forward / Reply cases</code>
+
+	</p>
+</article>
+
+<!-- Obsolete Variables -->
+<a name="obsolete"> </a>
+<h3 class="helpchapter">Obsolete Variables</h3>
+<article>
+	<ul>
+		<li><div class="obs" style="min-width: 50px;">- 0.9.3</div><code><s>%ownname%</s></code><div class="new" style="min-width: 50px; margin-left: 15px;">0.9.4 -</div><code>%identity(name)%</code></li>
+		<li><div class="obs" style="min-width: 50px;">- 0.9.3</div><code><s>%ownmail%</s></code><div class="new" style="min-width: 50px; margin-left: 15px;">0.9.4 -</div><code>%identity(mail)%</code></li>
+		<li><div class="obs" style="min-width: 50px;">- 0.9.3</div><code><s>%sig%</s></code><div class="new" style="min-width: 50px; margin-left: 44px;">0.9.4 -</div><code>%sig(html)%</code> <code>%sig(text)%</code> settings for delimiter (--) included in our global settings tab</li>
+    <li><div class="obs" style="min-width: 50px;">- 0.9.3</div><code><s>%sig2%</s></code><div class="new" style="min-width: 50px; margin-left: 36px;">0.9.4 -</div><code>%sig(html)%</code> <code>%sig(text)%</code></li>
+	</ul>
+</article>
+
+<a name="identity"> </a>
+<h3 class="helpchapter">Identity</h3>
+<article>
+	<ul>
+    <li><code>%identity%</code> = Name + Email of the current selected identity</li>
+		<li><code>%identity(name)%</code> = Name of the current selected identity</li>
+		<li><code>%identity(name,link)%</code> = Name of the current selected identity as mailto link</li>
+		<li><code>%identity(mail)%</code> = Email address of the current selected identity</li>
+		<li><code>%identity(mail,link)%</code> = Email address of the current selected identity as mailto link</li>
+    <li><code>%identity(addressbook,<i>fieldId</i>)%</code> = Use the 'addressbook' keyword to retrieve additional 
+      identity information from address book.</li>
+      
+	</ul>
+  <p><i>fieldId</i>: For additional field values, see chapter <a href="#ab_fields">'Address Book Fields'</a> below.</li></p>
+  <p>Example:<br>
+     <pre class="code maxW">Phone No: %identity(addressbook,workphone)% </pre>
+  </p>
+  <p>The 'addressbook' variables also support using the optionality syntax [[ ... ]] in order to  
+     omit a section of text or html if the particular addressbook field is empty. 
+     The following line will be omitted if State information is not available from the address book
+     for the current identity.<br>
+     <pre class="code maxW">[[State: <code class="inline">%identity(<i>addressbook</i>,<i>work.state</i>)%</code>]]</pre>
+  </p>  
+</article>
+
+
+<!-- ##### Fixed Variables #### -->
+<a name="fixed"> </a>
+<h3 class="helpchapter">Fixed variables</h3>
+<article>
+	<ul>
+		<li><code class="deferable">%date%</code> = Date / Time (same as original 'Mailheader')</li>
+		<li><code class="deferable">%sig%</code> = Signature from account settings</li>
+		<li><code class="deferable">%cursor%</code> = Sets the cursor position.</li>
+    <li><code class="deferable">%identity(name)%</code> = Your name (also <code class="inline">%ownname%</code>) </li> 
+    <li><code class="deferable">%identity(mail)%</code> = Your email (also <code class="inline">%ownmail%</code>) </li> 
+		<li><code class="deferable">%recipient%</code> = Final Recipient's name / mail address. what exactly is shown depends on the advanced setting "Default address format"</li>
+		<li><code class="deferable">%recipient(mail)%</code> = Recipient's email address (Text only)</li>
+		<li><code class="deferable">%recipient(firstname)%</code> = Recipient's First name</li>
+    <li><code>%mailto(body)%</code> = use this to insert the body portion of a 
+      <a href="mailto:bogus@example.com?subject=test%20subject&amp;body=This%20is%20the%20body%20of%20this%20message.%0D%0ASecond%20Line..%0D%0AAnd%20another%20line!">mailto link</a>.</li>
+    <li><code>%attach()%</code>Attaches a file to the emails.</li>
+    <li><code>%spellcheck(<i>language</i>)%</code> = Sets the spell-checking language. Example values: (en, de, es, ru) - note that the dictionary must be installed.
+	</ul>
+  <p>The actual display of email addressing variables such as %to% can be configured in Advanced Settings
+    in the box <i>'Default address format'</i>.
+  </p>
+</article>
+
+<!-- ##### "To" Variables #### -->
+<a name="to"> </a>
+<h3 class="helpchapter">Recipient (To)</h3>
+<article>
+  <p>
+    In replies / forwarded mails, these variables refer to headers from the original email, so if you 
+    reply to an email it will show your own address info. When you write a <b>new email</b> this variable 
+    will be displayed as a placeholder for your "final recipient" and can be updated by clicking on it 
+    once you have entered a "To:" address above. <br>
+    To always insert the final recipient of your mail regardless on where you use it (Write, Reply, Forward),
+    use <code>%recipient%</code> instead.
+  </p>
+	<ul>
+		<li><code class="deferable">%to%</code> = Recipient's name (default)</li>
+		<li><code class="deferable">%to(firstname)%</code> = Recipient's first name</li>
+		<li><code class="deferable">%to(firstname,link)%</code> = Recipient's first name as mailto link</li>
+		<li><code class="deferable">%to(name)%</code> = Recipient's name</li>
+		<li><code class="deferable">%to(name,link)%</code> = Recipient's name as mailto link</li>
+		<li><code class="deferable">%to(mail)%</code> = Recipient's email address (Text only)</li>
+		<li><code class="deferable">%to(mail,link)%</code> = Recipient's email address as mailto link</li>
+	</ul>
+	<p class="tip"><em>TIP:</em> When the name is not available, email address will be displayed instead</p>
+</article>
+
+
+<!-- ##### "From" Variables #### -->
+<a name="from"> </a>
+<h3 class="helpchapter">Sender (From)</h3>
+<article>
+  <p>
+    In replies / forwarded mails, these variables refer to headers from the original email, so if you 
+    reply to an email it will show the original sender's address info. 
+    Only when you write a <b>new email</b> this variable will be replaced with your own from address.<br>
+    To always insert your own information in a template regardless on where you use it (Write, Reply, Forward),
+    use <code>%identity%</code> instead.
+  </p>
+	<ul>
+		<li><code class="deferable">%from%</code> = Sender's name (default)</li>
+		<li><code class="deferable">%from(firstname)%</code> = Sender's firstname</li>
+		<li><code class="deferable">%from(firstname,link)%</code> = Sender's firstname as mailto link</li>
+		<li><code class="deferable">%from(name)%</code> = Sender's name</li>
+		<li><code class="deferable">%from(name,link)%</code> = Sender's name as mailto link</li>
+		<li><code class="deferable">%from(mail)%</code> = Sender's email address (Text only)</li>
+		<li><code class="deferable">%from(mail,link)%</code> = Sender's email address as mailto link</li>
+    <li><code>%from(mail,<b>toclipboard</b>)%</code> = transfer sender's address to clipboard.</li>
+	</ul>
+	<p class="tip"><em>TIP:</em> When the name is not available, email address will be displayed instead</p>
+</article>
+
+<!-- ##### "CC" Variables #### -->
+<a name="cc"> </a>
+<h3 class="helpchapter">Recipient (CC)</h3>
+<article>
+  <p>
+    In replies / forwarded mails, these variables refer to cc parts from the original email.
+    If you use it in a <b>new email</b> this variable will be displayed as a placeholder for 
+    anybody you CC and will be updated once you click it - probably not a useful application in 
+    a real example as the idea of CC is hiding recipients.
+  </p>
+	<ul>
+		<li><code class="deferable">%cc%</code> = Recipient's name (Default)</li>
+		<li><code class="deferable">%cc(firstname)%</code> = Recipient's first name</li>
+		<li><code class="deferable">%cc(firstname,link)%</code> = Sender's first name as mailto link</li>
+		<li><code class="deferable">%cc(name)%</code> = Recipient's name</li>
+		<li><code class="deferable">%cc(name,link)%</code> = Sender's name as mailto link</li>
+		<li><code class="deferable">%cc(mail)%</code> = Sender's email address (Text only)</li>
+		<li><code class="deferable">%cc(mail,link)%</code> = Sender's email address as mailto link</li>
+	</ul>
+</article>
+
+<!-- ##### AB variables #### -->
+<a name="ab_fields"> </a>
+
+
+<h3 class="helpchapter">Address Book Fields</h3>
+<article>
+  When replying to a matching email address you can now use additional fields for address variables like &#37;from&#37;:
+    <div class="ab_table">
+      <table class="ab_fields">
+        <tr>
+          <td>
+            <h4>Contact</h4>
+            <ul class="contact_switches">
+              <li>firstname</li>
+              <li>lastname</li>
+              <li>name</li>
+              <li>nickname</li>
+              <li>additionalmail</li>
+              <li>chatname</li>
+              <li>workphone</li>
+              <li>homephone</li>
+              <li>fax</li>
+              <li>pager</li>
+              <li>mobile</li>
+            </ul>
+          </td>
+          <td>
+            <h4>Private</h4>
+            <ul class="contact_switches">
+              <li>private.city</li>
+              <li>private.address1</li>
+              <li>private.address2</li>
+              <li>private.state</li>
+              <li>private.country</li>
+              <li>private.zipcode</li>
+              <li>private.webpage</li>
+              <li></li>
+            </ul>
+          </td>
+          <td>
+            <h4>Work</h4>
+            <ul class="contact_switches">
+              <li>work.title</li>
+              <li>work.department</li>
+              <li>work.organization</li>
+              <li>work.address1</li>
+              <li>work.address2</li>
+              <li>work.city</li>
+              <li>work.state</li>
+              <li>work.country</li>
+              <li>work.zipcode</li>
+              <li>work.webpage</li>
+            </ul>
+          </td>
+          <td>
+            <h4>Other</h4>
+            <ul class="contact_switches">
+              <li>other.custom1</li>
+              <li>other.custom2</li>
+              <li>other.custom3</li>
+              <li>other.custom4</li>
+              <li>other.notes</li>
+            </ul>
+          </td>
+        </tr>
+      </table>  
+    </div>
+</article>
+
+<!-- ##### Special Formatting "{Brackets}" NEW "[[Brackets]]" #### -->
+<a name="optionalExpressions"> </a>
+<h3 class="helpchapter">Optional Sections</h3>
+<article>
+	<p class="attention"><em>ATTENTION:</em> Sections inside square brackets, like:
+  <pre class="code maxW"> [[Cc: <code class="inline">%cc(name)%</code>]]</pre>
+  will only be displayed if the variable <code class="inline">%cc(name)%</code> 
+	can be found in the header and replaced successfully!</p>
+	<p>This can be either of these 2: 
+     <pre class="code maxW">
+To: Alex Cc: Fred 
+  OR
+To: Alex
+</pre>
+    - if Cc is missing, everything within the brackets will be omitted.</p>
+	<p>The following variables can be used inside square brackets [[...]]:</p>
+	<ul>
+		<li><code class="deferable">%to%</code> <code class="deferable">%to(firstname)%</code> <code class="deferable">%to(mail)%</code> <code class="deferable">%to(<i>any_AB_field</i>)%</code> 
+		    <code class="deferable">%cc%</code> <code class="deferable">%cc(firstname)%</code> <code class="deferable">%cc(mail)%</code> <code class="deferable">%cc(<i>any_AB_field</i>)%</code>
+		</li>
+		<li><code class="deferable">%to(firstname,link)%</code> <code class="deferable">%to(name,link)%</code> 
+		    <code class="deferable">%to(mail,link)%</code> <code class="deferable">%cc(name,link)%</code>
+		    <code class="deferable">%cc(mail,link)%</code> <code class="deferable">%cc(firstname,link)%</code>
+		</li>
+		<li><code class="deferable">%identity(addressbook,name)%</code> <code class="deferable">%identity(addressbook,<i>any_AB_field</i>)%</code> 
+    </li>
+	</ul>
+  <i>any_AB_field</i> := see chapter <a href="#ab_fields">'Address Book Fields'</a>.
+</article>
+
+<!-- ##### Subject Variables #### -->
+<a name="subject"> </a>
+<h3 class="helpchapter">Subject</h3>
+<article>
+	<ul>
+		<li><code class="deferable">%subject%</code> = subject of current replied / forwarded email (same as original message header)</li>
+		<li><code class="deferable">%subject(2)%</code> subject of current replied / forwarded email (same as message editor "compose window")</li>
+  </ul>
+</article>
+
+<!-- ##### Special Variables (Message-Headerkeys) #### -->
+<a name="specialHeaders"> </a>
+<h3 class="helpchapter">Special Headers</h3>
+<article>
+	<ul>
+		<li><code class="noWrite">%Message-ID%</code> = Message ID</li>
+		<li><code class="noWrite">%Newsgroups%</code> = Newsgroups</li>
+		<li><code class="noWrite">%X-Mailer%</code> = X-Mailer</li>
+		<li><code class="noWrite">%...%</code> = Any Header-line</li>
+	</ul>
+</article>
+
+<!-- ##### Signature #### -->
+<a name="signature"> </a>
+<h3 class="helpchapter">Signature (read from Account Settings)</h3>
+<p>By Default you can place the Signature by Account Settings in Thunderbird.</p>
+<img src="/screenshots/account-settings-sig.png" alt="Account settings for signature"/>
+<p>and remove the Signature delimiters '--' by our Global settings Tab.</p>
+<img src="http://smarttemplate4.mozdev.org/screenshots/global-settings.png" alt="Signature delimiter"/>
+<p>But with follow variables you can override this positioning and use the variable with or without the delimiters.</p>
+<article>
+	<ul>
+		<li><code>%sig(html)%</code> = Signature HTML based</li>
+		<li><code>%sig(text)%</code> = Signature Text based</li>
+		<li><code>%sig(none)%</code> = To remove the signature completely, overriding account settings</li>
+	</ul>
+</article>
+
+
+<!-- ##### Language (proofing) #### -->
+<h3 class="helpchapter">Language functions</h3>
+ <a name="spellcheck"> </a>
+<p>
+  <code>%spellcheck(<i>language</i>)%</code> = change automatic proofing / spellcheck language. 
+  The <i>language</i> parameter can be any locale string of a dictionary that is already installed, e.g. en, de, en-GB etc.
+  Examples for language: cs, de, en-US, es-ES, fi, fr, id-ID, it, ja, nl, oc, pl, pt-BR, ru.<br>
+  Additional dictionaries can be installed from 
+  <a href="https://addons.thunderbird.net/thunderbird/language-tools/">addons.thunderbird.net</a> using Add-ons Manager.
+  See also <a href="https://github.com/RealRaven2000/SmartTemplates/issues/17">[issue 17]</a>
+</p>
+<p>
+  You can also toggle spellcheck using <code>%spellcheck(on)%</code> or <code>%spellcheck(off)%</code>.
+  Normally the global Thunderbird setting under Composition / Spelling "Enable Spellcheck as you type" will apply.
+  To toggle (on or off) <i>and</i> set the language, write the toggle command first.
+</p>
+<p><b>Example:</b><br>
+<pre class="code maxW">
+  %spellcheck(on)%
+  %spellcheck(de)%
+</pre>
+This turns on automatic proofing and switches the spellchecker language to German.
+</p>
+
+
+<!-- ##### Language (Calendar) #### -->      
+<a name="language"> </a>
+<p>
+  <code>%language(<i>localeId</i>)%</code> Requests a language for certain Calendar functions.
+</p>
+<p>
+	The functions <code class="inline">%A%</code> <code class="inline">%a%</code> <code class="inline">%B%</code> <code class="inline">%b%</code> 
+	retrieve day / month names from the locales supplied with SmartTemplates<br>
+	<i>localeId</i> = [cs, de, en-US, es-ES, fi, fr, id-ID, it, ja, nl, oc, pl, pt-BR, ru, sl, sr, sv-SE, uk, zh-CN, zh-TW]
+</p>
+<p>
+	The functions <code class="inline">%dateshort%</code> <code class="inline">%datelocal%</code>
+  and also <code class="inline">dateformat</code> (see its documentation <a href="#dateformat">here</a>)
+	resolve their date formats from the currently installed language packs -
+	see the Languages tab in Add-on Manager to see available locales.
+</p>
+<p>
+	In case of problems / unexpected language results, check the JavaScript error console for details.
+	This can be opened with the shortcut CTRL+SHIFT+J or via <i>Error Console</i> in the 
+	<i>Tools - Developer Tools</i> Menu in Thunderbird.
+</p>
+<p>
+  In order to download additional language packs for Thunderbird, please go to
+	<a href="https://ftp.mozilla.org/pub/thunderbird/releases/">https://ftp.mozilla.org/pub/thunderbird/releases/</a>
+	then find a matching version for your Thunderbird / OS, then open the xpi folder for language packs.
+	<br>Example:
+	<a href="https://ftp.mozilla.org/pub/thunderbird/releases/60.8.0/win64/xpi/">https://ftp.mozilla.org/pub/thunderbird/releases/60.8.0/win64/xpi/</a>
+	contains matching language packs for Thunderbird 68.8.0 for Windows 64bit and can be 
+	dragged directly into the Add-ons Manager.
+</p>
+
+
+
+<!-- ##### Fix Variables for Date/Timezone #### -->
+<a name="comboDateTime"> </a>
+<h3 class="helpchapter">Combined variables for 'Date format' / 'Timezone'</h3>
+<article>
+	<p class="tip"><em>TIP:</em> Can be combined with <code class="inline">%X:=sent%</code></p>
+	<ul>
+		<li><code>%datelocal%</code> = Date / Time (locale format)</li>
+		<li><code>%dateshort%</code> = Date / Time short (e.g. 01.01.2000 1:23:45)</li>
+		<li><code>%date_tz%</code> = Timezone aberration (+0100, +0200, ... )</li>
+		<li><code>%tz_name%</code> = GMT, PST, EST, ...</li>
+		<li><code>%tz_name(1)%</code> = Greenwich Mean Time, Pacific Standard Time, Eastern Standard Time, ...</li>
+	</ul>
+</article>
+
+<!-- ##### Custom Variables #### -->
+<a name="customDates"> </a>
+<h3 class="helpchapter">Variables for customized 'Date format'</h3>
+<article>
+    <p class="tip"><em>TIP:</em> Can be combined with <code class="inline">%X:=sent%</code></p>
+	<ul>
+		<li><code>%A%</code> = Day of Week (Friday)</li>
+		<li><code>%a%</code> = Day of Week (Fri.)</li>
+		<li><code>%B%</code> = Month (January)</li>
+		<li><code>%b%</code> = Month (Jan.)</li>
+		<li><code>%d%</code> = Day of Month (01 to 31) - with leading zero</li>
+		<li><code>%e%</code> = Day of Month (1 to 31)</li>
+		<li><code>%m%</code> = Month (01 to 12) - with leading zero</li>
+		<li><code>%n%</code> = Month (1 to 12)</li>
+		<li><code>%Y%</code> = Year (1970)</li>
+		<li><code>%y%</code> = Year (70)</li>
+		<li><code>%M%</code> = Minute (00 to 59)</li>
+		<li><code>%S%</code> = Second (00 to 59)</li>
+		<li><code>%H%</code> = Hour, 24-Hour Format (00 to 23) - with leading zero</li>
+		<li><code>%k%</code> = Hour, 24-Hour Format (0 to 23)</li>
+		<li><code>%I%</code> = Hour, 12-Hour Format (01 to 12) - with leading zero</li>
+		<li><code>%l%</code> = Hour, 12-Hour Format (1 to 12)</li>
+		<li><code class="noWrite">%p%</code> = AM / PM</li>
+		<li><code class="noWrite">%p(1)%</code> = a.m.</li>
+		<li><code class="noWrite">%p(2)%</code> = A.M.</li>
+		<li><code class="noWrite">%p(3)%</code> = AM</li>
+  <a name="dateformat">  </a>
+    <li><code>%dateformat(<i>parameters string</i>)%</code> = Function for inserting current time (clickable field).
+      <p> Most time the "one letter" variables from above can be used in the parameter string by omitting %. You can also use 
+         delimiters such as "," "/" "-" "." ":" etc and spaces. See also: [Bug 26588].</p>
+      <p> Examples: 
+        <table>
+          <tr>
+            <th style="text-align: center;">variable</th>
+            <th style="text-align: center;">results</th>
+          </tr>
+          <tr>
+            <td><code class="inline">%dateformat(B/d/Y l:M:S p)%</code></td>
+            <td>October/24/2019 9:41:04 PM</td>
+          </tr>
+          <tr>
+            <td><code class="inline">%dateformat(d/n/Y k:M:S)%</code></td>
+            <td>24/10/2019 21:41:13</td>
+          </tr>
+          <tr>
+            <td><code class="inline">%dateformat("A, e/n/Y H:M",<b>toclipboard</b>)%</code></td>
+            <td>(new in v3.12) Copy time to clipboard. use in a reply mail to retrieve datestamp of original mail.</td>
+          </tr>
+          <tr>
+            <td><code class="inline">%dateformat("A, e/n/Y H:M",<b>current</b>,<b>toclipboard</b>)%</code></td>
+            <td>(new in v3.12) Copy current time to clipboard</td>
+          </tr>
+        </table>
+      </p>
+      
+      
+   </li>
+	</ul>
+</article>
+
+<!-- ##### Calendar Week #### -->
+<a name="calendarWeek"> </a>
+<h3 class="helpchapter">Calendar Week (based on ISO 8601)</h3>
+<p class="tip"><em>TIP:</em> <code class="inline">%cwIso(offset)%</code> the 'offset' represents what you count as first day of the week. 
+  Typically, in Europe you would probably use <code class="inline">%cwIso(1)%</code> (for Monday), in Northern America <code class="inline">%cwIso(0)%</code> 
+	(for Sunday)</p>
+<article>
+	<ul>
+		<li><code>%cwIso(0)%</code> = First Day of Week is Sunday</li>
+		<li><code>%cwIso(1)%</code> = First Day of Week is Monday</li>
+		<li><code>%cwIso(2)%</code> = First Day of Week is Tuesday</li>
+		<li><code>%cwIso(3)%</code> = First Day of Week is Wednesday</li>
+		<li><code>%cwIso(4)%</code> = First Day of Week is Thursday</li>
+		<li><code>%cwIso(5)%</code> = First Day of Week is Friday</li>
+		<li><code>%cwIso(6)%</code> = First Day of Week is Saturday</li>
+	</ul>
+</article>
+
+<!-- ##### X:=Sent Variable #### -->
+<a name="sentModifier"> </a>
+<h3 class="helpchapter">The %X:=sent% Modifier</h3>
+<article>
+<p>By Default, Date/Time variables will always be initialized with current values (current = the time when you create the email).<br>
+When combined with %X:=sent%, the date/time variables will reflect the original messages date/time.</p>
+	<ul>
+		<li><code class="noWrite">%X:=sent%</code></li>
+	</ul>
+</article>
+
+<!-- ##### Longstring Description #### -->
+<a name="longString"> </a>
+<h3 class="helpchapter">Example for a longstring:</h3>
+<article>
+	<ul>
+		<li><code class="noWrite">%X:=sent% %A%, %d%.%m%.%Y% %H%:%M% %date_tz%</code></li>
+	</ul>
+	<p class="tip"><em>TIP:</em> Result Sunday, 20.12.2011 16:24 +0100</p>
+</article>
+
+<!-- ##### Shortstring Description #### -->
+<a name="shortString"> </a>
+<h3 class="helpchapter">Example of a shortstring:</h3>
+<article>
+	<ul>
+		<li><code class="noWrite">%X:=sent% %datelocal%</code></li>
+	</ul>
+	<p class="tip"><em>TIP:</em> Result Sunday, 20.12.2011 08:54:21</p>
+	<p><b>The following variables can be used in both variants:</b></p>
+	<ul>
+		<li><code>%datelocal%</code> = Date / Time (Local Format)</li>
+		<li><code>%dateshort%</code> = Date / Time short (e.g. 01.01.2000 1:23:45)</li>
+		<li><code>%date_tz%</code> = Timezone aberration (+0100, +0200, ... )</li>
+		<li><code>%tz_name%</code> = GMT, PST, EST, ...</li>
+		<li><code>%tz_name(1)%</code> = Greenwich Mean Time, Pacific Standard Time, Eastern Standard Time, ...</li>
+	</ul>
+</article>
+
+<!-- ##### String Functions #### -->
+<a name="stringManipulation"> </a>
+<h3 class="helpchapter">String Manipulation (Pro Function)</h3>
+<article>
+	<ul>
+		<li><code>%deleteText("text")%</code> = Remove some text from the Quote Header, such as deleteText("via Paypal")- "John via Paypal wrote" =&gt; "John wrote"</li>
+		<li><code>%replaceText("find","replace")%</code> = Replace some text with something else (similar to deleteText).</li>
+		<li><code>%matchTextFromBody("Regular Expression",MatchGroup)%</code> = 
+		    Finds a pattern in quoted Email and insert at function location.<br>
+				E.g. <code class="inline">%matchTextFromBody("Delivery from ([-'a-zA-Z\u00C0-\u024F]*\s[-'a-zA-Z\u00C0-\u024F]*)",1)%</code> 
+				will retrieve 'John Doe' from the line 'Delivery from John Doe' - (included unicode characters for diacritics)</li>
+		<li><code>%matchTextFromSubject("Regular Expression",MatchGroup)%</code> = 
+		    Finds a pattern in subject and insert at function location.<br>
+				E.g. <code class="inline">%matchTextFromSubject("\b[a-zA-Z0-9._+-]+@[a-z0-9.-]+\.[a-z]{2,4}\b",0)%</code> 
+				will retrieve an Email address from the Subject line</li>
+	</ul>
+  <h4>New feature in SmartTemplates 3.12 - clipboard support</h4>
+  <p>The clipboard can now be used by other functions (such as %header.set%) to transfer information to other 
+    headers or insert elsewhere in the template.</p>
+  <ul>
+    <li><code>%replaceText(<i>regularExpression</i>,<b>clipboard</b>)%</code> - (new in v3.12) overwrite placeholder text in template from clipboard.</li>
+    <li><code>%matchTextFromSubject("Regular Expression",MatchGroup,<b>toclipboard</b>)%</code> = 
+      Extract text from the subject and copy to the clipboard. 
+    </li>
+    <li><code>%matchTextFromBody("Please reply until (.*)",1,<b>toclipboard</b>)%</code> = 
+      Extract text from the original mail and copy itr to the clipboard. In this example you can extract
+      a date, and maybe transfer it to the subject line afterwards using 
+      <code class="inline">%header.append(subject,clipboard)%</code>.
+      You can also use <code class="inline">%dateformat("A, e/n/Y H:M",toclipboard)%</code> to copy the time stamp of the original mail
+    </li>
+  </ul>
+	<p>Note: the new <code class="inline">%matchTextFromBody%</code> and <code class="inline">%matchTextFromSubject%</code> functions 
+	   use <a href="https://en.wikipedia.org/wiki/Regular_expression" target="_blank">regular expressions</a> - these are powerful keys for finding text patterns.
+		 The first parameter must be the regular expression within double quotes. The second parameter is a number which denotes the "match group". 
+		 Match groups are usually designated with round parentheses (). Use 0 to match the complete expression, 1 for the first group etc.
+	</p>
+	<p>To learn about regular expressions, please visit: <a href="http://www.regular-expressions.info/quickstart.html" target="_blank">www.regular-expressions.info</a>.
+	   For testing your patterns, I recommend this online tester: <a href="https://regex101.com/" target="_blank">regex101.com</a>
+	</p>
+</article>
+
+<!-- ##### Quote Modification #### -->
+<a name="quoteManipulation"> </a>
+<h3 class="helpchapter">Quote Modification (Pro Function)</h3>
+<article>
+  <ul>
+    <li>
+      <p><a href="https://github.com/RealRaven2000/SmartTemplates/issues/61">[issue 61]</a> Variable for quoted text.<br>
+        <code>%quotePlaceholder(<i>quoteLevel</i>)%</code> This moves the quoted part into the template text itself. 
+        The quote header section from account templates will be moved to the top of this quote. 
+        The optional numerical parameter <i>quoteLevel</i> is the maximum citation level to exclude 
+        older quote parts from the conversation.
+      </p>
+    <li><a href="https://github.com/RealRaven2000/SmartTemplates/issues/31">[issue 31]</a> 
+      From SmartTemplates 2.8: Variables to remove text / tags from quoted parts 
+      and save space. From 3.11 onwards this also supports changing texts of inline forwarded mail.
+      <p>
+        <code>%deleteQuotedText("<i>searchText</i>",<i>quoteLevel</i>)%</code> Deletes quoted Text <br>
+        <code>%replaceQuotedText("<i>searchText</i>","<i>replacementHTML</i>",<i>quoteLevel</i>)%</code> Replaces quoted text <br>
+        <code>%deleteQuotedTags("<i>selector</i>",<i>quoteLevel</i>,<i>minSize</i>)%</code> Deletes tags from the quote<br>
+        <code>%replaceQuotedTags("<i>selector</i>","<i>replacementHTML</i>",<i>quoteLevel</i>,<i>minSize</i>)%</code> Deletes tags from the quote<br>
+        <i>searchText</i> - must be in double quotes - the searchText argument must be a regular expression. 
+        Note that whitespace can be best represented as \s because it can also contain line breaks. 
+        Double quote characters and commas cannot be used.  <br>
+        <i>replacementHTML</i> - must be in double quotes - text or a html tag which will be inserted in page.
+        To insert a comma in the text parameter, prefix it with a backslash like this: <span class="paramLiteral">\,</span>
+        <i>quoteLevel</i> - optional, (number) which minimal quote level to start from
+        <br>
+        <i>selector</i> -  what you would use to address the tag in css. simplest case "img", or "p" but attribute selectors 
+        can be added as long as double quotes can be avoided.<br>
+        <i>minSize</i> - (optional, numeric) - number of kByte, minimum size for removing the tag. This way you can 
+        keep smaller images like icons / emojis while discarding large images.
+      </p>
+      <p>
+        A note on <i>quoteLevel</i>, for images I would recommend 2 if you want to 
+        remove images to retain some context in your replies. This will dramatically decrease email 
+        sizes in long threads which contain a lot of images (e.g. screenshots).
+      </p>
+      <p>
+        To use the function (v3.11 and later) during forwarding, use the parameter quoteLevel=0 to remove 
+        text from the original mail text.
+      </p>
+    </li>
+    
+    <li>
+      <code>%suppressQuoteHeaders%</code> - use this command to suppress all quote headers - the ones inserted by 
+      Thunderbird automatically (usally along the lines of <i>"on 12/03/2020 John Doe wrote:"</i>) and also 
+      any of the replacement ones configured in SmartTemplates account settings.
+    </li>    
+   </ul>
+</article>
+
+<!-- ##### Header Functions #### -->
+<a name="headerManipulation"> </a>
+<h3 class="helpchapter">Mail Header Manipulation (Pro Functions)</h3>
+<article>	
+  <p> 
+	  The following functions can be used to modify header fields such as the "To:" line of the email so that the 
+	  Email is autopmatically sent to a different recipient. 
+		They are included in SmartTemplates Pro for unlimited use. 
+		Read up on the full functionality on the <a href="premium.html#headerManipulation">Pro features</a>
+		page.
+	</p>
+
+	<ul>
+		<li> <code>%header.set(subject,"text"<span class="param">,textTransform</span>)%</code> = Replace subject with the text</li>
+		<li> <code>%header.prefix(subject,"text"<span class="param">,textTransform</span>)%</code> = Prefix subject with the text</li>
+		<li> <code>%header.append(subject,"text"<span class="param">,textTransform</span>)%</code> = Append text to subject</li>
+    <li> <code>%header.delete(subject,<i>pattern</i>)%</code> Remove matching regular expression from text.</li>  
+    <li> <code>%header.deleteFromSubject(<i>pattern</i>)%</code> (from v2.8.1) Remove matching pattern from subject.</li>  
+    <li> <code>%header.set(to,<b>clipboard</b>)%</code> - (new in v3.12) set the final recipient from the clipboard</li>
+		<hr/>
+		<li> 
+      <p>Special pattern matching functions:</p>
+		  <div style="text-align:left;">
+				<code>%header.set.matchFromSubject(<i>pattern</i>,<i>matchgroup</i>,<i>altText</i>)%</code> <br>
+				<code>%header.prefix.matchFromSubject(...)%</code> <br>
+				<code>%header.append.matchFromSubject(...)%</code> 
+        <br/>
+				<code>%header.set.matchFromBody(<i>pattern</i>,<i>matchgroup</i>,<i>altText</i>)%</code> <br>
+				<code>%header.prefix.matchFromBody(...)%</code> <br>
+				<code>%header.append.matchFromBody(...)%</code> 
+			</div>
+			These functions can be used to extract matching text (e.g. Names or email addresses)
+			from the E-Mails replied to and then modify fields like To, Cc, subject. They
+			are documented on the <a href="premium.html#headerManipulation">Pro features</a>
+			page.
+		</li>
+	</ul>
+	<h5>Parameters</h5>
+	<ul>
+    <li><i>pattern</i> = a regular expression, wrapped in double quotes, e.g. "\b(Dog\S*)" for words starting with "Dog"</li>
+    <li><i>matchgroup</i> = when using groups in a pattern (these are contained in round parentheses)
+      this is denotes the number of the group. 0 is placeholder for the complete match.</li>
+    <li><i>altText</i> = string, optional parameter; this alternative text will be used when no match can be found</li>
+  </ul>
+	<h5>Examples</h5>
+	<ul>
+		<li> <code class="inline">%header.set(to,"abc@de.com")%</code> = Replace recipient with email address</li>
+		<li> <code class="inline">%header.append(to,"abc@de.com")%</code> = Add email to recipient list</li>
+		<li> <code class="inline">%header.delete(subject,"([\[\(] *)?(Re|Fwd|AW?)*([-:;)\]][ :;\])-]*)|\]+")%</code> 
+       = Remove common quote prefixes from subject line.</li>
+	</ul>
+</article>
+
+<a name="priority"> </a>
+<h3 class="helpchapter">Setting Priority</h3>
+<article>
+  <p>
+    <code>%header.set(priority,<i>Priority</i>)%</code> = Change priority of Email. 
+    See also <a name="26689" href="https://www.mozdev.org/bugs/show_bug.cgi?id=26689" target="_blank">[Bug 26689]</a>
+  </p>
+  <p>
+    <b>Examples:</b><br><br>
+
+    <code class="inline">%header.set(priority,highest)%</code><br>
+    <code class="inline">%header.set(priority,high)%</code><br>
+    <code class="inline">%header.set(priority,normal)%</code><br>
+    <code class="inline">%header.set(priority,low)%</code><br>
+    <code class="inline">%header.set(priority,lowest)%</code><br>
+  </p>
+</article>
+
+<!-- ##### %file()% #### -->
+<h3 class="helpchapter">Inserting HTML files and Images</h3>
+<article>	
+  The <code>%file()%</code> and <code>%style()%</code> functions can be used for inserting 
+  images or HTML / text files which can even contain more SmartTemplates variables.
+	They are included in SmartTemplates Pro for unlimited use. 
+	Read up on the full functionality on the <a href="premium.html#fileInsert">Pro features</a>
+	page.
+</article>
+
+
+<!-- ##### deferred variables #### -->
+<a name="deferredVariables"> </a>
+<h3 class="helpchapter">Deferred Variables - Fields in New Emails</h3>
+<article>
+  <p>These are a subset of standard SmartTemplates variables, which perform in a specidal way 
+     when used in a "Write" situation: In this, certain information which is readily available when 
+     replying or following up / forwarding, is simply not present when opening the Email editor.
+  </p>
+	<ul>
+		<li><div class="new">NEW</div>
+			<p>When writing new mails, headers such as to, from are not available - therefore these 
+				 functions had to be written from scratch. 
+			</p>
+			<p><a name="24993" href="https://www.mozdev.org/bugs/show_bug.cgi?id=24993" target="_blank">[Bug 24993]</a>
+					Supports using the following fields when composing a *new* Email:</p>
+			<ul>
+				<li><code class="inline">%subject%</code></li>
+				<li><code class="inline">%from%</code></li>
+				<li><code class="inline">%to%</code> <code class="inline">%cc%</code> <code class="inline">%bcc%</code></li>
+				<li><code class="inline">%date%</code></li>
+				<li><code class="deferable">%dateformat()%</code>New function for building date strings for current date, <a href="#dateformat">see here</a>.</li>
+			</ul>
+			<p>Note, to  insert the real recipient in a <i>forwarded</i> email, you can now use the <tt>fwd</tt> argument:
+				 e.g. <code class="deferable">%to(firstname,fwd)%</code> </p>
+			<p>The variables are shown as colored placeholder blocks and can be updated with a simple mouse-click: <br>
+				<img class="screenshot" src="/img/deferred-vars-example.png" alt="deferred variables"><br>
+				This will pull in the correct information when available and can be clicked multiple times.
+			</p>
+			<p>A new button for a final clean up - for "tidying up ALL variables" can also be added to the Composer toolbar:<br>
+				<img class="screenshot" src="/img/clean-up-button.png" alt="clean up">
+			</p>	
+		</li>
+	</ul>
+</article>
+
+
+
+
+
+<!-- ##### Export/Import added in 1.0.0 ####
+<h3 class="helpchapter">Settings and Templates Export/Import</h3>
+<p>You can export and import your settings and templates associated with each account.</p>
+<br />
+<br />
+##### Export ####
+<b>Export:</b>
+<br />
+<p>First select the account you want to export in the SmartTemplates settings dropdown box.</p>
+<br />
+<img class="screenshot" alt="" src="/screenshots/identity_select.png">
+<br />
+<p>Next select 'File' &#8658; 'Export' &#8658; 'Settings and Templates' from the menu bar and save the file (xxx.st4) to your computer.</p>
+<br />
+<img class="screenshot" alt="" src="/screenshots/export.png">
+<br />
+##### Import ####
+<b>Import:</b>
+<br />
+<p>To import a file, select the account you want to import in the SmartTemplates settings dropdown box.<br>
+Next, select 'File' &#8658; 'Import' &#8658; 'Settings and Templates' from the menu bar.</p>
+<br />
+<img class="screenshot" alt="" src="/screenshots/import.png">
+<br />
+<p>Select the SmartTemplates file (xxx.st4) you want to import.</p>
+<p class="attention">NOTE: Apple/Macintosh platforms will have the menu bar in the title ribbon instead of the SmartTemplates Options window.<br>
+This is normal behavior on this platforms and can't be changed.</p>
+<br />
+<br />-->
+
+<!-- ##### Template Note <br> Option #### -->
+<a name="templates"> </a>
+<h3 class="helpchapter">Note for templates</h3>
+<article>
+<p class="attention">
+ <em>ATTENTION:</em> 
+  Templates which use &lt;br&gt; tags should be used with "Replace new-line with &lt;br&gt;" option deactivated<br> 
+  and Templates without the &lt;br&gt; Tags included should be used WITH the option "Replace new-line with &lt;br&gt;" activated!
+</p>
+</article>
+<!-- ##### HTML -> UTF-8 Note #### -->
+<h3 class="helpchapter">Note for HTML templates</h3>
+<article>
+	<p class="attention"><em>ATTENTION:</em> Please use only UTF-8 (Unicode) charset inside HTML templates!<br>
+	 A UTF-8 encoding table can be found <a href="http://www.utf8-chartable.de/unicode-utf8-table.pl?amp;number=1024&amp;utf8=dec&amp;unicodeinhtml=dec&amp;htmlent=1" title="UTF-8 encoding table and Unicode characters" target="_blank">here</a>.
+	</p>
+</article>
+<!-- END VARIABLES.HTML -->
+
+<!-- FOOTER.HTML -->
+<script>
+"use strict"; // use ECMAScript5 strict mode
+
+  /* Apply this site specific files to <head> element */
+  loadStyleSheet("footer.css");
+  loadStyleSheet("navibar.css");
+</script>
+
+  <div id="footer">
+   <div class="horizontalRule"></div>
+    <a id="contact"></a><!-- this anchor is just an in-page jump point, DO NOT REMOVE WE USE THIS ANCHOR ON ATN -->
+      <div id="mailToLink">
+       You have questions / comments about SmartTemplates? Please feel free to 
+       <p class="mail_link">
+        <script>mailtoLine();</script><!-- Mailto Line filled by JavaScript -->
+       </p>
+      </div>
+
+       <div class="attribution"><b>Attributions:</b><br>
+         Flagset by  Matthias Slovig under CC, see:
+        <a href="http://flags.blogpotato.de/" title="Visit Flagpotato Website" target="_blank">http://flags.blogpotato.de/</a><br>
+         Fugue Icons (or based on) by Yusuke Kamiyamane under CC, see:
+        <a href="http://p.yusukekamiyamane.com/" title="Visit Yusuke Kamiyamane Website" target="_blank">http://p.yusukekamiyamane.com/</a><br>
+         Noia Icons (or based on) by Carles Carbonell Bernado under LGPL, see:
+       <a href="http://carlitus.deviantart.com/" title="Visit Noia on Deviantart" target="_blank">http://carlitus.deviantart.com/</a>
+       </div>
+
+       <!--Special Attributions -->
+       <!-- Brands Carousel (jquery) in Alphabetically Order -->
+        <div id="brandsCarousel">
+         <a href="https://www.7-zip.org" target="_blank" title="Visit 7-Zip Website"><img class="brands" src="/brands/50/7zip.png" height="50" width="50" alt="7-Zip"></a>
+         <a href="https://addons.thunderbird.net/" target="_blank" title="Visit addons.thunderbird.net (ATN)"><img class="brands" src="/brands/50/amo.png" height="50" width="50" alt="ATN"></a>
+         <a href="https://www.thunderbird.net/" target="_blank" title="Visit thunderbird.net"><img class="brands" src="/brands/50/thunderbird_102.png" height="50" width="50" alt="ATN"></a>
+         <a href="https://www.betterbird.eu/" target="_blank" title="Visit Betterbird"><img class="brands" src="/brands/50/betterbird.png" height="50" width="50" alt="ATN"></a>
+         <a href="https://www.android.com" target="_blank" title="Visit Android Website"><img class="brands" src="/brands/50/android.png" height="50" width="50" alt="Android"></a>
+         <a href="https://bluefish.openoffice.nl/index.html" target="_blank" title="Visit Bluefish Website"><img class="brands" src="/brands/50/bluefish.png" height="50" width="50" alt="Bluefish"></a>
+         <a href="https://www.creativecommons.org" target="_blank" title="Visit Creative Commons Website"><img class="brands" src="/brands/50/creativecommons.png" height="50" width="50" alt="CreativeCommons"></a>
+         <a href="https://duckduckgo.com" target="_blank" title="DuckDuckGo is a search engine that does not track you"><img class="brands" src="/brands/50/duckduckgo.png" height="50" width="50" alt="DuckDuckGo"></a>
+         <a href="https://www.mozilla.org/firefox/fx/" target="_blank" title="Visit Firefox Website"><img class="brands" src="/brands/50/firefox.png" height="50" width="50" alt="Firefox"></a>
+         <a href="https://www.gimp.org" target="_blank" title="Visit Gimp Website"><img class="brands" src="/brands/50/gimp.png" height="50" width="50" alt="Gimp"></a>
+         <a href="https://www.gnu.org" target="_blank" title="Visit GNU Website"><img class="brands" src="/brands/50/gnu.png" height="50" width="50" alt="GNU"></a>
+         <a href="https://www.jquery.com" target="_blank" title="Visit jQuery.com"><img class="brands" src="/brands/50/jquery.png" height="50" width="50" alt="jQuery"></a>
+         <a href="https://kompozer-web.de/en" target="_blank" title="Visit KompoZer Website"><img class="brands" src="/brands/50/kompozer.png" height="50" width="50" alt="KompoZer"></a>
+         <a href="https://www.libreoffice.org/" target="_blank" title="Visit LibreOffice Website"><img class="brands" src="/brands/50/libreoffice.png" height="50" width="50" alt="LibreOffice"></a>
+         <a href="https://www.linux.org" target="_blank" title="Visit Linux Website"><img class="brands" src="/brands/50/linux.png" height="50" width="50" alt="Linux"></a>
+         <a href="https://developer.mozilla.org" target="_blank" title="Visit developer.mozilla.org Website"><img class="brands" src="/brands/50/mdn.png" height="50" width="50" alt="MDN"></a>
+         <a href="https://www.mozilla.org/foundation/about.html" target="_blank" title="Visit Mozilla Foundation Website"><img class="brands" src="/brands/50/mozilla.png" height="50" width="50" alt="Mozilla"></a>
+         <a href="https://www.notepad-plus-plus.org" target="_blank" title="Visit Notepad++ Website"><img class="brands" src="/brands/50/notepad++.png" height="50" width="50" alt="Notepad++"></a>
+         <a href="https://www.opensource.org" target="_blank" title="Visit Open Source Initiative Website"><img class="brands" src="/brands/50/opensource.png" height="50" width="50" alt="OpenSource"></a>
+         <a href="https://www.postbox-inc.com/" target="_blank" title="Visit PostBox Website"><img class="brands" src="/brands/50/postbox.png" height="50" width="50" alt="Postbox"></a>
+         <a href="https://www.seamonkey-project.org/" target="_blank" title="Visit Seamonkey Project Website"><img class="brands" src="/brands/50/seamonkey.png" height="50" width="50" alt="Seamonkey"></a>
+         <a href="https://www.tortoisesvn.net" target="_blank" title="Visit Tortoise SVN Website"><img class="brands" src="/brands/50/tortoise_svn.png" height="50" width="50" alt="Tortoise SVN"></a>
+         <a href="https://www.w3.org" target="_blank" title="Visit World Wide Web Consortium Website"><img class="brands" src="/brands/50/w3c.png" height="50" width="50" alt="W3C"></a>
+         <a href="https://www.w3schools.com" target="_blank" title="Visit W3Schools Website"><img class="brands" src="/brands/50/w3schools.png" height="50" width="50" alt="W3 Schools"></a>
+        </div>
+        <!-- END Brands Carousel -->
+
+        <div class="copyright" id="copyright">
+          <script>copyrightLine();</script><!-- Copyright Line filled by JavaScript -->
+        </div>
+
+      </div><!-- CLOSE <div id="footer"> -->
+    </div><!-- CLOSE <div id="main-content-no-nav"> with the blue box -->
+
+    <!-- Overlay Navibar -->
+    <div class="outerTable" id="navbarTable">
+     <table class="innerTable">
+      <tbody>
+       <tr class="innerTableTR">
+        <td class="innerTableTD"><div class="homeButton"><a href="/index.html" target="_self" title="To our Startpage">Home</a></div></td>
+        <td class="innerTableTD"><div class="historyBackButton"><a href="javascript:goBack();" title="Previous Page">Previous</a></div></td>
+        <td class="innerTableTD"><div class="scrollButton"><a href="javascript:window.scrollTo(0,0);" title="Scroll to Top">Up</a></div></td>
+        <td class="innerTableTD"><div class="historyFwdButton"><a href="javascript:goForward();" title="Next Page">Next</a></div></td>
+        <td class="innerTableTD"><div class="printButton"><a href="javascript:window.print();" title="Print this Page">Print</a></div></td>
+        <td class="innerTableTD"><div class="fontPlusButton"><a href="" onclick="resizeText(1);return false;" title="increase font size">Font +</a></div></td>
+        <td class="innerTableTD"><div class="fontMinusButton"><a href="" onclick="resizeText(-1);return false;" title="reduce font size">Font -</a></div></td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+    <!-- END Overlay Navibar -->
+
+    <div id="downPusher"></div><!-- push down the black main background -->
+    <!-- END FOOTER.HTML -->
+  </body>  
+</html>
+<!-- END HTML SITES IN FOOTER.HTML -->
+

@@ -1,0 +1,410 @@
+/*******************************************************************************************************/
+/***************************************** SCREEN SIZE SUPPORT *****************************************/
+/*******************************************************************************************************/
+/*
+@media only screen and (max-width: 1280px) {}
+@media only screen and (max-width: 1080px) {}
+@media only screen and (max-width: 1024px) {}
+
+or @media only screen and (min-device-width: xxxpx) and (max-device-width: xxxpx) {.yourCss{}}
+or @media only screen and ((min-device-width : 800px) and (max-device-width : 1280px))) and (orientation : landscape) {.yourCss{}}
+http://stackoverflow.com/questions/12299291/css-media-queries-for-common-tablet-sizes
+
+@media only screen and (max-device-width: 720px) and (orientation:portrait) {.your-css{}}
+@media only screen and (max-device-width: 1280px) and (orientation:landscape) {.your-css{}}
+http://stackoverflow.com/questions/11036337/css-media-queries-for-galaxy-s3
+
+Media Query Detector and resolution Infos:
+http://pieroxy.net/blog/pages/css-media-queries/test-features.html
+*/
+
+/* max width of 1000px */
+@media only screen and (max-width: 1000px) {
+  #infoTabs {
+    margin-right: -60px; 
+  }
+  #main-content-no-nav {
+    margin-left: 6%  !important;
+    margin-right: 6% !important;
+  }
+	#main-content-no-nav > ul,
+	#main-content > ul {	  
+		margin-left: 10px !important;
+	}
+
+}
+
+/* max width of 850px */
+@media only screen and (max-width: 850px) {
+  #infoTabs {
+    margin-right: -8%;
+  }
+  #main-content-no-nav {
+    margin-left: 2% !important;
+    margin-right: 2% !important;
+  }
+  .infoTab {
+    margin-left: 10px;
+  }
+	#main-content-no-nav > ul,
+	#main-content > ul {	  
+		margin-left: 5px !important;
+	}
+}
+
+@media only screen and (max-width: 1060px) {
+  #infoTabs {
+    display: none;
+  }
+}
+/* max width of 700px */
+@media only screen and (max-width: 700px) {
+  iframe.video,
+  #infoTabs {
+    display: none;
+  }
+  .copyright {
+    text-align: left !important; /* we have center as default but this looks horrible on mobile devices */
+  }
+  h3 {
+    font-size: 1.2em;
+  }
+  h2.page-header {
+    font-size: 1.5em;
+  }
+}
+
+/* max width of 360px (e.g. portrait mode s3) */
+@media only screen and (max-width: 360px) {
+  #project-navigation {
+    display: table !important; /* turn on again navigation which is hidden for examples tab inside add-on! */
+  }
+  #project-navigation a.version,
+  #project-navigation a.templates,
+  .tip.query  {
+    display: none;
+  }
+  .templateBlock {
+    margin-left: 10px;
+  }
+  h5.templateBlock {
+    margin-left: 10px !important;
+    margin-top: 0;
+    max-width: 10em;
+    text-align: center;
+    font-size: 10pt;
+    padding: 0;
+  }
+  div.code_block,
+  div.preview,
+  pre.code_block,
+  pre.code_block.bad_example {
+    margin-left: 10px !important;
+    margin-right: 10px !important;
+    width: auto;
+    min-width: 290px !important; /* here we need the important to overwrite the size for examples tab */
+  }
+  ul > li {
+    margin-left: 15px;
+  }
+  .collapsible li {
+    margin-bottom: 0;
+    padding-bottom: 0.5em;
+  }
+}
+@media only screen and (max-width: 1500px) and (min-width: 1281px)  {
+  #main-content-no-nav {
+    margin: 25px 80px 25px 80px !important;
+  }
+}
+
+/* max width of 1280px */
+@media only screen and (max-width: 1280px) {
+  #main-content-no-nav {
+    margin: 25px 50px 25px 50px !important;
+  }
+  .collapsible li {
+    margin-bottom: 0;
+    padding-bottom: 0.5em;
+  }
+  .templateBlock {
+    margin-left: 10px;
+  }
+  h5.templateBlock {
+    margin-left: 10px !important;
+    margin-top: 0;
+    max-width: 10em;
+    text-align: center;
+    font-size: 10pt;
+    padding: 0;
+  }
+  /* knowledgebase "good & bad" example boxes */
+  pre.code_block,
+  pre.code_block.bad_example {
+    margin-left: 10px !important;
+    margin-right: 10px !important;
+    width: auto;
+    min-width: 510px;
+  }
+  /* template example boxes */
+  div.preview,
+  div.code_block {
+    margin-left: 10px !important;
+    margin-right: 10px !important;
+    /*! width: auto; */
+    /*! min-width: 400px; */
+  }
+}
+
+
+@media only screen  and (max-width: 500px) {
+  #main-content-no-nav, .main_content {
+    border-radius: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+  }
+  #main-content-no-nav > * > li {
+    margin-left: 0;
+  }
+  
+  #main-content-no-nav ol {
+    padding-left: 15px;
+    padding-right: 5px;
+  }  
+  #main-content-no-nav > * > li img.screenshot {
+    margin-left: -20px;
+    margin-right: 5px;
+    max-width: 100% !important;
+  }
+  iframe {
+    width: 100%;
+    margin-left: -6px !important;
+  }
+  h2.page-header {
+    font-size: 15pt;   
+  }
+  h3 {
+    font-size: 1.05em;
+  }
+}
+
+
+@media only screen and (max-width: 970px) {
+  #infoTabs, #mozdev-logo, #mozdev-date {
+    display: none;
+  }
+  #main-content-no-nav {
+    border-radius: 0 !important;
+    margin-top: 0 !important;
+  }
+}
+
+
+
+@media only screen and (min-width: 500px) and (max-width: 1010px) {
+  #main-content-no-nav, .main_content {
+    border-radius: 0;
+    margin-top: 0;
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+  }
+  #infoTabs {
+    margin: 0px 0px 20px 0.2em !important;  
+  }
+}
+
+@media only screen and (min-width: 1010px) and (max-width: 1070px) {
+  #main-content-no-nav, .main_content {
+    margin-left: 20px !important;
+    margin-right: 20px !important;
+  }
+  #infoTabs {
+    margin: 0px 0px 20px 0.2em !important;  
+  }
+}
+
+@media only screen and (max-width: 620px) {
+  table.quickFiltersFreeUser, table.quickFiltersProRenew {
+    margin-left: -1em !important;
+    margin-right: -1em !important;
+    border-radius: 0 !important;
+  }
+  .quickFiltersProRenew p, .quickFiltersFreeUser p {
+    font-size: 1em !important;
+  }
+}
+
+@media only screen and (min-width: 620px) and (max-width: 1070px) {
+  table.quickFiltersFreeUser, table.quickFiltersProRenew {
+    margin-left: 0 !important;;
+  }
+  #infoTabs {
+    font-size: 0.8em !important;
+    margin-left: 10px !important;
+  }
+}
+
+@media (min-width: 1070px) and (max-width: 1200px) {
+  #main-content-no-nav, .main_content {
+    margin-left: 30px !important;
+    margin-right: 30px !important;
+  }
+  #infoTabs {
+    margin: 0px -55px 20px 1em !important;  
+    font-size: 0.8em !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  #main-content-no-nav {
+    padding-left: 3em;
+    padding-right: 3em;
+  }
+  #main-content-no-nav > p,
+  #main-content-no-nav > div p
+  {
+    max-width: 70em;
+  }
+  #infoTabs {
+    max-width: 40% !important;
+    margin: 0px -55px 20px 1em !important;  
+    font-size: 0.9em !important;
+  }
+}
+
+
+@media only screen and (max-width: 1680px) {
+  h5.templateBlock {
+    margin-left: 10px !important;
+    margin-top: 0;
+    max-width: 10em;
+    text-align: center;
+    font-size: 12pt;
+    padding: 0;
+  }
+  div.code_block,
+  pre.code_block,
+  div.preview,
+  pre.code_block.bad_example {
+    margin-left: 10px !important;
+    flex-grow: 1;
+  }
+  .screenshot.query {
+    margin-left: 10px;
+    margin-top: 10px;
+  }
+}
+
+/* range width 360px to 640px (e.g. portrait AND panorama mode on s3) */
+@media only screen and (min-width: 360px) and (max-width: 640px) {
+  .copyright {
+    text-align: left !important;
+    margin-top: 10px;
+  }
+  .screenshot.query {
+    margin-left: 10px;
+    margin-top: 10px;
+  }
+  div.old,
+  div.new {
+    margin-left: 0px !important;
+  }
+  .templateBlock {
+    margin-left: 10px;
+  }
+  h5.templateBlock {
+    margin-left: 10px !important;
+    margin-top: 0;
+    max-width: 10em;
+    text-align: center;
+    font-size: 10pt;
+    padding: 0;
+  }
+  /* template example boxes */
+  div.preview,
+  div.code_block {
+    margin-left: 10px !important;
+    margin-right: 10px !important;
+    width: auto;
+    min-width: 350px !important;
+  }
+}
+/* range width of 360px to 500px (outside of portrait mode and inside examples tab size */
+@media only screen and (min-width: 360px) and (max-width: 500px) {
+   iframe.video,
+   #brandsCarousel,
+   .outerTable,
+   #donation {
+    display: none;
+  }
+  .templateBlock {
+    margin-left: 10px;
+  }
+  h5.templateBlock {
+    margin-left: 10px !important;
+    margin-top: 0;
+    max-width: 10em;
+    text-align: center;
+    font-size: 10pt;
+    padding: 0;
+  }
+  /* knowledgebase "good & bad" example boxes */
+  pre.code_block,
+  pre.code_block.bad_example {
+    margin-left: 10px !important;
+    margin-right: 10px !important;
+    width: auto;
+    min-width: 500px;
+  }
+  /* template example boxes */
+  div.code_block {
+    margin-left: 10px !important;
+    margin-right: 10px !important;
+    width: auto;
+    min-width: 380px;
+  }
+  ul > li {
+    margin-left: 15px;
+  }
+  .collapsible li {
+    margin-bottom: 0;
+    padding-bottom: 0.5em;
+  }
+  h3 {
+    font-size: 1em;
+  }
+  h2.page-header {
+    font-size: 1.2em;
+  }  
+  #mozdev-logo, #mozdev-date, #project-navigation, #content, .attribution,
+  #copyright, #brandsCarousel, #downPusher, #navbarTable { 
+    display: none;
+  }
+  h2.page-header { 
+    padding: 0.25em 1em 0.15em !important;
+    font-size: 1em;
+  }
+  #main-content-no-nav {
+    margin: 0  !important;
+    border-radius: 0 !important;
+  }
+  #main-content-no-nav ul {
+    margin-left:0 !important;
+    padding-left:0 !important;
+  }
+  #mailToLink, .mail_link {
+    margin-bottom: 0;
+  }
+  #main-content-no-nav  p {
+    font-size: 0.9em;
+  }
+  h4 {
+    margin-top: 0.2em;
+    margin-bottom: 0;
+  }
+  ul.noneListStyle > li {
+    margin-left: 25px;
+  }
+}

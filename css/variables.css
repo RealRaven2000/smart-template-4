@@ -1,0 +1,111 @@
+div#pageContent {
+  background-image: url('/img/SmartTemplate4-watermark.png') !important;
+  background-position: 10px 10px;
+  background-repeat:   no-repeat;
+}
+/* table for vartable in variableTable.html */
+#keywords {
+  border: 1px solid #80A0A0;
+  border-collapse: collapse;
+  width: auto;
+  margin-left: 2em;
+  margin-right: auto;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+#keywords td,
+#keywords th {
+  text-align: center;
+  vertical-align: middle;
+  border-bottom: 1px solid rgb(128,128,128);
+}
+
+#keywords th {
+  margin-left: 1.5em;
+  margin-right: 1.5em;
+  margin-bottom: 2em;
+  font-weight: normal;
+  font-family: verdana, arial, sans-serif;
+}
+#keywords th > img {
+  vertical-align: bottom !important;
+  margin-right: 0.5em !important;
+  margin-left: 2em;
+  margin-bottom: 1px !important;
+}
+article {
+	display: block;
+	margin: 0.1em 0 0.1em 0;
+  padding: 0.3em;
+}
+
+article ul {
+  list-style-type: none !important;
+}
+article ul li {
+  padding-bottom: 0.2em;
+}
+
+article h4::before {
+  content: none !important;
+}
+
+article h4 {
+  margin-left: 2.6em;
+  font-size: 0.9em;
+  box-shadow: none !important;
+  padding: 0.3em;
+}
+
+
+/* format for "not" in vartable.html */
+.no {
+  color: #ff0000;
+  font-size : 1em;
+  font-weight : bold;
+  text-shadow: 1px 1px 1px rgb(0,0,0);
+}
+
+/* format for "yes" in vartable.html */
+.yes {
+  color : #7cfc00;
+  font-size : 1em;
+  font-weight : bold;
+  text-shadow: 1px 1px 1px rgb(0,0,0);
+}
+
+/** variable parameters  **/
+.codeTable tr > td:first-child,
+.param, .paramLiteral {
+  color: var(--color-param) ;
+  font-family: Consolas, monaco, monospace;
+}
+code .paramLiteral, code .param {
+  color: rgb(150,90,10) !important;
+}
+
+.codeTable {
+  border-collapse: collapse;
+  margin-right: 1em;
+  border: solid 1px rgba(40,40,40,0.5);
+}
+.codeTable tr {
+  border-bottom: dotted 1px rgba(40,40,40,0.4);
+}
+.codeTable tr {
+  padding: 0.5em 1em;
+}
+.codeTable tr > td:first-child {
+  font-size: 10pt;
+  line-break: strict;
+  border-right: dotted 1px rgba(40,40,40,0.3);
+}
+.codeTable td {
+  padding: 0.5em 0.6em;
+}
+
+
+.codeTable tr > td:not(:first-child) {
+  font-size: 0.9em;
+}

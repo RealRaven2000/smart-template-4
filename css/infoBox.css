@@ -1,0 +1,106 @@
+#infoTabs {
+  float: right;
+  margin-top: 60px;
+  margin-bottom: 20px;
+  min-width: 250px;
+  max-width: 40%;
+  width: auto;
+  margin-right:-100px;  
+  position: relative; /* IE8 crop fix */
+  vertical-align:top;
+}
+
+#infoTabs div {
+  margin-top: 1.5em;
+  margin-bottom: 4em;
+}
+
+.infoTab {
+  background: #eee;
+  border-right: 1px solid #26558B;
+  border-left: 1px solid #26558B;
+  border-bottom: 1px solid #26558B;
+  max-width: 22em;
+  margin: 0px 10px 10px 10px;
+  padding: 0px 10px 5px 10px;
+  -webkit-border-radius: 6px 6px 0px 0px; /* Safari / Chrome (Webkit) */
+  border-radius: 6px 6px 0px 0px; /* CSS3 = IE9 / Firefox 4+ */
+  -khtml-border-radius: 6px 6px 0px 0px; /* KHTML */
+  -moz-box-shadow: 5px 5px 6px -1px rgba(0,0,0,0.7); /* Firefox 1-4 */
+  -webkit-box-shadow: 5px 5px 6px -1px rgba(0,0,0,0.7); /* Safari / Chrome (Webkit) */
+  box-shadow: 5px 5px 6px -1px rgba(0,0,0,0.7); /* CSS3 = IE9 / Firefox 4+ */ 
+  -khtml-box-shadow: 5px 5px 6px -1px rgba(0,0,0,0.7); /* KHTML */
+  -moz-border-radius: 6px 6px 0px 0px; /* Firefox 1-4 */
+  behavior: url(js/PIE.js); /* CSS3 Fix for IE 6-8 */
+}
+
+.infoTab .infoHeader {
+  background: rgb(60,192,222);
+  background: -moz-linear-gradient(top, rgba(60,192,222,1) 0%, rgba(31,157,183,1) 24%, rgba(6,111,132,1) 50%, rgba(28,139,162,1) 79%, rgba(34,169,196,1) 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(60,192,222,1)), color-stop(24%,rgba(31,157,183,1)), color-stop(50%,rgba(6,111,132,1)), color-stop(79%,rgba(28,139,162,1)), color-stop(100%,rgba(34,169,196,1)));
+  background: -webkit-linear-gradient(top,  rgba(60,192,222,1) 0%,rgba(31,157,183,1) 24%,rgba(6,111,132,1) 50%,rgba(28,139,162,1) 79%,rgba(34,169,196,1) 100%);
+  background: -o-linear-gradient(top, rgba(60,192,222,1) 0%,rgba(31,157,183,1) 24%,rgba(6,111,132,1) 50%,rgba(28,139,162,1) 79%,rgba(34,169,196,1) 100%);
+  background: -ms-linear-gradient(top, rgba(60,192,222,1) 0%,rgba(31,157,183,1) 24%,rgba(6,111,132,1) 50%,rgba(28,139,162,1) 79%,rgba(34,169,196,1) 100%);
+  background: linear-gradient(top, rgba(60,192,222,1) 0%,rgba(31,157,183,1) 24%,rgba(6,111,132,1) 50%,rgba(28,139,162,1) 79%,rgba(34,169,196,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3cc0de', endColorstr='#22a9c4', GradientType=0);
+  color: #fff;
+  text-align: center;
+  -webkit-border-radius: 6px 6px 0px 0px; /* Safari / Chrome (Webkit) */
+  border-radius: 6px 6px 0px 0px; /* CSS3 = IE9 / Firefox 4+ */
+  -khtml-border-radius: 6px 6px 0px 0px; /* KHTML */
+  behavior: url(js/PIE.js); /* CSS3 Fix for IE 6-8 */
+  margin: 0 -10px 0 -10px;
+  border-top: 1px solid #26558B;
+  padding: 5px 0px 5px 0px;  
+}
+
+.infoTab a[href] {
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-left: 0.3em;
+  padding-right: 0.3em;
+  margin-left: -0.2em;
+  margin-right: -0.2em;
+}
+
+.infoTab a[href]:hover {
+  color: rgba(100, 224, 244, 0.9);
+  background-color: rgba(50,50,50,0.5);
+  border-radius: 4px;
+}
+
+/*  js no-rgba no-hsla no-borderradius no-boxshadow no-textshadow no-cssgradients fontface */
+.no-borderradius .infoTab {
+  behavior: url(js/PIE.js); /* CSS3 Fix for IE 6-8 */
+  border-radius: 6px 6px 0px 0px; 
+}
+
+
+.no-boxshadow .infoTab {
+ border-bottom: solid 5px #B0B0B0;
+ border-right: solid 5px #B0B0B0;
+}
+
+.no-cssgradients .infoTab .infoHeader {
+  behavior: url(js/PIE.js); /* CSS3 Fix for IE 6-8 */
+  -pie-background: linear-gradient(#3cc0de, #22a9c4);
+}
+
+.infoTab ul {
+  padding-left: 30px; /* bis 16.06.15: 0 doch dann ist checkmark icon au�erhalb infobox*/
+}
+
+.infoTab ul li {
+  list-style-image: url('/img/checkMark.png') !important;
+  list-style-type: square; /* fallback */
+  color: inherit;
+  padding-left: 0;
+  padding-bottom: 5px;
+  padding-top: 0px;
+  margin-top: 5px;
+  text-align: left !important;
+  vertical-align: top;
+  font-style: italic;
+  /*font-size: 14pt; alt 0.8em but font-size is given from body tag in project.css an this we should use insteat! */
+  color: #777;
+}

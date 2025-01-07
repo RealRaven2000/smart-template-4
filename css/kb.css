@@ -1,0 +1,51 @@
+table.fonts {
+  max-width: 100%;
+  border-collapse: collapse;
+}
+tr.TRfonts {
+  border: 1px solid #000000;
+}
+tr.TRfontsBG {
+  background-color: #48dddf;
+  border: 1px solid #000000;
+}
+tr.TRfontsBGbold {
+  background-color: #48dddf;
+  font-weight: bold;
+  border: 1px solid #000000;
+}
+
+.attribute, .html, .tag, .entity { 
+  font-family: Consolas, 'Courier New', Geneva, sans-serif;
+  font-size: 0.95em !important;
+  font-weight: normal;
+  color: rgb(120,0,0);
+}
+code.html {
+  color: rgb(0,0,120);
+}
+code.selector {
+  color: rgb(180,20,100);
+}
+h4.tag {
+  font-size: 1.2em;
+}
+.attribute { 
+  color: rgb(160,80,0);
+}
+.tag { 
+  color: rgb(0,0,160);
+}
+h3 .tag {
+  color: rgb(0,150,260);
+}
+.entity {
+  color: rgb(0,80,0);
+}
+.html {
+
+}
+.bad_example {
+  color: red;
+}
+    
