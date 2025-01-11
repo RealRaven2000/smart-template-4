@@ -974,6 +974,10 @@ SmartTemplate4.classSmartTemplate = function() {
 			SmartTemplate4.initFlags(flags);
 			flags.identitySwitched = true;  // new flag
 		}
+		if (gMsgCompose?.bodyModified === false) {
+      flags.isBodyUnmodified = true; // [issue 352]
+    }
+
     if (SmartTemplate4.PreprocessingFlags.isInsertTemplateRunning) return;
     SmartTemplate4.PreprocessingFlags.isInsertTemplateRunning = true; // [issue 139] avoid duplicates
 
@@ -1188,8 +1192,7 @@ SmartTemplate4.classSmartTemplate = function() {
 					case 'reply':
             if (flags.suppressQuoteHeaders) {
               delReplyHeader(idKey, false);
-            }
-            else if (pref.getCom("mail.identity." + idKey + ".auto_quote", true)) {
+            } else if (pref.getCom("mail.identity." + idKey + ".auto_quote", true)) {
 							// stationery has a placeholder for the original quote text.
 							if (pref.isDeleteHeaders(idKey, st4composeType, false)) {
 								// when in stationery we only delete the quote header and not all preceding quotes!
@@ -1895,6 +1898,7 @@ SmartTemplate4.classSmartTemplate = function() {
 			editor.enableUndo(false);
 			editor.enableUndo(true);
 		}
+		delete SmartTemplate4.PreprocessingFlags.isBodyUnmodified; // remove this flag.
 	};
 
 	function logSelectionHtml(selection) {
