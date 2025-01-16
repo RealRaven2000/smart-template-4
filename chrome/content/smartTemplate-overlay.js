@@ -2239,12 +2239,12 @@ SmartTemplate4.regularize = async function regularize(msg, composeType, isStatio
     "header.deleteFromSubject",
 		"header.set.matchFromSubject", "header.append.matchFromSubject", "header.prefix.matchFromSubject",
 		"header.set.matchFromBody", "header.append.matchFromBody", "header.prefix.matchFromBody", "logMsg",
-    "conditionalText", "clipboard", "toclipboard", "attachments", "preheader"
+    "conditionalText", "clipboard", "toclipboard", "attachments", "preheader", "abortComposer"
 	);
 	// new classification for time variables only
 	addTokens("reserved.time", 
 		"Y", "y", "m", "n", "d", "e", "H", "k", "I", "l", "M", "S", "T", "X", "A", "a", "B", "b", "p",
-		"datelocal", "dateshort", "dateformat", "date_tz", "tz_name", "cwIso",
+		"datelocal", "dateshort", "dateformat", "date_tz", "tz_name", "cwIso", "dateformat.received",
 		"X:=today", "X:=calculated", "X:=timezone");
 
   addTokens("reserved.optional", "identity"); // non-headers but support [[ optional syntax ]] (remove part if empty)
@@ -2914,6 +2914,7 @@ SmartTemplate4.regularize = async function regularize(msg, composeType, isStatio
       // if (prefs.isDebugOption('tokens') && token != "X:=today") debugger;
       let isUTC = SmartTemplate4.whatIsUtc,
         params;
+      const backupWhatSent = SmartTemplate4.whatIsX;
       switch (token) {
         case "deleteText": // return unchanged
         case "replaceText": // return unchanged
@@ -2924,7 +2925,9 @@ SmartTemplate4.regularize = async function regularize(msg, composeType, isStatio
         case "matchTextFromSubject": // return unchanged
         case "matchTextFromBody": // return unchanged
           return "%" + token + arg + "%";
-        case "dateformat":
+        case "dateformat.received":
+          SmartTemplate4.whatIsX = SmartTemplate4.XisSent; // force sent format (for sandbox)
+        case "dateformat": // fall-through
           if (debugTimeStrings) debugger;
           tm = new Date();
           let dateFormatSent = SmartTemplate4.whatIsX == SmartTemplate4.XisSent && date;
@@ -2951,6 +2954,7 @@ SmartTemplate4.regularize = async function regularize(msg, composeType, isStatio
               );
             }
           }
+          SmartTemplate4.whatIsX = backupWhatSent;
           return token;
         case "datelocal":
         case "dateshort":
@@ -3006,8 +3010,10 @@ SmartTemplate4.regularize = async function regularize(msg, composeType, isStatio
               attributeString = attributeString + ` ${key}='${value}'`; // string attributes
             }
             // [WIP unstyled]
-            return `<blockquote type=\"cite\" class='SmartTemplate'${attributeString}>\n` +
-              "</blockquote>";
+            return (
+              `<blockquote type=\"cite\" class='SmartTemplate'${attributeString}>\n` +
+              "</blockquote>"
+            );
           }
           break;
         case "suppressQuoteHeaders":
@@ -3181,7 +3187,7 @@ SmartTemplate4.regularize = async function regularize(msg, composeType, isStatio
           if (debugTimeStrings) debugger;
           SmartTemplate4.whatIsX = SmartTemplate4.XisToday;
           SmartTemplate4.whatIsUtc = false;
-          util.logDebugOptional ("replaceReservedWords", "Switch: Time = NOW");
+          util.logDebugOptional("replaceReservedWords", "Switch: Time = NOW");
           return "";
         case "X:=calculated": // calculated(numberOfDays)
           if (debugTimeStrings) debugger;
@@ -3217,7 +3223,8 @@ SmartTemplate4.regularize = async function regularize(msg, composeType, isStatio
         case "internal-javascript-ref":
           return javascriptResults[/\((.*)\)/.exec(arg)[1]];
         // any headers (to/cc/from/date/subject/message-id/newsgroups, etc)
-        case "messageRaw": { //returns the arg-th first characters of the content of the original message
+        case "messageRaw": {
+          //returns the arg-th first characters of the content of the original message
           // was hdr.content(argumentLength)
           let bodyContent = hdr.get("content") || SmartTemplate4.Util.getBodyComposer(),
             length = arg ? /\((.*)\)/.exec(arg)[1] * 1 : 2048;
@@ -3267,6 +3274,11 @@ SmartTemplate4.regularize = async function regularize(msg, composeType, isStatio
             );
           }
           return parsedContent;
+        case "abortComposer":
+          // mainly for sandbox to stop processing.
+          SmartTemplate4.Util.logHighlight("To Do: Implement abortComposer()");
+          return "";
+          break;
         case "basepath":
           return insertBasePath(removeParentheses(arg));
         case "preheader":
@@ -4059,6 +4071,20 @@ SmartTemplate4.regularize = async function regularize(msg, composeType, isStatio
           x = "security violation";
         }
       } catch (ex) {
+        if (ex instanceof ReferenceError) {
+          SmartTemplate4.Util.logException("Sandbox Script: ReferenceError", ex);
+          console.log(
+            "A ReferenceError occurred. It might be a mistyped variable in SmartTemplates."
+          );
+          // Optionally pass the error to the user (or log it for debugging)
+          alert(
+            "ReferenceError in Sandboxed SmartTemplates script: It seems a variable was mistyped. Please check your input:\n" +
+            ex
+          );
+        } else {
+          // Handle other types of errors if necessary
+          console.log("An unexpected error occurred:", ex);
+        }
         x = "ERR: " + ex;
       }
       javascriptResults.push(x);

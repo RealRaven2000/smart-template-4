@@ -220,6 +220,7 @@ END LICENSE BLOCK
     # [issue 350] Support multiple parameters in sandboxed script (e.g. %from(name,uppercase)% ) 
     # [issue 351] Fixed: *selection* truncates content in text nodes
     # [issue 352] %header.set(from)% triggers unnecessary warning.
+    # [issue 353] new %dateformat.received()% to retrieve date of original mail
 
 
 
