@@ -1924,6 +1924,7 @@ SmartTemplate4.classSmartTemplate = function() {
   }
 
 	// returns html code from selection in composer.
+	// very useful for *selection* macro in any text command [issue 351]
 	function unpackSelection(selection) {
 		let html = "";
 		const isDebug = SmartTemplate4.Preferences.isDebugOption("snippets");

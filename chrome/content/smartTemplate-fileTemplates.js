@@ -1766,7 +1766,6 @@ SmartTemplate4.fileTemplates = {
       const ignoreHTML = true;
       let code;
       if (isFormatCSS) {
-        // [issue 238]
         // create a style block!
         let lastUnixPos = theFileTemplate.path.lastIndexOf("/"),
           lastWindowsPos = theFileTemplate.path.lastIndexOf("\\"),
