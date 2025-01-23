@@ -211,7 +211,7 @@ END LICENSE BLOCK
   Version 4.10 - WIP
     # [issue 331] Add features to insert unquoted email and remove styles using %quotePlaceHolder% 
                   (implemented in 4.9)
-    # [issue 340] Fixed: Common settings are not stored
+    # [issue 340] Fixed: Common account settings for account were not stored
     # [issue 343] Improved Capitalization for double-barrelled names (such as Tyler-Smith)
     # [issue ] Compatibility: deal with removal of MozElements.NotificationBox.shown() 
     # [issue 344] %header.set(subject,clipboard)% and %matchTextFromBody(..,toclipboard)% fail at commas
@@ -221,7 +221,7 @@ END LICENSE BLOCK
     # [issue 351] Fixed: *selection* truncates content in text nodes
     # [issue 352] %header.set(from)% triggers unnecessary warning.
     # [issue 353] new %dateformat.received()% to retrieve date of original mail
-
+    # made compatible with Tb 135.*
 
 
 =========================

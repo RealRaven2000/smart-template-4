@@ -1752,8 +1752,7 @@ SmartTemplate4.fileTemplates = {
         }, 
         ownerWin
       );
-    }
-    else {
+    } else {
       flags.isFragment = true;
       flags.isFileTemplate = true;
       if (!flags.filePaths) flags.filePaths = [];
