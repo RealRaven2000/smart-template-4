@@ -1684,7 +1684,7 @@
     }
   },
   "special-offer-expiry": {
-    "message": "29. listopadu"
+    "message": "10. února"
   },
   "special-offer-head": {
     "message": "Pomozte zachovat kompatibilitu $addon$",
@@ -1979,7 +1979,7 @@
     "message": "Přečtěte si podrobný protokol změn zde (pouze v angličtině):"
   },
   "whats-new-list": {
-    "message": "{L1}Přidání proměnné {{%tags%}} pro uživatele SmartTemplates Pro [issue 320].{L2}{L1} Přidán odkaz na stránku příkladů.{L2}{L1}Podpora pro více parametrů adres v {{header.set}} / {{header.append}}. [issue 314]{L2} {L1} Proměnná {{%clipboard%}} nyní přijímá volitelné parametry pro vložení textu nebo html. [issue 330]{L2} {L1} Vylepšené vyhledávání textu na stránce proměnných.{L2} {L1} Aktualizace sandboxového skriptu nyní podporují prázdný seznam parametrů u asynchronních funkcí proměnných. Pokud používáte skript, přečtěte si prosím o změnách v dokumentaci. [issue 329] {L2} {L1} Opraveny pravopisné chyby názvů měsíců a dnů v nizozemštině (na malá písmena). {L2}"
+    "message": "{L1} Nová funkce pro odstranění sekcí CSS stylů při vkládání citované původní e-mailové zprávy {{%quotePlaceHolder(nostyles)%}} [issue 331].{L2} {L1} Opraveno: Obecná nastavení účtů nebyla generována novou záložkou nastavení. Tento problém se týká především uživatelů, kteří si nedávno nainstalovali SmartTemplates a neměli nastavení ze starších verzí. [issue 340]{L2} {L1} Vylepšená kapitalizace pro dvojitá příjmení (například Tyler-Smith). [issue 343]{L2}{L1} Čárky ve schránce již nezpůsobují problémy u {{%header.set(…,clipboard)%}} a {{%matchTextFromBody(…,toclipboard)%}}. [issue 344]{L2}{L1} Opraveno: {{*selection*}} odstraňovalo obsah v textových uzlech. [issue 351]{L2}{L1} Nová funkce {{%dateformat.received()%}} {L2}{L1} Opraveno mnoho chyb v sandboxových skriptech, včetně {{messageRaw()}}, podpory více parametrů, složených proměnných (s podtržítky) a rezervovaných parametrů (s předponou {{$}}). Další podrobnosti o skriptech naleznete na stránce podpory.{L2}{L1} Kompatibilita s Thunderbirdem zvýšena na verzi 135.{L2}"
   },
   "whitespace_note": {
     "message": "Všimněte si, že mezeru lze nejlépe reprezentovat jako \\s, protože může také obsahovat konce řádků. Nelze použít čárky a dvojité uvozovky."

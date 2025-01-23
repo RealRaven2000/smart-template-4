@@ -1639,7 +1639,7 @@
     }
   },
   "special-offer-expiry": {
-    "message": "29 novembre"
+    "message": "10 febbraio"
   },
   "special-offer-head": {
     "message": "Aiutaci a mantenere la compatibilità con $addon$",
@@ -1934,7 +1934,7 @@
     "message": "Leggi il registro delle modifiche dettagliato qui (solo in inglese):"
   },
   "whats-new-list": {
-    "message": "{L1}Aggiunta la variabile {{%tags%}} per gli utenti di SmartTemplates Pro [issue 320].{L2}{L1} Aggiunto collegamento alla pagina degli esempi.{L2}{L1}Supporto per più parametri di indirizzo in {{header.set}} / {{header.append}}. [issue 314]{L2} {L1} La variabile {{%clipboard%}} ora accetta parametri opzionali per inserire testo o html. [issue 330]{L2} {L1} Ricerca testuale migliorata nella pagina Variabili.{L2} {L1} Aggiornamenti degli script isolati, ora supportano liste di parametri vuoti nelle funzioni variabili asincrone. Se usi script, leggi i cambiamenti nella documentazione. [issue 329] {L2} {L1} Corretta l'ortografia dei nomi di mesi e giorni in olandese (in minuscolo). {L2}"
+    "message": "{L1} Nuova funzionalità per rimuovere le sezioni di stile CSS durante l'inserimento della parte citata dell'e-mail originale {{%quotePlaceHolder(nostyles)%}} [issue 331].{L2} {L1} Risolto: Le impostazioni comuni degli account non venivano generate dalla nuova scheda delle impostazioni. Questo problema riguarda principalmente gli utenti che hanno installato di recente SmartTemplates e non avevano impostazioni dalle versioni precedenti. [issue 340]{L2} {L1} Migliorata la capitalizzazione per i nomi composti (ad esempio Tyler-Smith). [issue 343]{L2}{L1} Le virgole negli appunti non causano più problemi con {{%header.set(…,clipboard)%}} e {{%matchTextFromBody(…,toclipboard)%}}. [issue 344]{L2}{L1} Risolto: {{*selection*}} tagliava il contenuto nei nodi di testo. [issue 351]{L2}{L1} Nuova funzione {{%dateformat.received()%}} {L2}{L1} Numerosi errori nei script sandbox sono stati corretti, inclusi {{messageRaw()}}, il supporto per parametri multipli, le variabili composite (con underscore) e i parametri riservati (con il prefisso {{$}}). Maggiori dettagli sugli script sono disponibili sul sito di supporto.{L2}{L1} Compatibilità con Thunderbird estesa fino alla versione 135.{L2}"
   },
   "whitespace_note": {
     "message": "Si noti che gli spazi bianchi possono essere meglio rappresentati come \\s perché possono contenere anche interruzioni di riga. Non è possibile utilizzare virgole e virgolette doppie."

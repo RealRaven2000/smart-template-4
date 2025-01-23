@@ -1686,7 +1686,7 @@
     }
   },
   "special-offer-expiry": {
-    "message": "29 listopada"
+    "message": "10 lutego"
   },
   "special-offer-head": {
     "message": "Pomóż zachować zgodność $addon$",
@@ -1988,7 +1988,7 @@
     "message": "Przeczytaj szczegółowy dziennik zmian tutaj (tylko w języku angielskim):"
   },
   "whats-new-list": {
-    "message": "{L1}Dodaj zmienną {{%tags%}} dla użytkowników SmartTemplates Pro [issue 320].{L2}{L1} Dodano link do strony z przykładami.{L2}{L1}Obsługa wielu parametrów adresowych w {{header.set}} / {{header.append}}. [issue 314]{L2} {L1} Zmienna {{%clipboard%}} akceptuje teraz opcjonalne parametry do wstawiania zwykłego tekstu lub html. [issue 330]{L2} {L1} Ulepszono wyszukiwanie tekstu na stronie Zmienne.{L2} {L1} Aktualizacje skryptów z izolacją, teraz obsługują puste listy parametrów w funkcjach zmiennych asynchronicznych. Jeśli używasz skryptów, przeczytaj o zmianach w dokumentacji. [issue 329] {L2} {L1} Poprawiono pisownię nazw miesięcy i dni tygodnia w języku niderlandzkim (małymi literami). {L2}"
+    "message": "{L1} Nowa funkcja usuwania sekcji stylów CSS podczas wstawiania cytowanej części oryginalnego e-maila {{%quotePlaceHolder(nostyles)%}} [issue 331].{L2} {L1} Naprawiono: Wspólne ustawienia kont nie były generowane przez nową kartę ustawień. Ten problem dotyczy głównie użytkowników, którzy niedawno zainstalowali SmartTemplates i nie mieli ustawień z poprzednich wersji. [issue 340]{L2} {L1} Poprawiono kapitalizację dla nazw z łącznikami (np. Tyler-Smith). [issue 343]{L2}{L1} Przecinki w schowku nie powodują już problemów z {{%header.set(…,clipboard)%}} i {{%matchTextFromBody(…,toclipboard)%}}. [issue 344]{L2}{L1} Naprawiono: {{*selection*}} ucinało zawartość w węzłach tekstowych. [issue 351]{L2}{L1} Nowa funkcja {{%dateformat.received()%}} {L2}{L1} Liczne błędy w skryptach sandbox zostały naprawione, w tym {{messageRaw()}}, obsługa wielu parametrów, zmienne złożone (z podkreśleniami) i parametry zastrzeżone (z prefiksem {{$}}). Szczegóły na temat skryptów dostępne są na stronie wsparcia.{L2}{L1} Zwiększono kompatybilność z Thunderbirdem do wersji 135.{L2}"
   },
   "whitespace_note": {
     "message": "Zauważ, że białe znaki można najlepiej przedstawić jako \\s, ponieważ mogą również zawierać podziały wierszy. Nie można używać przecinków i znaków podwójnego cudzysłowu."

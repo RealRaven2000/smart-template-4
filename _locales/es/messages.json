@@ -1645,7 +1645,7 @@
     }
   },
   "special-offer-expiry": {
-    "message": "29 de noviembre"
+    "message": "10 de febrero"
   },
   "special-offer-head": {
     "message": "Ayuda a mantener $addon$ compatible",
@@ -1940,7 +1940,7 @@
     "message": "Lea el registro de cambios detallado aquí (solo en inglés):"
   },
   "whats-new-list": {
-    "message": "{L1}Añadida la variable {{%tags%}} para los usuarios de SmartTemplates Pro [issue 320].{L2}{L1} Añadido enlace a la página de ejemplos.{L2}{L1}Soporte para múltiples parámetros de dirección en {{header.set}} / {{header.append}}. [issue 314]{L2} {L1} La variable {{%clipboard%}} ahora acepta parámetros opcionales para insertar texto o html. [issue 330]{L2} {L1} Búsqueda de texto mejorada en la página de Variables.{L2} {L1} Actualizaciones de script en caja de arena, ahora admite lista de parámetros vacía en funciones de variables asíncronas. Si usa script, por favor lea los cambios en la documentación. [issue 329] {L2} {L1} Corrección ortográfica de los nombres de los meses y días en neerlandés (en minúsculas). {L2}"
+    "message": "{L1} Nueva funcionalidad para eliminar secciones de estilo CSS al insertar la parte citada del correo original {{%quotePlaceHolder(nostyles)%}} [issue 331].{L2} {L1} Corregido: La configuración común de cuentas no se generaba en la nueva pestaña de configuración. Este error afecta principalmente a los usuarios que instalaron recientemente SmartTemplates y no tenían configuraciones de versiones anteriores. [issue 340]{L2} {L1} Mejora en la capitalización de nombres compuestos (como Tyler-Smith). [issue 343]{L2}{L1} Las comas en el portapapeles ya no causan problemas en {{%header.set(…,clipboard)%}} y {{%matchTextFromBody(…,toclipboard)%}}. [issue 344]{L2}{L1} Corregido: {{*selection*}} recortaba contenido en nodos de texto. [issue 351]{L2}{L1} Nueva función {{%dateformat.received()%}} {L2}{L1} Se corrigieron numerosos errores en los scripts sandbox, incluyendo {{messageRaw()}}, soporte para múltiples parámetros, variables compuestas (con guiones bajos) y parámetros reservados (con el prefijo {{$}}). Más detalles sobre los scripts están disponibles en el sitio de soporte.{L2}{L1} Compatibilidad con Thunderbird ampliada hasta la versión 135.{L2}"
   },
   "whitespace_note": {
     "message": "Tenga en cuenta que el espacio en blanco se puede representar mejor como \\s porque también puede contener saltos de línea. No se pueden usar comas ni comillas dobles."

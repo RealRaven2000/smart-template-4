@@ -1,25 +1,40 @@
-The full change log with screen shots [can be found here](https://smarttemplates.quickfolders.org/version.html#4.9) 
+The full change log with screen shots [can be found here](https://smarttemplates.quickfolders.org/version.html#4.10) 
 
 **Enhancements**
 
-*   Added %tags% variable to insert tags in Email. This is a SmartTemplates Pro feature. [issue #320] Full documentation of this feature: [the support website](https://smarttemplates.quickfolders.org/premium.html#tags)
-*   Variables Page: added missing text in explanation of the `%preHeader%` parameter  
-*   Examples Page: added link to open Examples Page in browser.
-*   Fixed spelling in Dutch months and days - these now start with lowercase letters
-*   Support for multiple address parameters in `%header.set()%` / `%header.append()%` [issue #327]
-*   Text search now includes text contained in tables. Also improved whitespace collapsing. [issue #328]
-*   Support reading variables without parameters (e.g. `%from%`) within Sandbox script [issue #329] Examples for the new behavior can be [found here](https://smarttemplates.quickfolders.org/premium.html#javascript).
-*   Optional preferred flavor parameter to %clipboard()%: plain, text, unicode, html. [issue #330]
-
-
+*   Added features to insert unquoted email and remove styles using `%quotePlaceHolder(nostyles)%` [issue #331]
+*   Improved Capitalization for double-barrelled names (such as Tyler-Smith) [issue #343]
+*   `%header.set(from)%` triggers unnecessary warning. [issue #352]
+*   new `%dateformat.received()%` to retrieve date of original mail [issue #353]
 
 
 **Bug Fixes** 
 
-*   Fixed: SmartTemplates ignored when creating an email from the Thunderbird taskbar context menu [issue #322] - see also issue #272
+*   Fixed: Common account settings for account were not stored [issue #340]
+*   Fixed problems with `messageRaw()` function in Sandboxed script [issue #347]
+*   Fixed: `%header.set(subject,clipboard)%` and `%matchTextFromBody(..,toclipboard)%` fail at commas [issue #344]
+*   Fixed: `*selection*` truncates content in text nodes [issue #351]
+
+
+**Sandboxed Script** 
+
+For deeper programming using inline script, several major improvements were implemented. For information on how to enable scripting and use it please refer to <a href="https://smarttemplates.quickfolders.org/premium.html#javascript">this documentation section</a>.
+
+*   Support "composite" ST variables in sandboxed script (e.g. `header.set`) via underscores (`header_set`) [issue #349]
+*   Support *multiple parameters* in sandboxed script (e.g. `%from(name,uppercase)%` )  [issue #350]
+*   Simplified using reserved parameter such as `firstname`, `lastname` etc. these can be used directly as parameter by prefixing with a "$" character. Previously these had to be wrapped in double quotes. 
+
+For example: 
+```js
+  let a = await from($name,$mail);
+```
+
+This will return the value that `%from(name,mail)%` would generate within the template. Note that all replacement functions are now asynchronous and need to be "awaited" if they are used within the script. Only when the script returns a variable directly without need for evaluation, it can be passed back directly (the promise will be resolved by SmartTemplates). It is highly recommended to read about asynchonous JavaScript brefore attempting to write longer scripts. console.log can be used within the sandboxed script and is highly encouraged!
+
 
 **Miscellaneous**
 
-*   Make SmartTemplates compatible with new ESM modules (jsm will be removed in the next ESR) [issue #324]
+*   Compatibility: deal with removal of `MozElements.NotificationBox.shown()`
+*   made SmartTemplates compatible with Thunderbird 135.*
 
 

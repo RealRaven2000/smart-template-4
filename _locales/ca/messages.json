@@ -1696,7 +1696,7 @@
     }
   },
   "special-offer-expiry": {
-    "message": "29 de novembre"
+    "message": "10 de febrer"
   },
   "special-offer-head": {
     "message": "Ajudeu a mantenir $addon$ compatible",
@@ -1994,7 +1994,7 @@
     "message": "Llegiu el registre de canvis detallat aquí (només en anglès):"
   },
   "whats-new-list": {
-    "message": "{L1}Afegeix la variable {{%tags%}} per a usuaris de SmartTemplates Pro [issue 320].{L2}{L1} Afegit un enllaç a la pàgina d'exemples.{L2}{L1}Suport per a múltiples paràmetres d'adreça a {{header.set}} / {{header.append}}. [issue 314]{L2} {L1} La variable {{%clipboard%}} ara accepta paràmetres de tipus opcionals per inserir text o html. [issue 330]{L2} {L1} Millora de la cerca de text a la pàgina de Variables.{L2} {L1} Actualitzacions de script en sandbox, ara admeten una llista de paràmetres buida en funcions variables asíncrones. Si feu servir script, si us plau, llegiu els canvis a la documentació. [issue 329] {L2} {L1} Correcció ortogràfica dels noms de mesos i dies en neerlandès (en minúscules). {L2}"
+    "message": "{L1} Nova funcionalitat per eliminar seccions d'estils CSS quan s'insereix la part citada del correu original {{%quotePlaceHolder(nostyles)%}} [issue 331].{L2} {L1} Solucionat: Els ajustos comuns del compte no es generaven a la nova pestanya de configuració. Aquest error afecta principalment els usuaris que han instal·lat recentment SmartTemplates i no tenien configuracions d'anteriors versions. [issue 340]{L2} {L1} Millora en la capitalització de noms compostos (com ara Tyler-Smith). [issue 343]{L2}{L1} Les comes al porta-retalls ja no causen problemes a {{%header.set(…,clipboard)%}} i {{%matchTextFromBody(…,toclipboard)%}}. [issue 344]{L2}{L1} Solucionat: {{*selection*}} tallava contingut en nodes de text. [issue 351]{L2}{L1} Nova funció {{%dateformat.received()%}} {L2}{L1} S'han solucionat nombrosos errors en els scripts sandbox, incloent {{messageRaw()}}, suport per a múltiples paràmetres, variables compostes (amb guions baixos) i paràmetres reservats (amb el prefix {{$}}). Podeu trobar més detalls sobre els scripts al lloc web de suport.{L2}{L1} Compatibilitat amb Thunderbird augmentada fins a la versió 135.{L2}"
   },
   "whitespace_note": {
     "message": "Tingueu en compte que els espais en blanc es poden representar millor com \\s perquè també poden contenir salts de línia. No es poden utilitzar comes ni cometes dobles."

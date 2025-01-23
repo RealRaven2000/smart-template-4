@@ -155,7 +155,7 @@
     }
   },
   "special-offer-expiry": {
-    "message": "29 tháng 11"
+    "message": "Ngày 10 tháng 2"
   },
   "special-offer-head": {
     "message": "Giúp giữ cho $addon$ tương thích",
@@ -286,7 +286,7 @@
     "message": "Đọc nhật ký thay đổi chi tiết tại đây (chỉ bằng tiếng Anh):"
   },
   "whats-new-list": {
-    "message": "{L1}Thêm biến {{%tags%}} cho người dùng SmartTemplates Pro [issue 320].{L2}{L1} Đã thêm liên kết đến trang ví dụ.{L2}{L1}Hỗ trợ nhiều tham số địa chỉ trong {{header.set}} / {{header.append}}. [issue 314]{L2} {L1} Biến {{%clipboard%}} hiện chấp nhận các tham số tùy chọn để chèn văn bản thuần hoặc html. [issue 330]{L2} {L1} Cải thiện tìm kiếm văn bản trên trang Biến.{L2} {L1} Cập nhật mã script trong môi trường bảo mật, hiện hỗ trợ danh sách tham số trống trong các hàm biến không đồng bộ. Nếu bạn sử dụng mã script, vui lòng đọc các thay đổi trong tài liệu. [issue 329] {L2} {L1} Đã sửa chính tả cho các tháng và ngày trong tiếng Hà Lan (viết thường). {L2}"
+    "message": "{L1} Thêm tính năng loại bỏ các phần CSS khi chèn phần được trích dẫn của email gốc {{%quotePlaceHolder(nostyles)%}} [issue 331].{L2} {L1} Sửa lỗi: Các cài đặt chung của tài khoản không được tạo bởi tab cài đặt mới. Lỗi này chủ yếu ảnh hưởng đến người dùng vừa mới cài đặt SmartTemplates và không có cài đặt từ các phiên bản cũ. [issue 340]{L2} {L1} Cải thiện viết hoa đối với các tên kép (ví dụ: Tyler-Smith). [issue 343]{L2}{L1} Dấu phẩy trong clipboard không còn gây sự cố với {{%header.set(…,clipboard)%}} và {{%matchTextFromBody(…,toclipboard)%}} nữa. [issue 344]{L2}{L1} Sửa lỗi: {{*selection*}} đã cắt bớt nội dung trong các nút văn bản. [issue 351]{L2}{L1} Tính năng mới {{%dateformat.received()%}} {L2}{L1} Đã sửa nhiều lỗi trong các tập lệnh sandbox bao gồm {{messageRaw()}}, hỗ trợ nhiều tham số, các biến kết hợp (sử dụng dấu gạch dưới) và các tham số dành riêng (với tiền tố {{$}}). Thông tin chi tiết về tập lệnh có sẵn trên trang hỗ trợ.{L2}{L1} Tăng khả năng tương thích với Thunderbird lên phiên bản 135.{L2}"
   },
   "window-title": {
     "description": "page title. first placeholder will be replaced with Add-on name",

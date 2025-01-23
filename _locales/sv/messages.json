@@ -1714,7 +1714,7 @@
     }
   },
   "special-offer-expiry": {
-    "message": "29 november"
+    "message": "10 februari"
   },
   "special-offer-head": {
     "message": "Hjälp till att hålla $addon$ kompatibel",
@@ -2018,7 +2018,7 @@
     "message": "Läs den detaljerade ändringsloggen här (endast engelska):"
   },
   "whats-new-list": {
-    "message": "{L1}Lägg till variabeln {{%tags%}} för SmartTemplates Pro-användare [issue 320].{L2}{L1} Lagt till länk till exempelsidan.{L2}{L1}Stöd för flera adressparametrar i {{header.set}} / {{header.append}}. [issue 314]{L2} {L1} Variabeln {{%clipboard%}} accepterar nu valfria parametrar för att infoga vanlig text eller html. [issue 330]{L2} {L1} Förbättrad textsökning på variabelsidan.{L2} {L1} Uppdateringar av sandlådeskript, nu stöd för tom parameterlista i asynkrona variabelfunktioner. Om du använder skript, läs om ändringarna i dokumentationen. [issue 329] {L2} {L1} Korrigerad stavning för nederländska månader och dagar (med små bokstäver). {L2}"
+    "message": "{L1} Ny funktion för att ta bort CSS-stilsektioner vid infogning av den citerade delen av det ursprungliga e-postmeddelandet {{%quotePlaceHolder(nostyles)%}} [issue 331].{L2} {L1} Fixat: Allmänna kontoinställningar genererades inte av den nya inställningsfliken. Detta problem påverkar främst användare som nyligen har installerat SmartTemplates och inte hade inställningar från tidigare versioner. [issue 340]{L2} {L1} Förbättrad användning av versaler för dubbelnamn (som Tyler-Smith). [issue 343]{L2}{L1} Kommatecken i urklipp orsakar inte längre problem med {{%header.set(…,clipboard)%}} och {{%matchTextFromBody(…,toclipboard)%}}. [issue 344]{L2}{L1} Fixat: {{*selection*}} klippte av innehållet i textnoder. [issue 351]{L2}{L1} Ny funktion {{%dateformat.received()%}} {L2}{L1} Flera fel i sandlådeskript har rättats, inklusive {{messageRaw()}}, stöd för flera parametrar, sammansatta variabler (med understreck) och reserverade parametrar (med prefix {{$}}). Mer information om skript finns på supportsidan.{L2}{L1} Thunderbird-kompatibilitet har höjts till version 135.{L2}"
   },
   "whitespace_note": {
     "message": "Observera att whitespace bäst kan representeras som '\\s' eftersom det också kan innehålla rader. Kommatecken och dubbelcitationstecken kan inte användas."

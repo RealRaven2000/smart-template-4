@@ -5,24 +5,38 @@ The full change log with screen shots <a href="https://smarttemplates.quickfolde
 
 <b>Enhancements</b>
 <ul>
-  <li> Added %tags% variable to insert tags in Email. This is a SmartTemplates Pro feature. <a href="https://github.com/RealRaven2000/SmartTemplates/issues/320">[issue 320]</a> Full documentation of this feature is available at <a href="https://smarttemplates.quickfolders.org/premium.html#tags">the support website</a> </li>
-  <li> Variables Page: added missing text in explanation of the %preHeader% parameter . </li>
-  <li> Examples Page: added link to open Examples Page in browser. </li>
-  <li> Fixed spelling in Dutch months and days - these now start with lowercase letters. </li>
-  <li> Support for multiple address parameters in header.set / header.append <a href="https://github.com/RealRaven2000/SmartTemplates/issues/327">[issue 327]</a></li>
-  <li> Text search now includes text contained in tables. Also improved whitespace collapsing. <a href="https://github.com/RealRaven2000/SmartTemplates/issues/328">[issue 328]</a></li>
-  <li> Support reading variables without parameters (e.g. %from%) within Sandbox script <a href="https://github.com/RealRaven2000/SmartTemplates/issues/329">[issue 329]</a> You can find examples for the new behavior <a href="premium.html#javascript">documented here</a>.</li>
-  <li> Added optional preferred flavor parameter to %clipboard()%: plain, text, unicode, html, rtf. <a href="https://github.com/RealRaven2000/SmartTemplates/issues/330">[issue 330]</a></li>
+  <li> Added features to insert unquoted email and remove styles using `%quotePlaceHolder(nostyles)%` <a href="https://github.com/RealRaven2000/SmartTemplates/issues/331">[issue 331]</a></li>
+  <li> Improved Capitalization for double-barrelled names (such as Tyler-Smith) <a href="https://github.com/RealRaven2000/SmartTemplates/issues/343">[issue 343]</a></li>
+  <li> `%header.set(from)%` triggers unnecessary warning. <a href="https://github.com/RealRaven2000/SmartTemplates/issues/352">[issue 352]</a></li>
+  <li> new `%dateformat.received()%` to retrieve date of original mail <a href="https://github.com/RealRaven2000/SmartTemplates/issues/353">[issue 353]</a></li>
 </ul>
-
 
 <b>Bug Fixes</b>
 <ul>
-  <li> Fixed: SmartTemplates ignored when creating an email from the Thunderbird taskbar context menu <a href="https://github.com/RealRaven2000/SmartTemplates/issues/322">[issue 322]</a>. See also <a href="https://github.com/RealRaven2000/SmartTemplates/issues/272">[issue 272]</a>.</li>
+  <li> Fixed: Common account settings for account were not stored <a href="https://github.com/RealRaven2000/SmartTemplates/issues/340">[issue 340]</a></li>
+  <li> Fixed: `%header.set(subject,clipboard)%` and `%matchTextFromBody(..,toclipboard)%` fail at commas <a href="https://github.com/RealRaven2000/SmartTemplates/issues/344">[issue 344]</a></li>
+  <li> Fixed: `*selection*` truncates content in text nodes <a href="https://github.com/RealRaven2000/SmartTemplates/issues/351">[issue 351]</a></li>
 </ul>
+
+<b>Sandboxed Scripts</b>
+
+For deeper programming using inline script, several major improvements were implemented. For information on how to enable scripting and use it please refer to <a href="https://smarttemplates.quickfolders.org/premium.html#javascript">this documentation section</a>.
+
+<li> Fixed problems with `messageRaw()` function in Sandboxed script <a href="https://github.com/RealRaven2000/SmartTemplates/issues/347">[issue 347]</a></li>
+<li> Support "composite" ST variables in sandboxed script (e.g. `header.set`) via underscores (`header_set`) <a href="https://github.com/RealRaven2000/SmartTemplates/issues/349">[issue 349]</a></li>
+<li> Support multiple parameters in sandboxed script (e.g. `%from(name,uppercase)%` )  <a href="https://github.com/RealRaven2000/SmartTemplates/issues/350">[issue 350]</a></li>
+<li> Simplified using reserved parameter such as `firstname`, `lastname` etc. these can be used directly as parameter by prefixing with a "$" character. Previously these had to be wrapped in double quotes. </li>
+
+For example: 
+
+let a = await from($name,$mail);
+
+This will return the value that %from(name,mail)% would generate within the template. Note that all replacement functions are now asynchronous and need to be "awaited" if they are used within the script. Only when the script returns a variable directly without need for evaluation, it can be passed back directly (the promise will be resolved by SmartTemplates). It is highly recommended to read about asynchonous JavaScript brefore attempting to write longer scripts. console.log can be used within the sandboxed script and is highly encouraged!
+
 
 <b>Miscellaneous</b>
 <ul>
-  <li> Make SmartTemplates compatible with new ESM modules (jsm will be removed in the next ESR)<a href="https://github.com/RealRaven2000/SmartTemplates/issues/324">[issue 324]</a>.</li>
+  <li> Compatibility: deal with removal of `MozElements.NotificationBox.shown()` </li>
+  <li> made SmartTemplates compatible with Thunderbird 135.*</li>
 </ul>
 

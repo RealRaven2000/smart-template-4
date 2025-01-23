@@ -1669,7 +1669,7 @@
     }
   },
   "special-offer-expiry": {
-    "message": "29 de novembro"
+    "message": "10 de fevereiro"
   },
   "special-offer-head": {
     "message": "Ajude a manter $addon$ compatível",
@@ -1964,7 +1964,7 @@
     "message": "Leia o registro de alterações detalhado aqui (somente em inglês):"
   },
   "whats-new-list": {
-    "message": "{L1}Adicionar variável {{%tags%}} para usuários do SmartTemplates Pro [issue 320].{L2}{L1} Adicionado link para a página de exemplos.{L2}{L1}Suporte para vários parâmetros de endereço em {{header.set}} / {{header.append}}. [issue 314]{L2} {L1} A variável {{%clipboard%}} agora aceita parâmetros opcionais para inserir texto simples ou html. [issue 330]{L2} {L1} Pesquisa de texto aprimorada na página de Variáveis.{L2} {L1} Atualizações de scripts isolados, agora com suporte para lista de parâmetros vazia em funções de variável assíncrona. Se você usa scripts, leia sobre as alterações na documentação. [issue 329] {L2} {L1} Correção da grafia dos meses e dias em neerlandês (em minúsculas). {L2}"
+    "message": "{L1} Nova funcionalidade para remover secções de estilos CSS ao inserir a parte citada do e-mail original {{%quotePlaceHolder(nostyles)%}} [issue 331].{L2} {L1} Corrigido: As definições gerais da conta não eram geradas pelo novo separador de definições. Este problema afeta principalmente os utilizadores que instalaram recentemente o SmartTemplates e não tinham definições de versões anteriores. [issue 340]{L2} {L1} Melhorada a capitalização para nomes compostos (como Tyler-Smith). [issue 343]{L2}{L1} As vírgulas na área de transferência já não causam problemas com {{%header.set(…,clipboard)%}} e {{%matchTextFromBody(…,toclipboard)%}}. [issue 344]{L2}{L1} Corrigido: {{*selection*}} estava a truncar o conteúdo em nós de texto. [issue 351]{L2}{L1} Nova funcionalidade {{%dateformat.received()%}} {L2}{L1} Foram corrigidos vários erros em scripts de sandbox, incluindo {{messageRaw()}}, suporte para múltiplos parâmetros, variáveis compostas (com underscores) e parâmetros reservados (com o prefixo {{$}}). Mais detalhes sobre os scripts estão disponíveis na página de suporte.{L2}{L1} Compatibilidade com o Thunderbird aumentada até à versão 135.{L2}"
   },
   "whitespace_note": {
     "message": "Observe que o espaço em branco pode ser melhor representado como \\s, pois também pode conter quebras de linha. Vírgulas e caracteres de aspas duplas não podem ser usados."

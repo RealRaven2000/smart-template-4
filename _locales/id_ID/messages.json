@@ -1075,6 +1075,9 @@
   "snippets.label": {
     "message": "Fragmen HTML untuk dimasukkan ke dalam Komposer"
   },
+  "special-offer-expiry": {
+    "message": "10 Februari"
+  },
   "spec_var.cap": {
     "message": "Khusus"
   },

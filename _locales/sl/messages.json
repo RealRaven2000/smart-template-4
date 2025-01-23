@@ -1690,7 +1690,7 @@
     }
   },
   "special-offer-expiry": {
-    "message": "29. november"
+    "message": "10. februar"
   },
   "special-offer-head": {
     "message": "Pomagajte ohraniti združljivost $addon$",
@@ -1994,7 +1994,7 @@
     "message": "Podroben dnevnik sprememb preberite tukaj (samo v angleščini):"
   },
   "whats-new-list": {
-    "message": "{L1}Dodana spremenljivka {{%tags%}} za uporabnike SmartTemplates Pro [issue 320].{L2}{L1} Dodana povezava na stran z zgledi.{L2}{L1}Podpora za več parametrov naslova v {{header.set}} / {{header.append}}. [issue 314]{L2} {L1} Spremenljivka {{%clipboard%}} zdaj sprejema dodatne parametre za vstavljanje navadnega besedila ali html. [issue 330]{L2} {L1} Izboljšano iskanje besedila na strani Spremenljivke.{L2} {L1} Posodobitve skript v zaščitenem načinu zdaj podpirajo prazen seznam parametrov v asinhronih funkcijah spremenljivk. Če uporabljate skripte, preberite o spremembah v dokumentaciji. [issue 329] {L2} {L1} Popravljeno zapisovanje mesecev in dni v nizozemščini (z malimi črkami). {L2}"
+    "message": "{L1} Ny funktion för att ta bort CSS-stilsektioner vid infogning av den citerade delen av det ursprungliga e-postmeddelandet {{%quotePlaceHolder(nostyles)%}} [issue 331].{L2} {L1} Fixat: Allmänna kontoinställningar genererades inte av den nya inställningsfliken. Detta problem påverkar främst användare som nyligen har installerat SmartTemplates och inte hade inställningar från tidigare versioner. [issue 340]{L2} {L1} Förbättrad användning av versaler för dubbelnamn (som Tyler-Smith). [issue 343]{L2}{L1} Kommatecken i urklipp orsakar inte längre problem med {{%header.set(…,clipboard)%}} och {{%matchTextFromBody(…,toclipboard)%}}. [issue 344]{L2}{L1} Fixat: {{*selection*}} klippte av innehållet i textnoder. [issue 351]{L2}{L1} Ny funktion {{%dateformat.received()%}} {L2}{L1} Flera fel i sandlådeskript har rättats, inklusive {{messageRaw()}}, stöd för flera parametrar, sammansatta variabler (med understreck) och reserverade parametrar (med prefix {{$}}). Mer information om skript finns på supportsidan.{L2}{L1} Thunderbird-kompatibilitet har höjts till version 135.{L2}"
   },
   "whitespace_note": {
     "message": "Upoštevajte, da je beli prostor lahko najbolje predstaviti kot \\s, ker lahko vsebuje tudi prelome vrstic. Vejice in znakov z dvojnim citiranjem ni mogoče uporabiti."
