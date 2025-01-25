@@ -805,10 +805,10 @@ style="background-color:#e18700;color:white;border-radius:0.7em;padding-inline:1
 <h3 class="helpchapter">Running "sandboxed" JavaScript</h3>
 <article>
   <p>
-    To do more flexible things with SmartTemplates a user (Benito van der Zanders) once 
+    To implement more flexible functionality with SmartTemplates a user (Benito van der Zanders) 
     <a href="https://quickfolders.org/bugzilla/bugs/show_bug.cgi@id=25676">contributed a JavaScript
     feature</a> - this is able to run some user supplied script in order
-    to insert SmartTemplates variables in a flexible manner. While I cannot guarantee
+    to insert and compute SmartTemplates variables in a flexible manner. While I cannot guarantee
     that this is going to work forever, it has come in handy for some advanced users.
     Please note that Thunderbird may have some problems with certain commands being 
     executed by a script invoked by a user / Add-on, so I give no guarantees for this functionality.
@@ -844,17 +844,26 @@ style="background-color:#e18700;color:white;border-radius:0.7em;padding-inline:1
   <p>
     You can use SmartTemplates variables (without the % signs) within code,
     they should be replaced within the function like a variable would in your HTML template.
-    If the parameters of a variable contain keywords such as <code>%from(firstname,mail,lowercase)%</code>
+    From Smarttemplates 4.10 onwards, composite variables such as %header.set()% can be used by replacing the . with _ :
+    <code class="inline">header_set()</code>.
+  </p>
+  <p>
+    If the parameters of a variable contain keywords such as 
+    <code>%from(firstname,mail,lowercase)%</code>
+    These need to be prefixed with $, for example:
+    <code class="inline">from($firstname,$mail,$lowercase)</code>.
+    <br>
+    In <i>older</i> versions of SmartTemplates (4.9 and older)
     they need to be enclosed in double quotes, to avoid the JavaScript throwing errors:
     <code class="inline">from("firstname,mail,lowercase")</code>. 
   </p>
   <p>
-    However since Thunderbird 115, the any <code>%variable%</code> functions now run asynchronously,
+    Since Thunderbird 115, any <code>%variable%</code> functions now run asynchronously,
     which means they do not return a value but a "Promise". This is ok if the script 
     block returns it directly, for example like this:
 <pre class="code">
 (function() {
-  return from("name,capitalize,bracketMail"); 
+  return from($name,$capitalize,$bracketMail); 
 } )()
 </pre>
   </p>
@@ -867,7 +876,7 @@ style="background-color:#e18700;color:white;border-radius:0.7em;padding-inline:1
 <pre class="code">
 &#37;{&#37;  
 (async () => {
-  let mysender = await from("mail");
+  let mysender = await from($mail);
   switch(mysender) {
     case "thunderbirddaily@gmail.com":
       return "&lt;p&gt;Special text for thunderbirddaily.&lt;/p&gt;"
@@ -881,13 +890,16 @@ style="background-color:#e18700;color:white;border-radius:0.7em;padding-inline:1
 &#37;}&#37;
 </pre>
   <p>
-    Here the keywords <code class="inline">file</code> and <code class="inline">from('mail')</code> are replaced in the script with the SmartTemplates
+    Here the keywords <code class="inline">file</code> and 
+    <code class="inline">from($mail)</code> are replaced in the script with the SmartTemplates
     variables <code>%file(path)%</code> and <code>%from(mail)%</code> and then resolved by SmartTemplates.
-    Notes: backslashes in strings need to be escaped: "\\" <br>
+    Notes: backslashes contained within strings need to be escaped: "\\" <br>
     Keywords / unquoted parts within smartTemplate functions like <code class="inline">%from()%</code>, such as 
-    <i>mail</i>, <i>firstname</i>, <i>toclipboard</i> etc. should be wrapped in quotes 
+    <i>mail</i>, <i>firstname</i>, <i>toclipboard</i> etc. should be prefixed with 
+    <code class="inline">$</code> 
     - otherwise the script parser will think they are undefined variables and return an error.
-    For example: <code>%from(firstname,email)%</code> must become <code class="inline">await from("firstname,email")</code>
+    For example: <code>%from(firstname,email)%</code> must become 
+    <code class="inline">await from($firstname,$email)</code>
   </p>
   
   <b>Example 2: Greeting based on time of day</b>
@@ -926,7 +938,7 @@ else { return "Good afternoon"; }
     return "";
   }
   console.log("no email in Clipboard:", val);
-  await from("mail,toclipboard");
+  await from($mail,$toclipboard);
   console.log(`Copied from address to clipboard`);
   return "";
 })()
