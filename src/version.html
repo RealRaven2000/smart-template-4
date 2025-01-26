@@ -257,27 +257,26 @@ permalink: version.html
       Version 4.10 - 24/01/2025</a>
 		<br>
 		<span class="appWrapper">
-			<span class="thunderbird">111.0 - 134.*</span>
+			<span class="thunderbird">111.0 - 135.*</span>
 		</span>
   </h4>
   <ul>
     <h5 class="inList"><span class="inListTitle">Enhancements</span></h5>
     <li>
       Add features to insert unquoted email and remove styles 
-      using <code>%quotePlaceHolder(nostyles)% </code>
+      using <code>%quotePlaceHolder(<b style="color: red;">nostyles</b>)% </code>
       <a href="https://github.com/RealRaven2000/SmartTemplates/issues/331">[issue 331]</a>
+      <p>
+        How does it work? Some Emails (and often ones that are created by SmartTemplates)
+        can contain <code class="html">style</code> sections that may affect the global scope
+        of the complete email. With the option above, such sections are removed making
+        it easier to reply without having to "fight" conflicting style rules.
+      </p>
     </li>
     <li>
-      Improved Capitalization for double-barrelled names (such as Tyler-Smith)
+      Improved Capitalization for double-barrelled names (such as Tyler-Smith). 
+      These used to be capitalized like: "Tyler-smith"
       <a href="https://github.com/RealRaven2000/SmartTemplates/issues/343">[issue 343]</a>
-    </li>
-    <li>
-      Support "composite" ST variables in sandboxed script (e.g. header.set)
-      <a href="https://github.com/RealRaven2000/SmartTemplates/issues/349">[issue 349]</a>
-    </li>
-    <li>
-      Support multiple parameters in sandboxed script (e.g. <code class="inline">%from(name,uppercase)%</code> ) 
-      <a href="https://github.com/RealRaven2000/SmartTemplates/issues/350">[issue 350]</a>
     </li>
     <li>
       Fixed: <code class="html">*selection*</code> truncates content in text nodes
@@ -300,11 +299,22 @@ permalink: version.html
     <p>
       For deeper programming using inline script, several major improvements
       were implemented. For information on how to enable scripting and use it
-      please refer to <a href="https://smarttemplates.quickfolders.org/premium.html#javascript">this documentation section</a>.
+      please refer to <a href="https://smarttemplates.quickfolders.org/premium.html#javascript">this 
+      chapter in the documentation</a>.
     </p>
     <li>
       Fixed Problems with <code class="html">messageRaw()</code>  function in Sandboxed script
       <a href="https://github.com/RealRaven2000/SmartTemplates/issues/347">[issue 347]</a>
+    </li>
+    <li>
+      Simplified using reserved parameter such as firstname, lastname etc. these can 
+      be used directly as parameter by prefixing with a "$" character. Previously these had 
+      to be wrapped in double quotes. Example:
+      <code class="html">from($name,$mail)</code>
+    </li>
+    <li>
+      Support multiple parameters in sandboxed script (e.g. <code class="inline">%from(name,uppercase)%</code> ).
+      <a href="https://github.com/RealRaven2000/SmartTemplates/issues/350">[issue 350]</a>
     </li>
     <li>
       Added support for functions with multiple parameters. 
@@ -313,14 +323,9 @@ permalink: version.html
     <li>
       Support for composite variables, such as <code class="inline">%header.set()%</code> 
       these can be coded in Sandbox by replacing the "." with an underscore:
-      <span class="html">header_set()</span>
+      <span class="html">header_set()</span> <a href="https://github.com/RealRaven2000/SmartTemplates/issues/349">[issue 349]</a>
     </li>
-    <li>
-      Simplified using reserved parameter such as firstname, lastname etc. these can 
-      be used directly as parameter by prefixing with a "$" character. Previously these had 
-      to be wrapped in double quotes. Example:
-      <code class="html">from($name,$mail)</code>
-    </li>
+
 
     <h5 class="inList"><span class="inListTitle">Miscellaneous</span></h5>
     <li> 
