@@ -398,11 +398,11 @@ permalink: version.html
     <h5 class="inList"><span class="inListTitle">Enhancements</span></h5>
     <li>
       Add features to insert unquoted email and remove styles 
-      using <code>%quotePlaceHolder(<b style="color: red;">nostyles</b>)% </code>
+      using <code>%quotePlaceHolder(<b style="color: darkred;">nostyles</b>)% </code>
       <a href="https://github.com/RealRaven2000/SmartTemplates/issues/331">[issue 331]</a>
       <p>
         How does it work? Some Emails (and often ones that are created by SmartTemplates)
-        can contain <code class="html">style</code> sections that may affect the global scope
+        can contain <code class="html">&lt;style&gt;</code> sections that may affect the global scope
         of the complete email. With the option above, such sections are removed making
         it easier to reply without having to "fight" conflicting style rules.
       </p>
