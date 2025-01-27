@@ -740,6 +740,16 @@ async function createHeaderMenu() {
 
 }
 
+// Helper function to check if a version matches a pattern
+function versionMatches(version, pattern) {
+  const regex = new RegExp(`^${pattern.replace(/\*/g, "\\d+")}$`);
+  return regex.test(version);
+}
+
+function versionGreater(v1, v2) {
+  return compareVersions(v1, v2) > 0;
+}
+
 //
 async function updateMruMenu(Context) {
    // default is 10 but can be raised in Pro
@@ -969,31 +979,52 @@ async function updateSubMenus(messages, tab) {
       // see below
       case "update":
         {
-          setTimeout(
-            async function() {
-              let ver = await messenger.LegacyPrefs.getPref("extensions.smartTemplate4.version","0");
-              const manifest = await messenger.runtime.getManifest();
-              // get pure version number / remove pre123 indicator
-              let installedVersion = manifest.version.replace(/pre.*/,""); 
-              if (isDebug) console.log(`SmartTemplates Update:  old=${ver}  new=${installedVersion}`);
-              // compare versions to support beta builds
-              // we probably need to manage prerelease installs with a separate flag!
-              if (compareVersions(installedVersion,ver)>0) { 
-                if (isDebug) console.log("Setting hasNews flag!");
-                messenger.LegacyPrefs.setPref("extensions.smartTemplate4.hasNews", true);
-              }
-              if (ver != installedVersion ) {
-                if (isDebug) console.log("Storing new version number " + manifest.version);
-                // STORE VERSION CODE!
-                // prefs.setMyStringPref("version", pureVersion); // store sanitized version! (no more alert on pre-Releases + betas!)
-                messenger.LegacyPrefs.setPref("extensions.smartTemplate4.version", installedVersion);
-              }              
-              
-              messenger.NotifyTools.notifyExperiment({event: "updateNewsLabels"});
-              messenger.NotifyTools.notifyExperiment({event: "firstRun"});
-            },
-            200
-          ); 
+          
+          (async () => {
+            // compare versions to support beta builds
+            // we probably need to manage prerelease installs with a separate flag!
+            // Define a Map of silent update rules with wildcards
+            const silentUpdateMap = new Map([
+              ["4.10", ["4.10.1"]], // Silent updates for [issue 354]
+            ]);
+            
+            // Function to check if an update is silent
+            function isSilentUpdate(fromVersion, toVersion) {
+              const patterns = silentUpdateMap.get(fromVersion);
+              if (!patterns) return false; // No silent updates defined for this `fromVersion`
+
+              // Check if `toVersion` matches any pattern in the list
+              return patterns.some((pattern) => versionMatches(toVersion, pattern));
+            }
+
+            const origVer = await messenger.LegacyPrefs.getPref(
+              "extensions.smartTemplate4.version",
+              "0"
+            );
+            const manifest = await messenger.runtime.getManifest();
+            // get pure version number / remove pre123 indicator
+            let installedVersion = manifest.version.replace(/pre.*/, "").replace(/\.$/, "");
+            if (isDebug) {
+              console.log(`SmartTemplates Update:  old=${origVer}  new=${installedVersion}`);
+            }
+
+            const isUpgrade = versionGreater(installedVersion, origVer),
+              isSilent = isSilentUpdate(origVer, installedVersion);
+
+            if (isUpgrade && !isSilent) {
+              if (isDebug) console.log("Setting hasNews flag!");
+              messenger.LegacyPrefs.setPref("extensions.smartTemplate4.hasNews", true);
+            }
+            if (origVer != installedVersion) {
+              if (isDebug) console.log("Storing new version number " + manifest.version);
+              // STORE VERSION CODE!
+              // prefs.setMyStringPref("version", pureVersion); // store sanitized version! (no more alert on pre-Releases + betas!)
+              messenger.LegacyPrefs.setPref("extensions.smartTemplate4.version", installedVersion);
+            }
+
+            messenger.NotifyTools.notifyExperiment({ event: "updateNewsLabels" });
+            messenger.NotifyTools.notifyExperiment({ event: "firstRun" });
+          })();
           
           // TypeError: currentLicense is undefined
           if (isDebug) console.log("2. update() case");

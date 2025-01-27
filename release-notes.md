@@ -1,6 +1,11 @@
 The full change log with screen shots [can be found here](https://smarttemplates.quickfolders.org/version.html#4.10) 
 
-**Enhancements**
+**Maintenance verfsion 4.10.1**
+<ul>
+  <li> Fixed regression in 4.10: automatic forwarding with FiltaQuilla fails [issue #354]</li>
+</ul>
+
+**Enhancements - 4.10**
 
 *   Added features to insert unquoted email and remove styles using `%quotePlaceHolder(nostyles)%` [issue #331]
 *   Improved Capitalization for double-barrelled names (such as Tyler-Smith) [issue #343]
@@ -8,7 +13,7 @@ The full change log with screen shots [can be found here](https://smarttemplates
 *   new `%dateformat.received()%` to retrieve date of original mail [issue #353]
 
 
-**Bug Fixes** 
+**Bug Fixes - 4.10** 
 
 *   Fixed: Common account settings for account were not stored [issue #340]
 *   Fixed problems with `messageRaw()` function in Sandboxed script [issue #347]
@@ -16,7 +21,7 @@ The full change log with screen shots [can be found here](https://smarttemplates
 *   Fixed: `*selection*` truncates content in text nodes [issue #351]
 
 
-**Sandboxed Script** 
+**Sandboxed Script - 4.10** 
 
 For deeper programming using inline script, several major improvements were implemented. For information on how to enable scripting and use it please refer to <a href="https://smarttemplates.quickfolders.org/premium.html#javascript">this documentation section</a>.
 

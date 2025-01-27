@@ -3,6 +3,11 @@
 
 The full change log with screen shots <a href="https://smarttemplates.quickfolders.org/version.html#4.10">can be found here</a>
 
+<b>Maintenance Version 4.10.1</b>
+<ul>
+  <li> Fixed regression in 4.10: automatic forwarding with FiltaQuilla fails <a href="https://github.com/RealRaven2000/SmartTemplates/issues/354">[issue 354]</a></li>
+</ul>
+
 <b>Enhancements</b>
 <ul>
   <li> Added features to insert unquoted email and remove styles using `%quotePlaceHolder(nostyles)%` <a href="https://github.com/RealRaven2000/SmartTemplates/issues/331">[issue 331]</a></li>
@@ -22,10 +27,12 @@ The full change log with screen shots <a href="https://smarttemplates.quickfolde
 
 For deeper programming using inline script, several major improvements were implemented. For information on how to enable scripting and use it please refer to <a href="https://smarttemplates.quickfolders.org/premium.html#javascript">this documentation section</a>.
 
+<ul>
 <li> Fixed problems with `messageRaw()` function in Sandboxed script <a href="https://github.com/RealRaven2000/SmartTemplates/issues/347">[issue 347]</a></li>
 <li> Support "composite" ST variables in sandboxed script (e.g. `header.set`) via underscores (`header_set`) <a href="https://github.com/RealRaven2000/SmartTemplates/issues/349">[issue 349]</a></li>
 <li> Support multiple parameters in sandboxed script (e.g. `%from(name,uppercase)%` )  <a href="https://github.com/RealRaven2000/SmartTemplates/issues/350">[issue 350]</a></li>
 <li> Simplified using reserved parameter such as `firstname`, `lastname` etc. these can be used directly as parameter by prefixing with a "$" character. Previously these had to be wrapped in double quotes. </li>
+</ul>
 
 For example: 
 
