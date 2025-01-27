@@ -208,7 +208,7 @@ END LICENSE BLOCK
     # [issue 328] Text search should include contents contained in tables. Also improved whitespace collapsing.
     # [issue 329] Sandbox script: Support reading variables without parameters (e.g. %from%) within script
 
-  Version 4.10 - WIP
+  Version 4.10 - 24/01/2025
     # [issue 331] Add features to insert unquoted email and remove styles using %quotePlaceHolder% 
                   (implemented in 4.9)
     # [issue 340] Fixed: Common account settings for account were not stored
@@ -222,6 +222,11 @@ END LICENSE BLOCK
     # [issue 352] %header.set(from)% triggers unnecessary warning.
     # [issue 353] new %dateformat.received()% to retrieve date of original mail
     # made compatible with Tb 135.*
+
+  Version 4.10.1 - 28/01/2025 ?
+    # [issue 354] Regression in 4.10: automatic forwarding with FiltaQuilla fails
+
+
 
 
 =========================
@@ -315,8 +320,8 @@ var SmartTemplate4 = {
       return ""; // unknown
     }
 
-    const ownerWin = win || util.Mail3PaneWindow, // for changing the template our current composer window is the context
-      theQueue =
+    const ownerWin = win || util.Mail3PaneWindow; // for changing the template our current composer window is the context
+    let  theQueue =
         ownerWin && ownerWin.SmartTemplate4
           ? ownerWin.SmartTemplate4.fileTemplates.armedQueue || []
           : [],
@@ -570,9 +575,6 @@ var SmartTemplate4 = {
               if (!adPill) {
                 let input = window.document.getElementById("toAddrInput");
                 if (input) {
-                  if (input) {
-                    input;
-                  }
                   FocusId = input.id;
                 }
               }

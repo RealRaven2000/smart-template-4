@@ -1986,7 +1986,7 @@
     "message": "在此处阅读详细的更改日志（仅英语）："
   },
   "whats-new-list": {
-    "message": "{L1} 新增 {{%preheader()%}} 功能，用于为移动邮件程序添加预览文本。{L2}{L1} 在通过上下文菜单“撰写邮件”写新邮件时，现在会自动插入{{%to%}}、{{%recipient%}}和{{%from%}}的地址数据。[issue 275]{L2} {L1} 在回复对话中自己的邮件且 Thunderbird 自动更改收件人时，使用 {{%recipient%}} 也会按预期工作。[issue 239]{L2} {L1} 在查找 Cardbook 联系人时，电子邮件地址会转换为小写。[issue 278]{L2} {L1} SmartTemplates 现在可以从地址簿字段中提取 {{prefix}} 和 {{suffix}}。[issue 267]{L2} {L1} SmartTemplates 还支持从地址簿字段中提取 {{other.custom1}}、{{other.custom2}} 等。[issue 246]{L2} {L1} 删除了活动 SmartTemplate 字段上的重复工具提示。{L2}{L1} 使用 Web 扩展 API 重新实现了消息操作菜单 [issue 253]{L2}"
+    "message": "{L1} 4.10.1 修复了 FiltaQuilla 无法通过模板转发的问题 [issue 354] {L2}{L1} 新增 {{%preheader()%}} 功能，用于为移动邮件程序添加预览文本。{L2}{L1} 在通过上下文菜单“撰写邮件”写新邮件时，现在会自动插入{{%to%}}、{{%recipient%}}和{{%from%}}的地址数据。[issue 275]{L2} {L1} 在回复对话中自己的邮件且 Thunderbird 自动更改收件人时，使用 {{%recipient%}} 也会按预期工作。[issue 239]{L2} {L1} 在查找 Cardbook 联系人时，电子邮件地址会转换为小写。[issue 278]{L2} {L1} SmartTemplates 现在可以从地址簿字段中提取 {{prefix}} 和 {{suffix}}。[issue 267]{L2} {L1} SmartTemplates 还支持从地址簿字段中提取 {{other.custom1}}、{{other.custom2}} 等。[issue 246]{L2} {L1} 删除了活动 SmartTemplate 字段上的重复工具提示。{L2}{L1} 使用 Web 扩展 API 重新实现了消息操作菜单 [issue 253]{L2}"
   },
   "whitespace_note": {
     "message": "请注意，空格最好用\\s表示，因为它也可以包含换行符。 不能使用逗号和双引号字符。"

@@ -1976,7 +1976,7 @@
     "message": "在此處閱讀詳細的更改日誌（僅英語）："
   },
   "whats-new-list": {
-    "message": "{L1} 新功能：在插入原始電子郵件的引用部分時刪除 CSS 樣式部分 {{%quotePlaceHolder(nostyles)%}} [issue 331].{L2} {L1} 修復：新設定分頁無法生成通用帳戶設定。此問題主要影響最近安裝了 SmartTemplates 且無舊版設定的使用者。 [issue 340]{L2} {L1} 改進了連字符姓名（如 Tyler-Smith）的大小寫處理。 [issue 343]{L2}{L1} 剪貼簿中的逗號不再導致 {{%header.set(…,clipboard)%}} 和 {{%matchTextFromBody(…,toclipboard)%}} 的問題。 [issue 344]{L2}{L1} 修復：{{*selection*}} 截斷了文字節點中的內容。 [issue 351]{L2}{L1} 新功能 {{%dateformat.received()%}} {L2}{L1} 修復了沙盒腳本中的許多錯誤，包括 {{messageRaw()}}, 支援多個參數、複合變數（帶下劃線）和保留參數（帶 {{$}} 前綴）。更多有關腳本的詳細資訊可在支援網站上找到。{L2}{L1} Thunderbird 相容性已提升至版本 135。{L2}"
+    "message": "{L1} 4.10.1 修復了 FiltaQuilla 無法透過範本轉寄的問題 [issue 354] {L2}{L1} 新功能：在插入原始電子郵件的引用部分時刪除 CSS 樣式部分 {{%quotePlaceHolder(nostyles)%}} [issue 331].{L2} {L1} 修復：新設定分頁無法生成通用帳戶設定。此問題主要影響最近安裝了 SmartTemplates 且無舊版設定的使用者。 [issue 340]{L2} {L1} 改進了連字符姓名（如 Tyler-Smith）的大小寫處理。 [issue 343]{L2}{L1} 剪貼簿中的逗號不再導致 {{%header.set(…,clipboard)%}} 和 {{%matchTextFromBody(…,toclipboard)%}} 的問題。 [issue 344]{L2}{L1} 修復：{{*selection*}} 截斷了文字節點中的內容。 [issue 351]{L2}{L1} 新功能 {{%dateformat.received()%}} {L2}{L1} 修復了沙盒腳本中的許多錯誤，包括 {{messageRaw()}}, 支援多個參數、複合變數（帶下劃線）和保留參數（帶 {{$}} 前綴）。更多有關腳本的詳細資訊可在支援網站上找到。{L2}{L1} Thunderbird 相容性已提升至版本 135。{L2}"
   },
   "whitespace_note": {
     "message": "請注意，空格可以最好地表示為 \\s，因為它也可以包含換行符。 不能使用逗號和雙引號字符。"
