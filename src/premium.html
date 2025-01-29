@@ -917,7 +917,9 @@ else { return "Good afternoon"; }
 } )() &#37;}&#37;
 </pre>
 
-<b>Example 3: Reading email from clipboard and reacting accordingly</b>
+  <p>
+    <b>Example 3: Read an Email Address from Clipboard and react accordingly</b>
+  </p>
   <p>
     In the next example, the template will insert content based on whether an email 
     address is found in the clipboard. If no email is found the sender's 
@@ -939,7 +941,8 @@ else { return "Good afternoon"; }
   }
   console.log("no email in Clipboard:", val);
   await from($mail,$toclipboard);
-  console.log(`Copied from address to clipboard`);
+  // warn that the address was defaulted:
+  alert(`Copied sender's address to clipboard: ${await clipboard("text")}`); 
   return "";
 })()
 &#37;}&#37;
@@ -960,7 +963,9 @@ else { return "Good afternoon"; }
 </pre>
 
 
-<b>Example for a script to prefix the date to subject:</b>
+<p>
+  <b>Example for a script to prefix the date to subject:</b>
+</p>
 <pre class="code">
 &#37;{&#37; 
   (async () => {
@@ -972,7 +977,9 @@ else { return "Good afternoon"; }
 </pre>
 
 
-<b>Example for checking date range when following up emails:</b>
+<p>
+  <b>Example for checking date range when following up emails:</b>
+</p>
 <p>
   I am using this specific script to make sure I follow up order emails tenMonthsLater
   should be roughly around one year old.
