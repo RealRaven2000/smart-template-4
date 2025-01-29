@@ -349,6 +349,11 @@ permalink: premium.html
 				Years, with the % symbols stripped. Use as follows: <br>
 				%dateformat(<i>formatString</i>)%
 			</p>
+      <p>
+        Since v4.10 you can also force the variable to alwys use the date of the answered / 
+        forarded mail: <code class="inline">%dateformat.received(<i>formatString</i>)%</code>
+       
+      </p>
 			<p>
 				Supported Formats:
 				Y, y, n, m, e, d, k, H, l, I, M, S, tz_name, B, b, A, a, p1, p2, p
@@ -911,7 +916,8 @@ if (date.getHours() &lt; 12) {return "Good morning";}
 else { return "Good afternoon"; }
 } )() &#37;}&#37;
 </pre>
-  <b>Example 3: Reading email from clipboard and reacting accordingly</b>
+
+Example 3: Reading email from clipboard and reacting accordingly</b>
   <p>
     In the next example, the template will insert content based on whether an email 
     address is found in the clipboard. If no email is found the sender's 
@@ -958,6 +964,19 @@ else { return "Good afternoon"; }
 })()
 &#37;}&#37;
 </pre>
+
+
+<b>Example for a script to prefix the date to subject:</b>
+<pre class="code">
+&#37;{&#37; 
+  (async () => {
+    var val = await dateformat_received("_Ymd");
+    header_append($subject,val);
+    return "";
+})()
+&#37;}&#37;
+</pre>
+
 
 </article>
 

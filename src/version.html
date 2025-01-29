@@ -250,11 +250,12 @@ permalink: version.html
 
 
 <a id="4.10"> &nbsp; </a>
+<a id="4.10.1"> &nbsp; </a>
 <li>
   <h4>
 		<a href="#contact" 
       href1="https://addons.thunderbird.net/thunderbird/addon/324497/versions/4.10">
-      Version 4.10 - 24/01/2025</a>
+      Version 4.10.1 - 28/01/2025</a>
 		<br>
 		<span class="appWrapper">
 			<span class="thunderbird">111.0 - 135.*</span>
@@ -412,12 +413,22 @@ permalink: version.html
       These used to be capitalized like: "Tyler-smith"
       <a href="https://github.com/RealRaven2000/SmartTemplates/issues/343">[issue 343]</a>
     </li>
+    <li> 
+      New <code>%dateformat.received()%</code> to retrieve date of original mail 
+      <a href="https://github.com/RealRaven2000/SmartTemplates/issues/353">[issue 353]</a>
+    </li>
+
+    <h5 class="inList"><span class="inListTitle">Bug Fixes</span></h5>
     <li>
       Fixed: <code class="html">*selection*</code> truncates content in text nodes
       <a href="https://github.com/RealRaven2000/SmartTemplates/issues/351">[issue 351]</a>
     </li>
 
     <h5 class="inList"><span class="inListTitle">Bug Fixes</span></h5>
+    <li> 
+      Fixed regression in 4.10, which was released on 24/01/2025: 
+      Automatic forwarding with FiltaQuilla failed.
+      <a href="https://github.com/RealRaven2000/SmartTemplates/issues/354">[issue 354]</a></li>
     <li>
       Fixed: <code>%header.set(subject,clipboard)%</code> and 
              <code>%matchTextFromBody(..,toclipboard)%</code> failed
@@ -442,13 +453,14 @@ permalink: version.html
     </li>
     <li>
       Simplified using reserved parameter such as firstname, lastname etc. these can 
-      be used directly as parameter by prefixing with a "$" character. Previously these had 
+      be used directly as parameter by prefixing with a <code class="html">$</code> character. Previously these had 
       to be wrapped in double quotes. Example:
       <code class="html">from($name,$mail)</code>
     </li>
     <li>
-      Support multiple parameters in sandboxed script (e.g. <code class="inline">%from(name,uppercase)%</code> ).
-      <a href="https://github.com/RealRaven2000/SmartTemplates/issues/350">[issue 350]</a>
+      Simplified using multiple parameters in sandboxed variables (e.g. <code class="inline">%from(name,uppercase)%</code> ).
+      This used to be done by wrapping the parameter list with double quotes, but this made it harder to mix 
+      this with literal strings. <a href="https://github.com/RealRaven2000/SmartTemplates/issues/350">[issue 350]</a>
     </li>
     <li>
       Added support for functions with multiple parameters. 
@@ -456,8 +468,21 @@ permalink: version.html
     </li>
     <li>
       Support for composite variables, such as <code class="inline">%header.set()%</code> 
-      these can be coded in Sandbox by replacing the "." with an underscore:
-      <span class="html">header_set()</span> <a href="https://github.com/RealRaven2000/SmartTemplates/issues/349">[issue 349]</a>
+      these can be coded in Sandbox by replacing the <code class="html">.</code> with an underscore:
+      <code class="html">header_set(...)</code> <a href="https://github.com/RealRaven2000/SmartTemplates/issues/349">[issue 349]</a>
+    </li>
+    <li>
+      Example for a script to prefix the date to subject, without using clipboard:
+<pre class="code">
+&#37;{&#37; 
+  (async () => {
+    var val = await dateformat_received("_Ymd");
+    header_append($subject,val);
+    return "";
+})()
+&#37;}&#37;
+</pre>
+
     </li>
 
 
