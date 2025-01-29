@@ -476,8 +476,8 @@ permalink: version.html
 <pre class="code">
 &#37;{&#37; 
   (async () => {
-    var val = await dateformat_received("_Ymd");
-    header_append($subject,val);
+    var val = await dateformat_received("Ymd_");
+    header_prefix($subject,val);
     return "";
 })()
 &#37;}&#37;
