@@ -970,9 +970,54 @@ Example 3: Reading email from clipboard and reacting accordingly</b>
 <pre class="code">
 &#37;{&#37; 
   (async () => {
-    var val = await dateformat_received("_Ymd");
-    header_append($subject,val);
+    var val = await dateformat_received("Ymd_");
+    header_prefix($subject,val);
     return "";
+})()
+&#37;}&#37;
+</pre>
+
+
+<b>Example for checking date range when following up emails:</b>
+<p>
+  I am using this specific script to make sure I follow up order emails tenMonthsLater
+  should be roughly around one year old.
+  The function <code class="html">abortComposer()</code> is currently in the planning stage.
+</p>
+<pre class="code">
+&#37;{&#37; 
+  (async () => {
+  const d = await dateformat_received("Y-m-d"),
+    mailDate = new Date(d),
+    now = new Date();
+
+  let errorString = "";
+  
+  const tenMonthsLater = new Date(mailDate);
+  tenMonthsLater.setMonth(mailDate.getMonth() + 10); 
+  
+  const eighteenMonthsLater = new Date(mailDate);
+  eighteenMonthsLater.setMonth(mailDate.getMonth() + 18); // Adding 18 months to mailDate
+
+  // Check if the mailDate is less than 10 months old
+  if (now < tenMonthsLater) {
+    errorString = `Follow up to email that is newer than 10 months: ${mailDate.toLocaleDateString()}`;
+  }
+  
+  // Check if the mailDate is older than 18 months
+  if (now > eighteenMonthsLater) {
+    errorString += `Follow up to email that is older than 1.5 years: ${mailDate.toLocaleDateString()}`;
+  }
+
+  // If there's an error string, show a confirmation
+  if (errorString) {
+    const ans = confirm(errorString + "\nAre you sure you want to send out this mail?")
+    if (!ans) {
+      abortComposer(); // Close the composer if the user confirms FUTURE FUNCTION!
+    }
+  }
+
+  return "";
 })()
 &#37;}&#37;
 </pre>
