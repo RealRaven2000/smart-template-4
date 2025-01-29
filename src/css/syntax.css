@@ -63,9 +63,11 @@
 
   pre.code { 
     background-color: #ffffff;
+    box-shadow: inset 4px 4px 10px rgba(0,0,0,0.6);
     color: #303030;
+    display: table;
     padding: 1em;
-    box-shadow: inset 4px 4px 10px #000000;
+    min-width: 35%;    
   }
 
   code.parameter, .paramLiteral {
