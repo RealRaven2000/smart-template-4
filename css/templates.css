@@ -1,0 +1,27 @@
+div#pageContent {
+  background-image: url('/img/SmartTemplate4-watermark.png') !important;
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+}
+
+.code_block code {
+  padding: 0px 3px;
+  margin-left: 1px;
+  margin-right: 1px;
+  font-size: 9pt !important;
+}
+.code_block {
+  border-top-left-radius: 0 !important;
+}
+
+h5.templateBlock {
+  margin-left: 30px;
+  margin-bottom: 0;
+  margin-top: 6px;
+  background-color: #eeeeee;
+  padding: 0.2em;
+  border-radius: 0.5em 0.5em 0 0;
+  border: 1px solid #A0A0A0;
+  max-width: 10em;
+  text-align: center;
+}

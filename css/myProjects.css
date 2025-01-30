@@ -1,0 +1,72 @@
+
+/*** PROJECT LINKS - links to my other projects **/
+
+h4.projects {
+  background: rgb(167,233,233);
+  background: -moz-linear-gradient(top,  rgba(167,233,233,1) 0%, rgba(154,226,230,1) 37%, rgba(138,225,226,1) 65%, rgba(148,238,248,1) 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(167,233,233,1)), color-stop(37%,rgba(154,226,230,1)), color-stop(65%,rgba(138,225,226,1)), color-stop(100%,rgba(148,238,248,1)));
+  background: -webkit-linear-gradient(top,  rgba(167,233,233,1) 0%,rgba(154,226,230,1) 37%,rgba(138,225,226,1) 65%,rgba(148,238,248,1) 100%);
+  background: -o-linear-gradient(top,  rgba(167,233,233,1) 0%,rgba(154,226,230,1) 37%,rgba(138,225,226,1) 65%,rgba(148,238,248,1) 100%);
+  background: -ms-linear-gradient(top,  rgba(167,233,233,1) 0%,rgba(154,226,230,1) 37%,rgba(138,225,226,1) 65%,rgba(148,238,248,1) 100%);
+  background: linear-gradient(top,  rgba(167,233,233,1) 0%,rgba(154,226,230,1) 37%,rgba(138,225,226,1) 65%,rgba(148,238,248,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a7e9e9', endColorstr='#55ca72',GradientType=0 );
+  border: 1px solid #bce !important;
+  border-radius: 0.5em; 
+  box-shadow: 2px 2px 3px -1px rgba(0,0,0,0.7);
+  padding: 0.35em 0.5em;
+  display: inline-block;
+  margin-right: 20px;
+}
+
+h4.projects:hover {
+  text-decoration: underline;
+  color: rgb(167,233,233);
+  background: rgb(69,72,77);
+  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzQ1NDg0ZCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwMDAwMDAiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+  background: -moz-linear-gradient(top,  rgba(69,72,77,1) 0%, rgba(0,0,0,1) 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(69,72,77,1)), color-stop(100%,rgba(0,0,0,1)));
+  background: -webkit-linear-gradient(top,  rgba(69,72,77,1) 0%,rgba(0,0,0,1) 100%);
+  background: -o-linear-gradient(top,  rgba(69,72,77,1) 0%,rgba(0,0,0,1) 100%);
+  background: -ms-linear-gradient(top,  rgba(69,72,77,1) 0%,rgba(0,0,0,1) 100%);
+  background: linear-gradient(to bottom,  rgba(69,72,77,1) 0%,rgba(0,0,0,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#45484d', endColorstr='#000000',GradientType=0 );
+}
+
+h4.projects:hover,
+h4.projects:hover a {
+  color: rgb(167,233,233);
+}
+
+
+h4.QuickFolders:before {
+  content: url('/img/quickfolders-Icon.png'); /* IE8 or higher */
+}
+
+h4.QuickFilters:before {
+  content: url('/img/QuickFilters_32.png'); /* IE8 or higher */
+}
+
+h4.QuickPasswords:before {
+  content: url('/img/quickPasswords.png'); /* IE8 or higher */ 
+}
+
+h4.titlebarCleaner:before {
+  content: url('/img/titlebarCleaner.png'); /* IE8 or higher */
+}
+h4.ZombieKeys:before {
+  content: url('/img/zombie-key-32.png'); /* IE8 or higher */
+}
+h4.menuOnTop:before {
+  content: url('/img/menuOnTop.png'); /* IE8 or higher */
+}
+/* settings bundle for all items */
+h4.QuickFolders:before,
+h4.QuickFilters:before,
+h4.QuickPasswords:before,
+h4.titlebarCleaner:before,
+h4.ZombieKeys:before,
+h4.menuOnTop:before {
+  margin: 0em 0.5em -0.1em 0.5em;
+  vertical-align: middle;
+  display: inline-block; /* IE 7 fix, hasLayout */
+}

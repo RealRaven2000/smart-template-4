@@ -1,0 +1,105 @@
+/*******************************************************************************************/
+/********************* font-faces for common use hosted in our project *********************/
+/**** all fonts under SIL Open Font License, Version 1.1 see http://scripts.sil.org/OFL ****/
+/*******************************************************************************************/
+
+@font-face {
+  font-family: 'Architects Daughter';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Architects Daughter'), local('ArchitectsDaughter'), url(/fonts/architectsDaughter.woff) format('woff');
+}
+/* Architects Daughter © 2010 by Kimberly Geswein */
+
+@font-face {
+  font-family: 'Baumans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Baumans'), local('Baumans-Regular'), url(/fonts/baumans.woff) format('woff');
+}
+/* Baumans © 2011 by Cyreal */
+
+@font-face {
+  font-family: 'Chewy';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Chewy'), url(/fonts/chewy.woff) format('woff');
+}
+/* Chewy © 2011 by Brenda Gallo */
+
+@font-face {
+  font-family: 'Handlee';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Handlee Regular'), local('Handlee-Regular'), url(/fonts/handlee.woff) format('woff');
+}
+/* Handlee © 2011 by Admix Designs */
+
+@font-face {
+  font-family: 'Indie Flower';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Indie Flower'), local('IndieFlower'), url(/fonts/indieFlower.woff) format('woff');
+}
+/* Indie Flower © 2010 by Kimberly Geswein */
+
+@font-face {
+  font-family: 'Loved by the King';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Loved by the King'), local('LovedbytheKing'), url(/fonts/lovedByTheKing.woff) format('woff');
+}
+/* Loved by the King © 2006 by Kimberly Geswein */
+
+@font-face {
+  font-family: 'Nothing You Could Do';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Nothing You Could Do'), local('NothingYouCouldDo'), url(/fonts/nothingYouCouldDo.woff) format('woff');
+}
+/* Nothing You Could Do © 2010 by Brenda Gallo */
+
+@font-face {
+  font-family: 'Nixie One';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Nixie One'), local('NixieOne-Regular'), url(/fonts/nixieOne.woff) format('woff');
+}
+/* Nixie One © 2011 by Jovanny Lemonad */
+
+@font-face {
+  font-family: 'Poiret One';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Poiret One'), local('PoiretOne-Regular'), url(/fonts/poiretOne.woff) format('woff');
+}
+/* Poiret One © 2011 Denis Masharov */
+
+@font-face {
+	font-family: 'Maven Pro';
+	font-style: normal;
+	font-weight: 400;
+	src: local('Maven Pro Regular'), local('MavenProRegular'), url(/fonts/mavenPro.woff) format('woff');
+}
+@font-face {
+	font-family: 'Maven Pro';
+	font-style: normal;
+	font-weight: 500;
+	src: local('Maven Pro Medium'), local('MavenProMedium'), url(/fonts/mavenPro.woff) format('woff');
+}
+@font-face {
+	font-family: 'Maven Pro';
+	font-style: normal;
+	font-weight: 700;
+	src: local('Maven Pro Bold'), local('MavenProBold'), url(/fonts/mavenPro.woff) format('woff');
+}
+@font-face {
+	font-family: 'Maven Pro';
+	font-style: normal;
+	font-weight: 900;
+	src: local('Maven Pro Black'), local('MavenProBlack'), url(/fonts/mavenPro.woff) format('woff');
+}
+/* Maven Pro Joe Prince */
+
+/*******************************************************************************************/
+/*******************************************************************************************/

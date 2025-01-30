@@ -1,0 +1,50 @@
+/* <div class="locale"> which contains locale flags */
+.locale {
+  width: auto;
+  max-width:70%;
+  text-align: left;
+  margin-top:-15px; /* added 05.10.12 */
+  margin-bottom:-5px; /* added 05.10.12 */
+  margin-left:-17px; /* added 05.10.12 */
+}
+.locale img {
+  margin-left: 0.7em;
+}
+
+/* img formatting for flags */
+img.flag {
+  display: inline-block;
+  -moz-box-shadow: 5px 5px 6px -1px rgba(0,0,0,0.7); /* Firefox 1-4 */
+  -webkit-box-shadow: 5px 5px 6px -1px rgba(0,0,0,0.7); /* Safari / Chrome (Webkit) */
+  box-shadow: 5px 5px 6px -1px rgba(0,0,0,0.7); /* CSS3= IE9 / Firefox 4+ */ 
+  -khtml-box-shadow: 5px 5px 6px -1px rgba(0,0,0,0.7); /* KHTML */
+  width: 25px; /* img size stretched */
+  border: 0;
+  border-style: none;
+}
+
+
+#SiteNav {
+  text-align: left;
+}
+.sitenavigation {
+  display: inline-block;
+  clear:right; 
+  border: 1px solid rgba(0,0,0,0.05); 
+  vertical-align:top; 
+  padding: 0.2em 1.5em;
+}
+#main-content-no-nav .sitenavigation ul {
+  min-width: 10em;
+  margin-left: 0;
+}
+#main-content-no-nav .sitenavigation ul li {
+  list-style-type: none;
+  margin: 0.1em 0;
+  padding: 0px;
+}
+
+/* for some unknown reason the links are broken into 2 lines */
+#main-content-no-nav .sitenavigation ul li a {
+  white-space: nowrap;
+}

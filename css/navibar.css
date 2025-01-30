@@ -1,0 +1,78 @@
+/* MAINTABLE -> Navbar overlay set in bottom before <div id="downPusher"></div> */
+/* outer table div's <div class="outerTableTD"> and <div class="outerTableTR"> are not formated, we don't need it for now */
+
+.outerTable {
+  border-top: 1px solid #a9a9a9;
+  border-bottom: 1px solid #a9a9a9;
+  position: fixed; /* set to fixed means "static element" */
+  bottom: 0px; /* place at bottom with 0px space */
+  width: 100%; /* set maintable to 100% width to display it as navbar */
+  margin: 0px; 
+  padding: 0px;
+  background: -moz-linear-gradient(top,  rgba(246,248,249,1) 0%, rgba(229,235,238,0.85) 50%, rgba(215,222,227,0.85) 51%, rgba(245,247,249,0.7) 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(246,248,249,1)), color-stop(50%,rgba(229,235,238,0.85)), color-stop(51%,rgba(215,222,227,0.85)), color-stop(100%,rgba(245,247,249,0.7)));
+  background: -webkit-linear-gradient(top,  rgba(246,248,249,1) 0%,rgba(229,235,238,0.85) 50%,rgba(215,222,227,0.85) 51%,rgba(245,247,249,0.7) 100%);
+  background: -o-linear-gradient(top,  rgba(246,248,249,1) 0%,rgba(229,235,238,0.85) 50%,rgba(215,222,227,0.85) 51%,rgba(245,247,249,0.7) 100%);
+  background: -ms-linear-gradient(top,  rgba(246,248,249,1) 0%,rgba(229,235,238,0.85) 50%,rgba(215,222,227,0.85) 51%,rgba(245,247,249,0.7) 100%);
+  background: linear-gradient(top,  rgba(246,248,249,1) 0%, rgba(229,235,238,0.85) 50%, rgba(215,222,227,0.85) 51%, rgba(245,247,249,0.7) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f6f8f9', endColorstr='#f6f8f9',GradientType=0 );
+  behavior: url(js/PIE.js); /* CSS3 Fix for IE 6-8 */
+}
+/* innerTable place the content float from center to left/right same as project-navigation */
+.innerTable {
+  padding: 0;
+  border-spacing: 0;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+}
+.innerTableTD {
+  height: 25px;
+  width: 120px; /* needed for background hover effect on globally a[href] tag */
+  margin: 0;
+  padding: 0;
+  font-size: 1.05em;
+}
+/* item order:  Home Back Up Forward Print Font+ Font- */
+
+/* Icon bindings */
+
+/* home button */
+.homeButton a:before {
+  content: url('/img/home.png'); /* IE8 or higher */
+}
+/* history back button */
+.historyBackButton a:before {
+  content: url('/img/back.png'); /* IE8 or higher */
+}
+/* icon add to scroll button */
+.scrollButton a:before {
+  content: url('/img/up.png'); /* IE8 or higher */
+}
+/* history forward button */
+.historyFwdButton a:before {
+  content: url('/img/forward.png'); /* IE8 or higher */
+}
+/* print button */
+.printButton a:before {
+  content: url('/img/printer.png'); /* IE8 or higher */
+}
+/* Font Plus Button */
+.fontPlusButton a:before {
+  content: url('/img/edit-size-up.png'); /* IE8 or higher */
+}
+/* Font Minus Button */
+.fontMinusButton a:before {
+  content: url('/img/edit-size-down.png'); /* IE8 or higher */
+}
+/* wrapped settings for all items */
+.fontPlusButton a:before,
+.homeButton a:before,
+.historyBackButton a:before,
+.scrollButton a:before,
+.historyFwdButton a:before,
+.printButton a:before,
+.fontMinusButton a:before {
+  margin: 0em 0.2em 0em 0.8em;
+  vertical-align: middle;
+}

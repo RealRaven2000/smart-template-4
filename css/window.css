@@ -1,0 +1,76 @@
+/* Document body formatting */
+body {
+  font-family: Calibri, Arial, sans-serif;
+  background-color: #ffffff;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 25px; /* same value as buttonbar height */
+  right: 0;
+}
+/* content div which contains iframe */
+div.content {
+  background-image: url("/img/SmartTemplate4-watermark.png"); /* visible if iframe onload or can't displayed */
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  height: 100%;
+  min-height: 100%; 
+}
+/* iframe itself */
+iframe#myFrame {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  border-style: none;
+}
+/* Errorphrase inside iframe tag if iframe cant be displayed */
+p#noiframes {
+  font-size: 1.05em;
+  font-weight: bold;
+  color: #E33;
+  text-shadow: #F0E0E0 0px 0px 1px;
+}
+/* our buttonbar div */
+div.buttonbar {
+  height: 25px;
+  position: fixed;
+  bottom: 0;
+  border-top: 1px solid #a9a9a9;
+  border-bottom: 1px solid #a9a9a9;
+  background: -moz-linear-gradient(top,rgba(246,248,249,1) 0%,rgba(229,235,238,0.85) 50%,rgba(215,222,227,0.85) 51%, rgba(245,247,249,0.7) 100%);
+  background: -webkit-gradient(linear,left top, left bottom, color-stop(0%,rgba(246,248,249,1)), color-stop(50%,rgba(229,235,238,0.85)), color-stop(51%,rgba(215,222,227,0.85)), color-stop(100%,rgba(245,247,249,0.7)));
+  background: -webkit-linear-gradient(top,  rgba(246,248,249,1) 0%,rgba(229,235,238,0.85) 50%,rgba(215,222,227,0.85) 51%,rgba(245,247,249,0.7) 100%);
+  background: -o-linear-gradient(top,rgba(246,248,249,1) 0%,rgba(229,235,238,0.85) 50%,rgba(215,222,227,0.85) 51%,rgba(245,247,249,0.7) 100%);
+  background: -ms-linear-gradient(top,rgba(246,248,249,1) 0%,rgba(229,235,238,0.85) 50%,rgba(215,222,227,0.85) 51%,rgba(245,247,249,0.7) 100%);
+  background: linear-gradient(top,rgba(246,248,249,1) 0%,rgba(229,235,238,0.85) 50%,rgba(215,222,227,0.85) 51%,rgba(245,247,249,0.7) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#f6f8f9", endColorstr="#f6f8f9",GradientType=0);
+}
+div.content,div.buttonbar {
+  padding: 0;
+  width: 100%;
+  vertical-align: middle;
+  text-align: center;
+}
+/* Common URL formatting */
+a[href] {
+  font-size: 1.05em;
+  text-decoration: none;
+  color: rgb(38,85,139);  
+}
+a[href]:hover {
+  color: rgb(9,208,223);
+  text-shadow: 0 0 5px rgba(0,0,0,0.96);
+  background-color: rgba(50,50,50,0.3);
+  border-radius: 4px;
+}
+/* Icon Binding */
+#closeButton a:before {
+  content: url("/img/close.png");
+  margin: 0em 0.2em 0em 0.8em;
+  vertical-align: middle;
+}

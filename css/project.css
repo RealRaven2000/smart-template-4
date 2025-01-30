@@ -1,0 +1,535 @@
+/* here in this css file we formate all globally used content only */
+/* alternate webFonts available see webFonts.css */
+
+/* formats the background for the mozdev logo */
+h1#mozdev-logo { 
+  background-color: rgb(10,79,144);
+}
+
+/* mozdev logo itself -> no other chance to overwrite mozdev origin Image! */
+h1#mozdev-logo a { 
+  background-image: url('/img/mozdev-blue.png') !important;
+  background-repeat: no-repeat;
+  height: 69px; /* own original size */
+  width: 148px; /* own original size */
+}
+
+/* our Season gif's in html_body.html inside <h1 id="mozdev-logo"> below </a> */
+/* this gif's will paste automatically on date by js */
+
+/* vampire which transfroms to a bait placed on navbar */
+.halloween {
+  margin-left: 920px; /* optimized 31/10/13 */
+  margin-top: -160px; /* optimized 31/10/13 */
+}
+/* santa on sleigh with reindeers */
+.christmas {
+  margin-left: 800px; 
+  margin-top: -150px; /* optimized 31/10/13 */
+}
+/* starrain on left hand popps out of "[...] a Happy xxxx everyone!" phrase */
+.newYear1 {
+  margin-left: 800px; 
+  margin-top: -100px; /* optimized 31/10/13 */
+}
+/* rocket right of starrain */
+.newYear2 {
+  margin-left: 430px; 
+  margin-top: -120px; /* optimized 31/10/13 */
+}
+/* settings bundle for all items */
+.halloween,
+.christmas,
+.newYear1,
+.newYear2 {
+  padding: 0px;
+  display: block;
+  position: relative; /* ie crop fix */
+  border: 0;
+  border-style: none;
+  max-width: 100%;
+}
+/* horrizontal box on top of our page which contains mozdev-fries and date */
+/* 20.09.12 formated as table ie7 makes trouble with date -> to deep */
+table#mozdev-date {
+  background: rgb(208,228,247);
+  background: rgb(149,234,237);
+  background: -moz-linear-gradient(top,  rgba(149,234,237,1) 0%, rgba(71,221,223,1) 24%, rgba(9,179,181,1) 50%, rgba(44,215,218,1) 79%, rgba(88,223,226,1) 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(149,234,237,1)), color-stop(24%,rgba(71,221,223,1)), color-stop(50%,rgba(9,179,181,1)), color-stop(79%,rgba(44,215,218,1)), color-stop(100%,rgba(88,223,226,1)));
+  background: -webkit-linear-gradient(top,  rgba(149,234,237,1) 0%,rgba(71,221,223,1) 24%,rgba(9,179,181,1) 50%,rgba(44,215,218,1) 79%,rgba(88,223,226,1) 100%);
+  background: -o-linear-gradient(top,  rgba(149,234,237,1) 0%,rgba(71,221,223,1) 24%,rgba(9,179,181,1) 50%,rgba(44,215,218,1) 79%,rgba(88,223,226,1) 100%);
+  background: -ms-linear-gradient(top,  rgba(149,234,237,1) 0%,rgba(71,221,223,1) 24%,rgba(9,179,181,1) 50%,rgba(44,215,218,1) 79%,rgba(88,223,226,1) 100%);
+  background: linear-gradient(top,  rgba(149,234,237,1) 0%,rgba(71,221,223,1) 24%,rgba(9,179,181,1) 50%,rgba(44,215,218,1) 79%,rgba(88,223,226,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#95eaed', endColorstr='#58dfe2',GradientType=0 );
+  padding: 0.3em 0em 0.3em 0em; /* added 08.09.12 */
+  width: 100%; /* added 20.09.12 */
+}
+/* formats the mozdev-fries line in html_body.html (current our greeting Phrase and dateformat from scripts.js) */
+td.mozdev-fries {
+  text-align: left;
+}
+td.mozdev-date {
+  text-align: right;
+}
+td.mozdev-fries,
+td.mozdev-date {
+  font-family: 'Architects Daughter';
+  vertical-align: middle;
+  margin: 0;
+  padding: 0;
+  font-size: 1.05em;
+  font-weight: bold;
+  text-shadow: #333 0px 0px 1px;
+  font-style: italic;
+  color: rgb(255,255,255);
+}
+
+/* common li>h4 formatting */
+li > h4 {
+  font-size: 0.8em;
+  margin-left: 2em;
+}
+/* sets the main background */
+body {
+  background: rgb(69,72,77);
+  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzQ1NDg0ZCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjUwJSIgc3RvcC1jb2xvcj0iIzAwMDAwMCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM0NTQ4NGQiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+  background-image: linear-gradient(to bottom, rgba(69,72,77,1) 0%,rgba(0,0,0,1) 50%,rgba(69,72,77,1) 100%);
+  font-size: 12.5pt; /* old 14pt but this is little big */
+  min-height: 950px;
+}
+/* common font settings */
+/* settings bundle for all items */
+h1,
+h2,
+h3,
+h4,
+dt,
+dd,
+td *,
+body {
+  font-family: Calibri,Arial,Sans-Serif;
+  font-weight: normal;
+}
+h1,h2,h3,h4 {
+  margin: 0.5em 0em;
+}
+
+
+/* video */
+.video {
+  border: 0;
+  border-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* sets the second background which contains the content */
+#main-content-no-nav {
+  border-radius: 10px;
+  background: #ffffff;
+  border-left: #ccc 1px;
+  border-right: #ccc 1px;
+  box-shadow: 12px 12px 10px 2px rgba(0,0,0,0.5);
+  margin: 25px 120px 25px 120px;
+  padding: 12px;
+}
+
+/* pageheaderbox on every sub page */
+h2.page-header {
+  display: inline-block;
+  color: #ffffff;
+  background: #ebf1f6;
+  border: 1px solid #bce !important;
+  background: rgb(100,154,174);
+  background-image: linear-gradient(to bottom,  rgba(100,154,174,1) 0%,rgba(79,160,181,1) 33%,rgba(43,142,169,1) 51%,rgba(47,178,217,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#649aae', endColorstr='#2fb2d9',GradientType=0 );
+  border-radius: 0.25em; /* CSS3 = IE9 / Firefox 4+ */
+  box-shadow: 2px 2px 3px -1px rgba(0,0,0,0.7); /* CSS3 = IE9 / Firefox 4+ */ 
+  margin-right: 1em;
+  margin-bottom: 0.2em;
+  padding:  0.5em 1em 0.5em 1em;
+}
+
+.no-borderradius h2.page-header {
+  border-radius: 0.25em; 
+}
+
+
+h2.page-header:before {
+  content: url('/img/icon32x32.png'); /* IE8 or higher */
+  margin: 0.1em 1em 0.1em 0em;
+  padding: 0;
+  vertical-align: middle;
+  display: inline-block; 
+}
+/* h3 box */
+h3 {
+  border: 1px solid #ec9 !important;
+  color: #ffffff;
+  display: inline-block;
+  font-weight:500;
+  padding:  0.2em 1em 0em 0.8em;
+  margin: 1.2em 0em 0.3em;
+  margin-right: 1em;
+
+  background-color: rgb(40,132,218);
+  border-radius: 3px; /* CSS3 = IE9 / Firefox 4+ */
+  box-shadow: 2px 2px 3px -1px rgba(0,0,0,0.3); /* CSS3 = IE9 / Firefox 4+ */ 
+}
+
+h3:before {
+  content: url('/img/icon16x16.png'); /* IE8 or higher */
+  margin: 0.2em 0.5em 0.2em 0em;
+  vertical-align: middle;
+  display: inline-block; 
+}
+/* h4 box */
+h4{
+  background: rgb(167,233,233);
+ /* background: linear-gradient(to bottom,  rgba(167,233,233,1) 0%,rgba(154,226,230,1) 37%,rgba(138,225,226,1) 65%,rgba(148,238,248,1) 100%); */
+  border: 1px solid #bce !important;
+  border-radius: 1px; 
+  box-shadow: inset 1px 1px 2px 1px rgba(0,0,0,0.2); /* CSS3 = IE9 / Firefox 4+ */ 
+  padding: 0.35em 0.5em;
+  display: inline-block; 
+}
+
+h4:before {
+  content: url('/img/icon16x16.png'); /* IE8 or higher */
+  margin: 0.2em 0.5em 0.2em 0em;
+  vertical-align: middle;
+  display: inline-block; 
+}
+
+/* common settings for h tags */
+/* wrapped settings for all items */
+h1,
+h2,
+h3,
+h4 {
+  /*cursor:pointer;*/
+  text-shadow: #333 0px 0px 1px;
+}
+
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a {
+  font-weight: normal;
+  margin: 0em 0.2em 0em 0.2em; /* spaced left and right the topic if it is an url e.g. in version.html */
+}
+
+/* checklist formatting */
+ul.checkList li {
+  list-style-image: url('/img/checkMark.png') !important;
+  margin-bottom: 10px;
+  margin-left: 30px;
+  list-style-type: square; /* fallback */
+}
+
+/* nested (sub-) lists */
+ul.checkList li ul li,
+#version-history li ul li ul li {
+  list-style-image: url('/img/chevron.png') !important;
+}
+
+/* options list formatting */
+ul.optionlist li {
+  list-style-image: url('/img/checkbox.png') !important;
+  margin-bottom: 10px;
+  margin-left: 30px;
+  list-style-type: square; /* fallback */
+}
+table.image-columns tr td {
+  border: 0;
+  padding: 2px 10px 2px 0px;
+  margin: 0;
+  vertical-align:top;
+}
+
+ul#version-history tt {
+  font-size: 10pt;
+	font-family: Consolas, 'Courier New', Geneva, sans-serif;
+}
+
+/* 10.08.12: why an image? list-style-type possible; square image additional added */
+#main-content-no-nav > ul,
+#main-content > ul {
+  padding-left: 1.5em;
+  margin-bottom: 10px;
+  margin-left: 30px;
+  list-style-type: square;
+}
+
+.attention:before,
+div.attention:before,
+p.attention:before,
+span.attention:before {
+  content: url('/img/attention.png');
+  margin: 0.1em 0.3em 0.2em 0em;
+  vertical-align: middle;
+  display: inline-block; 
+  font-style: italic;
+  font-weight: bold; /* for the complete phrase */
+}
+
+.tip:before,
+div.tip:before,
+p.tip:before,
+span.tip:before {
+  content: url('/img/tip.png');
+  margin: 0.1em 0.3em 0.2em 0em;
+  vertical-align: middle;
+  display: inline-block;
+  font-style: italic; 
+}
+
+/* settings bundle for all nested <em> items and span's  (old was red) */
+.important,
+.attention em,
+p.attention em,
+span.attention em,
+.tip em,
+div.tip em,
+p.tip em,
+span.tip em {  
+  color: #CC0000; /* rgb(160, 31, 31) */
+  text-shadow: #F0E0E0 0px 0px 1px;
+  font-weight: bold;
+}
+
+/* span's for for marks in variables.html */
+
+*.obs {
+  color: #CC0000; /*rgb(160, 31, 31) */
+}
+.new {
+  color: rgb(128, 255, 0);
+  text-shadow: 1px 1px 1px rgba(0,0,0,.7);
+}
+
+div.obs,
+div.new {
+  display: inline-block;
+}
+/* a few little tricks... */
+li div.new, 
+li div.obs {
+  width: 2.5em !important;
+  margin-left: -3em;
+  text-align: right;
+  padding-right: 0.5em;
+}
+
+/* now we remove the list style square from variables listing */
+article > ul > li {
+  list-style-type: none;
+}
+
+/* red phrase without icon */
+p.scream {
+  color: #900;
+  font-style: italic;
+  font-weight: bold;
+}
+
+img.screenshot,
+img.gallery {
+  border-radius: 4px;
+  box-shadow: 5px 5px 6px -1px rgba(0,0,0,0.2); /* CSS3 = IE9 / Firefox 4+ */ 
+  border: 1px solid #dad0d0;
+  border-style: solid;
+  max-width: 100%;
+}
+img.screenshot {
+  margin-top: 12px;
+  margin-bottom: 10px;
+}
+
+
+/* common list formatting */
+ul > li {
+  padding-bottom: 1em;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0){ /* 09.10.12: special fix chrome/webkit bug in <a> */
+  ul > li  a {
+    vertical-align: top;
+  }
+}
+
+ul > li > ul > li {
+  padding: 0 3em;
+  list-style-type: square; /* fallback */
+  list-style-image: none;
+  background: none no-repeat 0 50%;
+  max-width: 70em;
+}
+/* ul class noneListStyle */
+ul.noneListStyle > li {
+  list-style-type: none;
+  padding-bottom: 1em;
+}
+.chevron {
+  display: list-item;
+  list-style: square outside url('/img/chevron.png') !important;
+}
+
+/* common url formatting and .versionLink in description of versions.html */
+a[href],
+.versionLink {
+  color: rgb(38,85,139);
+ /*cursor: pointer;*/
+  padding: 3px 6px;
+}
+a[href] {
+  margin-left: -6px;
+  margin-right: -6px;
+}
+
+h1 a[href],
+h2 a[href],
+h3 a[href],
+h4 a[href] {
+  margin-left:0;
+  margin-right:0;
+}
+
+
+a[href]:visited {
+  color: rgb(38,85,139); /* rgb(48,17,144);*/
+}
+/* to remove this global style from elements in href e.g. on images */
+/* add this: background-color: transparent !important; to removes our global style (project.css) on this element */
+a[href]:hover,
+.question:hover {
+  color: rgba(100, 224, 244, 0.9);
+  text-decoration: none;
+  text-shadow: 0 0 5px rgba(0,0,0,0.96);
+  background-color: rgba(50,50,50,0.3);
+  border-radius: 4px; 
+}
+/* remove click border from a clicked a[href] element */
+a[href]:focus {
+  outline: 0; /* CSS3 = IE9 / Firefox 4+ */
+}
+
+/* <div class="horizontalRule"></div> class is used in many sub pages */
+.horizontalRule {
+  border: 1px solid rgba(90,90,90,0.4);
+  box-shadow: 0px 0px 2px 2px rgba(60,80,100,0.5); /* CSS3 = IE9 / Firefox 4+ */
+  width: 100%;
+}
+
+/* members */
+.BZ-th-bug,
+.BZ-th-bug a {
+  background-color: rgb(0,0,155) !important;
+  color: #fff !important;
+  padding: 0.2em 0.5em;
+}
+
+/* content for animation templates.html, faq.html and screenshots.html */
+/* image left of .question */
+.collapseDown {
+  border-style : none;
+  vertical-align : middle;
+}
+/* collapsible list item */
+.collapsible li {
+  list-style-image: none;
+  list-style-type: none;
+  margin-bottom: 0.8em;
+}
+
+/* clickable question in templates.html, faq.html and screenshots.html */
+/* additional we have .question:hover in line with a[href]:hover */
+.question {
+  color: #04356c;
+  display: inline;
+  cursor: pointer;
+}
+
+/* bubble used to display code */
+.code_block, .answer_block {
+  background-color: white;
+  border-style: solid;
+  border-color: black;
+  border-radius: 10px; /* CSS3 = IE9 / Firefox 4+ */
+  border-width: 1px;
+  color: black;
+  font-family: Consolas, 'Courier New', Geneva, sans-serif;
+  font-size:10pt;
+  overflow: auto; /* OLD scroll */
+  line-height: 1.3em;
+  margin-left: 30px;
+  max-height: 220px;
+}
+.preview {
+  margin-left: 30px;
+}
+.code_block {
+  padding: 10px;
+}
+/* we are using paragraphs inside these! */
+.answer_block {
+  padding: 0 1em;
+}
+
+.mini,
+.miniquote {
+  font-style: italic;
+  font-size: 0.93em;
+  color: rgb(90,90,90);
+}
+
+.miniquote {
+  max-width: 400px;
+  text-align: justify;
+}
+
+
+/* span class for our signatures in all cases if we call us */
+span.sigAxel {
+  font-family: 'Nothing You Could Do'; 
+}
+span.sigMarc {
+  font-family: 'Loved by the King';
+}
+/* settings bundle for all items */
+span.sigAxel,
+span.sigMarc {
+  font-size: 1.6em;
+  font-style: italic;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+}
+
+/* for prompts based on jQuery */
+.msgBox {
+	display: block;
+	position: fixed;
+	z-index: 10000;
+	top: 0;
+	left: 0;
+	height: auto;
+	width: 100%;
+	border: 1px solid black;
+	font-weight: bold;
+	margin: 0;
+	text-align: center;
+	padding: 20px 5px 20px 5px;
+}
+.msgBox.error {
+	background-color: #ff6666;
+	color: white;
+}
+.msgBox h1 {
+	color: black;
+}
+
+#community-links {font-size: 0.8em;}
+#TJK_ToggleON,#TJK_ToggleOFF {display:none}
+#copyright { margin-top: 16px; }
